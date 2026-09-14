@@ -1,0 +1,90 @@
+{
+  "scenario_id": "SCN-005",
+  "category": "Quality failure - field",
+  "title": "Safety-relevant disconnect device does not confirm its commanded state",
+  "engineering_question": "A safety-relevant device failed to confirm its commanded state in the field. What is the containment position, the likely cause, and what corrective action is required?",
+  "one_liner": "Identify the likely causes of this field failure and the required containment.",
+  "initial_input": "A vehicle in fleet trial reported a fault indicating that a high voltage disconnect device did not confirm the open state after a DC fast charge session.",
+  "relevant_entities": {
+    "quality_issues": [
+      "QI-013"
+    ],
+    "ncrs": [
+      "NCR-006"
+    ],
+    "supplier_issues": [
+      "SI-006"
+    ],
+    "systems": [
+      "SYS-003",
+      "SYS-001"
+    ],
+    "components": [
+      "COMP-019",
+      "COMP-006"
+    ],
+    "suppliers": [
+      "SUP-004"
+    ],
+    "requirements": [
+      "REQ-020",
+      "REQ-021",
+      "REQ-014",
+      "REQ-007"
+    ],
+    "failure_modes": [
+      "FM-043",
+      "FM-021"
+    ],
+    "tests": [
+      "TEST-045",
+      "TEST-016",
+      "TEST-015"
+    ],
+    "standards": [
+      "STD-008",
+      "STD-013",
+      "STD-021",
+      "STD-041"
+    ]
+  },
+  "expected_impacted_domains": [
+    "High voltage safety",
+    "Charging system control and diagnostics",
+    "Supplier component qualification",
+    "Field containment and fleet exposure",
+    "Regulatory and approval exposure"
+  ],
+  "expected_evidence": [
+    "TR-057",
+    "TR-058"
+  ],
+  "expected_reasoning_paths": [
+    "Severity is at the top of the scale because the failure effect is HV present at the inlet, so containment precedes root cause",
+    "TR-058 passes but was performed on the main contactor, not the DC charge contactor pair, so it does not cover the failing part",
+    "TR-057 reproduces the failure on 1 of 6 units on the bench, so this is a population characteristic rather than a single field anomaly",
+    "SI-006 escalation to the supplier is justified by bench reproduction"
+  ],
+  "candidate_outputs": [
+    "8D",
+    "Root Cause Analysis",
+    "5-Why",
+    "Fishbone Analysis",
+    "Corrective Action Plan",
+    "Risk Assessment",
+    "Failure Mode Analysis",
+    "DFMEA Review",
+    "Supplier Quality Assessment",
+    "Evidence Gap Analysis",
+    "Compliance / Standards Impact",
+    "Engineering Executive Summary",
+    "Engineering Decision Brief"
+  ],
+  "known_unknowns": [
+    "Total fleet exposure count is not represented in the environment",
+    "Contactor interruption history per vehicle is not available",
+    "No confirmed root cause exists - no RootCause record links to QI-013"
+  ],
+  "data_classification": "SIMULATED ENTERPRISE ARTEFACT - not OEM, customer or proprietary data",
+  "connector": "SIMULATION"
+}

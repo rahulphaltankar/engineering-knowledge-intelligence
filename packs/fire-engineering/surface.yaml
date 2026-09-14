@@ -1,0 +1,187 @@
+# ---------------------------------------------------------------------------
+# The fire-engineering product surface (appliance/api/templates/fire/).
+#
+# Presentation content for the public demonstrator. The knowledge-source
+# categories are CONCEPTUAL: they describe the kinds of knowledge a
+# fire-engineering knowledge platform would hold. They are not a description of
+# any organisation's actual systems. Coverage of each category and domain is
+# computed from the synthetic corpus at runtime, never asserted here.
+# ---------------------------------------------------------------------------
+product_name: Fire Engineering Knowledge Intelligence
+subtitle: Evidence-grounded technical decision support for fire engineering
+notice_title: BB7 × University of Leeds KTP Demonstrator
+notice: Synthetic public demonstration data — not BB7 internal data
+independence: >-
+  Independent demonstrator responding to the publicly announced Knowledge Transfer
+  Partnership. It is not commissioned, supplied, endorsed or used by BB7 or the University
+  of Leeds. It is not production fire-safety design, assessment or certification software;
+  every output requires review by a competent fire engineer.
+ktp_context: >-
+  BB7 has publicly announced a Knowledge Transfer Partnership with the University of Leeds
+  to develop a Knowledge Management and Training Platform using Explainable AI and Machine
+  Learning, beginning with fire engineering, to capture, organise and share technical
+  expertise.
+hero_scenario: SCN-F01
+
+narrative:
+  - {step: Change, anchor: change, detail: "What is proposed and the design basis it moves from and to"}
+  - {step: Impacted fire-safety domains, anchor: domains, detail: "Domains reached through engineering relationships"}
+  - {step: Applicable requirements, anchor: requirements, detail: "Requirements in scope and what they trace to"}
+  - {step: Knowledge / relationship paths, anchor: paths, detail: "The recorded path to every record relied on"}
+  - {step: Evidence, anchor: evidence, detail: "Assessments, verification results and documents in scope"}
+  - {step: Transferability, anchor: transferability, detail: "Does existing evidence still apply to the new use?"}
+  - {step: Unknown / evidence gaps, anchor: gaps, detail: "What cannot be established, and why"}
+  - {step: Confidence, anchor: confidence, detail: "Deterministic confidence and the evidence gate"}
+  - {step: Human review, anchor: review, detail: "Accept or reject each finding, with a reason"}
+  - {step: Verification & Evidence Plan, anchor: plan, detail: "Actions traced requirement to finding"}
+
+# Evidence conditions, worded for fire engineering.
+gap_labels:
+  test_not_run: Verification activity not carried out
+  inconclusive: Result cannot be judged
+  criterion_not_established: Acceptance criterion not established
+  evidence_not_transferable: Evidence does not transfer to the proposed use
+  no_result_recorded: Verification activity defined, no result recorded
+gap_detail:
+  test_not_run: "No evidence exists because the activity has not been carried out."
+  inconclusive: "A result exists but part of the system was not demonstrated."
+  criterion_not_established: "No project-specific criterion is recorded. None has been assumed."
+  evidence_not_transferable: "A pass exists but was obtained on the basis the change supersedes."
+  no_result_recorded: "The activity is defined but nothing is recorded against it."
+gap_action:
+  test_not_run: Carry out
+  inconclusive: Repeat under representative conditions
+  criterion_not_established: Agree a project-specific criterion
+  evidence_not_transferable: Re-establish for the proposed use
+  no_result_recorded: Record or carry out
+
+knowledge_sources:
+  - name: Fire Strategies
+    description: Fire strategy reports and the design basis they record.
+    match:
+      - {entity_type: Document, where: {document_type: [fire_strategy]}}
+      - {entity_type: Evidence, where: {evidence_type: [fire_strategy]}}
+  - name: Regulatory Requirements
+    description: Requirements and the legislation and statutory guidance they trace to.
+    match:
+      - {entity_type: Requirement}
+      - {entity_type: Standard, where: {scope_tag: [legislation, statutory_guidance]}}
+  - name: Design Information
+    description: Proposals and change descriptions for the building as altered.
+    match:
+      - {entity_type: Document, where: {document_type: [architectural_proposal]}}
+      - {entity_type: EngineeringChange}
+  - name: Fire Safety Drawings
+    description: Fire strategy and compartmentation drawings.
+    match: []
+  - name: Engineering Calculations
+    description: Calculation-based assessments such as escape capacity.
+    match:
+      - {entity_type: TestCase, where: {method: [calculation_assessment, engineering_assessment]}}
+  - name: Assessment Reports
+    description: Assessment and review records supporting a conclusion.
+    match:
+      - {entity_type: Evidence, where: {evidence_type: [assessment_report, document_review]}}
+  - name: Test Evidence
+    description: Inspection, commissioning and test results with their status.
+    match:
+      - {entity_type: TestResult}
+      - {entity_type: Evidence, where: {evidence_type: [test_certificate, inspection_record]}}
+  - name: Product / System Information
+    description: Installed systems, elements and their records.
+    match:
+      - {entity_type: Component}
+      - {entity_type: Document, where: {document_type: [installation_record, cause_and_effect]}}
+  - name: Technical Guidance
+    description: Codes of practice, referenced by identifier and title only.
+    match:
+      - {entity_type: Standard, where: {scope_tag: [code_of_practice]}}
+  - name: Lessons Learned
+    description: Recorded lessons from previous assessments and reviews.
+    match: []
+  - name: Previous Project Evidence
+    description: Evidence from comparable previous projects and whether it transfers.
+    match: []
+  - name: Expert Knowledge
+    description: Specialist reasoning profiles that frame how evidence is assessed.
+    match:
+      - {specialist_profiles: true}
+
+domains:
+  - {name: Means of Escape, description: "Escape routes, stairs, lobbies and travel."}
+  - {name: Evacuation Strategy, description: "Simultaneous, phased or stay-put strategies and their basis."}
+  - {name: Fire Detection & Alarm, description: "Detection, warning and cause-and-effect."}
+  - {name: Active Fire Protection, description: "Sprinklers and other suppression systems."}
+  - {name: Passive Fire Protection, description: "Compartmentation, fire doors and fire-stopping."}
+  - name: Smoke Control
+    description: "Smoke ventilation of stairs, lobbies and corridors."
+    note: "Not modelled as records in the synthetic corpus; carried as an unrecorded design input of the change."
+  - {name: Structural Fire Performance, description: "Fire resistance of structure and compartment floors."}
+  - {name: Firefighting Access, description: "Fire service access, facilities and fire mains."}
+  - {name: Regulatory / Guidance Requirements, description: "Legislation, statutory guidance and codes of practice."}
+
+capabilities:
+  - {name: Change Impact Assessment, description: "Which fire-safety domains a change reaches, and by what path.", page: "/analyse-change#domains"}
+  - {name: Requirements Applicability, description: "Requirements in scope, their references and whether applicability is established.", page: /requirements}
+  - {name: Knowledge Relationship Analysis, description: "Deterministic traversal with a justifying path for every record.", page: "/reasoning#paths"}
+  - {name: Evidence Assessment, description: "Status of every assessment, verification result and document in scope.", page: /evidence}
+  - {name: Evidence Transferability, description: "Whether evidence obtained for the previous use applies to the new one.", page: "/evidence#transferability"}
+  - {name: Technical Reasoning, description: "Specialist analysis backed by fire-engineering operating profiles.", page: /reasoning}
+  - {name: Uncertainty / Unknowns, description: "What the evidence does not establish - reported, never filled in.", page: "/analyse-change#gaps"}
+  - {name: Evidence Gaps, description: "Not carried out, inconclusive, no criterion, not transferable, no result recorded.", page: "/evidence#gaps"}
+  - {name: Confidence Assessment, description: "Deterministic confidence from evidence properties - not model self-report.", page: "/reasoning#confidence"}
+  - {name: Provenance & Source Attribution, description: "Source, record and classification for every item relied on.", page: /evidence}
+  - {name: Human Review, description: "Finding-level accept or reject with a recorded reason.", page: /review}
+
+outputs:
+  - {name: Change Impact Assessment, description: "Classification, domains, requirements, hazards and gaps.", page: /verification-plan, workflow: change-impact-assessment}
+  - {name: Applicable Requirements, description: "Requirements with references and applicability status.", page: /requirements}
+  - {name: Evidence Assessment, description: "Evidence status, transferability and gaps.", page: /verification-plan, workflow: evidence-assessment}
+  - {name: Evidence Gaps, description: "Evidence conditions by class, with the action each implies.", page: "/evidence#gaps"}
+  - {name: Verification & Evidence Plan, description: "Requirement to verification activity to result and evidence to finding.", page: /verification-plan, workflow: verification-evidence-plan}
+  - {name: Assumptions & Unknowns, description: "Everything the evidence does not establish.", page: "/analyse-change#gaps"}
+  - {name: Confidence, description: "Classification and confidence for every finding.", page: "/reasoning#confidence"}
+  - {name: Provenance, description: "Source attribution for every record relied on.", page: /evidence}
+  - {name: Human Review, description: "Engineering review decisions on individual findings.", page: /review}
+  - {name: Audit Trail, description: "Timestamped decisions, with the finding as the reviewer saw it.", page: "/review#audit"}
+
+architecture:
+  - layer: Knowledge sources
+    description: "Knowledge enters through read-only connectors; source systems stay outside."
+    example: "Fire strategy FDOC-001, assessment reports, verification results, standards by identifier."
+    fact: sources
+  - layer: Knowledge structure
+    description: "Records become typed, provenance-stamped entities in one generic model."
+    example: "Change FEC-001, fire-safety domains, requirements, fire hazards, verification activities."
+    fact: structure
+  - layer: Relationships & context
+    description: "Typed relationships; a deterministic traversal records the path to each record."
+    example: "FEC-001 affects FREQ-002, verified by FTST-001, which produced FTR-001."
+    fact: relationships
+  - layer: Evidence retrieval
+    description: "Retrieval scoped to the knowledge sources for this domain."
+    example: "Results, evidence records and documents reached from the change."
+    fact: retrieval
+  - layer: Reasoning
+    description: "Specialists derive findings by graph and set operations; optional model interpretation is lower trust."
+    example: "Office-basis evidence compared with the proposed residential basis."
+    fact: reasoning
+  - layer: Provenance & confidence
+    description: "Every citation verified by the evidence gate; confidence scored from evidence properties."
+    example: "Unsupported claims downgraded or removed; missing criteria reported as UNKNOWN."
+    fact: provenance
+  - layer: Human review
+    description: "A reviewer accepts or rejects each finding, with a reason, recorded beside it."
+    example: "Rejecting the FTR-001 transferability finding holds the actions it justified."
+    fact: review
+  - layer: Technical decision output
+    description: "Outputs generated from the same reasoning context, with review decisions applied."
+    example: "Verification & Evidence Plan, Change Impact Assessment, Evidence Assessment."
+    fact: outputs
+
+not_in_demonstrator:
+  - Ingestion of real fire strategies, drawings, calculations or project files
+  - Lessons-learned and previous-project knowledge bases
+  - Authenticated reviewers, roles, competence records and formal sign-off
+  - Training content or learning pathways built from reviewed findings
+  - Any BB7 system, data or process

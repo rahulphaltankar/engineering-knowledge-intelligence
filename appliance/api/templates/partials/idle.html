@@ -1,0 +1,37 @@
+<div class="panel">
+  <div class="panel-head"><h2>Ready</h2></div>
+  <p class="muted" style="margin:0 0 16px;max-width:86ch">
+    Select a change and assess it. The appliance retrieves engineering context through the
+    connector that holds that domain's data, reasons across it with specialist agents,
+    verifies every claim against evidence, and prepares outputs from that same reasoning
+    context for a human reviewer.
+  </p>
+  <div class="pipeline">
+    {% for s, d in [
+      ('Input', 'Engineering change or scenario'),
+      ('Classification', 'Change type and the design basis it moves from and to'),
+      ('Applicable requirements', 'Requirements and the references they trace to'),
+      ('Knowledge / relationships', 'Graph traversal with a justifying path per record'),
+      ('Evidence retrieval', 'Results, evidence records and documents in scope'),
+      ('Impact / risk reasoning', 'Domains reached and prioritised hazards'),
+      ('Evidence transferability', 'Does existing evidence still apply?'),
+      ('Unknown / gap detection', 'Not run, inconclusive, no criterion, no result'),
+      ('Confidence + provenance', 'Deterministic scoring; evidence gate'),
+      ('Human review', 'Accept or reject each finding'),
+      ('Verification / action output', 'Plan traced requirement to finding'),
+    ] %}
+    <div class="ps"><div class="n">{{ s }}</div><div class="d">{{ d }}</div></div>
+    {% endfor %}
+  </div>
+  <details class="disclosure">
+    <summary>Architecture data flow</summary>
+    <div class="flow" style="margin-top:12px">
+      {% for f in flow %}
+      <div class="flow-step">
+        <div class="n">{{ f.stage }}</div>
+        <div class="d">{{ f.note }}</div>
+      </div>
+      {% endfor %}
+    </div>
+  </details>
+</div>

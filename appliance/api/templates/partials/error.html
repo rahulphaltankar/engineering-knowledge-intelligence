@@ -1,0 +1,6 @@
+<div class="panel">
+  <div class="panel-head"><h2>Unable to continue</h2></div>
+  <p><span class="pill bad">{{ error.code }}</span></p>
+  <p style="margin:9px 0 0">{{ error.message }}</p>
+  {% if error.detail %}<p class="small muted mono">{{ error.detail }}</p>{% endif %}
+</div>

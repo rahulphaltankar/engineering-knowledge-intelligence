@@ -1,0 +1,129 @@
+{
+  "entity": "CorrectiveAction",
+  "description": "Containment, corrective and preventive actions with effectiveness verification.",
+  "data_classification": "SIMULATED ENTERPRISE ARTEFACT - not OEM, customer or proprietary data",
+  "generated_by": "scripts/generate_simulation.py",
+  "seed": 20260823,
+  "records": [
+    {
+      "id": "CA-001",
+      "root_cause_id": "RC-001",
+      "quality_issue_id": "QI-009",
+      "action_type": "corrective",
+      "description": "Update the BMS balancing algorithm to increase balancing current availability during parked periods and extend the balancing window.",
+      "owner_role": "BMS software engineering",
+      "due_date": "2026-06-05",
+      "status": "implemented",
+      "effectiveness_verification": "Fleet cell spread monitoring over 30 days after update deployment.",
+      "record_type": "CorrectiveAction"
+    },
+    {
+      "id": "CA-002",
+      "root_cause_id": "RC-001",
+      "quality_issue_id": "QI-009",
+      "action_type": "preventive",
+      "description": "Add a parked self-discharge spread case to the balancing sizing input specification for all future pack programmes.",
+      "owner_role": "Battery systems engineering",
+      "due_date": "2026-07-31",
+      "status": "in_progress",
+      "effectiveness_verification": "Specification review sign-off and application on the next programme.",
+      "record_type": "CorrectiveAction"
+    },
+    {
+      "id": "CA-003",
+      "root_cause_id": "RC-002",
+      "quality_issue_id": "QI-012",
+      "action_type": "corrective",
+      "description": "Re-establish laser focus position and rework the affected modules.",
+      "owner_role": "Manufacturing engineering",
+      "due_date": "2026-04-18",
+      "status": "implemented",
+      "effectiveness_verification": "Weld resistance measurement on 100 percent of reworked modules.",
+      "record_type": "CorrectiveAction"
+    },
+    {
+      "id": "CA-004",
+      "root_cause_id": "RC-002",
+      "quality_issue_id": "QI-012",
+      "action_type": "preventive",
+      "description": "Add focus verification as a mandatory step in the fixture change control plan.",
+      "owner_role": "Manufacturing engineering",
+      "due_date": "2026-05-15",
+      "status": "implemented",
+      "effectiveness_verification": "Control plan audit and verification of the first three fixture changes.",
+      "record_type": "CorrectiveAction"
+    },
+    {
+      "id": "CA-005",
+      "root_cause_id": "RC-003",
+      "quality_issue_id": "QI-006",
+      "action_type": "containment",
+      "description": "Quarantine and 100 percent leak test all cooling plates from the affected production weeks.",
+      "owner_role": "Supplier quality",
+      "due_date": "2026-06-16",
+      "status": "implemented",
+      "effectiveness_verification": "Leak test records for the full quarantined population.",
+      "record_type": "CorrectiveAction"
+    },
+    {
+      "id": "CA-006",
+      "root_cause_id": "RC-003",
+      "quality_issue_id": "QI-006",
+      "action_type": "corrective",
+      "description": "Reset the furnace dew point alarm threshold to the qualified limit and requalify the furnace profile.",
+      "owner_role": "Supplier quality",
+      "due_date": "2026-07-15",
+      "status": "in_progress",
+      "effectiveness_verification": "Furnace requalification report and sectioning results on the first qualified batch.",
+      "record_type": "CorrectiveAction"
+    },
+    {
+      "id": "CA-007",
+      "root_cause_id": "RC-004",
+      "quality_issue_id": "QI-011",
+      "action_type": "containment",
+      "description": "Sort and segregate all bushing stock from the transferred location and revert to the incumbent source until capability is demonstrated.",
+      "owner_role": "Supplier quality",
+      "due_date": "2026-06-10",
+      "status": "implemented",
+      "effectiveness_verification": "Incoming stiffness measurement on the segregated population.",
+      "record_type": "CorrectiveAction"
+    },
+    {
+      "id": "CA-008",
+      "root_cause_id": "RC-004",
+      "quality_issue_id": "QI-011",
+      "action_type": "corrective",
+      "description": "Requalify the cure oven profile at the transferred location and demonstrate process capability on stiffness.",
+      "owner_role": "Supplier quality",
+      "due_date": "2026-08-30",
+      "status": "in_progress",
+      "effectiveness_verification": "Process capability study on a minimum of 30 consecutive batches.",
+      "record_type": "CorrectiveAction"
+    },
+    {
+      "id": "CA-009",
+      "root_cause_id": "RC-004",
+      "quality_issue_id": "QI-011",
+      "action_type": "preventive",
+      "description": "Add mandatory cure profile requalification to the standard process transfer checklist.",
+      "owner_role": "Supplier quality",
+      "due_date": "2026-09-15",
+      "status": "planned",
+      "effectiveness_verification": "Checklist revision approval and application on the next transfer.",
+      "record_type": "CorrectiveAction"
+    },
+    {
+      "id": "CA-010",
+      "root_cause_id": "RC-005",
+      "quality_issue_id": "QI-017",
+      "action_type": "corrective",
+      "description": "Introduce protective packaging and revise the work instruction to specify vent handling protection.",
+      "owner_role": "Manufacturing engineering",
+      "due_date": "2026-05-20",
+      "status": "implemented",
+      "effectiveness_verification": "Vent flow verification pass rate over the following 500 packs.",
+      "record_type": "CorrectiveAction"
+    }
+  ]
+}

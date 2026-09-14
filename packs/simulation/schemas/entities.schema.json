@@ -1,0 +1,2587 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/engineering-intelligence-simulation/entities.schema.json",
+  "title": "Simulated Engineering Environment - Entity Schemas",
+  "description": "Schemas for every entity the Simulation Connector exposes. Derived directly from the generated data by scripts/build_schemas.py, so it cannot drift from what the connector returns. `x-references` marks foreign key fields.",
+  "x-data-classification": "SIMULATED ENTERPRISE ARTEFACT - not OEM, customer or proprietary data",
+  "$defs": {
+    "Component": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": [
+            "string"
+          ]
+        },
+        "subsystem_id": {
+          "type": [
+            "string"
+          ],
+          "x-references": "Subsystem"
+        },
+        "system_id": {
+          "type": [
+            "string"
+          ],
+          "x-references": "System"
+        },
+        "name": {
+          "type": [
+            "string"
+          ]
+        },
+        "supplier_id": {
+          "type": [
+            "string"
+          ],
+          "x-references": "Supplier"
+        },
+        "part_number": {
+          "type": [
+            "string"
+          ]
+        },
+        "revision": {
+          "type": [
+            "string"
+          ],
+          "enum": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ]
+        },
+        "record_type": {
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "part_number",
+        "record_type",
+        "revision",
+        "subsystem_id",
+        "supplier_id",
+        "system_id"
+      ],
+      "additionalProperties": false,
+      "description": "Components with supplier allocation and revision level.",
+      "x-collection": "components.json",
+      "x-record-count": 68
+    },
+    "Configuration": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": [
+            "string"
+          ],
+          "enum": [
+            "CFG-001",
+            "CFG-002",
+            "CFG-003",
+            "CFG-004",
+            "CFG-005",
+            "CFG-006"
+          ]
+        },
+        "programme_id": {
+          "type": [
+            "string"
+          ],
+          "x-references": "Programme",
+          "enum": [
+            "PRG-001",
+            "PRG-002",
+            "PRG-003"
+          ]
+        },
+        "name": {
+          "type": [
+            "string"
+          ],
+          "enum": [
+            "ATLAS DV",
+            "ATLAS PT1",
+            "ATLAS PT2",
+            "ATLAS PV",
+            "ORION SOP",
+            "VEGA PV"
+          ]
+        },
+        "phase": {
+          "type": [
+            "string"
+          ],
+          "enum": [
+            "design_verification",
+            "production",
+            "production_validation",
+            "prototype"
+          ]
+        },
+        "description": {
+          "type": [
+            "string"
+          ]
+        },
+        "build_date": {
+          "type": [
+            "string"
+          ],
+          "enum": [
+            "2026-02-01",
+            "2026-02-10",
+            "2026-03-12",
+            "2026-05-08",
+            "2026-07-15",
+            "2026-11-20"
+          ]
+        },
+        "vehicle_ids": {
+          "type": [
+            "array"
+          ],
+          "items": {
+            "type": [
+              "string"
+            ]
+          },
+          "x-references": "Vehicle"
+        },
+        "record_type": {
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "required": [
+        "build_date",
+        "description",
+        "id",
+        "name",
+        "phase",
+        "programme_id",
+        "record_type",
+        "vehicle_ids"
+      ],
+      "additionalProperties": false,
+      "description": "Build levels and configuration baselines.",
+      "x-collection": "configurations.json",
+      "x-record-count": 6
+    },
+    "CorrectiveAction": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": [
+            "string"
+          ],
+          "enum": [
+            "CA-001",
+            "CA-002",
+            "CA-003",
+            "CA-004",
+            "CA-005",
+            "CA-006",
+            "CA-007",
+            "CA-008",
+            "CA-009",
+            "CA-010"
+          ]
+        },
+        "root_cause_id": {
+          "type": [
+            "string"
+          ],
+          "x-references": "RootCause",
+          "enum": [
+            "RC-001",
+            "RC-002",
+            "RC-003",
+            "RC-004",
+            "RC-005"
+          ]
+        },
+        "quality_issue_id": {
+          "type": [
+            "string"
+          ],
+          "x-references": "QualityIssue",
+          "enum": [
+            "QI-006",
+            "QI-009",
+            "QI-011",
+            "QI-012",
+            "QI-017"
+          ]
+        },
+        "action_type": {
+          "type": [
+            "string"
+          ],
+          "enum": [
+            "containment",
+            "corrective",
+            "preventive"
+          ]
+        },
+        "description": {
+          "type": [
+            "string"
+          ]
+        },
+        "owner_role": {
+          "type": [
+            "string"
+          ],
+          "enum": [
+            "BMS software engineering",
+            "Battery systems engineering",
+            "Manufacturing engineering",
+            "Supplier quality"
+          ]
+        },
+        "due_date": {
+          "type": [
+            "string"
+          ],
+          "enum": [
+            "2026-04-18",
+            "2026-05-15",
+            "2026-05-20",
+            "2026-06-05",
+            "2026-06-10",
+            "2026-06-16",
+            "2026-07-15",
+            "2026-07-31",
+            "2026-08-30",
+            "2026-09-15"
+          ]
+        },
+        "status": {
+          "type": [
+            "string"
+          ],
+          "enum": [
+            "implemented",
+            "in_progress",
+            "planned"
+          ]
+        },
+        "effectiveness_verification": {
+          "type": [
+            "string"
+          ]
+        },
+        "record_type": {
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "required": [
+        "action_type",
+        "description",
+        "due_date",
+        "effectiveness_verification",
+        "id",
+        "owner_role",
+        "quality_issue_id",
+        "record_type",
+        "root_cause_id",
+        "status"
+      ],
+      "additionalProperties": false,
+      "description": "Containment, corrective and preventive actions with effectiveness verification.",
+      "x-collection": "corrective_actions.json",
+      "x-record-count": 10
+    },
+    "Document": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": [
+            "string"
+          ]
+        },
+        "title": {
+          "type": [
+            "string"
+          ]
+        },
+        "document_type": {
+          "type": [
+            "string"
+          ]
+        },
+        "owner_domain": {
+          "type": [
+            "string"
+          ]
+        },
+        "revision": {
+          "type": [
+            "string"
+          ],
+          "enum": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ]
+        },
+        "issued_date": {
+          "type": [
+            "string"
+          ]
+        },
+        "status": {
+          "type": [
+            "string"
+          ],
+          "enum": [
+            "draft",
+            "released"
+          ]
+        },
+        "related_entity_type": {
+          "type": [
+            "string"
+          ],
+          "enum": [
+            "configuration",
+            "engineering_change",
+            "programme",
+            "subsystem",
+            "system",
+            "vehicle"
+          ]
+        },
+        "related_entity_id": {
+          "type": [
+            "string"
+          ]
+        },
+        "abstract": {
+          "type": [
+            "string"
+          ]
+        },
+        "record_type": {
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "required": [
+        "abstract",
+        "document_type",
+        "id",
+        "issued_date",
+        "owner_domain",
+        "record_type",
+        "related_entity_id",
+        "related_entity_type",
+        "revision",
+        "status",
+        "title"
+      ],
+      "additionalProperties": false,
+      "description": "Engineering documents with authored abstracts.",
+      "x-collection": "documents.json",
+      "x-record-count": 30
+    },
+    "EngineeringChange": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": [
+            "string"
+          ]
+        },
+        "title": {
+          "type": [
+            "string"
+          ]
+        },
+        "description": {
+          "type": [
+            "string"
+          ]
+        },
+        "change_type": {
+          "type": [
+            "string"
+          ],
+          "enum": [
+            "design",
+            "obsolescence",
+            "process",
+            "software",
+            "sourcing"
+          ]
+        },
+        "raised_date": {
+          "type": [
+            "string"
+          ]
+        },
+        "status": {
+          "type": [
+            "string"
+          ],
+          "enum": [
+            "approved",
+            "implemented",
+            "proposed",
+            "under_review"
+          ]
+        },
+        "programme_ids": {
+          "type": [
+            "array"
+          ],
+          "items": {
+            "type": [
+              "string"
+            ]
+          },
+          "x-references": "Programme"
+        },
+        "primary_system_id": {
+          "type": [
+            "string"
+          ],
+          "x-references": "System",
+          "enum": [
+            "SYS-001",
+            "SYS-003",
+            "SYS-004",
+            "SYS-005",
+            "SYS-006",
+            "SYS-007",
+            "SYS-008",
+            "SYS-010",
+            "SYS-015",
+            "SYS-016",
+            "SYS-018"
+          ]
+        },
+        "affected_component_ids": {
+          "type": [
+            "array"
+          ],
+          "items": {
+            "type": [
+              "string"
+            ]
+          },
+          "x-references": "Component"
+        },
+        "driver": {
+          "type": [
+            "string"
+          ]
+        },
+        "phase": {
+          "type": [
+            "string"
+          ],
+          "enum": [
+            "DV",
+            "PV",
+            "Production"
+          ]
+        },
+        "derived_from_sources": {
+          "type": [
+            "array"
+          ],
+          "items": {
+            "type": [
+              "string"
+            ]
+          }
+        },
+        "record_type": {
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "required": [
+        "affected_component_ids",
+        "change_type",
+        "derived_from_sources",
+        "description",
+        "driver",
+        "id",
+        "phase",
+        "primary_system_id",
+        "programme_ids",
+        "raised_date",
+        "record_type",
+        "status",
+        "title"
+      ],
+      "additionalProperties": false,
+      "description": "Engineering change requests across the programmes.",
+      "x-collection": "engineering_changes.json",
+      "x-record-count": 14
+    },
+    "Evidence": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": [
+            "string"
+          ]
+        },
+        "evidence_type": {
+          "type": [
+            "string"
+          ],
+          "enum": [
+            "document",
+            "measurement",
+            "test_result"
+          ]
+        },
+        "source_record_type": {
+          "type": [
+            "string"
+          ],
+          "enum": [
+            "Document",
+            "Measurement",
+            "TestResult"
+          ]
+        },
+        "source_record_id": {
+          "type": [
+            "string"
+          ]
+        },
+        "title": {
+          "type": [
+            "string"
+          ]
+        },
+        "strength": {
+          "type": [
+            "string"
+          ],
+          "enum": [
+            "moderate",
+            "strong",
+            "weak"
+          ]
+        },
+        "status": {
+          "type": [
+            "string"
+          ],
+          "enum": [
+            "draft",
+            "fail",
+            "inconclusive",
+            "pass",
+            "recorded",
+            "released"
+          ]
+        },
+        "supports_requirements": {
+          "type": [
+            "array"
+          ],
+          "items": {
+            "type": [
+              "string"
+            ]
+          },
+          "x-references": "Requirement"
+        },
+        "supports_failure_modes": {
+          "type": [
+            "array"
+          ],
+          "items": {
+            "type": [
+              "string"
+            ]
+          },
+          "x-references": "FailureMode"
+        },
+        "configuration_id": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "x-references": "Configuration"
+        },
+        "recorded_date": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "record_type": {
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "required": [
+        "configuration_id",
+        "evidence_type",
+        "id",
+        "record_type",
+        "recorded_date",
+        "source_record_id",
+        "source_record_type",
+        "status",
+        "strength",
+        "supports_failure_modes",
+        "supports_requirements",
+        "title"
+      ],
+      "additionalProperties": false,
+      "description": "Evidence records derived from test results, documents and measurements.",
+      "x-collection": "evidence.json",
+      "x-record-count": 139
+    },
+    "FailureMode": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": [
+            "string"
+          ]
+        },
+        "fmea_id": {
+          "type": [
+            "string"
+          ],
+          "x-references": "FMEA"
+        },
+        "focus_type": {
+          "type": [
+            "string"
+          ],
+          "enum": [
+            "component",
+            "process",
+            "subsystem",
+            "system"
+          ]
+        },
+        "focus_id": {
+          "type": [
+            "string"
+          ]
+        },
+        "function": {
+          "type": [
+            "string"
+          ]
+        },
+        "failure_mode": {
+          "type": [
+            "string"
+          ]
+        },
+        "failure_effect": {
+          "type": [
+            "string"
+          ]
+        },
+        "severity": {
+          "type": [
+            "integer"
+          ]
+        },
+        "failure_cause": {
+          "type": [
+            "string"
+          ]
+        },
+        "prevention_control": {
+          "type": [
+            "string"
+          ]
+        },
+        "occurrence": {
+          "type": [
+            "integer"
+          ]
+        },
+        "detection_control": {
+          "type": [
+            "string"
+          ]
+        },
+        "detection": {
+          "type": [
+            "integer"
+          ]
+        },
+        "action_priority": {
+          "type": [
+            "string"
+          ],
+          "enum": [
+            "H",
+            "L",
+            "M"
+          ]
+        },
+        "action_priority_method": {
+          "type": [
+            "string"
+          ]
+        },
+        "status": {
+          "type": [
+            "string"
+          ]
+        },
+        "record_type": {
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "required": [
+        "action_priority",
+        "action_priority_method",
+        "detection",
+        "detection_control",
+        "failure_cause",
+        "failure_effect",
+        "failure_mode",
+        "fmea_id",
+        "focus_id",
+        "focus_type",
+        "function",
+        "id",
+        "occurrence",
+        "prevention_control",
+        "record_type",
+        "severity",
+        "status"
+      ],
+      "additionalProperties": false,
+      "description": "Design and process failure modes with S/O/D ratings.",
+      "x-collection": "failure_modes.json",
+      "x-record-count": 83
+    },
+    "FMEA": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": [
+            "string"
+          ]
+        },
+        "fmea_type": {
+          "type": [
+            "string"
+          ],
+          "enum": [
+            "DFMEA",
+            "PFMEA"
+          ]
+        },
+        "title": {
+          "type": [
+            "string"
+          ]
+        },
+        "scope_ref_type": {
+          "type": [
+            "string"
+          ],
+          "enum": [
+            "subsystem",
+            "system"
+          ]
+        },
+        "scope_ref_id": {
+          "type": [
+            "string"
+          ]
+        },
+        "revision": {
+          "type": [
+            "string"
+          ],
+          "enum": [
+            "A",
+            "B",
+            "C"
+          ]
+        },
+        "revision_date": {
+          "type": [
+            "string"
+          ]
+        },
+        "status": {
+          "type": [
+            "string"
+          ],
+          "enum": [
+            "draft",
+            "released"
+          ]
+        },
+        "team": {
+          "type": [
+            "string"
+          ]
+        },
+        "standard_ids": {
+          "type": [
+            "array"
+          ],
+          "items": {
+            "type": [
+              "string"
+            ]
+          },
+          "x-references": "Standard"
+        },
+        "record_type": {
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "required": [
+        "fmea_type",
+        "id",
+        "record_type",
+        "revision",
+        "revision_date",
+        "scope_ref_id",
+        "scope_ref_type",
+        "standard_ids",
+        "status",
+        "team",
+        "title"
+      ],
+      "additionalProperties": false,
+      "description": "DFMEA and PFMEA headers.",
+      "x-collection": "fmea.json",
+      "x-record-count": 22
+    },
+    "Measurement": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": [
+            "string"
+          ]
+        },
+        "title": {
+          "type": [
+            "string"
+          ]
+        },
+        "signal_id": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "x-references": "Signal"
+        },
+        "related_entity_type": {
+          "type": [
+            "string"
+          ],
+          "enum": [
+            "quality_issue",
+            "test",
+            "test_result"
+          ]
+        },
+        "related_entity_id": {
+          "type": [
+            "string"
+          ]
+        },
+        "unit": {
+          "type": [
+            "string"
+          ],
+          "enum": [
+            "celsius",
+            "decibelmicrovoltpermetre",
+            "kilonewton",
+            "kilowatt",
+            "metrepersecondsquared",
+            "millivolt",
+            "newtonpermillimetre",
+            "percent",
+            "volt"
+          ]
+        },
+        "sample_count": {
+          "type": [
+            "integer"
+          ]
+        },
+        "profile": {
+          "type": [
+            "string"
+          ]
+        },
+        "shape_reference_sources": {
+          "type": [
+            "array"
+          ],
+          "items": {
+            "type": [
+              "string"
+            ]
+          }
+        },
+        "notes": {
+          "type": [
+            "string"
+          ]
+        },
+        "values": {
+          "type": [
+            "array"
+          ],
+          "items": {
+            "type": [
+              "number"
+            ]
+          }
+        },
+        "statistics": {
+          "type": [
+            "object"
+          ]
+        },
+        "data_classification": {
+          "type": [
+            "string"
+          ]
+        },
+        "record_type": {
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "required": [
+        "data_classification",
+        "id",
+        "notes",
+        "profile",
+        "record_type",
+        "related_entity_id",
+        "related_entity_type",
+        "sample_count",
+        "shape_reference_sources",
+        "signal_id",
+        "statistics",
+        "title",
+        "unit",
+        "values"
+      ],
+      "additionalProperties": false,
+      "description": "Simulated measurement series with synthetic values.",
+      "x-collection": "measurements.json",
+      "x-record-count": 20
+    },
+    "NCR": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": [
+            "string"
+          ],
+          "enum": [
+            "NCR-001",
+            "NCR-002",
+            "NCR-003",
+            "NCR-004",
+            "NCR-005",
+            "NCR-006",
+            "NCR-007"
+          ]
+        },
+        "quality_issue_id": {
+          "type": [
+            "string"
+          ],
+          "x-references": "QualityIssue",
+          "enum": [
+            "QI-006",
+            "QI-011",
+            "QI-012",
+            "QI-013",
+            "QI-017",
+            "QI-024",
+            "QI-025"
+          ]
+        },
+        "title": {
+          "type": [
+            "string"
+          ]
+        },
+        "disposition": {
+          "type": [
+            "string"
+          ],
+          "enum": [
+            "engineering_review",
+            "quarantine",
+            "return_to_supplier",
+            "rework",
+            "scrap",
+            "supplier_action"
+          ]
+        },
+        "quantity_affected": {
+          "type": [
+            "integer"
+          ]
+        },
+        "raised_date": {
+          "type": [
+            "string"
+          ],
+          "enum": [
+            "2026-04-16",
+            "2026-04-28",
+            "2026-05-09",
+            "2026-05-16",
+            "2026-06-05",
+            "2026-06-14",
+            "2026-07-19"
+          ]
+        },
+        "status": {
+          "type": [
+            "string"
+          ],
+          "enum": [
+            "closed",
+            "open"
+          ]
+        },
+        "record_type": {
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "required": [
+        "disposition",
+        "id",
+        "quality_issue_id",
+        "quantity_affected",
+        "raised_date",
+        "record_type",
+        "status",
+        "title"
+      ],
+      "additionalProperties": false,
+      "description": "Non-conformance reports.",
+      "x-collection": "ncrs.json",
+      "x-record-count": 7
+    },
+    "Programme": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": [
+            "string"
+          ],
+          "enum": [
+            "PRG-001",
+            "PRG-002",
+            "PRG-003"
+          ]
+        },
+        "name": {
+          "type": [
+            "string"
+          ],
+          "enum": [
+            "ATLAS",
+            "ORION",
+            "VEGA"
+          ]
+        },
+        "description": {
+          "type": [
+            "string"
+          ]
+        },
+        "propulsion": {
+          "type": [
+            "string"
+          ],
+          "enum": [
+            "BEV",
+            "ICE-MHEV",
+            "PHEV"
+          ]
+        },
+        "sop": {
+          "type": [
+            "string"
+          ],
+          "enum": [
+            "2026-Q2",
+            "2026-Q4",
+            "2027-Q3"
+          ]
+        },
+        "markets": {
+          "type": [
+            "array"
+          ],
+          "items": {
+            "type": [
+              "string"
+            ]
+          }
+        },
+        "current_phase": {
+          "type": [
+            "string"
+          ],
+          "enum": [
+            "DV",
+            "PV",
+            "Production"
+          ]
+        },
+        "derived_from": {
+          "type": [
+            "array"
+          ],
+          "items": {
+            "type": [
+              "string"
+            ]
+          }
+        },
+        "record_type": {
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "required": [
+        "current_phase",
+        "derived_from",
+        "description",
+        "id",
+        "markets",
+        "name",
+        "propulsion",
+        "record_type",
+        "sop"
+      ],
+      "additionalProperties": false,
+      "description": "Vehicle programmes in the simulated environment.",
+      "x-collection": "programmes.json",
+      "x-record-count": 3
+    },
+    "QualityIssue": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": [
+            "string"
+          ]
+        },
+        "title": {
+          "type": [
+            "string"
+          ]
+        },
+        "description": {
+          "type": [
+            "string"
+          ]
+        },
+        "origin": {
+          "type": [
+            "string"
+          ],
+          "enum": [
+            "bench_test",
+            "field",
+            "plant",
+            "supplier",
+            "vehicle_test"
+          ]
+        },
+        "detected_at": {
+          "type": [
+            "string"
+          ]
+        },
+        "severity": {
+          "type": [
+            "string"
+          ],
+          "enum": [
+            "critical",
+            "major",
+            "minor"
+          ]
+        },
+        "occurrence_count": {
+          "type": [
+            "integer"
+          ]
+        },
+        "affected_component_ids": {
+          "type": [
+            "array"
+          ],
+          "items": {
+            "type": [
+              "string"
+            ]
+          },
+          "x-references": "Component"
+        },
+        "system_id": {
+          "type": [
+            "string"
+          ],
+          "x-references": "System"
+        },
+        "programme_id": {
+          "type": [
+            "string"
+          ],
+          "x-references": "Programme",
+          "enum": [
+            "PRG-001",
+            "PRG-003"
+          ]
+        },
+        "status": {
+          "type": [
+            "string"
+          ],
+          "enum": [
+            "closed",
+            "open"
+          ]
+        },
+        "opened_date": {
+          "type": [
+            "string"
+          ]
+        },
+        "containment_state": {
+          "type": [
+            "string"
+          ],
+          "enum": [
+            "in_place",
+            "not_required"
+          ]
+        },
+        "record_type": {
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "required": [
+        "affected_component_ids",
+        "containment_state",
+        "description",
+        "detected_at",
+        "id",
+        "occurrence_count",
+        "opened_date",
+        "origin",
+        "programme_id",
+        "record_type",
+        "severity",
+        "status",
+        "system_id",
+        "title"
+      ],
+      "additionalProperties": false,
+      "description": "Quality issues from field, plant, supplier and test origins.",
+      "x-collection": "quality_issues.json",
+      "x-record-count": 26
+    },
+    "Requirement": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": [
+            "string"
+          ]
+        },
+        "level": {
+          "type": [
+            "string"
+          ],
+          "enum": [
+            "component",
+            "process",
+            "subsystem",
+            "system",
+            "vehicle"
+          ]
+        },
+        "system_id": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "x-references": "System"
+        },
+        "subsystem_id": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "x-references": "Subsystem"
+        },
+        "component_id": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "x-references": "Component"
+        },
+        "title": {
+          "type": [
+            "string"
+          ]
+        },
+        "statement": {
+          "type": [
+            "string"
+          ]
+        },
+        "requirement_type": {
+          "type": [
+            "string"
+          ],
+          "enum": [
+            "design",
+            "durability",
+            "functional",
+            "performance",
+            "process",
+            "regulatory",
+            "safety",
+            "security"
+          ]
+        },
+        "asil": {
+          "type": [
+            "string"
+          ],
+          "enum": [
+            "ASIL B",
+            "ASIL C",
+            "ASIL D",
+            "QM"
+          ]
+        },
+        "verification_method": {
+          "type": [
+            "string"
+          ]
+        },
+        "standard_ids": {
+          "type": [
+            "array"
+          ],
+          "items": {
+            "type": [
+              "string"
+            ]
+          },
+          "x-references": "Standard"
+        },
+        "parent_requirement_id": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "x-references": "Requirement"
+        },
+        "status": {
+          "type": [
+            "string"
+          ],
+          "enum": [
+            "approved",
+            "in_review",
+            "proposed"
+          ]
+        },
+        "derived_from_sources": {
+          "type": [
+            "array"
+          ],
+          "items": {
+            "type": [
+              "string"
+            ]
+          }
+        },
+        "record_type": {
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "required": [
+        "asil",
+        "component_id",
+        "derived_from_sources",
+        "id",
+        "level",
+        "parent_requirement_id",
+        "record_type",
+        "requirement_type",
+        "standard_ids",
+        "statement",
+        "status",
+        "subsystem_id",
+        "system_id",
+        "title",
+        "verification_method"
+      ],
+      "additionalProperties": false,
+      "description": "Requirements at vehicle, system, subsystem, component and process level.",
+      "x-collection": "requirements.json",
+      "x-record-count": 90
+    },
+    "Risk": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": [
+            "string"
+          ]
+        },
+        "failure_mode_id": {
+          "type": [
+            "string"
+          ],
+          "x-references": "FailureMode"
+        },
+        "title": {
+          "type": [
+            "string"
+          ]
+        },
+        "risk_statement": {
+          "type": [
+            "string"
+          ]
+        },
+        "severity": {
+          "type": [
+            "integer"
+          ]
+        },
+        "occurrence": {
+          "type": [
+            "integer"
+          ]
+        },
+        "detection": {
+          "type": [
+            "integer"
+          ]
+        },
+        "action_priority": {
+          "type": [
+            "string"
+          ],
+          "enum": [
+            "H",
+            "M"
+          ]
+        },
+        "risk_class": {
+          "type": [
+            "string"
+          ],
+          "enum": [
+            "high",
+            "medium"
+          ]
+        },
+        "owner_domain": {
+          "type": [
+            "null"
+          ]
+        },
+        "status": {
+          "type": [
+            "string"
+          ]
+        },
+        "record_type": {
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "required": [
+        "action_priority",
+        "detection",
+        "failure_mode_id",
+        "id",
+        "occurrence",
+        "owner_domain",
+        "record_type",
+        "risk_class",
+        "risk_statement",
+        "severity",
+        "status",
+        "title"
+      ],
+      "additionalProperties": false,
+      "description": "Risk register derived from failure modes with H or M action priority.",
+      "x-collection": "risks.json",
+      "x-record-count": 48
+    },
+    "RootCause": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": [
+            "string"
+          ],
+          "enum": [
+            "RC-001",
+            "RC-002",
+            "RC-003",
+            "RC-004",
+            "RC-005"
+          ]
+        },
+        "quality_issue_id": {
+          "type": [
+            "string"
+          ],
+          "x-references": "QualityIssue",
+          "enum": [
+            "QI-006",
+            "QI-009",
+            "QI-011",
+            "QI-012",
+            "QI-017"
+          ]
+        },
+        "cause_type": {
+          "type": [
+            "string"
+          ],
+          "enum": [
+            "design",
+            "process"
+          ]
+        },
+        "statement": {
+          "type": [
+            "string"
+          ]
+        },
+        "evidence_strength": {
+          "type": [
+            "string"
+          ],
+          "enum": [
+            "moderate",
+            "strong"
+          ]
+        },
+        "systemic": {
+          "type": [
+            "boolean"
+          ]
+        },
+        "five_why_chain": {
+          "type": [
+            "array"
+          ],
+          "items": {
+            "type": [
+              "string"
+            ]
+          }
+        },
+        "confirmed": {
+          "type": [
+            "boolean"
+          ]
+        },
+        "record_type": {
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "required": [
+        "cause_type",
+        "confirmed",
+        "evidence_strength",
+        "five_why_chain",
+        "id",
+        "quality_issue_id",
+        "record_type",
+        "statement",
+        "systemic"
+      ],
+      "additionalProperties": false,
+      "description": "Root causes with five-why chains and confirmation state.",
+      "x-collection": "root_causes.json",
+      "x-record-count": 5
+    },
+    "Signal": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": [
+            "string"
+          ]
+        },
+        "path": {
+          "type": [
+            "string"
+          ]
+        },
+        "unit": {
+          "type": [
+            "string"
+          ]
+        },
+        "nominal_rate_hz": {
+          "type": [
+            "integer",
+            "number"
+          ]
+        },
+        "system_id": {
+          "type": [
+            "string"
+          ],
+          "x-references": "System"
+        },
+        "record_type": {
+          "type": [
+            "string"
+          ]
+        },
+        "naming_convention": {
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "naming_convention",
+        "nominal_rate_hz",
+        "path",
+        "record_type",
+        "system_id",
+        "unit"
+      ],
+      "additionalProperties": false,
+      "description": "Vehicle signal catalogue for telemetry and diagnostics.",
+      "x-collection": "signals.json",
+      "x-record-count": 40
+    },
+    "Standard": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": [
+            "string"
+          ]
+        },
+        "identifier": {
+          "type": [
+            "string"
+          ]
+        },
+        "title": {
+          "type": [
+            "string"
+          ]
+        },
+        "body": {
+          "type": [
+            "string"
+          ],
+          "enum": [
+            "AIAG / VDA",
+            "IATF",
+            "IEC",
+            "IEC/CISPR",
+            "ISO",
+            "NHTSA",
+            "SAE",
+            "UNECE",
+            "VDA"
+          ]
+        },
+        "scope_tag": {
+          "type": [
+            "string"
+          ]
+        },
+        "record_type": {
+          "type": [
+            "string"
+          ]
+        },
+        "content_policy": {
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "required": [
+        "body",
+        "content_policy",
+        "id",
+        "identifier",
+        "record_type",
+        "scope_tag",
+        "title"
+      ],
+      "additionalProperties": false,
+      "description": "Standards and regulations. Identifier, title, body and scope tag only.",
+      "x-collection": "standards.json",
+      "x-record-count": 44
+    },
+    "Subsystem": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": [
+            "string"
+          ]
+        },
+        "system_id": {
+          "type": [
+            "string"
+          ],
+          "x-references": "System"
+        },
+        "name": {
+          "type": [
+            "string"
+          ]
+        },
+        "description": {
+          "type": [
+            "string"
+          ]
+        },
+        "record_type": {
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "required": [
+        "description",
+        "id",
+        "name",
+        "record_type",
+        "system_id"
+      ],
+      "additionalProperties": false,
+      "description": "Subsystems within each system.",
+      "x-collection": "subsystems.json",
+      "x-record-count": 47
+    },
+    "SupplierIssue": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": [
+            "string"
+          ],
+          "enum": [
+            "SI-001",
+            "SI-002",
+            "SI-003",
+            "SI-004",
+            "SI-005",
+            "SI-006"
+          ]
+        },
+        "supplier_id": {
+          "type": [
+            "string"
+          ],
+          "x-references": "Supplier",
+          "enum": [
+            "SUP-004",
+            "SUP-006",
+            "SUP-010",
+            "SUP-012"
+          ]
+        },
+        "quality_issue_id": {
+          "type": [
+            "string"
+          ],
+          "x-references": "QualityIssue",
+          "enum": [
+            "QI-006",
+            "QI-007",
+            "QI-011",
+            "QI-013",
+            "QI-020",
+            "QI-025"
+          ]
+        },
+        "title": {
+          "type": [
+            "string"
+          ]
+        },
+        "scar_level": {
+          "type": [
+            "string"
+          ],
+          "enum": [
+            "Level 1",
+            "Level 2",
+            "Level 3"
+          ]
+        },
+        "raised_date": {
+          "type": [
+            "string"
+          ],
+          "enum": [
+            "2026-05-16",
+            "2026-06-05",
+            "2026-06-15",
+            "2026-07-08",
+            "2026-07-14",
+            "2026-07-20"
+          ]
+        },
+        "due_date": {
+          "type": [
+            "string"
+          ],
+          "enum": [
+            "2026-06-16",
+            "2026-07-05",
+            "2026-07-15",
+            "2026-08-08",
+            "2026-08-14",
+            "2026-08-20"
+          ]
+        },
+        "status": {
+          "type": [
+            "string"
+          ]
+        },
+        "containment_confirmed": {
+          "type": [
+            "boolean"
+          ]
+        },
+        "root_cause_accepted": {
+          "type": [
+            "boolean"
+          ]
+        },
+        "record_type": {
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "required": [
+        "containment_confirmed",
+        "due_date",
+        "id",
+        "quality_issue_id",
+        "raised_date",
+        "record_type",
+        "root_cause_accepted",
+        "scar_level",
+        "status",
+        "supplier_id",
+        "title"
+      ],
+      "additionalProperties": false,
+      "description": "Supplier corrective action requests.",
+      "x-collection": "supplier_issues.json",
+      "x-record-count": 6
+    },
+    "Supplier": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": [
+            "string"
+          ]
+        },
+        "name": {
+          "type": [
+            "string"
+          ]
+        },
+        "tier": {
+          "type": [
+            "string"
+          ],
+          "enum": [
+            "Tier 1",
+            "Tier 2"
+          ]
+        },
+        "supply_scope": {
+          "type": [
+            "string"
+          ]
+        },
+        "country": {
+          "type": [
+            "string"
+          ],
+          "enum": [
+            "CN",
+            "DE",
+            "ES",
+            "IN",
+            "IT",
+            "JP",
+            "KR",
+            "PL",
+            "RO",
+            "TW",
+            "UK",
+            "US"
+          ]
+        },
+        "risk_class": {
+          "type": [
+            "integer"
+          ]
+        },
+        "certification": {
+          "type": [
+            "string"
+          ]
+        },
+        "quality_score": {
+          "type": [
+            "integer"
+          ]
+        },
+        "record_type": {
+          "type": [
+            "string"
+          ]
+        },
+        "note": {
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "required": [
+        "certification",
+        "country",
+        "id",
+        "name",
+        "note",
+        "quality_score",
+        "record_type",
+        "risk_class",
+        "supply_scope",
+        "tier"
+      ],
+      "additionalProperties": false,
+      "description": "Suppliers. All names are fictional.",
+      "x-collection": "suppliers.json",
+      "x-record-count": 16
+    },
+    "System": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": [
+            "string"
+          ]
+        },
+        "name": {
+          "type": [
+            "string"
+          ]
+        },
+        "domain": {
+          "type": [
+            "string"
+          ],
+          "enum": [
+            "ADAS",
+            "Battery",
+            "Body",
+            "Charging",
+            "Chassis",
+            "Electronics",
+            "Emissions",
+            "Powertrain",
+            "Safety",
+            "Software",
+            "Thermal"
+          ]
+        },
+        "description": {
+          "type": [
+            "string"
+          ]
+        },
+        "record_type": {
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "required": [
+        "description",
+        "domain",
+        "id",
+        "name",
+        "record_type"
+      ],
+      "additionalProperties": false,
+      "description": "Vehicle systems.",
+      "x-collection": "systems.json",
+      "x-record-count": 18
+    },
+    "TestResult": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": [
+            "string"
+          ]
+        },
+        "test_id": {
+          "type": [
+            "string"
+          ],
+          "x-references": "TestCase"
+        },
+        "configuration_id": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "x-references": "Configuration"
+        },
+        "vehicle_id": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "x-references": "Vehicle"
+        },
+        "executed_date": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "status": {
+          "type": [
+            "string"
+          ],
+          "enum": [
+            "fail",
+            "inconclusive",
+            "not_run",
+            "pass"
+          ]
+        },
+        "measured_summary": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "deviation": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "quality_issue_id": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "x-references": "QualityIssue"
+        },
+        "calibration_id": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "notes": {
+          "type": [
+            "string"
+          ]
+        },
+        "origin": {
+          "type": [
+            "string"
+          ],
+          "enum": [
+            "authored",
+            "generated"
+          ]
+        },
+        "record_type": {
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "required": [
+        "calibration_id",
+        "configuration_id",
+        "deviation",
+        "executed_date",
+        "id",
+        "measured_summary",
+        "notes",
+        "origin",
+        "quality_issue_id",
+        "record_type",
+        "status",
+        "test_id",
+        "vehicle_id"
+      ],
+      "additionalProperties": false,
+      "description": "Test results including pass, fail, inconclusive and not_run states.",
+      "x-collection": "test_results.json",
+      "x-record-count": 99
+    },
+    "TestCase": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": [
+            "string"
+          ]
+        },
+        "title": {
+          "type": [
+            "string"
+          ]
+        },
+        "method": {
+          "type": [
+            "string"
+          ]
+        },
+        "level": {
+          "type": [
+            "string"
+          ],
+          "enum": [
+            "component",
+            "process",
+            "subsystem",
+            "system",
+            "vehicle"
+          ]
+        },
+        "conditions": {
+          "type": [
+            "string"
+          ]
+        },
+        "sample_size": {
+          "type": [
+            "integer"
+          ]
+        },
+        "acceptance_criterion": {
+          "type": [
+            "string"
+          ]
+        },
+        "acceptance_criterion_established": {
+          "type": [
+            "boolean"
+          ]
+        },
+        "phase": {
+          "type": [
+            "string"
+          ],
+          "enum": [
+            "DV",
+            "PV"
+          ]
+        },
+        "verifies_requirements": {
+          "type": [
+            "array"
+          ],
+          "items": {
+            "type": [
+              "string"
+            ]
+          },
+          "x-references": "Requirement"
+        },
+        "addresses_failure_modes": {
+          "type": [
+            "array"
+          ],
+          "items": {
+            "type": [
+              "string"
+            ]
+          },
+          "x-references": "FailureMode"
+        },
+        "standard_ids": {
+          "type": [
+            "array"
+          ],
+          "items": {
+            "type": [
+              "string"
+            ]
+          },
+          "x-references": "Standard"
+        },
+        "responsible_domain": {
+          "type": [
+            "string"
+          ]
+        },
+        "derived_from_sources": {
+          "type": [
+            "array"
+          ],
+          "items": {
+            "type": [
+              "string"
+            ]
+          }
+        },
+        "record_type": {
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "required": [
+        "acceptance_criterion",
+        "acceptance_criterion_established",
+        "addresses_failure_modes",
+        "conditions",
+        "derived_from_sources",
+        "id",
+        "level",
+        "method",
+        "phase",
+        "record_type",
+        "responsible_domain",
+        "sample_size",
+        "standard_ids",
+        "title",
+        "verifies_requirements"
+      ],
+      "additionalProperties": false,
+      "description": "Test cases with acceptance criteria and traceability.",
+      "x-collection": "tests.json",
+      "x-record-count": 98
+    },
+    "Vehicle": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": [
+            "string"
+          ],
+          "enum": [
+            "VEH-001",
+            "VEH-002",
+            "VEH-003",
+            "VEH-004"
+          ]
+        },
+        "programme_id": {
+          "type": [
+            "string"
+          ],
+          "x-references": "Programme",
+          "enum": [
+            "PRG-001",
+            "PRG-002",
+            "PRG-003"
+          ]
+        },
+        "name": {
+          "type": [
+            "string"
+          ],
+          "enum": [
+            "ATLAS AWD Long Range",
+            "ATLAS RWD Standard Range",
+            "ORION Panel Van L2H2",
+            "VEGA PHEV AWD"
+          ]
+        },
+        "body_class": {
+          "type": [
+            "string"
+          ],
+          "enum": [
+            "Crossover SUV",
+            "Light Commercial Van",
+            "SUV"
+          ]
+        },
+        "drive": {
+          "type": [
+            "string"
+          ],
+          "enum": [
+            "AWD",
+            "FWD",
+            "RWD"
+          ]
+        },
+        "usable_energy_kwh": {
+          "type": [
+            "number"
+          ]
+        },
+        "target_range_wltp_km": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "kerb_mass_kg": {
+          "type": [
+            "integer"
+          ]
+        },
+        "max_dc_charge_kw": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "derived_from": {
+          "type": [
+            "array"
+          ],
+          "items": {
+            "type": [
+              "string"
+            ]
+          }
+        },
+        "record_type": {
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "required": [
+        "body_class",
+        "derived_from",
+        "drive",
+        "id",
+        "kerb_mass_kg",
+        "max_dc_charge_kw",
+        "name",
+        "programme_id",
+        "record_type",
+        "target_range_wltp_km",
+        "usable_energy_kwh"
+      ],
+      "additionalProperties": false,
+      "description": "Vehicle variants within each programme.",
+      "x-collection": "vehicles.json",
+      "x-record-count": 4
+    },
+    "VVActivity": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": [
+            "string"
+          ]
+        },
+        "activity_type": {
+          "type": [
+            "string"
+          ],
+          "enum": [
+            "validation",
+            "verification"
+          ]
+        },
+        "title": {
+          "type": [
+            "string"
+          ]
+        },
+        "phase": {
+          "type": [
+            "string"
+          ],
+          "enum": [
+            "DV",
+            "PV"
+          ]
+        },
+        "scope": {
+          "type": [
+            "string"
+          ],
+          "enum": [
+            "system SYS-001",
+            "system SYS-002",
+            "system SYS-003",
+            "system SYS-004",
+            "system SYS-005",
+            "system SYS-006",
+            "system SYS-007",
+            "system SYS-008",
+            "vehicle VEH-001",
+            "vehicle VEH-001 and VEH-002",
+            "vehicle VEH-004"
+          ]
+        },
+        "test_ids": {
+          "type": [
+            "array"
+          ],
+          "items": {
+            "type": [
+              "string"
+            ]
+          },
+          "x-references": "TestCase"
+        },
+        "status": {
+          "type": [
+            "string"
+          ],
+          "enum": [
+            "in_progress",
+            "planned"
+          ]
+        },
+        "planned_start": {
+          "type": [
+            "string"
+          ],
+          "enum": [
+            "2026-02-01",
+            "2026-03-15",
+            "2026-04-01",
+            "2026-04-15",
+            "2026-05-01",
+            "2026-05-15",
+            "2026-05-20",
+            "2026-06-01",
+            "2026-06-15",
+            "2026-09-01",
+            "2026-09-15",
+            "2026-11-01"
+          ]
+        },
+        "planned_end": {
+          "type": [
+            "string"
+          ]
+        },
+        "owner_domain": {
+          "type": [
+            "string"
+          ],
+          "enum": [
+            "Battery",
+            "Brakes",
+            "Charging",
+            "Chassis",
+            "Durability",
+            "EDU",
+            "EMC",
+            "Emissions",
+            "Homologation",
+            "Safety",
+            "Thermal",
+            "Vehicle integration"
+          ]
+        },
+        "record_type": {
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "required": [
+        "activity_type",
+        "id",
+        "owner_domain",
+        "phase",
+        "planned_end",
+        "planned_start",
+        "record_type",
+        "scope",
+        "status",
+        "test_ids",
+        "title"
+      ],
+      "additionalProperties": false,
+      "description": "Verification and validation activity packages.",
+      "x-collection": "vv_activities.json",
+      "x-record-count": 13
+    }
+  }
+}

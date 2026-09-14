@@ -1,0 +1,106 @@
+{
+  "scenario_id": "SCN-006",
+  "category": "Supplier quality issue",
+  "title": "Characteristic drift following a production location transfer",
+  "engineering_question": "A component characteristic has drifted out of specification after a sourcing change. What failed in the transfer, and what must the supplier demonstrate before release?",
+  "one_liner": "Assess the supplier quality risk associated with this failure pattern.",
+  "initial_input": "Incoming inspection identified a batch of suspension bushings with radial stiffness below the lower specification limit, following a production location transfer.",
+  "relevant_entities": {
+    "quality_issues": [
+      "QI-011",
+      "QI-025",
+      "QI-005"
+    ],
+    "ncrs": [
+      "NCR-002"
+    ],
+    "supplier_issues": [
+      "SI-001",
+      "SI-003"
+    ],
+    "root_causes": [
+      "RC-004"
+    ],
+    "corrective_actions": [
+      "CA-007",
+      "CA-008",
+      "CA-009"
+    ],
+    "engineering_changes": [
+      "ECR-003"
+    ],
+    "suppliers": [
+      "SUP-012"
+    ],
+    "components": [
+      "COMP-035",
+      "COMP-034"
+    ],
+    "requirements": [
+      "REQ-071",
+      "REQ-070",
+      "REQ-072",
+      "REQ-073",
+      "REQ-132"
+    ],
+    "failure_modes": [
+      "FM-071",
+      "FM-072",
+      "FM-230",
+      "FM-231",
+      "FM-232"
+    ],
+    "tests": [
+      "TEST-071",
+      "TEST-072",
+      "TEST-073",
+      "TEST-070"
+    ],
+    "documents": [
+      "DOC-013",
+      "DOC-029"
+    ]
+  },
+  "expected_impacted_domains": [
+    "Supplier process capability and transfer governance",
+    "Suspension ride and handling characteristics",
+    "Road noise transfer",
+    "Structural durability validity",
+    "PPAP completeness"
+  ],
+  "expected_evidence": [
+    "TR-014",
+    "TR-015",
+    "TR-016",
+    "MEAS-014",
+    "MEAS-017"
+  ],
+  "expected_reasoning_paths": [
+    "RC-004 identifies an under-cure cause, and the systemic finding is that the transfer checklist did not require cure profile requalification",
+    "TR-015 shows a separate press-fit capability problem, so there are two independent process concerns from one transfer",
+    "TR-016 durability pass was achieved on incumbent-source parts, so the durability evidence does not cover the transferred source",
+    "QI-005 field knock noise is a plausible downstream consequence of FM-072 bushing displacement"
+  ],
+  "candidate_outputs": [
+    "Supplier Quality Assessment",
+    "8D",
+    "Root Cause Analysis",
+    "5-Why",
+    "Fishbone Analysis",
+    "Corrective Action Plan",
+    "PFMEA Review",
+    "Risk Assessment",
+    "Evidence Gap Analysis",
+    "Regression Impact Analysis",
+    "Requirements Impact Analysis",
+    "Engineering Executive Summary",
+    "Engineering Decision Brief"
+  ],
+  "known_unknowns": [
+    "RC-004 is not confirmed - the cure profile record from the transferred location is not in the environment",
+    "Quantity of affected parts already fitted to vehicles is not represented",
+    "No stiffness measurement exists on parts recovered from field vehicles"
+  ],
+  "data_classification": "SIMULATED ENTERPRISE ARTEFACT - not OEM, customer or proprietary data",
+  "connector": "SIMULATION"
+}

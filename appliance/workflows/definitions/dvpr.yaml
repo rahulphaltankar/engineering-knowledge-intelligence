@@ -1,0 +1,33 @@
+id: dvpr
+name: DVP&R
+description: >-
+  Design Verification Plan and Report rows built from the actual requirement to
+  failure-mode to test graph. Where the context does not establish an acceptance
+  criterion the row says so - no threshold is ever synthesised.
+category: Verification and validation
+maturity: functional
+required_context_types:
+  - Requirement
+  - TestCase
+  - FailureMode
+upstream_skills:
+  - dvp-test-plan
+  - apqp
+sections:
+  - builder: dvpr_table
+  - builder: evidence_gaps
+  - builder: finding_list
+    params:
+      key: verification_findings
+      title: Verification findings
+      tags: [verification_gap, evidence_summary]
+  - builder: review_record
+  - builder: confidence_summary
+  - builder: unknowns
+validation_rules:
+  - required_sections_present
+  - no_fabricated_ids
+  - no_invented_acceptance_criteria
+  - unknowns_declared
+  - human_review_applied
+export_formats: [markdown, json, csv]

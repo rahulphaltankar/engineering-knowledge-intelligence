@@ -1,0 +1,97 @@
+{
+  "scenario_id": "SCN-009",
+  "category": "Design review",
+  "title": "Addition of a protective sensing function",
+  "engineering_question": "A new sensing function and associated protection strategy are proposed. Is the design ready for review, and what must be in place first?",
+  "one_liner": "A new component variant is being introduced. Determine the verification implications.",
+  "initial_input": "Engineering change ECR-008 proposes adding a contact temperature sensor to a high current connection interface, together with a current derate function based on the measured temperature.",
+  "relevant_entities": {
+    "engineering_changes": [
+      "ECR-008"
+    ],
+    "systems": [
+      "SYS-003",
+      "SYS-008"
+    ],
+    "subsystems": [
+      "SUB-011",
+      "SUB-012"
+    ],
+    "components": [
+      "COMP-020",
+      "COMP-021"
+    ],
+    "requirements": [
+      "REQ-042",
+      "REQ-043",
+      "REQ-044",
+      "REQ-041",
+      "REQ-094"
+    ],
+    "failure_modes": [
+      "FM-041",
+      "FM-042",
+      "FM-093"
+    ],
+    "tests": [
+      "TEST-042",
+      "TEST-043",
+      "TEST-044",
+      "TEST-094"
+    ],
+    "quality_issues": [
+      "QI-003",
+      "QI-023"
+    ],
+    "standards": [
+      "STD-032",
+      "STD-033"
+    ],
+    "documents": [
+      "DOC-006",
+      "DOC-007"
+    ]
+  },
+  "expected_impacted_domains": [
+    "Charging interface thermal protection",
+    "Charge control strategy and interoperability",
+    "Functional safety allocation for the new protection function",
+    "Communication bus loading",
+    "Sensor qualification and accuracy"
+  ],
+  "expected_evidence": [
+    "TR-010",
+    "TR-008",
+    "TR-009",
+    "TR-050",
+    "MEAS-007"
+  ],
+  "expected_reasoning_paths": [
+    "TR-010 is not_run because the current design has no measurement capability, which is precisely the gap ECR-008 closes - the change is justified by an evidence gap",
+    "REQ-042 and REQ-043 are still only proposed, so the requirements baseline is not ready for a design review gate",
+    "The new derate function interacts with the existing QI-003 ramp problem, so introducing another derate path without fixing the ramp risks compounding session terminations",
+    "TR-050 shows bus load already exceeded, so adding signals for the new sensor worsens a known failing condition"
+  ],
+  "candidate_outputs": [
+    "Design Review",
+    "Requirements Impact Analysis",
+    "DFMEA Review",
+    "Failure Mode Analysis",
+    "Risk Assessment",
+    "Verification Plan",
+    "DVP&R",
+    "Test Case Recommendations",
+    "Evidence Gap Analysis",
+    "Engineering Change Impact",
+    "Compliance / Standards Impact",
+    "Engineering Executive Summary",
+    "Engineering Decision Brief"
+  ],
+  "known_unknowns": [
+    "The protection threshold value is not established in any requirement",
+    "The safety integrity allocation for the new function is proposed but not confirmed",
+    "Sensor supplier qualification status is not represented in the environment"
+  ],
+  "data_classification": "SIMULATED ENTERPRISE ARTEFACT - not OEM, customer or proprietary data",
+  "connector": "SIMULATION"
+}

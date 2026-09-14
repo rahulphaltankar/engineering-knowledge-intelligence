@@ -1,0 +1,2335 @@
+{
+  "entity": "Evidence",
+  "description": "Evidence records derived from test results, documents and measurements.",
+  "data_classification": "SIMULATED ENTERPRISE ARTEFACT - not OEM, customer or proprietary data",
+  "generated_by": "scripts/generate_simulation.py",
+  "seed": 20260823,
+  "records": [
+    {
+      "id": "EVID-001",
+      "evidence_type": "test_result",
+      "source_record_type": "TestResult",
+      "source_record_id": "TR-001",
+      "title": "Pack thermal performance at high ambient sustained load - fail",
+      "strength": "strong",
+      "status": "fail",
+      "supports_requirements": [
+        "REQ-011",
+        "REQ-030"
+      ],
+      "supports_failure_modes": [
+        "FM-002",
+        "FM-030"
+      ],
+      "configuration_id": "CFG-003",
+      "recorded_date": "2026-07-02",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-002",
+      "evidence_type": "test_result",
+      "source_record_type": "TestResult",
+      "source_record_id": "TR-002",
+      "title": "Pack thermal performance at high ambient sustained load - fail",
+      "strength": "strong",
+      "status": "fail",
+      "supports_requirements": [
+        "REQ-011",
+        "REQ-030"
+      ],
+      "supports_failure_modes": [
+        "FM-002",
+        "FM-030"
+      ],
+      "configuration_id": "CFG-003",
+      "recorded_date": "2026-07-04",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-003",
+      "evidence_type": "test_result",
+      "source_record_type": "TestResult",
+      "source_record_id": "TR-003",
+      "title": "Concurrent thermal load capability - fail",
+      "strength": "strong",
+      "status": "fail",
+      "supports_requirements": [
+        "REQ-030",
+        "REQ-032"
+      ],
+      "supports_failure_modes": [
+        "FM-030",
+        "FM-031"
+      ],
+      "configuration_id": "CFG-003",
+      "recorded_date": "2026-07-08",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-004",
+      "evidence_type": "test_result",
+      "source_record_type": "TestResult",
+      "source_record_id": "TR-004",
+      "title": "Thermal arbitration HIL verification - pass",
+      "strength": "strong",
+      "status": "pass",
+      "supports_requirements": [
+        "REQ-032"
+      ],
+      "supports_failure_modes": [
+        "FM-031"
+      ],
+      "configuration_id": "CFG-003",
+      "recorded_date": "2026-07-10",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-005",
+      "evidence_type": "test_result",
+      "source_record_type": "TestResult",
+      "source_record_id": "TR-005",
+      "title": "Cooling plate heat rejection verification - pass",
+      "strength": "strong",
+      "status": "pass",
+      "supports_requirements": [
+        "REQ-022"
+      ],
+      "supports_failure_modes": [
+        "FM-007"
+      ],
+      "configuration_id": "CFG-002",
+      "recorded_date": "2026-05-30",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-006",
+      "evidence_type": "test_result",
+      "source_record_type": "TestResult",
+      "source_record_id": "TR-006",
+      "title": "DC fast charge time at low ambient - inconclusive",
+      "strength": "weak",
+      "status": "inconclusive",
+      "supports_requirements": [
+        "REQ-040"
+      ],
+      "supports_failure_modes": [
+        "FM-040"
+      ],
+      "configuration_id": "CFG-003",
+      "recorded_date": "2026-06-19",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-007",
+      "evidence_type": "test_result",
+      "source_record_type": "TestResult",
+      "source_record_id": "TR-007",
+      "title": "DC fast charge time at reference conditions - pass",
+      "strength": "strong",
+      "status": "pass",
+      "supports_requirements": [
+        "REQ-040"
+      ],
+      "supports_failure_modes": [
+        "FM-040"
+      ],
+      "configuration_id": "CFG-003",
+      "recorded_date": "2026-06-16",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-008",
+      "evidence_type": "test_result",
+      "source_record_type": "TestResult",
+      "source_record_id": "TR-008",
+      "title": "Charge current derate ramp verification - fail",
+      "strength": "strong",
+      "status": "fail",
+      "supports_requirements": [
+        "REQ-044"
+      ],
+      "supports_failure_modes": [
+        "FM-042"
+      ],
+      "configuration_id": "CFG-003",
+      "recorded_date": "2026-06-30",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-009",
+      "evidence_type": "test_result",
+      "source_record_type": "TestResult",
+      "source_record_id": "TR-009",
+      "title": "Charging interoperability campaign - inconclusive",
+      "strength": "weak",
+      "status": "inconclusive",
+      "supports_requirements": [
+        "REQ-041",
+        "REQ-044"
+      ],
+      "supports_failure_modes": [
+        "FM-042"
+      ],
+      "configuration_id": "CFG-003",
+      "recorded_date": "2026-07-05",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-010",
+      "evidence_type": "test_result",
+      "source_record_type": "TestResult",
+      "source_record_id": "TR-011",
+      "title": "Full vehicle radiated emissions measurement - fail",
+      "strength": "strong",
+      "status": "fail",
+      "supports_requirements": [
+        "REQ-006",
+        "REQ-090"
+      ],
+      "supports_failure_modes": [
+        "FM-090",
+        "FM-091",
+        "FM-092"
+      ],
+      "configuration_id": "CFG-003",
+      "recorded_date": "2026-07-21",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-011",
+      "evidence_type": "test_result",
+      "source_record_type": "TestResult",
+      "source_record_id": "TR-012",
+      "title": "HV harness shield continuity measurement - fail",
+      "strength": "strong",
+      "status": "fail",
+      "supports_requirements": [
+        "REQ-092"
+      ],
+      "supports_failure_modes": [
+        "FM-091",
+        "FM-241"
+      ],
+      "configuration_id": "CFG-003",
+      "recorded_date": "2026-07-23",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-012",
+      "evidence_type": "test_result",
+      "source_record_type": "TestResult",
+      "source_record_id": "TR-013",
+      "title": "HV harness routing verification against the standard - fail",
+      "strength": "strong",
+      "status": "fail",
+      "supports_requirements": [
+        "REQ-093"
+      ],
+      "supports_failure_modes": [
+        "FM-092",
+        "FM-240"
+      ],
+      "configuration_id": "CFG-003",
+      "recorded_date": "2026-07-24",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-013",
+      "evidence_type": "test_result",
+      "source_record_type": "TestResult",
+      "source_record_id": "TR-014",
+      "title": "Control arm bushing radial stiffness measurement - fail",
+      "strength": "strong",
+      "status": "fail",
+      "supports_requirements": [
+        "REQ-071"
+      ],
+      "supports_failure_modes": [
+        "FM-071",
+        "FM-232"
+      ],
+      "configuration_id": "CFG-004",
+      "recorded_date": "2026-06-05",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-014",
+      "evidence_type": "test_result",
+      "source_record_type": "TestResult",
+      "source_record_id": "TR-015",
+      "title": "Bushing press-fit process capability study - fail",
+      "strength": "strong",
+      "status": "fail",
+      "supports_requirements": [
+        "REQ-132"
+      ],
+      "supports_failure_modes": [
+        "FM-230",
+        "FM-231"
+      ],
+      "configuration_id": "CFG-004",
+      "recorded_date": "2026-06-12",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-015",
+      "evidence_type": "test_result",
+      "source_record_type": "TestResult",
+      "source_record_id": "TR-016",
+      "title": "Suspension rig durability - pass",
+      "strength": "strong",
+      "status": "pass",
+      "supports_requirements": [
+        "REQ-070"
+      ],
+      "supports_failure_modes": [
+        "FM-070"
+      ],
+      "configuration_id": "CFG-002",
+      "recorded_date": "2026-04-22",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-016",
+      "evidence_type": "test_result",
+      "source_record_type": "TestResult",
+      "source_record_id": "TR-017",
+      "title": "Judder durability schedule with thickness variation measurement - fail",
+      "strength": "strong",
+      "status": "fail",
+      "supports_requirements": [
+        "REQ-063",
+        "REQ-066"
+      ],
+      "supports_failure_modes": [
+        "FM-063",
+        "FM-066"
+      ],
+      "configuration_id": "CFG-003",
+      "recorded_date": "2026-07-11",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-017",
+      "evidence_type": "test_result",
+      "source_record_type": "TestResult",
+      "source_record_id": "TR-018",
+      "title": "Friction coefficient characterisation - inconclusive",
+      "strength": "weak",
+      "status": "inconclusive",
+      "supports_requirements": [
+        "REQ-065"
+      ],
+      "supports_failure_modes": [
+        "FM-060",
+        "FM-061"
+      ],
+      "configuration_id": "CFG-003",
+      "recorded_date": "2026-06-20",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-018",
+      "evidence_type": "test_result",
+      "source_record_type": "TestResult",
+      "source_record_id": "TR-019",
+      "title": "Fade and recovery test - pass",
+      "strength": "strong",
+      "status": "pass",
+      "supports_requirements": [
+        "REQ-061"
+      ],
+      "supports_failure_modes": [
+        "FM-061"
+      ],
+      "configuration_id": "CFG-003",
+      "recorded_date": "2026-06-24",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-019",
+      "evidence_type": "test_result",
+      "source_record_type": "TestResult",
+      "source_record_id": "TR-020",
+      "title": "Cold performance stopping distance - pass",
+      "strength": "strong",
+      "status": "pass",
+      "supports_requirements": [
+        "REQ-004",
+        "REQ-060"
+      ],
+      "supports_failure_modes": [
+        "FM-060"
+      ],
+      "configuration_id": "CFG-003",
+      "recorded_date": "2026-06-23",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-020",
+      "evidence_type": "test_result",
+      "source_record_type": "TestResult",
+      "source_record_id": "TR-021",
+      "title": "Friction material restricted substance analysis - pass",
+      "strength": "strong",
+      "status": "pass",
+      "supports_requirements": [
+        "REQ-064"
+      ],
+      "supports_failure_modes": [
+        "FM-065",
+        "FM-251"
+      ],
+      "configuration_id": "CFG-004",
+      "recorded_date": "2026-07-02",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-021",
+      "evidence_type": "test_result",
+      "source_record_type": "TestResult",
+      "source_record_id": "TR-022",
+      "title": "Brake noise evaluation schedule - fail",
+      "strength": "strong",
+      "status": "fail",
+      "supports_requirements": [
+        "REQ-067"
+      ],
+      "supports_failure_modes": [
+        "FM-064"
+      ],
+      "configuration_id": "CFG-003",
+      "recorded_date": "2026-06-30",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-022",
+      "evidence_type": "test_result",
+      "source_record_type": "TestResult",
+      "source_record_id": "TR-023",
+      "title": "Continuous power on sustained gradient - fail",
+      "strength": "strong",
+      "status": "fail",
+      "supports_requirements": [
+        "REQ-051"
+      ],
+      "supports_failure_modes": [
+        "FM-050",
+        "FM-052"
+      ],
+      "configuration_id": "CFG-003",
+      "recorded_date": "2026-06-25",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-023",
+      "evidence_type": "test_result",
+      "source_record_type": "TestResult",
+      "source_record_id": "TR-024",
+      "title": "Inverter thermal derate onset verification - fail",
+      "strength": "strong",
+      "status": "fail",
+      "supports_requirements": [
+        "REQ-053"
+      ],
+      "supports_failure_modes": [
+        "FM-052"
+      ],
+      "configuration_id": "CFG-003",
+      "recorded_date": "2026-06-27",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-024",
+      "evidence_type": "test_result",
+      "source_record_type": "TestResult",
+      "source_record_id": "TR-025",
+      "title": "Tyre rolling resistance measurement - fail",
+      "strength": "strong",
+      "status": "fail",
+      "supports_requirements": [
+        "REQ-120"
+      ],
+      "supports_failure_modes": [
+        "FM-110"
+      ],
+      "configuration_id": "CFG-003",
+      "recorded_date": "2026-07-06",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-025",
+      "evidence_type": "test_result",
+      "source_record_type": "TestResult",
+      "source_record_id": "TR-026",
+      "title": "Wheel and tyre assembly mass measurement - fail",
+      "strength": "strong",
+      "status": "fail",
+      "supports_requirements": [
+        "REQ-123"
+      ],
+      "supports_failure_modes": [
+        "FM-113"
+      ],
+      "configuration_id": "CFG-003",
+      "recorded_date": "2026-07-07",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-026",
+      "evidence_type": "test_result",
+      "source_record_type": "TestResult",
+      "source_record_id": "TR-027",
+      "title": "Ride comfort evaluation on reference surfaces - fail",
+      "strength": "strong",
+      "status": "fail",
+      "supports_requirements": [
+        "REQ-072"
+      ],
+      "supports_failure_modes": [
+        "FM-074"
+      ],
+      "configuration_id": "CFG-003",
+      "recorded_date": "2026-07-16",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-027",
+      "evidence_type": "test_result",
+      "source_record_type": "TestResult",
+      "source_record_id": "TR-030",
+      "title": "Vehicle certified range measurement - pass",
+      "strength": "strong",
+      "status": "pass",
+      "supports_requirements": [
+        "REQ-001"
+      ],
+      "supports_failure_modes": [
+        "FM-001",
+        "FM-110",
+        "FM-102"
+      ],
+      "configuration_id": "CFG-003",
+      "recorded_date": "2026-07-14",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-028",
+      "evidence_type": "test_result",
+      "source_record_type": "TestResult",
+      "source_record_id": "TR-031",
+      "title": "Vehicle kerb mass measurement - pass",
+      "strength": "strong",
+      "status": "pass",
+      "supports_requirements": [
+        "REQ-002"
+      ],
+      "supports_failure_modes": [
+        "FM-113"
+      ],
+      "configuration_id": "CFG-003",
+      "recorded_date": "2026-07-13",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-029",
+      "evidence_type": "test_result",
+      "source_record_type": "TestResult",
+      "source_record_id": "TR-032",
+      "title": "Cooling plate braze coverage sectioning - fail",
+      "strength": "strong",
+      "status": "fail",
+      "supports_requirements": [
+        "REQ-130"
+      ],
+      "supports_failure_modes": [
+        "FM-200",
+        "FM-201"
+      ],
+      "configuration_id": "CFG-004",
+      "recorded_date": "2026-06-16",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-030",
+      "evidence_type": "test_result",
+      "source_record_type": "TestResult",
+      "source_record_id": "TR-033",
+      "title": "Leak tester measurement system analysis - fail",
+      "strength": "strong",
+      "status": "fail",
+      "supports_requirements": [
+        "REQ-131"
+      ],
+      "supports_failure_modes": [
+        "FM-203"
+      ],
+      "configuration_id": "CFG-004",
+      "recorded_date": "2026-06-18",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-031",
+      "evidence_type": "test_result",
+      "source_record_type": "TestResult",
+      "source_record_id": "TR-034",
+      "title": "Cooling plate helium leak test - pass",
+      "strength": "strong",
+      "status": "pass",
+      "supports_requirements": [
+        "REQ-023"
+      ],
+      "supports_failure_modes": [
+        "FM-008",
+        "FM-201"
+      ],
+      "configuration_id": "CFG-004",
+      "recorded_date": "2026-06-20",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-032",
+      "evidence_type": "test_result",
+      "source_record_type": "TestResult",
+      "source_record_id": "TR-035",
+      "title": "Cooling plate flatness measurement - pass",
+      "strength": "strong",
+      "status": "pass",
+      "supports_requirements": [
+        "REQ-130"
+      ],
+      "supports_failure_modes": [
+        "FM-202"
+      ],
+      "configuration_id": "CFG-004",
+      "recorded_date": "2026-06-19",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-033",
+      "evidence_type": "test_result",
+      "source_record_type": "TestResult",
+      "source_record_id": "TR-036",
+      "title": "Steering assist response time measurement - fail",
+      "strength": "strong",
+      "status": "fail",
+      "supports_requirements": [
+        "REQ-083"
+      ],
+      "supports_failure_modes": [
+        "FM-082"
+      ],
+      "configuration_id": "CFG-003",
+      "recorded_date": "2026-08-04",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-034",
+      "evidence_type": "test_result",
+      "source_record_type": "TestResult",
+      "source_record_id": "TR-038",
+      "title": "Steering assist loss safe state verification - pass",
+      "strength": "strong",
+      "status": "pass",
+      "supports_requirements": [
+        "REQ-081"
+      ],
+      "supports_failure_modes": [
+        "FM-080"
+      ],
+      "configuration_id": "CFG-002",
+      "recorded_date": "2026-04-14",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-035",
+      "evidence_type": "test_result",
+      "source_record_type": "TestResult",
+      "source_record_id": "TR-039",
+      "title": "Cell balancing convergence verification - pass",
+      "strength": "strong",
+      "status": "pass",
+      "supports_requirements": [
+        "REQ-019"
+      ],
+      "supports_failure_modes": [
+        "FM-022"
+      ],
+      "configuration_id": "CFG-004",
+      "recorded_date": "2026-06-08",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-036",
+      "evidence_type": "test_result",
+      "source_record_type": "TestResult",
+      "source_record_id": "TR-040",
+      "title": "Cell overtemperature protection verification - pass",
+      "strength": "strong",
+      "status": "pass",
+      "supports_requirements": [
+        "REQ-018"
+      ],
+      "supports_failure_modes": [
+        "FM-021"
+      ],
+      "configuration_id": "CFG-003",
+      "recorded_date": "2026-05-12",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-037",
+      "evidence_type": "test_result",
+      "source_record_type": "TestResult",
+      "source_record_id": "TR-041",
+      "title": "Temperature sensor representativeness verification - inconclusive",
+      "strength": "weak",
+      "status": "inconclusive",
+      "supports_requirements": [
+        "REQ-018"
+      ],
+      "supports_failure_modes": [
+        "FM-021"
+      ],
+      "configuration_id": "CFG-003",
+      "recorded_date": "2026-05-14",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-038",
+      "evidence_type": "test_result",
+      "source_record_type": "TestResult",
+      "source_record_id": "TR-042",
+      "title": "Pack usable energy verification - pass",
+      "strength": "strong",
+      "status": "pass",
+      "supports_requirements": [
+        "REQ-010"
+      ],
+      "supports_failure_modes": [
+        "FM-001"
+      ],
+      "configuration_id": "CFG-003",
+      "recorded_date": "2026-05-20",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-039",
+      "evidence_type": "test_result",
+      "source_record_type": "TestResult",
+      "source_record_id": "TR-044",
+      "title": "Cell temperature gradient mapping - pass",
+      "strength": "strong",
+      "status": "pass",
+      "supports_requirements": [
+        "REQ-012"
+      ],
+      "supports_failure_modes": [
+        "FM-003"
+      ],
+      "configuration_id": "CFG-003",
+      "recorded_date": "2026-05-22",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-040",
+      "evidence_type": "test_result",
+      "source_record_type": "TestResult",
+      "source_record_id": "TR-045",
+      "title": "HVAC energy consumption over the reference climate cycle - fail",
+      "strength": "strong",
+      "status": "fail",
+      "supports_requirements": [
+        "REQ-101"
+      ],
+      "supports_failure_modes": [
+        "FM-102"
+      ],
+      "configuration_id": "CFG-003",
+      "recorded_date": "2026-07-29",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-041",
+      "evidence_type": "test_result",
+      "source_record_type": "TestResult",
+      "source_record_id": "TR-046",
+      "title": "Cabin cool-down time measurement - pass",
+      "strength": "strong",
+      "status": "pass",
+      "supports_requirements": [
+        "REQ-100"
+      ],
+      "supports_failure_modes": [
+        "FM-100"
+      ],
+      "configuration_id": "CFG-003",
+      "recorded_date": "2026-07-28",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-042",
+      "evidence_type": "test_result",
+      "source_record_type": "TestResult",
+      "source_record_id": "TR-047",
+      "title": "Compressor cabin noise measurement - fail",
+      "strength": "strong",
+      "status": "fail",
+      "supports_requirements": [
+        "REQ-103"
+      ],
+      "supports_failure_modes": [
+        "FM-101"
+      ],
+      "configuration_id": "CFG-003",
+      "recorded_date": "2026-07-28",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-043",
+      "evidence_type": "test_result",
+      "source_record_type": "TestResult",
+      "source_record_id": "TR-048",
+      "title": "Road noise transfer path measurement - fail",
+      "strength": "strong",
+      "status": "fail",
+      "supports_requirements": [
+        "REQ-073",
+        "REQ-074"
+      ],
+      "supports_failure_modes": [
+        "FM-073"
+      ],
+      "configuration_id": "CFG-003",
+      "recorded_date": "2026-06-02",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-044",
+      "evidence_type": "test_result",
+      "source_record_type": "TestResult",
+      "source_record_id": "TR-049",
+      "title": "Range estimate accuracy on the reference cycle - fail",
+      "strength": "strong",
+      "status": "fail",
+      "supports_requirements": [
+        "REQ-113"
+      ],
+      "supports_failure_modes": [
+        "FM-141"
+      ],
+      "configuration_id": "CFG-003",
+      "recorded_date": "2026-06-12",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-045",
+      "evidence_type": "test_result",
+      "source_record_type": "TestResult",
+      "source_record_id": "TR-050",
+      "title": "Bus load measurement on the integration bench - fail",
+      "strength": "strong",
+      "status": "fail",
+      "supports_requirements": [
+        "REQ-094"
+      ],
+      "supports_failure_modes": [
+        "FM-093"
+      ],
+      "configuration_id": "CFG-003",
+      "recorded_date": "2026-08-01",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-046",
+      "evidence_type": "test_result",
+      "source_record_type": "TestResult",
+      "source_record_id": "TR-051",
+      "title": "LV supply worst case load verification - fail",
+      "strength": "strong",
+      "status": "fail",
+      "supports_requirements": [
+        "REQ-160"
+      ],
+      "supports_failure_modes": [
+        "FM-120"
+      ],
+      "configuration_id": "CFG-003",
+      "recorded_date": "2026-07-30",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-047",
+      "evidence_type": "test_result",
+      "source_record_type": "TestResult",
+      "source_record_id": "TR-052",
+      "title": "Aged catalyst emissions verification - fail",
+      "strength": "strong",
+      "status": "fail",
+      "supports_requirements": [
+        "REQ-142"
+      ],
+      "supports_failure_modes": [
+        "FM-130",
+        "FM-131"
+      ],
+      "configuration_id": "CFG-006",
+      "recorded_date": "2026-06-20",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-048",
+      "evidence_type": "test_result",
+      "source_record_type": "TestResult",
+      "source_record_id": "TR-053",
+      "title": "Cold start light-off characterisation - fail",
+      "strength": "strong",
+      "status": "fail",
+      "supports_requirements": [
+        "REQ-141"
+      ],
+      "supports_failure_modes": [
+        "FM-131"
+      ],
+      "configuration_id": "CFG-006",
+      "recorded_date": "2026-06-18",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-049",
+      "evidence_type": "test_result",
+      "source_record_type": "TestResult",
+      "source_record_id": "TR-054",
+      "title": "Tailpipe emissions over the required test procedures - pass",
+      "strength": "strong",
+      "status": "pass",
+      "supports_requirements": [
+        "REQ-140"
+      ],
+      "supports_failure_modes": [
+        "FM-130"
+      ],
+      "configuration_id": "CFG-006",
+      "recorded_date": "2026-03-10",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-050",
+      "evidence_type": "test_result",
+      "source_record_type": "TestResult",
+      "source_record_id": "TR-055",
+      "title": "Pack seal compression set after thermal cycling - fail",
+      "strength": "strong",
+      "status": "fail",
+      "supports_requirements": [
+        "REQ-015"
+      ],
+      "supports_failure_modes": [
+        "FM-005"
+      ],
+      "configuration_id": "CFG-003",
+      "recorded_date": "2026-04-28",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-051",
+      "evidence_type": "test_result",
+      "source_record_type": "TestResult",
+      "source_record_id": "TR-056",
+      "title": "Pack vibration durability with continuous monitoring - fail",
+      "strength": "strong",
+      "status": "fail",
+      "supports_requirements": [
+        "REQ-011"
+      ],
+      "supports_failure_modes": [
+        "FM-010",
+        "FM-212"
+      ],
+      "configuration_id": "CFG-003",
+      "recorded_date": "2026-05-18",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-052",
+      "evidence_type": "test_result",
+      "source_record_type": "TestResult",
+      "source_record_id": "TR-057",
+      "title": "DC charge contactor open state confirmation - fail",
+      "strength": "strong",
+      "status": "fail",
+      "supports_requirements": [
+        "REQ-020"
+      ],
+      "supports_failure_modes": [
+        "FM-043"
+      ],
+      "configuration_id": "CFG-003",
+      "recorded_date": "2026-07-22",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-053",
+      "evidence_type": "test_result",
+      "source_record_type": "TestResult",
+      "source_record_id": "TR-058",
+      "title": "HV contactor endurance - pass",
+      "strength": "strong",
+      "status": "pass",
+      "supports_requirements": [
+        "REQ-021"
+      ],
+      "supports_failure_modes": [
+        "FM-043"
+      ],
+      "configuration_id": "CFG-003",
+      "recorded_date": "2026-05-05",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-054",
+      "evidence_type": "test_result",
+      "source_record_type": "TestResult",
+      "source_record_id": "TR-059",
+      "title": "Unintended torque fault injection - pass",
+      "strength": "strong",
+      "status": "pass",
+      "supports_requirements": [
+        "REQ-052"
+      ],
+      "supports_failure_modes": [
+        "FM-051"
+      ],
+      "configuration_id": "CFG-003",
+      "recorded_date": "2026-04-30",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-055",
+      "evidence_type": "test_result",
+      "source_record_type": "TestResult",
+      "source_record_id": "TR-061",
+      "title": "Pack ingress protection verification - pass",
+      "strength": "strong",
+      "status": "pass",
+      "supports_requirements": [
+        "REQ-015"
+      ],
+      "supports_failure_modes": [
+        "FM-005"
+      ],
+      "configuration_id": "CFG-004",
+      "recorded_date": "2026-03-22",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-056",
+      "evidence_type": "test_result",
+      "source_record_type": "TestResult",
+      "source_record_id": "TR-062",
+      "title": "Pack pressure equalisation verification - pass",
+      "strength": "strong",
+      "status": "pass",
+      "supports_requirements": [
+        "REQ-016"
+      ],
+      "supports_failure_modes": [
+        "FM-006"
+      ],
+      "configuration_id": "CFG-003",
+      "recorded_date": "2026-03-28",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-057",
+      "evidence_type": "test_result",
+      "source_record_type": "TestResult",
+      "source_record_id": "TR-063",
+      "title": "Busbar weld tensile and resistance verification - pass",
+      "strength": "strong",
+      "status": "pass",
+      "supports_requirements": [
+        "REQ-133"
+      ],
+      "supports_failure_modes": [
+        "FM-009",
+        "FM-210"
+      ],
+      "configuration_id": "CFG-003",
+      "recorded_date": "2026-06-16",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-058",
+      "evidence_type": "test_result",
+      "source_record_type": "TestResult",
+      "source_record_id": "TR-064",
+      "title": "HV isolation resistance verification - pass",
+      "strength": "strong",
+      "status": "pass",
+      "supports_requirements": [
+        "REQ-014"
+      ],
+      "supports_failure_modes": [
+        "FM-005"
+      ],
+      "configuration_id": "CFG-003",
+      "recorded_date": "2026-06-24",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-059",
+      "evidence_type": "test_result",
+      "source_record_type": "TestResult",
+      "source_record_id": "TR-065",
+      "title": "SOC estimation accuracy across temperature - pass",
+      "strength": "strong",
+      "status": "pass",
+      "supports_requirements": [
+        "REQ-017"
+      ],
+      "supports_failure_modes": [
+        "FM-020"
+      ],
+      "configuration_id": "CFG-004",
+      "recorded_date": "2026-05-23",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-060",
+      "evidence_type": "test_result",
+      "source_record_type": "TestResult",
+      "source_record_id": "TR-066",
+      "title": "Power limit map verification against cell capability - pass",
+      "strength": "strong",
+      "status": "pass",
+      "supports_requirements": [
+        "REQ-017"
+      ],
+      "supports_failure_modes": [
+        "FM-024"
+      ],
+      "configuration_id": "CFG-004",
+      "recorded_date": "2026-03-22",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-061",
+      "evidence_type": "test_result",
+      "source_record_type": "TestResult",
+      "source_record_id": "TR-067",
+      "title": "State of health estimate correlation - inconclusive",
+      "strength": "weak",
+      "status": "inconclusive",
+      "supports_requirements": [
+        "REQ-013"
+      ],
+      "supports_failure_modes": [
+        "FM-023"
+      ],
+      "configuration_id": "CFG-004",
+      "recorded_date": "2026-03-24",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-062",
+      "evidence_type": "test_result",
+      "source_record_type": "TestResult",
+      "source_record_id": "TR-068",
+      "title": "Coolant flow rate verification - pass",
+      "strength": "strong",
+      "status": "pass",
+      "supports_requirements": [
+        "REQ-033"
+      ],
+      "supports_failure_modes": [
+        "FM-032"
+      ],
+      "configuration_id": "CFG-004",
+      "recorded_date": "2026-05-26",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-063",
+      "evidence_type": "test_result",
+      "source_record_type": "TestResult",
+      "source_record_id": "TR-069",
+      "title": "Diverter valve position fault detection - pass",
+      "strength": "strong",
+      "status": "pass",
+      "supports_requirements": [
+        "REQ-031"
+      ],
+      "supports_failure_modes": [
+        "FM-033"
+      ],
+      "configuration_id": "CFG-003",
+      "recorded_date": "2026-08-22",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-064",
+      "evidence_type": "test_result",
+      "source_record_type": "TestResult",
+      "source_record_id": "TR-070",
+      "title": "Thermal derate driver communication - pass",
+      "strength": "strong",
+      "status": "pass",
+      "supports_requirements": [
+        "REQ-031"
+      ],
+      "supports_failure_modes": [
+        "FM-002"
+      ],
+      "configuration_id": "CFG-004",
+      "recorded_date": "2026-08-18",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-065",
+      "evidence_type": "test_result",
+      "source_record_type": "TestResult",
+      "source_record_id": "TR-071",
+      "title": "AC charging power verification at temperature - pass",
+      "strength": "strong",
+      "status": "pass",
+      "supports_requirements": [
+        "REQ-045"
+      ],
+      "supports_failure_modes": [
+        "FM-044"
+      ],
+      "configuration_id": "CFG-002",
+      "recorded_date": "2026-06-27",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-066",
+      "evidence_type": "test_result",
+      "source_record_type": "TestResult",
+      "source_record_id": "TR-072",
+      "title": "Peak power verification - inconclusive",
+      "strength": "weak",
+      "status": "inconclusive",
+      "supports_requirements": [
+        "REQ-050"
+      ],
+      "supports_failure_modes": [
+        "FM-050"
+      ],
+      "configuration_id": "CFG-002",
+      "recorded_date": "2026-08-14",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-067",
+      "evidence_type": "test_result",
+      "source_record_type": "TestResult",
+      "source_record_id": "TR-073",
+      "title": "Resolver signal plausibility verification - pass",
+      "strength": "strong",
+      "status": "pass",
+      "supports_requirements": [
+        "REQ-052"
+      ],
+      "supports_failure_modes": [
+        "FM-053"
+      ],
+      "configuration_id": "CFG-002",
+      "recorded_date": "2026-03-18",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-068",
+      "evidence_type": "test_result",
+      "source_record_type": "TestResult",
+      "source_record_id": "TR-074",
+      "title": "Motor insulation dielectric verification - pass",
+      "strength": "strong",
+      "status": "pass",
+      "supports_requirements": [
+        "REQ-054"
+      ],
+      "supports_failure_modes": [
+        "FM-051"
+      ],
+      "configuration_id": "CFG-002",
+      "recorded_date": "2026-05-25",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-069",
+      "evidence_type": "test_result",
+      "source_record_type": "TestResult",
+      "source_record_id": "TR-075",
+      "title": "Gearbox noise evaluation - pass",
+      "strength": "strong",
+      "status": "pass",
+      "supports_requirements": [
+        "REQ-073"
+      ],
+      "supports_failure_modes": [
+        "FM-054"
+      ],
+      "configuration_id": "CFG-004",
+      "recorded_date": "2026-03-18",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-070",
+      "evidence_type": "test_result",
+      "source_record_type": "TestResult",
+      "source_record_id": "TR-076",
+      "title": "Regenerative blending subjective and objective evaluation - inconclusive",
+      "strength": "weak",
+      "status": "inconclusive",
+      "supports_requirements": [
+        "REQ-062"
+      ],
+      "supports_failure_modes": [
+        "FM-062"
+      ],
+      "configuration_id": "CFG-002",
+      "recorded_date": "2026-07-19",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-071",
+      "evidence_type": "test_result",
+      "source_record_type": "TestResult",
+      "source_record_id": "TR-077",
+      "title": "Friction material density verification - fail",
+      "strength": "strong",
+      "status": "fail",
+      "supports_requirements": [
+        "REQ-065"
+      ],
+      "supports_failure_modes": [
+        "FM-250"
+      ],
+      "configuration_id": "CFG-002",
+      "recorded_date": "2026-05-16",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-072",
+      "evidence_type": "test_result",
+      "source_record_type": "TestResult",
+      "source_record_id": "TR-078",
+      "title": "Bushing retention under load - inconclusive",
+      "strength": "weak",
+      "status": "inconclusive",
+      "supports_requirements": [
+        "REQ-071"
+      ],
+      "supports_failure_modes": [
+        "FM-072"
+      ],
+      "configuration_id": "CFG-003",
+      "recorded_date": "2026-06-25",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-073",
+      "evidence_type": "test_result",
+      "source_record_type": "TestResult",
+      "source_record_id": "TR-079",
+      "title": "Handling stability at maximum mass - pass",
+      "strength": "strong",
+      "status": "pass",
+      "supports_requirements": [
+        "REQ-075"
+      ],
+      "supports_failure_modes": [
+        "FM-070"
+      ],
+      "configuration_id": "CFG-004",
+      "recorded_date": "2026-06-17",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-074",
+      "evidence_type": "test_result",
+      "source_record_type": "TestResult",
+      "source_record_id": "TR-081",
+      "title": "Full vehicle radiated immunity measurement - pass",
+      "strength": "strong",
+      "status": "pass",
+      "supports_requirements": [
+        "REQ-091"
+      ],
+      "supports_failure_modes": [
+        "FM-090"
+      ],
+      "configuration_id": "CFG-002",
+      "recorded_date": "2026-07-28",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-075",
+      "evidence_type": "test_result",
+      "source_record_type": "TestResult",
+      "source_record_id": "TR-082",
+      "title": "Diagnostic service coverage verification - pass",
+      "strength": "strong",
+      "status": "pass",
+      "supports_requirements": [
+        "REQ-095"
+      ],
+      "supports_failure_modes": [
+        "FM-093"
+      ],
+      "configuration_id": "CFG-004",
+      "recorded_date": "2026-08-17",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-076",
+      "evidence_type": "test_result",
+      "source_record_type": "TestResult",
+      "source_record_id": "TR-083",
+      "title": "LV conducted transient immunity - pass",
+      "strength": "strong",
+      "status": "pass",
+      "supports_requirements": [
+        "REQ-097"
+      ],
+      "supports_failure_modes": [
+        "FM-120"
+      ],
+      "configuration_id": "CFG-002",
+      "recorded_date": "2026-08-17",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-077",
+      "evidence_type": "test_result",
+      "source_record_type": "TestResult",
+      "source_record_id": "TR-084",
+      "title": "Compressor operating envelope verification - pass",
+      "strength": "strong",
+      "status": "pass",
+      "supports_requirements": [
+        "REQ-102"
+      ],
+      "supports_failure_modes": [
+        "FM-100"
+      ],
+      "configuration_id": "CFG-003",
+      "recorded_date": "2026-04-15",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-078",
+      "evidence_type": "test_result",
+      "source_record_type": "TestResult",
+      "source_record_id": "TR-085",
+      "title": "Calibration identifier readback verification - pass",
+      "strength": "strong",
+      "status": "pass",
+      "supports_requirements": [
+        "REQ-111"
+      ],
+      "supports_failure_modes": [
+        "FM-140"
+      ],
+      "configuration_id": "CFG-002",
+      "recorded_date": "2026-03-19",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-079",
+      "evidence_type": "test_result",
+      "source_record_type": "TestResult",
+      "source_record_id": "TR-086",
+      "title": "Update interruption and rollback verification - pass",
+      "strength": "strong",
+      "status": "pass",
+      "supports_requirements": [
+        "REQ-112"
+      ],
+      "supports_failure_modes": [
+        "FM-142"
+      ],
+      "configuration_id": "CFG-004",
+      "recorded_date": "2026-03-10",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-080",
+      "evidence_type": "test_result",
+      "source_record_type": "TestResult",
+      "source_record_id": "TR-087",
+      "title": "Configuration control audit - pass",
+      "strength": "strong",
+      "status": "pass",
+      "supports_requirements": [
+        "REQ-110"
+      ],
+      "supports_failure_modes": [
+        "FM-140"
+      ],
+      "configuration_id": "CFG-002",
+      "recorded_date": "2026-04-26",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-081",
+      "evidence_type": "test_result",
+      "source_record_type": "TestResult",
+      "source_record_id": "TR-088",
+      "title": "DC-DC converter output at temperature - pass",
+      "strength": "strong",
+      "status": "pass",
+      "supports_requirements": [
+        "REQ-161"
+      ],
+      "supports_failure_modes": [
+        "FM-121"
+      ],
+      "configuration_id": "CFG-002",
+      "recorded_date": "2026-03-27",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-082",
+      "evidence_type": "test_result",
+      "source_record_type": "TestResult",
+      "source_record_id": "TR-089",
+      "title": "OBD catalyst monitor demonstration - pass",
+      "strength": "strong",
+      "status": "pass",
+      "supports_requirements": [
+        "REQ-143"
+      ],
+      "supports_failure_modes": [
+        "FM-132"
+      ],
+      "configuration_id": "CFG-002",
+      "recorded_date": "2026-03-20",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-083",
+      "evidence_type": "test_result",
+      "source_record_type": "TestResult",
+      "source_record_id": "TR-092",
+      "title": "Radar detection range and accuracy verification - pass",
+      "strength": "strong",
+      "status": "pass",
+      "supports_requirements": [
+        "REQ-171"
+      ],
+      "supports_failure_modes": [],
+      "configuration_id": "CFG-002",
+      "recorded_date": "2026-06-22",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-084",
+      "evidence_type": "test_result",
+      "source_record_type": "TestResult",
+      "source_record_id": "TR-093",
+      "title": "Perception degradation behaviour verification - pass",
+      "strength": "strong",
+      "status": "pass",
+      "supports_requirements": [
+        "REQ-170"
+      ],
+      "supports_failure_modes": [],
+      "configuration_id": "CFG-003",
+      "recorded_date": "2026-08-22",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-085",
+      "evidence_type": "test_result",
+      "source_record_type": "TestResult",
+      "source_record_id": "TR-094",
+      "title": "Pack end of line pressure decay test - inconclusive",
+      "strength": "weak",
+      "status": "inconclusive",
+      "supports_requirements": [
+        "REQ-015"
+      ],
+      "supports_failure_modes": [
+        "FM-220"
+      ],
+      "configuration_id": "CFG-002",
+      "recorded_date": "2026-04-25",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-086",
+      "evidence_type": "test_result",
+      "source_record_type": "TestResult",
+      "source_record_id": "TR-096",
+      "title": "Pack capacity correlation to laboratory measurement - pass",
+      "strength": "strong",
+      "status": "pass",
+      "supports_requirements": [
+        "REQ-010"
+      ],
+      "supports_failure_modes": [
+        "FM-222"
+      ],
+      "configuration_id": "CFG-003",
+      "recorded_date": "2026-03-12",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-087",
+      "evidence_type": "test_result",
+      "source_record_type": "TestResult",
+      "source_record_id": "TR-097",
+      "title": "Thermal interface material coverage vision inspection - pass",
+      "strength": "strong",
+      "status": "pass",
+      "supports_requirements": [
+        "REQ-012"
+      ],
+      "supports_failure_modes": [
+        "FM-211"
+      ],
+      "configuration_id": "CFG-004",
+      "recorded_date": "2026-04-13",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-088",
+      "evidence_type": "test_result",
+      "source_record_type": "TestResult",
+      "source_record_id": "TR-098",
+      "title": "Power module thermal resistance verification - pass",
+      "strength": "strong",
+      "status": "pass",
+      "supports_requirements": [
+        "REQ-053"
+      ],
+      "supports_failure_modes": [
+        "FM-260"
+      ],
+      "configuration_id": "CFG-003",
+      "recorded_date": "2026-08-10",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-089",
+      "evidence_type": "test_result",
+      "source_record_type": "TestResult",
+      "source_record_id": "TR-099",
+      "title": "Catalyst canning force monitoring - pass",
+      "strength": "strong",
+      "status": "pass",
+      "supports_requirements": [
+        "REQ-140"
+      ],
+      "supports_failure_modes": [
+        "FM-270"
+      ],
+      "configuration_id": "CFG-002",
+      "recorded_date": "2026-05-23",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-090",
+      "evidence_type": "document",
+      "source_record_type": "Document",
+      "source_record_id": "DOC-001",
+      "title": "HV Battery System Requirements Specification",
+      "strength": "moderate",
+      "status": "released",
+      "supports_requirements": [],
+      "supports_failure_modes": [],
+      "configuration_id": null,
+      "recorded_date": "2026-04-05",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-091",
+      "evidence_type": "document",
+      "source_record_type": "Document",
+      "source_record_id": "DOC-002",
+      "title": "Thermal Management System Design Description",
+      "strength": "moderate",
+      "status": "released",
+      "supports_requirements": [],
+      "supports_failure_modes": [],
+      "configuration_id": null,
+      "recorded_date": "2026-03-28",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-092",
+      "evidence_type": "document",
+      "source_record_type": "Document",
+      "source_record_id": "DOC-003",
+      "title": "Battery Thermal Model Correlation Report",
+      "strength": "moderate",
+      "status": "released",
+      "supports_requirements": [],
+      "supports_failure_modes": [],
+      "configuration_id": null,
+      "recorded_date": "2026-02-14",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-093",
+      "evidence_type": "document",
+      "source_record_type": "Document",
+      "source_record_id": "DOC-004",
+      "title": "ATLAS Vehicle Energy Budget",
+      "strength": "moderate",
+      "status": "released",
+      "supports_requirements": [],
+      "supports_failure_modes": [],
+      "configuration_id": null,
+      "recorded_date": "2026-06-30",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-094",
+      "evidence_type": "document",
+      "source_record_type": "Document",
+      "source_record_id": "DOC-005",
+      "title": "ATLAS Vehicle Mass Budget",
+      "strength": "moderate",
+      "status": "released",
+      "supports_requirements": [],
+      "supports_failure_modes": [],
+      "configuration_id": null,
+      "recorded_date": "2026-06-30",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-095",
+      "evidence_type": "document",
+      "source_record_type": "Document",
+      "source_record_id": "DOC-006",
+      "title": "Charging System Design Description",
+      "strength": "moderate",
+      "status": "released",
+      "supports_requirements": [],
+      "supports_failure_modes": [],
+      "configuration_id": null,
+      "recorded_date": "2026-05-10",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-096",
+      "evidence_type": "document",
+      "source_record_type": "Document",
+      "source_record_id": "DOC-007",
+      "title": "Charge Inlet Thermal Analysis",
+      "strength": "weak",
+      "status": "draft",
+      "supports_requirements": [],
+      "supports_failure_modes": [],
+      "configuration_id": null,
+      "recorded_date": "2026-07-20",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-097",
+      "evidence_type": "document",
+      "source_record_type": "Document",
+      "source_record_id": "DOC-008",
+      "title": "EMC Design Rules and Routing Standard",
+      "strength": "moderate",
+      "status": "released",
+      "supports_requirements": [],
+      "supports_failure_modes": [],
+      "configuration_id": null,
+      "recorded_date": "2026-01-22",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-098",
+      "evidence_type": "document",
+      "source_record_type": "Document",
+      "source_record_id": "DOC-009",
+      "title": "HV Harness Routing Change Assessment",
+      "strength": "moderate",
+      "status": "released",
+      "supports_requirements": [],
+      "supports_failure_modes": [],
+      "configuration_id": null,
+      "recorded_date": "2026-07-10",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-099",
+      "evidence_type": "document",
+      "source_record_type": "Document",
+      "source_record_id": "DOC-010",
+      "title": "Brake System Design Description",
+      "strength": "moderate",
+      "status": "released",
+      "supports_requirements": [],
+      "supports_failure_modes": [],
+      "configuration_id": null,
+      "recorded_date": "2026-05-02",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-100",
+      "evidence_type": "document",
+      "source_record_type": "Document",
+      "source_record_id": "DOC-011",
+      "title": "Friction Compound Change Assessment",
+      "strength": "moderate",
+      "status": "released",
+      "supports_requirements": [],
+      "supports_failure_modes": [],
+      "configuration_id": null,
+      "recorded_date": "2026-05-26",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-101",
+      "evidence_type": "document",
+      "source_record_type": "Document",
+      "source_record_id": "DOC-012",
+      "title": "Suspension Load Case Definition",
+      "strength": "moderate",
+      "status": "released",
+      "supports_requirements": [],
+      "supports_failure_modes": [],
+      "configuration_id": null,
+      "recorded_date": "2026-02-08",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-102",
+      "evidence_type": "document",
+      "source_record_type": "Document",
+      "source_record_id": "DOC-013",
+      "title": "Bushing Supplier Transfer Plan",
+      "strength": "moderate",
+      "status": "released",
+      "supports_requirements": [],
+      "supports_failure_modes": [],
+      "configuration_id": null,
+      "recorded_date": "2026-04-25",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-103",
+      "evidence_type": "document",
+      "source_record_type": "Document",
+      "source_record_id": "DOC-014",
+      "title": "Steering Functional Safety Concept",
+      "strength": "moderate",
+      "status": "released",
+      "supports_requirements": [],
+      "supports_failure_modes": [],
+      "configuration_id": null,
+      "recorded_date": "2026-04-08",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-104",
+      "evidence_type": "document",
+      "source_record_type": "Document",
+      "source_record_id": "DOC-015",
+      "title": "Steering ECU Microcontroller Replacement Assessment",
+      "strength": "weak",
+      "status": "draft",
+      "supports_requirements": [],
+      "supports_failure_modes": [],
+      "configuration_id": null,
+      "recorded_date": "2026-07-29",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-105",
+      "evidence_type": "document",
+      "source_record_type": "Document",
+      "source_record_id": "DOC-016",
+      "title": "Inverter Calibration Release Note v4.2",
+      "strength": "weak",
+      "status": "draft",
+      "supports_requirements": [],
+      "supports_failure_modes": [],
+      "configuration_id": null,
+      "recorded_date": "2026-07-18",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-106",
+      "evidence_type": "document",
+      "source_record_type": "Document",
+      "source_record_id": "DOC-017",
+      "title": "Cooling Plate Braze Process Specification",
+      "strength": "moderate",
+      "status": "released",
+      "supports_requirements": [],
+      "supports_failure_modes": [],
+      "configuration_id": null,
+      "recorded_date": "2026-05-12",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-107",
+      "evidence_type": "document",
+      "source_record_type": "Document",
+      "source_record_id": "DOC-018",
+      "title": "Cooling Plate Process Change Qualification Plan",
+      "strength": "moderate",
+      "status": "released",
+      "supports_requirements": [],
+      "supports_failure_modes": [],
+      "configuration_id": null,
+      "recorded_date": "2026-05-14",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-108",
+      "evidence_type": "document",
+      "source_record_type": "Document",
+      "source_record_id": "DOC-019",
+      "title": "Pack Assembly Control Plan",
+      "strength": "moderate",
+      "status": "released",
+      "supports_requirements": [],
+      "supports_failure_modes": [],
+      "configuration_id": null,
+      "recorded_date": "2026-05-28",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-109",
+      "evidence_type": "document",
+      "source_record_type": "Document",
+      "source_record_id": "DOC-020",
+      "title": "Wheel and Tyre Change Assessment",
+      "strength": "weak",
+      "status": "draft",
+      "supports_requirements": [],
+      "supports_failure_modes": [],
+      "configuration_id": null,
+      "recorded_date": "2026-06-26",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-110",
+      "evidence_type": "document",
+      "source_record_type": "Document",
+      "source_record_id": "DOC-021",
+      "title": "HVAC Compressor Change Assessment",
+      "strength": "weak",
+      "status": "draft",
+      "supports_requirements": [],
+      "supports_failure_modes": [],
+      "configuration_id": null,
+      "recorded_date": "2026-07-03",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-111",
+      "evidence_type": "document",
+      "source_record_type": "Document",
+      "source_record_id": "DOC-022",
+      "title": "Cell Change Feasibility Assessment",
+      "strength": "weak",
+      "status": "draft",
+      "supports_requirements": [],
+      "supports_failure_modes": [],
+      "configuration_id": null,
+      "recorded_date": "2026-06-14",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-112",
+      "evidence_type": "document",
+      "source_record_type": "Document",
+      "source_record_id": "DOC-023",
+      "title": "ATLAS Homologation Plan",
+      "strength": "moderate",
+      "status": "released",
+      "supports_requirements": [],
+      "supports_failure_modes": [],
+      "configuration_id": null,
+      "recorded_date": "2026-05-30",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-113",
+      "evidence_type": "document",
+      "source_record_type": "Document",
+      "source_record_id": "DOC-024",
+      "title": "Cybersecurity Risk Assessment",
+      "strength": "moderate",
+      "status": "released",
+      "supports_requirements": [],
+      "supports_failure_modes": [],
+      "configuration_id": null,
+      "recorded_date": "2026-03-18",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-114",
+      "evidence_type": "document",
+      "source_record_type": "Document",
+      "source_record_id": "DOC-025",
+      "title": "Calibration Configuration Control Procedure",
+      "strength": "moderate",
+      "status": "released",
+      "supports_requirements": [],
+      "supports_failure_modes": [],
+      "configuration_id": null,
+      "recorded_date": "2026-01-15",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-115",
+      "evidence_type": "document",
+      "source_record_type": "Document",
+      "source_record_id": "DOC-026",
+      "title": "Aftertreatment Cost Reduction Assessment",
+      "strength": "weak",
+      "status": "draft",
+      "supports_requirements": [],
+      "supports_failure_modes": [],
+      "configuration_id": null,
+      "recorded_date": "2026-05-18",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-116",
+      "evidence_type": "document",
+      "source_record_type": "Document",
+      "source_record_id": "DOC-027",
+      "title": "12V Battery Relocation Packaging Study",
+      "strength": "weak",
+      "status": "draft",
+      "supports_requirements": [],
+      "supports_failure_modes": [],
+      "configuration_id": null,
+      "recorded_date": "2026-07-12",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-117",
+      "evidence_type": "document",
+      "source_record_type": "Document",
+      "source_record_id": "DOC-028",
+      "title": "Rear Subframe Isolation Assessment",
+      "strength": "weak",
+      "status": "draft",
+      "supports_requirements": [],
+      "supports_failure_modes": [],
+      "configuration_id": null,
+      "recorded_date": "2026-06-16",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-118",
+      "evidence_type": "document",
+      "source_record_type": "Document",
+      "source_record_id": "DOC-029",
+      "title": "Supplier Quality Manual",
+      "strength": "moderate",
+      "status": "released",
+      "supports_requirements": [],
+      "supports_failure_modes": [],
+      "configuration_id": null,
+      "recorded_date": "2025-09-01",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-119",
+      "evidence_type": "document",
+      "source_record_type": "Document",
+      "source_record_id": "DOC-030",
+      "title": "DV Test Fleet Build Record",
+      "strength": "moderate",
+      "status": "released",
+      "supports_requirements": [],
+      "supports_failure_modes": [],
+      "configuration_id": null,
+      "recorded_date": "2026-07-15",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-120",
+      "evidence_type": "measurement",
+      "source_record_type": "Measurement",
+      "source_record_id": "MEAS-001",
+      "title": "Maximum cell temperature during high ambient sustained load",
+      "strength": "moderate",
+      "status": "recorded",
+      "supports_requirements": [],
+      "supports_failure_modes": [],
+      "configuration_id": null,
+      "recorded_date": null,
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-121",
+      "evidence_type": "measurement",
+      "source_record_type": "Measurement",
+      "source_record_id": "MEAS-002",
+      "title": "Battery coolant inlet temperature during high ambient sustained load",
+      "strength": "moderate",
+      "status": "recorded",
+      "supports_requirements": [],
+      "supports_failure_modes": [],
+      "configuration_id": null,
+      "recorded_date": null,
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-122",
+      "evidence_type": "measurement",
+      "source_record_type": "Measurement",
+      "source_record_id": "MEAS-003",
+      "title": "Drive power limit during high ambient sustained load",
+      "strength": "moderate",
+      "status": "recorded",
+      "supports_requirements": [],
+      "supports_failure_modes": [],
+      "configuration_id": null,
+      "recorded_date": null,
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-123",
+      "evidence_type": "measurement",
+      "source_record_type": "Measurement",
+      "source_record_id": "MEAS-004",
+      "title": "HVAC compressor power during high ambient sustained load",
+      "strength": "moderate",
+      "status": "recorded",
+      "supports_requirements": [],
+      "supports_failure_modes": [],
+      "configuration_id": null,
+      "recorded_date": null,
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-124",
+      "evidence_type": "measurement",
+      "source_record_type": "Measurement",
+      "source_record_id": "MEAS-005",
+      "title": "Charge rate during low ambient DC fast charge",
+      "strength": "moderate",
+      "status": "recorded",
+      "supports_requirements": [],
+      "supports_failure_modes": [],
+      "configuration_id": null,
+      "recorded_date": null,
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-125",
+      "evidence_type": "measurement",
+      "source_record_type": "Measurement",
+      "source_record_id": "MEAS-006",
+      "title": "Charge rate during reference DC fast charge",
+      "strength": "moderate",
+      "status": "recorded",
+      "supports_requirements": [],
+      "supports_failure_modes": [],
+      "configuration_id": null,
+      "recorded_date": null,
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-126",
+      "evidence_type": "measurement",
+      "source_record_type": "Measurement",
+      "source_record_id": "MEAS-007",
+      "title": "Charge current during derate ramp event",
+      "strength": "moderate",
+      "status": "recorded",
+      "supports_requirements": [],
+      "supports_failure_modes": [],
+      "configuration_id": null,
+      "recorded_date": null,
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-127",
+      "evidence_type": "measurement",
+      "source_record_type": "Measurement",
+      "source_record_id": "MEAS-008",
+      "title": "Inverter temperature during sustained gradient",
+      "strength": "moderate",
+      "status": "recorded",
+      "supports_requirements": [],
+      "supports_failure_modes": [],
+      "configuration_id": null,
+      "recorded_date": null,
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-128",
+      "evidence_type": "measurement",
+      "source_record_type": "Measurement",
+      "source_record_id": "MEAS-009",
+      "title": "Motor derate factor during sustained gradient",
+      "strength": "moderate",
+      "status": "recorded",
+      "supports_requirements": [],
+      "supports_failure_modes": [],
+      "configuration_id": null,
+      "recorded_date": null,
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-129",
+      "evidence_type": "measurement",
+      "source_record_type": "Measurement",
+      "source_record_id": "MEAS-010",
+      "title": "Front left brake disc temperature during judder durability",
+      "strength": "moderate",
+      "status": "recorded",
+      "supports_requirements": [],
+      "supports_failure_modes": [],
+      "configuration_id": null,
+      "recorded_date": null,
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-130",
+      "evidence_type": "measurement",
+      "source_record_type": "Measurement",
+      "source_record_id": "MEAS-011",
+      "title": "Battery state of health across accelerated ageing",
+      "strength": "moderate",
+      "status": "recorded",
+      "supports_requirements": [],
+      "supports_failure_modes": [],
+      "configuration_id": null,
+      "recorded_date": null,
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-131",
+      "evidence_type": "measurement",
+      "source_record_type": "Measurement",
+      "source_record_id": "MEAS-012",
+      "title": "Cell voltage spread after extended parking",
+      "strength": "moderate",
+      "status": "recorded",
+      "supports_requirements": [],
+      "supports_failure_modes": [],
+      "configuration_id": null,
+      "recorded_date": null,
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-132",
+      "evidence_type": "measurement",
+      "source_record_type": "Measurement",
+      "source_record_id": "MEAS-013",
+      "title": "Vertical ride acceleration on reference surface",
+      "strength": "moderate",
+      "status": "recorded",
+      "supports_requirements": [],
+      "supports_failure_modes": [],
+      "configuration_id": null,
+      "recorded_date": null,
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-133",
+      "evidence_type": "measurement",
+      "source_record_type": "Measurement",
+      "source_record_id": "MEAS-014",
+      "title": "Press force signature during bushing press-fit",
+      "strength": "moderate",
+      "status": "recorded",
+      "supports_requirements": [],
+      "supports_failure_modes": [],
+      "configuration_id": null,
+      "recorded_date": null,
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-134",
+      "evidence_type": "measurement",
+      "source_record_type": "Measurement",
+      "source_record_id": "MEAS-015",
+      "title": "Braze furnace dew point across the affected production week",
+      "strength": "moderate",
+      "status": "recorded",
+      "supports_requirements": [],
+      "supports_failure_modes": [],
+      "configuration_id": null,
+      "recorded_date": null,
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-135",
+      "evidence_type": "measurement",
+      "source_record_type": "Measurement",
+      "source_record_id": "MEAS-016",
+      "title": "Radiated emissions level in the 76 to 108 MHz band",
+      "strength": "moderate",
+      "status": "recorded",
+      "supports_requirements": [],
+      "supports_failure_modes": [],
+      "configuration_id": null,
+      "recorded_date": null,
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-136",
+      "evidence_type": "measurement",
+      "source_record_type": "Measurement",
+      "source_record_id": "MEAS-017",
+      "title": "Bushing radial stiffness distribution on incoming batch",
+      "strength": "moderate",
+      "status": "recorded",
+      "supports_requirements": [],
+      "supports_failure_modes": [],
+      "configuration_id": null,
+      "recorded_date": null,
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-137",
+      "evidence_type": "measurement",
+      "source_record_type": "Measurement",
+      "source_record_id": "MEAS-018",
+      "title": "Bus utilisation under worst case loading",
+      "strength": "moderate",
+      "status": "recorded",
+      "supports_requirements": [],
+      "supports_failure_modes": [],
+      "configuration_id": null,
+      "recorded_date": null,
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-138",
+      "evidence_type": "measurement",
+      "source_record_type": "Measurement",
+      "source_record_id": "MEAS-019",
+      "title": "LV supply voltage during simultaneous peak demand",
+      "strength": "moderate",
+      "status": "recorded",
+      "supports_requirements": [],
+      "supports_failure_modes": [],
+      "configuration_id": null,
+      "recorded_date": null,
+      "record_type": "Evidence"
+    },
+    {
+      "id": "EVID-139",
+      "evidence_type": "measurement",
+      "source_record_type": "Measurement",
+      "source_record_id": "MEAS-020",
+      "title": "Catalyst temperature during cold start light-off",
+      "strength": "moderate",
+      "status": "recorded",
+      "supports_requirements": [],
+      "supports_failure_modes": [],
+      "configuration_id": null,
+      "recorded_date": null,
+      "record_type": "Evidence"
+    }
+  ]
+}

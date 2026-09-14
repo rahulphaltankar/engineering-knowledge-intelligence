@@ -1,0 +1,199 @@
+{
+  "entity": "TestCase",
+  "description": "Verification activities with acceptance criteria where established.",
+  "data_classification": "SIMULATED — PUBLIC DEMONSTRATOR DATA",
+  "generated_by": "Engineering Knowledge Intelligence demonstrator",
+  "seed": 42,
+  "records": [
+    {
+      "id": "FTST-001",
+      "title": "Stair capacity and evacuation assessment",
+      "method": "calculation_assessment",
+      "level": "building",
+      "conditions": "Population and evacuation strategy as defined in the building fire strategy (FDOC-001).",
+      "acceptance_criterion": "Stair capacity is not less than the evacuating population determined under the agreed fire strategy",
+      "acceptance_criterion_established": true,
+      "verifies_requirements": [
+        "FREQ-001",
+        "FREQ-002"
+      ],
+      "addresses_failure_modes": [
+        "FFM-001"
+      ],
+      "standard_ids": [
+        "FSTD-002"
+      ],
+      "responsible_domain": "Means of escape",
+      "phase": "design_review",
+      "record_type": "TestCase"
+    },
+    {
+      "id": "FTST-002",
+      "title": "Fire alarm cause-and-effect functional test",
+      "method": "commissioning_test",
+      "level": "building",
+      "conditions": "All zones, against the matrix in FDOC-002.",
+      "acceptance_criterion": "Every initiating device produces the outputs specified in the approved cause-and-effect matrix",
+      "acceptance_criterion_established": true,
+      "verifies_requirements": [
+        "FREQ-005"
+      ],
+      "addresses_failure_modes": [
+        "FFM-002"
+      ],
+      "standard_ids": [
+        "FSTD-004"
+      ],
+      "responsible_domain": "Detection and warning",
+      "phase": "design_review",
+      "record_type": "TestCase"
+    },
+    {
+      "id": "FTST-003",
+      "title": "Detection and alarm inspection within the flats",
+      "method": "inspection",
+      "level": "building",
+      "conditions": "No grade or category of system has been selected for the flats.",
+      "acceptance_criterion": null,
+      "acceptance_criterion_established": false,
+      "verifies_requirements": [
+        "FREQ-004"
+      ],
+      "addresses_failure_modes": [
+        "FFM-002"
+      ],
+      "standard_ids": [
+        "FSTD-005"
+      ],
+      "responsible_domain": "Detection and warning",
+      "phase": "design_review",
+      "record_type": "TestCase"
+    },
+    {
+      "id": "FTST-004",
+      "title": "Stair lobby fire doorset inspection",
+      "method": "inspection",
+      "level": "building",
+      "conditions": "Stair lobby doorsets, Levels 2-4.",
+      "acceptance_criterion": "Doorsets carry third-party certification for their specified fire and smoke performance, and self-closing devices close and latch the door",
+      "acceptance_criterion_established": true,
+      "verifies_requirements": [
+        "FREQ-003"
+      ],
+      "addresses_failure_modes": [
+        "FFM-001"
+      ],
+      "standard_ids": [
+        "FSTD-002"
+      ],
+      "responsible_domain": "Means of escape",
+      "phase": "design_review",
+      "record_type": "TestCase"
+    },
+    {
+      "id": "FTST-005",
+      "title": "Compartment floor fire-resistance evidence review",
+      "method": "document_review",
+      "level": "building",
+      "conditions": "Level 3 / Level 4 compartment floor.",
+      "acceptance_criterion": "As-built construction matches a tested or assessed specification achieving the fire resistance period stated in the fire strategy",
+      "acceptance_criterion_established": true,
+      "verifies_requirements": [
+        "FREQ-007"
+      ],
+      "addresses_failure_modes": [],
+      "standard_ids": [
+        "FSTD-002"
+      ],
+      "responsible_domain": "Internal fire spread",
+      "phase": "design_review",
+      "record_type": "TestCase"
+    },
+    {
+      "id": "FTST-006",
+      "title": "Flat entrance doorset specification and certification review",
+      "method": "document_review",
+      "level": "building",
+      "conditions": "Six proposed flat entrance doorsets.",
+      "acceptance_criterion": "Doorsets are certified for the fire resistance and smoke control performance the fire strategy specifies for flat entrance doors",
+      "acceptance_criterion_established": true,
+      "verifies_requirements": [
+        "FREQ-003",
+        "FREQ-006"
+      ],
+      "addresses_failure_modes": [
+        "FFM-003"
+      ],
+      "standard_ids": [
+        "FSTD-001"
+      ],
+      "responsible_domain": "Internal fire spread",
+      "phase": "design_review",
+      "record_type": "TestCase"
+    },
+    {
+      "id": "FTST-007",
+      "title": "Sprinkler provision assessment for Level 3",
+      "method": "engineering_assessment",
+      "level": "building",
+      "conditions": "Scope depends on the evacuation strategy and building height, neither recorded.",
+      "acceptance_criterion": null,
+      "acceptance_criterion_established": false,
+      "verifies_requirements": [
+        "FREQ-008"
+      ],
+      "addresses_failure_modes": [
+        "FFM-005"
+      ],
+      "standard_ids": [
+        "FSTD-006",
+        "FSTD-001"
+      ],
+      "responsible_domain": "Suppression and firefighting",
+      "phase": "design_review",
+      "record_type": "TestCase"
+    },
+    {
+      "id": "FTST-008",
+      "title": "Fire service access route survey to Level 3",
+      "method": "site_survey",
+      "level": "building",
+      "conditions": "Fire appliance access, entry point and route to Level 3.",
+      "acceptance_criterion": "Access route and firefighting facilities conform to the fire service provisions recorded in the fire strategy",
+      "acceptance_criterion_established": true,
+      "verifies_requirements": [
+        "FREQ-009"
+      ],
+      "addresses_failure_modes": [
+        "FFM-006"
+      ],
+      "standard_ids": [
+        "FSTD-002"
+      ],
+      "responsible_domain": "Suppression and firefighting",
+      "phase": "design_review",
+      "record_type": "TestCase"
+    },
+    {
+      "id": "FTST-009",
+      "title": "Dry rising main pressure test",
+      "method": "commissioning_test",
+      "level": "building",
+      "conditions": "Existing dry rising main serving all storeys.",
+      "acceptance_criterion": "Rising main holds test pressure for the duration specified by its installation standard with no loss of pressure",
+      "acceptance_criterion_established": true,
+      "verifies_requirements": [
+        "FREQ-009"
+      ],
+      "addresses_failure_modes": [
+        "FFM-006"
+      ],
+      "standard_ids": [
+        "FSTD-002"
+      ],
+      "responsible_domain": "Suppression and firefighting",
+      "phase": "design_review",
+      "record_type": "TestCase"
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{% extends "fire/base.html" %}
+{% block title %}Analyse Change &middot; {{ S.product_name }}{% endblock %}
+{% block body %}
+
+<div class="hero">
+  <div class="eyebrow">Analyse change</div>
+  <form hx-post="/analyse" hx-target="#result" hx-swap="innerHTML" hx-indicator="#spin">
+    <div class="row" style="align-items:flex-end;gap:10px">
+      <div style="flex:1;min-width:260px">
+        <label class="fl" for="scenario">Change / scenario</label>
+        <select name="scenario_id" id="scenario" onchange="showChange()">
+          {% for s in scenarios %}
+          <option value="{{ s.scenario_id }}" data-desc="{{ s.initial_input }}"
+                  {{ 'selected' if view and view.subject and s.scenario_id == S.hero_scenario }}>{{ s.scenario_id }} &mdash; {{ s.title }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <button class="primary" type="submit">Assess change</button>
+      <button type="button" hx-post="/reset" hx-target="#result" hx-swap="innerHTML">Reset</button>
+      <span class="spin" id="spin">Running the analysis pipeline…</span>
+    </div>
+    <p class="change-text" id="changedesc"></p>
+  </form>
+  <div class="chain">
+    {% for s in S.narrative %}
+      <a href="#{{ s.anchor }}" title="{{ s.detail }}">{{ loop.index }} &middot; {{ s.step }}</a>
+      {% if not loop.last %}<span class="arrow">&rarr;</span>{% endif %}
+    {% endfor %}
+  </div>
+</div>
+
+<div id="result">
+  {% if view %}{% include "fire/partials/narrative.html" %}{% else %}{% include "fire/partials/idle.html" %}{% endif %}
+</div>
+
+<script>
+function showChange(){
+  const s=document.getElementById('scenario');
+  document.getElementById('changedesc').textContent =
+    s.options[s.selectedIndex].getAttribute('data-desc') || '';
+}
+showChange();
+</script>
+{% endblock %}

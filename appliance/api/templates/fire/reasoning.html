@@ -1,0 +1,91 @@
+{% extends "fire/base.html" %}
+{% from "fire/_macros.html" import lbl, explain, review_pill, no_analysis with context %}
+{% block title %}Reasoning &middot; {{ S.product_name }}{% endblock %}
+{% block body %}
+<div class="page-head">
+  <h1>Technical reasoning</h1>
+  <p>The evidence and reasoning trace for the analysis: which stages ran, which specialists
+     contributed and what backs them, the relationship paths relied on, and the classification and
+     confidence of every finding. Each finding opens its auditable derivation.</p>
+</div>
+
+{% if not view %}{{ no_analysis('/reasoning', 'Reasoning traces') }}{% else %}
+<div class="split">
+  <div class="panel">
+    <div class="panel-head"><h2>Stages executed</h2><span class="aside">as recorded by the pipeline</span></div>
+    <table>
+      <thead><tr><th>Stage</th><th>Status</th><th>Time</th><th>Detail</th></tr></thead>
+      <tbody>
+      {% for s in view.stages %}
+      <tr><td class="small"><strong>{{ s.name }}</strong></td>
+        <td><span class="pill {{ 'ok' if s.status == 'done' else 'warn' }}">{{ s.status }}</span></td>
+        <td class="mono tiny">{{ s.duration_ms }} ms</td>
+        <td class="small muted">{{ s.detail }}</td></tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  <div class="panel">
+    <div class="panel-head"><h2>Specialists</h2><span class="aside">selected for the request, backed by fire-engineering operating profiles</span></div>
+    <table>
+      <thead><tr><th>Specialist</th><th>Findings</th><th>Backed by</th></tr></thead>
+      <tbody>
+      {% for a in view.activity %}
+      <tr><td><strong class="small">{{ a.specialist }}</strong><div class="tiny muted">{{ a.rationale }}</div></td>
+        <td>{{ a.findings }}</td><td class="tiny muted">{{ a.attribution or '—' }}</td></tr>
+      {% endfor %}
+      </tbody>
+    </table>
+    <h3>What was retrieved</h3>
+    <div class="small">{% for t, n in view.context_types.items() %}<span class="chip">{{ n }} {{ lbl(t) }}</span>{% endfor %}</div>
+    <p class="tiny muted" style="margin-top:8px">Findings are derived by graph traversal and set operations over these records.
+      With a model configured, model interpretation is added as lower-trust INFERRED findings and anything the
+      evidence gate cannot verify is removed.</p>
+  </div>
+</div>
+
+<div id="why"></div>
+
+<section class="panel" id="confidence">
+  <div class="panel-head"><h2>Findings, classification and confidence</h2>
+    <span class="aside">{{ view.result.findings|length }} findings passed the evidence gate ·
+      {{ view.confidence.gate.fabricated_citation_count }} fabricated citations</span></div>
+  <div class="scroll" style="max-height:520px">
+  <table>
+    <thead><tr><th style="width:52%">Finding</th><th>Classification</th><th>Confidence</th><th>Evidence</th><th>Review</th><th></th></tr></thead>
+    <tbody>
+    {% for f in view.findings %}
+    <tr>
+      <td class="small">{{ f.statement }}<div class="tiny faint">{{ f.id }} · {{ f.produced_by }}</div></td>
+      <td><span class="pill {{ f.classification }}">{{ f.classification }}</span></td>
+      <td class="small muted">{{ f.confidence }} ({{ '%.2f'|format(f.confidence_score) }})</td>
+      <td class="small muted">{{ f.evidence_count }}</td>
+      <td id="rv-{{ f.id }}">{{ review_pill(f.review) }}</td>
+      <td>{{ explain(f.id) }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  </div>
+  <p class="tiny muted" style="margin:8px 0 0">FACT retrieved directly · DERIVED computed deterministically ·
+    INFERRED reasoned by a model · ASSUMED stated without verifiable evidence · UNKNOWN not established.</p>
+</section>
+
+<section class="panel" id="paths">
+  <div class="panel-head"><h2>Knowledge / relationship paths</h2>
+    <span class="aside">{{ view.result.closure|length }} records reached from {{ view.subject.id }}</span></div>
+  <div class="scroll" style="max-height:460px">
+  <table>
+    <thead><tr><th>Record</th><th>Type</th><th>Hops</th><th>Path</th></tr></thead>
+    <tbody>
+    {% for pth in view.paths %}
+    <tr><td><code>{{ pth.id }}</code><div class="tiny muted">{{ pth.title }}</div></td><td class="small">{{ pth.type }}</td>
+      <td class="small">{{ pth.hops }}</td>
+      <td class="path">{% for s in pth.steps %}{{ s }}{% if not loop.last %}<br>{% endif %}{% endfor %}</td></tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  </div>
+</section>
+{% endif %}
+{% endblock %}

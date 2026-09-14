@@ -1,0 +1,117 @@
+{
+  "scenario_id": "SCN-003",
+  "category": "Vehicle / system validation issue",
+  "title": "Power reduction during sustained high ambient operation",
+  "engineering_question": "A vehicle intermittently reduces available power during sustained operation at high ambient temperature. What is happening and what evidence supports each hypothesis?",
+  "one_liner": "Investigate intermittent thermal derating during high-load operation.",
+  "initial_input": "Multiple design verification vehicles report a reduction in available drive power after approximately 40 to 55 minutes of sustained highway operation at ambient temperatures above 35 degC.",
+  "relevant_entities": {
+    "quality_issues": [
+      "QI-001"
+    ],
+    "systems": [
+      "SYS-001",
+      "SYS-002",
+      "SYS-010"
+    ],
+    "subsystems": [
+      "SUB-005",
+      "SUB-006",
+      "SUB-008",
+      "SUB-029"
+    ],
+    "components": [
+      "COMP-012",
+      "COMP-015",
+      "COMP-049"
+    ],
+    "requirements": [
+      "REQ-011",
+      "REQ-012",
+      "REQ-022",
+      "REQ-030",
+      "REQ-031",
+      "REQ-032",
+      "REQ-033",
+      "REQ-101"
+    ],
+    "failure_modes": [
+      "FM-002",
+      "FM-003",
+      "FM-007",
+      "FM-021",
+      "FM-030",
+      "FM-031",
+      "FM-032",
+      "FM-202",
+      "FM-211"
+    ],
+    "tests": [
+      "TEST-002",
+      "TEST-003",
+      "TEST-008",
+      "TEST-022",
+      "TEST-030",
+      "TEST-031",
+      "TEST-032",
+      "TEST-034"
+    ],
+    "documents": [
+      "DOC-002",
+      "DOC-003"
+    ]
+  },
+  "expected_impacted_domains": [
+    "Battery thermal capability",
+    "Thermal arbitration between cabin and battery loads",
+    "Cooling plate heat rejection capability",
+    "Temperature sensor representativeness",
+    "Coolant flow adequacy",
+    "Calibration derate thresholds"
+  ],
+  "expected_evidence": [
+    "TR-001",
+    "TR-002",
+    "TR-003",
+    "TR-004",
+    "TR-005",
+    "TR-041",
+    "TR-044",
+    "MEAS-001",
+    "MEAS-002",
+    "MEAS-003",
+    "MEAS-004"
+  ],
+  "expected_reasoning_paths": [
+    "TR-004 passes, so the arbitration implementation matches its specification - this eliminates an implementation defect and points at the specification",
+    "TR-003 fails specifically under concurrent cabin cooling demand, which is the discriminating condition",
+    "TR-041 is inconclusive and shows sensor error growing to 7 K under exactly the condition under investigation, so the measured temperature may understate the true hot cell",
+    "TR-005 passes but only at 25 degC coolant inlet, so it does not cover the failing condition",
+    "Cooling plate braze coverage FM-200 and FM-007 remain a live alternative hypothesis because TR-032 shows coverage problems on a related population"
+  ],
+  "candidate_outputs": [
+    "Root Cause Analysis",
+    "5-Why",
+    "Fishbone Analysis",
+    "8D",
+    "Engineering Impact Assessment",
+    "DFMEA Review",
+    "Evidence Gap Analysis",
+    "Test Strategy",
+    "Test Case Recommendations",
+    "Validation Plan",
+    "Risk Assessment",
+    "Failure Mode Analysis",
+    "Corrective Action Plan",
+    "Engineering Executive Summary",
+    "Engineering Decision Brief"
+  ],
+  "known_unknowns": [
+    "No heat rejection measurement exists at elevated coolant inlet temperature",
+    "No cell temperature gradient mapping exists at elevated coolant inlet temperature",
+    "Sensor error band under sustained high load is not defined in any acceptance criterion",
+    "Refrigerant circuit capacity split between cabin and battery is not quantified in the environment"
+  ],
+  "data_classification": "SIMULATED ENTERPRISE ARTEFACT - not OEM, customer or proprietary data",
+  "connector": "SIMULATION"
+}

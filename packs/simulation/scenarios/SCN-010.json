@@ -1,0 +1,122 @@
+{
+  "scenario_id": "SCN-010",
+  "category": "Compliance / standards impact",
+  "title": "Wheel and tyre specification change on a derivative variant",
+  "engineering_question": "A chassis specification change is proposed for a derivative variant. What are the approval, energy and comfort consequences?",
+  "one_liner": "Assess the compliance and certification consequences of this specification change.",
+  "initial_input": "Engineering change ECR-006 introduces a larger wheel diameter and lower profile tyre specification on the top trim level, replacing the current specification.",
+  "relevant_entities": {
+    "engineering_changes": [
+      "ECR-006"
+    ],
+    "quality_issues": [
+      "QI-020",
+      "QI-026"
+    ],
+    "supplier_issues": [
+      "SI-005"
+    ],
+    "systems": [
+      "SYS-016",
+      "SYS-006",
+      "SYS-005",
+      "SYS-011"
+    ],
+    "components": [
+      "COMP-061",
+      "COMP-062",
+      "COMP-063",
+      "COMP-064"
+    ],
+    "requirements": [
+      "REQ-001",
+      "REQ-003",
+      "REQ-005",
+      "REQ-072",
+      "REQ-120",
+      "REQ-121",
+      "REQ-122",
+      "REQ-123",
+      "REQ-124",
+      "REQ-004"
+    ],
+    "failure_modes": [
+      "FM-110",
+      "FM-111",
+      "FM-112",
+      "FM-113",
+      "FM-074"
+    ],
+    "tests": [
+      "TEST-120",
+      "TEST-121",
+      "TEST-122",
+      "TEST-123",
+      "TEST-124",
+      "TEST-074",
+      "TEST-060"
+    ],
+    "standards": [
+      "STD-015",
+      "STD-016",
+      "STD-017",
+      "STD-037",
+      "STD-038",
+      "STD-023",
+      "STD-040"
+    ],
+    "documents": [
+      "DOC-004",
+      "DOC-005",
+      "DOC-020",
+      "DOC-023"
+    ]
+  },
+  "expected_impacted_domains": [
+    "Type approval for sound emission and tyre characteristics",
+    "Certified range and energy budget",
+    "Unsprung mass and ride comfort",
+    "Braking performance at revised rolling radius and mass",
+    "Tyre load capability at maximum axle load"
+  ],
+  "expected_evidence": [
+    "TR-025",
+    "TR-026",
+    "TR-027",
+    "TR-028",
+    "TR-029",
+    "TR-030",
+    "MEAS-013"
+  ],
+  "expected_reasoning_paths": [
+    "TR-025 rolling resistance failure propagates to REQ-001 certified range because DOC-004 allocates rolling resistance within the energy budget",
+    "TR-030 range pass was measured on the previous specification, so the certified range evidence does not cover the new variant",
+    "TR-028 pass-by noise not_run is a regulatory evidence gap on an approval-critical requirement",
+    "TR-029 axle load and load index verification not_run means REQ-121 tyre load capability is unverified while mass is also increasing from other proposed changes",
+    "This change interacts with ECR-001 and ECR-014, which both also affect mass, so the mass budget must be assessed across all three rather than individually"
+  ],
+  "candidate_outputs": [
+    "Compliance / Standards Impact",
+    "Engineering Impact Assessment",
+    "Requirements Impact Analysis",
+    "Traceability Matrix",
+    "Evidence Gap Analysis",
+    "DVP&R",
+    "Validation Plan",
+    "Verification Plan",
+    "Test Strategy",
+    "Risk Assessment",
+    "Design Review",
+    "Engineering Change Impact",
+    "Supplier Quality Assessment",
+    "Engineering Executive Summary",
+    "Engineering Decision Brief"
+  ],
+  "known_unknowns": [
+    "Approval limit values are not held in the environment - only the regulation identifiers",
+    "The rolling radius change and its speedometer and range calibration effect is not quantified",
+    "Whether the derivative variant requires a separate approval extension is not recorded"
+  ],
+  "data_classification": "SIMULATED ENTERPRISE ARTEFACT - not OEM, customer or proprietary data",
+  "connector": "SIMULATION"
+}

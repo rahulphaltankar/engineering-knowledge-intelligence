@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block title %}Engineering Knowledge Intelligence{% endblock %}</title>
+<script src="/static/htmx.min.js"></script>
+{% include "_styles.html" %}
+</head>
+<body>
+<header class="mast">
+  <div class="mast-top">
+    <span class="brand">Engineering Knowledge Intelligence</span>
+    <span class="tag">Automotive engineering reference demonstration</span>
+    <span class="spacer"></span>
+    <a href="/domain/fire-engineering" style="color:#cfe0f0;font-size:12px;margin-right:12px">Fire engineering demonstrator &rarr;</a>
+    {% if health.model.execution_mode == 'model' %}
+      <span class="mode ai"><span class="dot"></span>Analysis mode: AI-assisted
+        ({{ health.model.provider }})</span>
+    {% else %}
+      <span class="mode"><span class="dot"></span>Analysis mode: Deterministic</span>
+    {% endif %}
+  </div>
+  <nav>
+    <a href="/" class="{{ 'on' if nav == 'intelligence' }}">Intelligence</a>
+    <a href="/architecture" class="{{ 'on' if nav == 'architecture' }}">Architecture</a>
+    <a href="/sources" class="{{ 'on' if nav == 'sources' }}">Data sources</a>
+    <a href="/outputs" class="{{ 'on' if nav == 'outputs' }}">Engineering outputs</a>
+    <a href="/evidence" class="{{ 'on' if nav == 'evidence' }}">Evidence</a>
+  </nav>
+</header>
+<div class="demo-strip">
+  <strong>Public demonstrator.</strong> Synthetic automotive data only &mdash; not an OEM
+  implementation and not customer data. Not production software. Human review is session scoped
+  and unauthenticated.
+</div>
+<div class="wrap">
+{% block body %}{% endblock %}
+</div>
+<script>
+/* A review decision refreshes only the regions this page has. */
+function reviewTargets(findingId) {
+  var ids = ['review-summary', 'output', 'pipeline'];
+  var present = ids.filter(function (id) { return document.getElementById(id); });
+  if (document.getElementById('rv-' + findingId)) present.push('pill');
+  return present.join(',');
+}
+/* Validation responses (400) carry a message the user must see - for example a
+   rejection submitted without a note. HTMX does not swap error responses by
+   default, which would make the control look unresponsive. */
+document.body.addEventListener('htmx:beforeSwap', function (event) {
+  var status = event.detail.xhr && event.detail.xhr.status;
+  if (status === 400 || status === 422) {
+    event.detail.shouldSwap = true;
+    event.detail.isError = false;
+  }
+});
+/* The WHY answer is the trust moment: it is where a claim is traded for its
+   evidence. HTMX swaps it into #why further down the page, which put it below
+   the fold with no cue that anything had happened. Move the viewport to the
+   answer - the evidence itself is untouched. */
+document.body.addEventListener('htmx:afterSwap', function (event) {
+  var target = event.detail && event.detail.target;
+  if (!target || target.id !== 'why') return;
+  var panel = target.querySelector('.panel');
+  if (!panel) return;
+  var box = panel.getBoundingClientRect();
+  var view = window.innerHeight;
+  if (box.top >= 0 && box.bottom <= view) return;   /* already in view */
+  var margin = 24;
+  var top = box.height <= view - margin * 2
+    ? window.scrollY + box.top - (view - box.height) / 2
+    : window.scrollY + box.top - margin;
+  var still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  window.scrollTo({top: Math.max(0, top), behavior: still ? 'auto' : 'smooth'});
+});
+</script>
+</body>
+</html>

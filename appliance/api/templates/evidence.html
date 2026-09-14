@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+{% block title %}Evidence{% endblock %}
+{% block body %}
+<div class="page-head">
+  <h1>Evidence</h1>
+  <p>What the appliance knows, how it knows it, and what it could not establish.</p>
+</div>
+
+{% if not e.answerable %}
+<div class="panel">
+  <p class="muted" style="margin:0">No analysis in session. Run one on the
+     <a href="/">Intelligence</a> page.</p>
+</div>
+{% else %}
+
+<div class="metrics" style="margin-bottom:16px">
+  <div class="metric good"><div class="v">{{ e.supported_findings }}</div>
+    <div class="k">Supported findings</div></div>
+  <div class="metric attn"><div class="v">{{ e.total_gaps }}</div>
+    <div class="k">Evidence gaps</div></div>
+  <div class="metric unk"><div class="v">{{ e.unknowns|length }}</div>
+    <div class="k">Not established</div></div>
+  <div class="metric"><div class="v">{{ e.evidence_rows }}</div>
+    <div class="k">Test results examined</div></div>
+  <div class="metric"><div class="v">{{ e.fabricated_citations }}</div>
+    <div class="k">Fabricated citations</div></div>
+</div>
+
+<div class="panel">
+  <div class="panel-head">
+    <h2>Evidence gaps by class</h2>
+    <span class="aside">Categorised, not merely counted &mdash; these are different problems</span>
+  </div>
+  <table>
+    <thead><tr><th>Gap</th><th>Count</th><th>What it means</th><th>Action</th>
+      <th>Requirements</th></tr></thead>
+    <tbody>
+    {% for a in e.attention %}
+    <tr>
+      <td><strong>{{ a.label }}</strong></td>
+      <td><span class="pill {{ 'unknown' if a.gap_type == 'criterion_not_established' else 'warn' }}">
+        {{ a.count }}</span></td>
+      <td class="small muted">{{ a.detail }}</td>
+      <td class="small" style="color:var(--accent)">{{ a.action }}</td>
+      <td class="small mono muted">{{ a.requirements|join(', ') }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+<div class="panel">
+  <div class="panel-head">
+    <h2>What could not be established</h2>
+    <span class="aside">Never replaced with an invented answer</span>
+  </div>
+  <div class="note unknown stack">
+    {% for u in e.unknowns %}<div>{{ u }}</div>{% endfor %}
+  </div>
+</div>
+
+<div class="panel">
+  <div class="panel-head"><h2>Provenance of this analysis</h2></div>
+  <table>
+    <tbody>
+    <tr><td style="width:230px" class="muted small">Connector</td>
+      <td><code>{{ connectors|join(', ') }}</code></td></tr>
+    <tr><td class="muted small">Records available</td><td>{{ e.context_records }}</td></tr>
+    <tr><td class="muted small">Records in analysis scope</td><td>{{ e.closure_size }}</td></tr>
+    <tr><td class="muted small">Context snapshot</td><td><code>{{ e.snapshot }}</code></td></tr>
+    <tr><td class="muted small">Analysis mode</td><td>{{ e.execution_mode }}</td></tr>
+    <tr><td class="muted small">Duration</td><td>{{ e.duration_ms }} ms</td></tr>
+    <tr><td class="muted small">Evidence gate</td>
+      <td>{{ detail.gate.removed|length }} removed &middot;
+          {{ detail.gate.downgraded|length }} downgraded &middot;
+          {{ e.fabricated_citations }} fabricated citations</td></tr>
+    </tbody>
+  </table>
+  <p class="tiny muted" style="margin-top:11px">
+    Identical retrieval produces an identical snapshot id. That reproducibility is what
+    makes this analysis auditable rather than merely plausible.
+  </p>
+</div>
+{% endif %}
+{% endblock %}

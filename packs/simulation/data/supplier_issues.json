@@ -1,0 +1,87 @@
+{
+  "entity": "SupplierIssue",
+  "description": "Supplier corrective action requests.",
+  "data_classification": "SIMULATED ENTERPRISE ARTEFACT - not OEM, customer or proprietary data",
+  "generated_by": "scripts/generate_simulation.py",
+  "seed": 20260823,
+  "records": [
+    {
+      "id": "SI-001",
+      "supplier_id": "SUP-012",
+      "quality_issue_id": "QI-011",
+      "title": "Radial stiffness below specification on transferred bushing production",
+      "scar_level": "Level 2",
+      "raised_date": "2026-06-05",
+      "due_date": "2026-07-05",
+      "status": "open",
+      "containment_confirmed": true,
+      "root_cause_accepted": false,
+      "record_type": "SupplierIssue"
+    },
+    {
+      "id": "SI-002",
+      "supplier_id": "SUP-006",
+      "quality_issue_id": "QI-006",
+      "title": "Through-wall porosity in cooling plate braze joints",
+      "scar_level": "Level 3",
+      "raised_date": "2026-06-15",
+      "due_date": "2026-07-15",
+      "status": "open",
+      "containment_confirmed": true,
+      "root_cause_accepted": false,
+      "record_type": "SupplierIssue"
+    },
+    {
+      "id": "SI-003",
+      "supplier_id": "SUP-012",
+      "quality_issue_id": "QI-025",
+      "title": "Incomplete PPAP submission for the transferred production location",
+      "scar_level": "Level 1",
+      "raised_date": "2026-05-16",
+      "due_date": "2026-06-16",
+      "status": "open",
+      "containment_confirmed": false,
+      "root_cause_accepted": false,
+      "record_type": "SupplierIssue"
+    },
+    {
+      "id": "SI-004",
+      "supplier_id": "SUP-010",
+      "quality_issue_id": "QI-007",
+      "title": "Brake judder associated with the revised friction compound",
+      "scar_level": "Level 2",
+      "raised_date": "2026-07-14",
+      "due_date": "2026-08-14",
+      "status": "open",
+      "containment_confirmed": false,
+      "root_cause_accepted": false,
+      "record_type": "SupplierIssue"
+    },
+    {
+      "id": "SI-005",
+      "supplier_id": "SUP-010",
+      "quality_issue_id": "QI-020",
+      "title": "Rolling resistance above allocation on the 20 inch tyre specification",
+      "scar_level": "Level 1",
+      "raised_date": "2026-07-08",
+      "due_date": "2026-08-08",
+      "status": "open",
+      "containment_confirmed": false,
+      "root_cause_accepted": false,
+      "record_type": "SupplierIssue"
+    },
+    {
+      "id": "SI-006",
+      "supplier_id": "SUP-004",
+      "quality_issue_id": "QI-013",
+      "title": "DC charge contactor open state not confirmed after fast charge",
+      "scar_level": "Level 3",
+      "raised_date": "2026-07-20",
+      "due_date": "2026-08-20",
+      "status": "open",
+      "containment_confirmed": true,
+      "root_cause_accepted": false,
+      "record_type": "SupplierIssue"
+    }
+  ]
+}

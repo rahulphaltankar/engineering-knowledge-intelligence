@@ -1,0 +1,369 @@
+{
+  "entity": "Signal",
+  "description": "Vehicle signal catalogue for telemetry and diagnostics.",
+  "data_classification": "SIMULATED ENTERPRISE ARTEFACT - not OEM, customer or proprietary data",
+  "generated_by": "scripts/generate_simulation.py",
+  "seed": 20260823,
+  "records": [
+    {
+      "id": "SIG-001",
+      "path": "Vehicle.Powertrain.TractionBattery.StateOfCharge.Current",
+      "unit": "percent",
+      "nominal_rate_hz": 10,
+      "system_id": "SYS-001",
+      "record_type": "Signal",
+      "naming_convention": "Follows COVESA VSS naming convention (SRC-007). No VSS file content is copied."
+    },
+    {
+      "id": "SIG-002",
+      "path": "Vehicle.Powertrain.TractionBattery.Temperature.Max",
+      "unit": "celsius",
+      "nominal_rate_hz": 1,
+      "system_id": "SYS-001",
+      "record_type": "Signal",
+      "naming_convention": "Follows COVESA VSS naming convention (SRC-007). No VSS file content is copied."
+    },
+    {
+      "id": "SIG-003",
+      "path": "Vehicle.Powertrain.TractionBattery.Temperature.Min",
+      "unit": "celsius",
+      "nominal_rate_hz": 1,
+      "system_id": "SYS-001",
+      "record_type": "Signal",
+      "naming_convention": "Follows COVESA VSS naming convention (SRC-007). No VSS file content is copied."
+    },
+    {
+      "id": "SIG-004",
+      "path": "Vehicle.Powertrain.TractionBattery.CurrentCurrent",
+      "unit": "ampere",
+      "nominal_rate_hz": 100,
+      "system_id": "SYS-001",
+      "record_type": "Signal",
+      "naming_convention": "Follows COVESA VSS naming convention (SRC-007). No VSS file content is copied."
+    },
+    {
+      "id": "SIG-005",
+      "path": "Vehicle.Powertrain.TractionBattery.CurrentVoltage",
+      "unit": "volt",
+      "nominal_rate_hz": 100,
+      "system_id": "SYS-001",
+      "record_type": "Signal",
+      "naming_convention": "Follows COVESA VSS naming convention (SRC-007). No VSS file content is copied."
+    },
+    {
+      "id": "SIG-006",
+      "path": "Vehicle.Powertrain.TractionBattery.StateOfHealth",
+      "unit": "percent",
+      "nominal_rate_hz": 0.1,
+      "system_id": "SYS-001",
+      "record_type": "Signal",
+      "naming_convention": "Follows COVESA VSS naming convention (SRC-007). No VSS file content is copied."
+    },
+    {
+      "id": "SIG-007",
+      "path": "Vehicle.Powertrain.TractionBattery.CellVoltage.Delta",
+      "unit": "millivolt",
+      "nominal_rate_hz": 10,
+      "system_id": "SYS-001",
+      "record_type": "Signal",
+      "naming_convention": "Follows COVESA VSS naming convention (SRC-007). No VSS file content is copied."
+    },
+    {
+      "id": "SIG-008",
+      "path": "Vehicle.Powertrain.TractionBattery.PowerLimit.Discharge",
+      "unit": "kilowatt",
+      "nominal_rate_hz": 20,
+      "system_id": "SYS-001",
+      "record_type": "Signal",
+      "naming_convention": "Follows COVESA VSS naming convention (SRC-007). No VSS file content is copied."
+    },
+    {
+      "id": "SIG-009",
+      "path": "Vehicle.Powertrain.TractionBattery.PowerLimit.Charge",
+      "unit": "kilowatt",
+      "nominal_rate_hz": 20,
+      "system_id": "SYS-001",
+      "record_type": "Signal",
+      "naming_convention": "Follows COVESA VSS naming convention (SRC-007). No VSS file content is copied."
+    },
+    {
+      "id": "SIG-010",
+      "path": "Vehicle.Powertrain.TractionBattery.Thermal.CoolantInletTemperature",
+      "unit": "celsius",
+      "nominal_rate_hz": 5,
+      "system_id": "SYS-002",
+      "record_type": "Signal",
+      "naming_convention": "Follows COVESA VSS naming convention (SRC-007). No VSS file content is copied."
+    },
+    {
+      "id": "SIG-011",
+      "path": "Vehicle.Powertrain.TractionBattery.Thermal.CoolantOutletTemperature",
+      "unit": "celsius",
+      "nominal_rate_hz": 5,
+      "system_id": "SYS-002",
+      "record_type": "Signal",
+      "naming_convention": "Follows COVESA VSS naming convention (SRC-007). No VSS file content is copied."
+    },
+    {
+      "id": "SIG-012",
+      "path": "Vehicle.Powertrain.TractionBattery.Thermal.PumpDutyCycle",
+      "unit": "percent",
+      "nominal_rate_hz": 5,
+      "system_id": "SYS-002",
+      "record_type": "Signal",
+      "naming_convention": "Follows COVESA VSS naming convention (SRC-007). No VSS file content is copied."
+    },
+    {
+      "id": "SIG-013",
+      "path": "Vehicle.Powertrain.TractionBattery.Thermal.ChillerActive",
+      "unit": "boolean",
+      "nominal_rate_hz": 5,
+      "system_id": "SYS-002",
+      "record_type": "Signal",
+      "naming_convention": "Follows COVESA VSS naming convention (SRC-007). No VSS file content is copied."
+    },
+    {
+      "id": "SIG-014",
+      "path": "Vehicle.Powertrain.TractionBattery.Charging.ChargeRate",
+      "unit": "kilowatt",
+      "nominal_rate_hz": 10,
+      "system_id": "SYS-003",
+      "record_type": "Signal",
+      "naming_convention": "Follows COVESA VSS naming convention (SRC-007). No VSS file content is copied."
+    },
+    {
+      "id": "SIG-015",
+      "path": "Vehicle.Powertrain.TractionBattery.Charging.InletTemperature",
+      "unit": "celsius",
+      "nominal_rate_hz": 5,
+      "system_id": "SYS-003",
+      "record_type": "Signal",
+      "naming_convention": "Follows COVESA VSS naming convention (SRC-007). No VSS file content is copied."
+    },
+    {
+      "id": "SIG-016",
+      "path": "Vehicle.Powertrain.TractionBattery.Charging.SessionState",
+      "unit": "string",
+      "nominal_rate_hz": 1,
+      "system_id": "SYS-003",
+      "record_type": "Signal",
+      "naming_convention": "Follows COVESA VSS naming convention (SRC-007). No VSS file content is copied."
+    },
+    {
+      "id": "SIG-017",
+      "path": "Vehicle.Powertrain.ElectricMotor.Speed",
+      "unit": "rpm",
+      "nominal_rate_hz": 100,
+      "system_id": "SYS-004",
+      "record_type": "Signal",
+      "naming_convention": "Follows COVESA VSS naming convention (SRC-007). No VSS file content is copied."
+    },
+    {
+      "id": "SIG-018",
+      "path": "Vehicle.Powertrain.ElectricMotor.Torque",
+      "unit": "newtonmetre",
+      "nominal_rate_hz": 100,
+      "system_id": "SYS-004",
+      "record_type": "Signal",
+      "naming_convention": "Follows COVESA VSS naming convention (SRC-007). No VSS file content is copied."
+    },
+    {
+      "id": "SIG-019",
+      "path": "Vehicle.Powertrain.ElectricMotor.Temperature.Stator",
+      "unit": "celsius",
+      "nominal_rate_hz": 5,
+      "system_id": "SYS-004",
+      "record_type": "Signal",
+      "naming_convention": "Follows COVESA VSS naming convention (SRC-007). No VSS file content is copied."
+    },
+    {
+      "id": "SIG-020",
+      "path": "Vehicle.Powertrain.ElectricMotor.Inverter.Temperature",
+      "unit": "celsius",
+      "nominal_rate_hz": 10,
+      "system_id": "SYS-004",
+      "record_type": "Signal",
+      "naming_convention": "Follows COVESA VSS naming convention (SRC-007). No VSS file content is copied."
+    },
+    {
+      "id": "SIG-021",
+      "path": "Vehicle.Powertrain.ElectricMotor.DerateFactor",
+      "unit": "percent",
+      "nominal_rate_hz": 10,
+      "system_id": "SYS-004",
+      "record_type": "Signal",
+      "naming_convention": "Follows COVESA VSS naming convention (SRC-007). No VSS file content is copied."
+    },
+    {
+      "id": "SIG-022",
+      "path": "Vehicle.Chassis.Brake.PedalPosition",
+      "unit": "percent",
+      "nominal_rate_hz": 100,
+      "system_id": "SYS-005",
+      "record_type": "Signal",
+      "naming_convention": "Follows COVESA VSS naming convention (SRC-007). No VSS file content is copied."
+    },
+    {
+      "id": "SIG-023",
+      "path": "Vehicle.Chassis.Brake.RegenerativeTorque",
+      "unit": "newtonmetre",
+      "nominal_rate_hz": 100,
+      "system_id": "SYS-005",
+      "record_type": "Signal",
+      "naming_convention": "Follows COVESA VSS naming convention (SRC-007). No VSS file content is copied."
+    },
+    {
+      "id": "SIG-024",
+      "path": "Vehicle.Chassis.Brake.FrictionTorque.Front",
+      "unit": "newtonmetre",
+      "nominal_rate_hz": 100,
+      "system_id": "SYS-005",
+      "record_type": "Signal",
+      "naming_convention": "Follows COVESA VSS naming convention (SRC-007). No VSS file content is copied."
+    },
+    {
+      "id": "SIG-025",
+      "path": "Vehicle.Chassis.Brake.DiscTemperature.FrontLeft",
+      "unit": "celsius",
+      "nominal_rate_hz": 1,
+      "system_id": "SYS-005",
+      "record_type": "Signal",
+      "naming_convention": "Follows COVESA VSS naming convention (SRC-007). No VSS file content is copied."
+    },
+    {
+      "id": "SIG-026",
+      "path": "Vehicle.Chassis.Brake.ABSActive",
+      "unit": "boolean",
+      "nominal_rate_hz": 100,
+      "system_id": "SYS-005",
+      "record_type": "Signal",
+      "naming_convention": "Follows COVESA VSS naming convention (SRC-007). No VSS file content is copied."
+    },
+    {
+      "id": "SIG-027",
+      "path": "Vehicle.Chassis.SteeringWheel.Angle",
+      "unit": "degree",
+      "nominal_rate_hz": 100,
+      "system_id": "SYS-007",
+      "record_type": "Signal",
+      "naming_convention": "Follows COVESA VSS naming convention (SRC-007). No VSS file content is copied."
+    },
+    {
+      "id": "SIG-028",
+      "path": "Vehicle.Chassis.Steering.AssistTorque",
+      "unit": "newtonmetre",
+      "nominal_rate_hz": 100,
+      "system_id": "SYS-007",
+      "record_type": "Signal",
+      "naming_convention": "Follows COVESA VSS naming convention (SRC-007). No VSS file content is copied."
+    },
+    {
+      "id": "SIG-029",
+      "path": "Vehicle.Chassis.Axle.Row1.Wheel.Left.Tire.Pressure",
+      "unit": "kilopascal",
+      "nominal_rate_hz": 1,
+      "system_id": "SYS-016",
+      "record_type": "Signal",
+      "naming_convention": "Follows COVESA VSS naming convention (SRC-007). No VSS file content is copied."
+    },
+    {
+      "id": "SIG-030",
+      "path": "Vehicle.Chassis.Accelerometer.Vertical",
+      "unit": "metrepersecondsquared",
+      "nominal_rate_hz": 200,
+      "system_id": "SYS-006",
+      "record_type": "Signal",
+      "naming_convention": "Follows COVESA VSS naming convention (SRC-007). No VSS file content is copied."
+    },
+    {
+      "id": "SIG-031",
+      "path": "Vehicle.Cabin.HVAC.CompressorPower",
+      "unit": "kilowatt",
+      "nominal_rate_hz": 5,
+      "system_id": "SYS-010",
+      "record_type": "Signal",
+      "naming_convention": "Follows COVESA VSS naming convention (SRC-007). No VSS file content is copied."
+    },
+    {
+      "id": "SIG-032",
+      "path": "Vehicle.Cabin.HVAC.AmbientAirTemperature",
+      "unit": "celsius",
+      "nominal_rate_hz": 1,
+      "system_id": "SYS-010",
+      "record_type": "Signal",
+      "naming_convention": "Follows COVESA VSS naming convention (SRC-007). No VSS file content is copied."
+    },
+    {
+      "id": "SIG-033",
+      "path": "Vehicle.Cabin.HVAC.CabinTemperature",
+      "unit": "celsius",
+      "nominal_rate_hz": 1,
+      "system_id": "SYS-010",
+      "record_type": "Signal",
+      "naming_convention": "Follows COVESA VSS naming convention (SRC-007). No VSS file content is copied."
+    },
+    {
+      "id": "SIG-034",
+      "path": "Vehicle.CurrentLocation.Altitude",
+      "unit": "metre",
+      "nominal_rate_hz": 1,
+      "system_id": "SYS-017",
+      "record_type": "Signal",
+      "naming_convention": "Follows COVESA VSS naming convention (SRC-007). No VSS file content is copied."
+    },
+    {
+      "id": "SIG-035",
+      "path": "Vehicle.Speed",
+      "unit": "kilometreperhour",
+      "nominal_rate_hz": 50,
+      "system_id": "SYS-011",
+      "record_type": "Signal",
+      "naming_convention": "Follows COVESA VSS naming convention (SRC-007). No VSS file content is copied."
+    },
+    {
+      "id": "SIG-036",
+      "path": "Vehicle.TravelledDistance",
+      "unit": "kilometre",
+      "nominal_rate_hz": 1,
+      "system_id": "SYS-011",
+      "record_type": "Signal",
+      "naming_convention": "Follows COVESA VSS naming convention (SRC-007). No VSS file content is copied."
+    },
+    {
+      "id": "SIG-037",
+      "path": "Vehicle.Software.CalibrationId",
+      "unit": "string",
+      "nominal_rate_hz": 0.1,
+      "system_id": "SYS-011",
+      "record_type": "Signal",
+      "naming_convention": "Follows COVESA VSS naming convention (SRC-007). No VSS file content is copied."
+    },
+    {
+      "id": "SIG-038",
+      "path": "Vehicle.Software.BuildLevel",
+      "unit": "string",
+      "nominal_rate_hz": 0.1,
+      "system_id": "SYS-011",
+      "record_type": "Signal",
+      "naming_convention": "Follows COVESA VSS naming convention (SRC-007). No VSS file content is copied."
+    },
+    {
+      "id": "SIG-039",
+      "path": "Vehicle.LowVoltageBattery.CurrentVoltage",
+      "unit": "volt",
+      "nominal_rate_hz": 10,
+      "system_id": "SYS-018",
+      "record_type": "Signal",
+      "naming_convention": "Follows COVESA VSS naming convention (SRC-007). No VSS file content is copied."
+    },
+    {
+      "id": "SIG-040",
+      "path": "Vehicle.Diagnostics.ActiveDTCCount",
+      "unit": "count",
+      "nominal_rate_hz": 1,
+      "system_id": "SYS-008",
+      "record_type": "Signal",
+      "naming_convention": "Follows COVESA VSS naming convention (SRC-007). No VSS file content is copied."
+    }
+  ]
+}

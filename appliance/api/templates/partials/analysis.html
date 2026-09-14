@@ -1,0 +1,367 @@
+{% if not e.answerable %}
+<div class="panel">
+  <div class="panel-head"><h2>Result</h2></div>
+  <h3>The available context does not support an answer</h3>
+  <p class="muted small">This is a result, not an error. The appliance reports what it
+     could not establish rather than producing an answer it cannot support.</p>
+  <div class="note unknown stack" style="margin-top:10px">
+    {% for u in e.unknowns %}<div>{{ u }}</div>{% endfor %}
+  </div>
+</div>
+{% else %}
+{% set v = e.domain.vocabulary %}
+{% set knowledge = e.domain.presentation == 'knowledge' %}
+{% set k = e.knowledge %}
+
+<!-- ============ LEVEL 1 — EXECUTIVE ============ -->
+<div class="panel">
+  <div class="panel-head">
+    <h2>{{ v.change_heading }}</h2>
+    <span class="aside">{{ e.subject_id }} · status {{ e.subject_status }}</span>
+  </div>
+  <h3 style="margin-top:0">{{ e.subject_title }}</h3>
+  <p class="muted" style="margin:0 0 16px;max-width:82ch">{{ e.subject_description }}</p>
+
+  <div class="metrics">
+    <div class="metric">
+      <div class="v">{{ e.domains|length }}</div>
+      <div class="k">{{ v.affected_metric }}</div>
+    </div>
+    <div class="metric">
+      <div class="v">{{ e.cross_domain_count }}</div>
+      <div class="k">{{ v.cross_domain_metric }}</div>
+    </div>
+    <div class="metric attn">
+      <div class="v">{{ e.total_gaps }}</div>
+      <div class="k">{{ v.gaps_metric }}</div>
+    </div>
+    <div class="metric unk">
+      <div class="v">{{ e.unknowns|length }}</div>
+      <div class="k">Not established</div>
+    </div>
+    <div class="metric good">
+      <div class="v">{{ e.supported_findings }}</div>
+      <div class="k">Supported findings</div>
+    </div>
+  </div>
+  <p class="small muted" style="margin:11px 0 0">
+    <strong>{{ e.significance }} impact.</strong> {{ e.significance_note }}
+  </p>
+  {% if knowledge and k.classification %}
+  <div class="note" style="margin-top:14px">
+    <div class="row" style="justify-content:space-between">
+      <span><span class="faint tiny" style="text-transform:uppercase;letter-spacing:.06em">Classification</span>
+        &nbsp;<strong>{{ k.classification.label|capitalize }}</strong>
+        &nbsp;<code>{{ k.classification.baseline_basis }}</code> &rarr;
+        <code>{{ k.classification.proposed_basis }}</code></span>
+      <button class="ghost" hx-get="/explain/{{ k.classification.id }}"
+              hx-target="#why" hx-swap="innerHTML">Explain</button>
+    </div>
+    <div class="tiny muted" style="margin-top:4px">Affected areas:
+      {{ k.classification.affected_areas|join('; ') }}</div>
+    <div class="tiny muted">Existing conditions: {{ k.classification.existing_conditions|join(' · ') }}</div>
+  </div>
+  {% endif %}
+  {% if e.domain.disclaimer %}
+  <p class="tiny" style="color:var(--warn);margin:12px 0 0">{{ e.domain.disclaimer }}</p>
+  {% endif %}
+</div>
+
+{% if pipeline %}
+<div class="panel">
+  <div class="panel-head">
+    <h2>Evidence and reasoning trace</h2>
+    <span class="aside">Auditable derivation &mdash; each step populated from the stages that actually ran</span>
+  </div>
+  <div class="pipeline" id="pipeline">
+    {% include "partials/pipeline.html" %}
+  </div>
+</div>
+{% endif %}
+
+<div class="split">
+  <!-- WHAT IS AFFECTED -->
+  <div class="panel">
+    <div class="panel-head"><h2>{{ v.affected_heading }}</h2></div>
+    <div class="stack">
+      {% for d in e.domains %}
+      <div class="row" style="justify-content:space-between;gap:8px;
+           padding:9px 0;border-bottom:1px solid var(--line-soft)">
+        <div>
+          <div style="font-weight:580">{{ d.name }}</div>
+          <div class="tiny muted">
+            {% if d.direct %}Named directly in the change{% else %}
+            Reached through a {{ d.hops }}-step relationship path{% endif %}
+            {% if d.domain %}· {{ d.domain }}{% endif %}
+          </div>
+        </div>
+        <div class="row" style="gap:7px">
+          {% if not d.direct %}<span class="pill info">Cross-domain</span>{% endif %}
+          <button class="ghost" hx-get="/explain/{{ d.finding_id }}"
+                  hx-target="#why" hx-swap="innerHTML">Explain</button>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% if e.cross_domain_count %}
+    <p class="tiny muted" style="margin:12px 0 0">
+      Cross-domain impacts are reached only by following engineering relationships.
+      They are the consequences most often missed in manual change review.
+    </p>
+    {% endif %}
+  </div>
+
+  <!-- WHAT NEEDS ATTENTION -->
+  <div class="panel">
+    <div class="panel-head"><h2>{{ v.attention_heading }}</h2></div>
+    {% if e.attention %}
+    <div class="stack">
+      {% for a in e.attention %}
+      <div style="padding:10px 0;border-bottom:1px solid var(--line-soft)">
+        <div class="row" style="justify-content:space-between">
+          <span style="font-weight:580">{{ a.label }}</span>
+          <span class="pill {{ 'unknown' if a.gap_type == 'criterion_not_established' else 'warn' }}">
+            {{ a.count }}</span>
+        </div>
+        <div class="tiny muted" style="margin-top:3px">{{ a.detail }}</div>
+        <div class="tiny" style="margin-top:4px;color:var(--accent)">
+          Action: {{ a.action }}</div>
+      </div>
+      {% endfor %}
+    </div>
+    {% else %}
+    <p class="muted small">No verification gap was identified in the impacted scope.</p>
+    {% endif %}
+  </div>
+</div>
+
+{% if knowledge and k.requirements %}
+<!-- APPLICABLE REQUIREMENTS -->
+<div class="panel">
+  <div class="panel-head">
+    <h2>Applicable requirements</h2>
+    <span class="aside">Standards by identifier only &mdash; no clause text reproduced
+      {% if k.applicable_finding %}&nbsp;<button class="ghost" hx-get="/explain/{{ k.applicable_finding }}"
+        hx-target="#why" hx-swap="innerHTML">Explain</button>{% endif %}</span>
+  </div>
+  <div class="scroll">
+  <table>
+    <thead><tr><th>Requirement</th><th>Regulatory reference</th><th>Standards</th>
+      <th>Applicability</th><th>Status</th><th>Basis</th></tr></thead>
+    <tbody>
+    {% for r in k.requirements %}
+    <tr>
+      <td><code>{{ r.requirement }}</code><br><span class="small">{{ r.title }}</span></td>
+      <td class="small muted">{{ r.regulatory_reference }}</td>
+      <td class="small">{% for s in r.standards %}<code>{{ s.id }}</code> {{ s.identifier }}{% if not loop.last %}<br>{% endif %}{% endfor %}</td>
+      <td>{% if r.applicability == 'applies' %}<span class="pill ok">applies</span>
+          {% else %}<span class="pill unknown">{{ r.applicability|replace('_',' ') }}</span>{% endif %}</td>
+      <td class="small">{{ r.status }}</td>
+      <td class="small">{{ r.basis|replace('_',' ') }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  </div>
+</div>
+{% endif %}
+
+{% if knowledge and k.evidence_cards %}
+<!-- EVIDENCE AND TRANSFERABILITY -->
+<div class="panel">
+  <div class="panel-head">
+    <h2>Evidence retrieved &amp; transferability</h2>
+    <span class="aside">{{ k.transferable_count }} of {{ k.evidence_cards|length }} evidence items
+      transfer to the proposed basis</span>
+  </div>
+  <div class="cards">
+    {% for c in k.evidence_cards %}
+    <div class="ev-card {{ '' if c.transferable else 'blocked' }}">
+      <div class="row" style="justify-content:space-between;gap:6px">
+        <span><code>{{ c.id }}</code> <span class="tiny muted">{{ c.entity_type }}</span></span>
+        {% if c.transferable %}<span class="pill ok">Transferable</span>
+        {% else %}<span class="pill bad">Not transferable</span>{% endif %}
+      </div>
+      <div style="font-weight:570;margin:6px 0 5px;font-size:13.5px">{{ c.title }}</div>
+      <dl class="kv">
+        <dt>Status</dt><dd><span class="pill {{ 'ok' if c.status == 'pass' else 'warn' }}">{{ c.status|replace('_',' ') }}</span></dd>
+        <dt>Basis</dt><dd>{{ c.basis|replace('_',' ') }}</dd>
+        {% if c.test %}<dt>Verification</dt><dd><code>{{ c.test }}</code>
+          {% if c.criterion_established == false %}<span class="pill unknown">criterion not established</span>{% endif %}</dd>{% endif %}
+        {% if c.requirements %}<dt>Requirements</dt><dd>{{ c.requirements|join(', ') }}</dd>{% endif %}
+        {% if c.evidence_records %}<dt>Evidence records</dt><dd>{{ c.evidence_records|join(', ') }}</dd>{% endif %}
+        <dt>Classification</dt><dd><span class="pill {{ c.classification }}">{{ c.classification }}</span></dd>
+      </dl>
+      {% if c.reason %}<div class="note warn tiny" style="margin-top:8px">{{ c.reason }}</div>{% endif %}
+      <div class="meta">
+        Provenance: {{ c.provenance.connector_id }} / {{ c.provenance.source_object_id }}
+        &middot; {{ c.provenance.source_version }}<br>{{ c.provenance.data_classification }}
+      </div>
+      <button class="ghost" style="padding-left:0;margin-top:4px"
+              hx-get="/explain/{{ c.finding_id }}" hx-target="#why" hx-swap="innerHTML">Explain &amp; review</button>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endif %}
+
+<!-- WHAT ENGINEERING SHOULD DO -->
+<div class="panel">
+  <div class="panel-head"><h2>{{ v.actions_heading }}</h2></div>
+  {% if e.actions %}
+  <ol style="margin:0;padding-left:20px" class="stack">
+    {% for a in e.actions %}<li>{{ a }}</li>{% endfor %}
+  </ol>
+  {% else %}
+  <p class="muted small">No action is indicated by the current analysis.</p>
+  {% endif %}
+</div>
+
+<!-- WHAT IS NOT ESTABLISHED -->
+{% if e.unknowns %}
+<div class="panel">
+  <div class="panel-head">
+    <h2>{{ v.unknowns_heading }}</h2>
+    <span class="aside">Reported, never replaced with an assumption</span>
+  </div>
+  <div class="note unknown stack">
+    {% for u in e.unknowns %}<div>{{ u }}</div>{% endfor %}
+  </div>
+</div>
+{% endif %}
+
+<div id="why"></div>
+
+<div id="review-summary">
+  {% include "partials/review_summary.html" %}
+</div>
+
+<!-- ============ LEVEL 2 — ENGINEERING ============ -->
+<div class="panel">
+  <div class="panel-head">
+    <h2>Engineering detail</h2>
+    <span class="aside">{{ e.total_findings }} findings · {{ e.evidence_rows }} test results
+      examined · {{ e.risk_count }} risk findings</span>
+  </div>
+
+  {% if e.risks %}
+  <h3>{{ v.risk_heading }}</h3>
+  <table>
+    <thead><tr><th>Failure mode</th><th>Effect</th>
+      {% if v.risk_rating == 'priority' %}<th>Review priority</th>{% else %}<th>S</th><th>AP</th>{% endif %}
+      <th></th></tr></thead>
+    <tbody>
+    {% for r in e.risks %}
+    <tr>
+      <td><strong>{{ r.mode }}</strong><br><code>{{ r.id }}</code></td>
+      <td class="muted small">{{ r.effect }}</td>
+      {% if v.risk_rating == 'priority' %}<td>{{ r.action_priority }}</td>
+      {% else %}<td>{{ r.severity }}</td>
+      <td>{{ r.action_priority }}</td>{% endif %}
+      <td><button class="ghost" hx-get="/explain/{{ r.finding_id }}"
+                  hx-target="#why" hx-swap="innerHTML">Explain</button></td>
+    </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  {% endif %}
+
+  <details class="disclosure">
+    <summary>All findings, grouped by engineering concern</summary>
+    <div style="margin-top:14px">
+      {% for g in detail.groups %}
+      <h3>{{ g.title }}</h3>
+      <table>
+        <thead><tr><th style="width:52%">Finding</th><th>Classification</th>
+          <th>Confidence</th><th>Evidence</th><th>Review</th><th></th></tr></thead>
+        <tbody>
+        {% for f in g.findings %}
+        <tr>
+          <td>{{ f.statement }}</td>
+          <td><span class="pill {{ f.classification }}">{{ f.classification }}</span></td>
+          <td class="small muted">{{ f.confidence }} ({{ '%.2f'|format(f.confidence_score) }})</td>
+          <td class="small muted">{{ f.evidence_count }}</td>
+          {% set rv = reviews.current.get(f.id) if reviews else None %}
+          <td id="rv-{{ f.id }}">{% include "partials/review_pill.html" %}</td>
+          <td><button class="ghost" hx-get="/explain/{{ f.id }}"
+                      hx-target="#why" hx-swap="innerHTML">Explain</button></td>
+        </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+      {% endfor %}
+    </div>
+  </details>
+
+  <!-- ============ LEVEL 3 — TECHNICAL ============ -->
+  <details class="disclosure">
+    <summary>How the appliance reached this — orchestration, context and gate</summary>
+    <div style="margin-top:14px">
+      <h3>Orchestration stages executed</h3>
+      <table>
+        <thead><tr><th>Stage</th><th>Status</th><th>Time</th><th>Detail</th></tr></thead>
+        <tbody>
+        {% for s in detail.stages %}
+        <tr>
+          <td>{{ s.name }}</td>
+          <td><span class="pill {{ 'ok' if s.status == 'done' else 'warn' }}">{{ s.status }}</span></td>
+          <td class="mono small">{{ s.duration_ms }} ms</td>
+          <td class="small muted">{{ s.detail }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+
+      <h3>Specialists invoked</h3>
+      <table>
+        <thead><tr><th>Specialist</th><th>Findings</th><th>Backed by</th><th>Selected because</th></tr></thead>
+        <tbody>
+        {% for a in detail.activity %}
+        <tr>
+          <td><strong>{{ a.specialist }}</strong></td>
+          <td>{{ a.findings }}</td>
+          <td class="small muted">{{ a.attribution or '—' }}</td>
+          <td class="small muted">{{ a.rationale }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+
+      <h3>Engineering context retrieved</h3>
+      <p class="small muted">{{ e.context_records }} records available from the active
+        connector; {{ e.closure_size }} reached from <code>{{ e.subject_id }}</code>.
+        Snapshot <code>{{ e.snapshot }}</code>.</p>
+      <div class="small muted" style="line-height:2">
+        {% for t, n in detail.context_types.items() %}
+        <code>{{ t }} {{ n }}</code>&nbsp;
+        {% endfor %}
+      </div>
+
+      <h3>Evidence sufficiency gate</h3>
+      <p class="small">
+        {{ e.total_findings }} findings passed ·
+        {{ detail.gate.removed|length }} removed ·
+        {{ detail.gate.downgraded|length }} downgraded to ASSUMED ·
+        <strong>{{ e.fabricated_citations }}</strong> fabricated citations detected.
+      </p>
+      <p class="tiny muted">Every entity id cited by a finding is verified against the
+        retrieved context before that finding is shown. A claim whose evidence cannot
+        be verified is downgraded or removed.</p>
+    </div>
+  </details>
+</div>
+
+<!-- ============ OUTPUTS ============ -->
+<div class="panel">
+  <div class="panel-head">
+    <h2>{{ 'Verification & knowledge outputs' if knowledge else 'Engineering outputs' }}</h2>
+    <span class="aside">One intelligence context ·
+      {% if knowledge %}{{ outputs|length }} outputs relevant to {{ e.domain.label|lower }}
+      {% else %}{{ summary.total }} engineering deliverables{% endif %}
+      · {{ summary.executable }} available from this analysis</span>
+  </div>
+  {% include "partials/output_grid.html" %}
+</div>
+
+<div id="output"></div>
+{% endif %}

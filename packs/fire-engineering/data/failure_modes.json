@@ -1,0 +1,75 @@
+{
+  "entity": "FailureMode",
+  "description": "Fire hazards expressed as failure modes, with qualitative review priority.",
+  "data_classification": "SIMULATED — PUBLIC DEMONSTRATOR DATA",
+  "generated_by": "Engineering Knowledge Intelligence demonstrator",
+  "seed": 42,
+  "records": [
+    {
+      "id": "FFM-001",
+      "focus_id": "FSYS-001",
+      "failure_mode": "Smoke enters the single stair during evacuation",
+      "failure_effect": "Escape route compromised for occupants above the fire floor, including sleeping residents",
+      "failure_cause": "Stair protection and evacuation assumptions were made for awake, familiar office occupants",
+      "action_priority": "H",
+      "action_priority_method": "a qualitative review priority assigned in the SIMULATED dataset; it is not a quantified fire risk assessment",
+      "status": "open",
+      "record_type": "FailureMode"
+    },
+    {
+      "id": "FFM-002",
+      "focus_id": "FSYS-002",
+      "failure_mode": "Residents are not warned in time",
+      "failure_effect": "Delayed evacuation from the flats",
+      "failure_cause": "Detection and cause-and-effect were designed for office occupancy",
+      "action_priority": "H",
+      "action_priority_method": "a qualitative review priority assigned in the SIMULATED dataset; it is not a quantified fire risk assessment",
+      "status": "open",
+      "record_type": "FailureMode"
+    },
+    {
+      "id": "FFM-003",
+      "focus_id": "FCMP-003",
+      "failure_mode": "Fire and smoke spread from a flat into common circulation",
+      "failure_effect": "Common escape route becomes untenable",
+      "failure_cause": "Flat entrance doorsets not yet specified to a residential performance",
+      "action_priority": "H",
+      "action_priority_method": "a qualitative review priority assigned in the SIMULATED dataset; it is not a quantified fire risk assessment",
+      "status": "open",
+      "record_type": "FailureMode"
+    },
+    {
+      "id": "FFM-004",
+      "focus_id": "FSUB-003",
+      "failure_mode": "Compartment floor breached by new service penetrations",
+      "failure_effect": "Fire spread between Level 3 and adjacent storeys",
+      "failure_cause": "New drainage and ventilation penetrations for the flats not fire-stopped",
+      "action_priority": "M",
+      "action_priority_method": "a qualitative review priority assigned in the SIMULATED dataset; it is not a quantified fire risk assessment",
+      "status": "open",
+      "record_type": "FailureMode"
+    },
+    {
+      "id": "FFM-005",
+      "focus_id": "FSUB-003",
+      "failure_mode": "Fire in an unsprinklered flat grows beyond the fire size assumed in the strategy",
+      "failure_effect": "Greater smoke and heat challenge to compartmentation and escape",
+      "failure_cause": "Sprinklers are not fitted above Level 1",
+      "action_priority": "M",
+      "action_priority_method": "a qualitative review priority assigned in the SIMULATED dataset; it is not a quantified fire risk assessment",
+      "status": "open",
+      "record_type": "FailureMode"
+    },
+    {
+      "id": "FFM-006",
+      "focus_id": "FSYS-001",
+      "failure_mode": "Firefighting operations and escape conflict in the single stair",
+      "failure_effect": "Delayed firefighting and obstructed escape",
+      "failure_cause": "One stair serves both escape and firefighting access",
+      "action_priority": "M",
+      "action_priority_method": "a qualitative review priority assigned in the SIMULATED dataset; it is not a quantified fire risk assessment",
+      "status": "open",
+      "record_type": "FailureMode"
+    }
+  ]
+}

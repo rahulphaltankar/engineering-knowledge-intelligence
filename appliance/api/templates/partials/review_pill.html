@@ -1,0 +1,1 @@
+{% if rv and rv.decision == 'accepted' %}<span class="pill ok" title="{{ rv.reviewer }} · {{ rv.timestamp }}">Accepted</span>{% elif rv and rv.decision == 'rejected' %}<span class="pill bad" title="{{ rv.reviewer }} · {{ rv.timestamp }}: {{ rv.note }}">Rejected</span>{% else %}<span class="pill PLANNED">Pending review</span>{% endif %}

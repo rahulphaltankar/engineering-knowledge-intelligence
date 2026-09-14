@@ -1,0 +1,113 @@
+{% extends "fire/base.html" %}
+{% from "fire/_macros.html" import lbl with context %}
+{% block title %}{{ S.product_name }}{% endblock %}
+{% block body %}
+
+<div class="hero">
+  <div class="eyebrow">{{ S.notice_title }}</div>
+  <h1>{{ S.product_name }}</h1>
+  <p class="sub">{{ S.subtitle }}</p>
+  <p class="small" style="max-width:96ch;margin:0 0 6px">{{ S.ktp_context }}
+    This demonstrator explores how that problem could be approached: technical knowledge is
+    structured and connected, evidence is retrieved with its source, reasoning is exposed as an
+    auditable derivation, uncertainty is stated rather than filled in, and a fire engineer reviews
+    each finding.</p>
+  <p class="tiny muted" style="max-width:96ch;margin:0">{{ S.independence }}</p>
+</div>
+
+<div class="panel">
+  <div class="eyebrow">Demonstration scenario &middot; {{ hero.scenario_id if hero else S.hero_scenario }}</div>
+  <h3 style="margin:0">{{ hero.title if hero else '' }}</h3>
+  <p class="change-text">{{ hero.initial_input if hero else '' }}</p>
+  <div class="chain">
+    {% for s in S.narrative %}
+      <a href="/analyse-change#{{ s.anchor }}" title="{{ s.detail }}">{{ s.step }}</a>
+      {% if not loop.last %}<span class="arrow">&rarr;</span>{% endif %}
+    {% endfor %}
+  </div>
+  <div class="row" style="margin-top:16px">
+    <form method="post" action="/run/{{ S.hero_scenario }}">
+      <input type="hidden" name="next" value="/analyse-change">
+      <button class="primary" type="submit">Analyse this change</button>
+    </form>
+    {% if view %}
+    <a class="small" href="/analyse-change">Open the current analysis &rarr;</a>
+    <span class="small muted">{{ view.impacted|length }} fire-safety domains ·
+      {{ view.k.requirements|length }} requirements · {{ view.gaps|map(attribute='pairs')|map('length')|sum }} evidence gaps ·
+      {{ view.unknown_findings|length }} unknowns · {{ reviews.log|length }} review decisions</span>
+    {% else %}
+    <span class="small muted">Runs the real analysis pipeline on the synthetic corpus
+      ({{ record_count }} records).</span>
+    {% endif %}
+  </div>
+</div>
+
+<div class="panel">
+  <div class="panel-head">
+    <h2>Fire engineering domains</h2>
+    <span class="aside">Coverage computed from the synthetic corpus{% if view %}; highlighted where the change reaches{% endif %}</span>
+  </div>
+  <div class="grid3">
+    {% for d in domains %}
+    <div class="tile {{ '' if d.records else 'muted-tile' }}">
+      <div class="row" style="justify-content:space-between;gap:6px">
+        <h4>{{ d.name }}</h4>
+        {% if d.impacted %}<span class="pill bad">Impacted</span>
+        {% elif d.records %}<span class="pill info">In corpus</span>
+        {% else %}<span class="pill PLANNED">Not modelled</span>{% endif %}
+      </div>
+      <div class="d">{{ d.description }}</div>
+      {% if d.records %}<div class="tiny muted" style="margin-top:6px">{{ d.by_type|join(' · ') }}</div>{% endif %}
+      {% if d.note %}<div class="tiny" style="margin-top:6px;color:var(--unknown)">{{ d.note }}</div>{% endif %}
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+<div class="panel">
+  <div class="panel-head">
+    <h2>Knowledge sources</h2>
+    <span class="aside">Conceptual categories for this demonstrator &mdash; not a description of BB7's systems</span>
+  </div>
+  <div class="grid3">
+    {% for s in sources %}
+    <div class="tile {{ '' if s.represented else 'muted-tile' }}">
+      <div class="row" style="justify-content:space-between;gap:6px">
+        <h4>{{ s.name }}</h4>
+        {% if s.represented %}<span class="pill ok">{{ s.count }}</span>
+        {% else %}<span class="pill PLANNED">Conceptual</span>{% endif %}
+      </div>
+      <div class="d">{{ s.description }}</div>
+      <div class="tiny {{ 'muted' if s.represented else 'faint' }}" style="margin-top:6px">{{ s.status }}{% if s.ids %}:
+        {% for i in s.ids %}<code>{{ i }}</code> {% endfor %}{% if s.more %}+{{ s.more }}{% endif %}{% endif %}
+        {% if s.profiles %}: {{ s.profiles|join(', ') }}{% endif %}</div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+<div class="split">
+  <div class="panel">
+    <div class="panel-head"><h2>Intelligence capabilities</h2></div>
+    <div class="stack">
+      {% for c in S.capabilities %}
+      <div style="padding-bottom:8px;border-bottom:1px solid var(--line-soft)">
+        <a href="{{ c.page }}" style="font-weight:600">{{ c.name }}</a>
+        <div class="tiny muted">{{ c.description }}</div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  <div class="panel">
+    <div class="panel-head"><h2>Technical decision outputs</h2></div>
+    <div class="stack">
+      {% for o in S.outputs %}
+      <div style="padding-bottom:8px;border-bottom:1px solid var(--line-soft)">
+        <a href="{{ o.page }}{% if o.workflow and o.page == '/verification-plan' %}?output={{ o.workflow }}{% endif %}" style="font-weight:600">{{ o.name }}</a>
+        <div class="tiny muted">{{ o.description }}</div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endblock %}

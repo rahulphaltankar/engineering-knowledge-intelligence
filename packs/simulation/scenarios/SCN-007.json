@@ -1,0 +1,99 @@
+{
+  "scenario_id": "SCN-007",
+  "category": "Intermittent test failure",
+  "title": "Intermittent electromagnetic compatibility exceedance after a packaging-driven routing change",
+  "engineering_question": "A compliance test fails intermittently. What explains the intermittency, and what is the compliance exposure?",
+  "one_liner": "A compliance measurement fails intermittently. Investigate.",
+  "initial_input": "Full vehicle electromagnetic compatibility measurement shows an intermittent exceedance in one frequency band during DC charging. The exceedance is not reproducible on every run.",
+  "relevant_entities": {
+    "quality_issues": [
+      "QI-004"
+    ],
+    "engineering_changes": [
+      "ECR-007"
+    ],
+    "systems": [
+      "SYS-008",
+      "SYS-003"
+    ],
+    "subsystems": [
+      "SUB-024"
+    ],
+    "components": [
+      "COMP-043",
+      "COMP-044"
+    ],
+    "requirements": [
+      "REQ-006",
+      "REQ-090",
+      "REQ-091",
+      "REQ-092",
+      "REQ-093"
+    ],
+    "failure_modes": [
+      "FM-090",
+      "FM-091",
+      "FM-092",
+      "FM-240",
+      "FM-241"
+    ],
+    "tests": [
+      "TEST-090",
+      "TEST-091",
+      "TEST-092",
+      "TEST-093"
+    ],
+    "standards": [
+      "STD-014",
+      "STD-027",
+      "STD-028"
+    ],
+    "documents": [
+      "DOC-008",
+      "DOC-009"
+    ]
+  },
+  "expected_impacted_domains": [
+    "Electromagnetic compatibility approval",
+    "High voltage harness shielding and routing",
+    "Manufacturing routing control",
+    "Charging system operating mode interaction",
+    "Homologation timing"
+  ],
+  "expected_evidence": [
+    "TR-011",
+    "TR-012",
+    "TR-013",
+    "MEAS-016"
+  ],
+  "expected_reasoning_paths": [
+    "TR-012 and TR-013 both localise to the section re-routed by ECR-007, which converts a diffuse EMC problem into a specific design change consequence",
+    "Intermittency is explained by build-to-build routing variation - FM-240 is a process failure mode, not a design one",
+    "DOC-009 already recorded that EMC re-verification was required, so the process gap is that the required re-verification was not completed before the measurement",
+    "REQ-093 is still only in_review, which means the routing rule itself was not yet baselined when the change was implemented"
+  ],
+  "candidate_outputs": [
+    "Root Cause Analysis",
+    "5-Why",
+    "Fishbone Analysis",
+    "8D",
+    "Engineering Change Impact",
+    "Regression Impact Analysis",
+    "PFMEA Review",
+    "DFMEA Review",
+    "Evidence Gap Analysis",
+    "Corrective Action Plan",
+    "Compliance / Standards Impact",
+    "Risk Assessment",
+    "Test Strategy",
+    "Engineering Executive Summary",
+    "Engineering Decision Brief"
+  ],
+  "known_unknowns": [
+    "Per-vehicle routing records for the EMC test vehicles are not in the environment",
+    "Shield termination resistance history across builds is not available",
+    "Immunity margin after the routing change has not been measured"
+  ],
+  "data_classification": "SIMULATED ENTERPRISE ARTEFACT - not OEM, customer or proprietary data",
+  "connector": "SIMULATION"
+}

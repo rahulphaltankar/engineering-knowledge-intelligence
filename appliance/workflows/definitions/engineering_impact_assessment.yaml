@@ -1,0 +1,37 @@
+id: engineering_impact_assessment
+name: Engineering Impact Assessment
+description: >-
+  What the change means, what it affects, which requirements and failure modes
+  are in scope, and what remains unknown. Impact is derived from graph traversal,
+  so every impacted system carries the path that justifies its inclusion.
+category: Engineering understanding
+maturity: functional
+required_context_types:
+  - EngineeringChange
+  - System
+  - Requirement
+  - FailureMode
+upstream_skills:
+  - automotive-engineer
+  - dfmea-design
+sections:
+  - builder: executive_summary
+  - builder: impacted_systems
+  - builder: finding_list
+    params:
+      key: cross_domain
+      title: Cross-domain and concurrent-change findings
+      tags: [cross_domain, concurrent_change, mass_budget]
+  - builder: requirements_impact
+  - builder: risk_table
+  - builder: evidence_gaps
+  - builder: review_record
+  - builder: confidence_summary
+  - builder: unknowns
+validation_rules:
+  - required_sections_present
+  - no_fabricated_ids
+  - all_claims_cited
+  - unknowns_declared
+  - human_review_applied
+export_formats: [markdown, json]

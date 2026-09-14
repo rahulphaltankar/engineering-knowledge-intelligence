@@ -1,0 +1,47 @@
+{% extends "fire/base.html" %}
+{% from "fire/_macros.html" import explain, review_pill, no_analysis with context %}
+{% block title %}Engineering Review &middot; {{ S.product_name }}{% endblock %}
+{% block body %}
+<div class="page-head">
+  <h1>Engineering Review</h1>
+  <p>A fire engineer inspects each finding &mdash; its evidence, derivation, classification and
+     confidence &mdash; and accepts or rejects it with a reason. Rejected findings are withheld from
+     outputs and the verification actions they justified are held.</p>
+</div>
+
+<div class="panel tight" style="border-color:#f1d6c4;background:#fffaf6">
+  <strong>Demonstrator control.</strong> <span class="control-label">{{ review_label }}</span>
+  <div class="small muted">Reviewer names are self-declared. Decisions last for this browser session only.
+    This is not identity, competence verification, approval or sign-off.</div>
+</div>
+
+{% if not view %}{{ no_analysis('/review', 'Findings for review') }}{% else %}
+<div class="panel">
+  <div class="panel-head"><h2>Findings awaiting engineering review</h2>
+    <span class="aside">{{ view.findings|length }} findings from analysis of {{ view.subject.id }}</span></div>
+  <div class="scroll" style="max-height:560px">
+  <table>
+    <thead><tr><th style="width:56%">Finding</th><th>Classification</th><th>Confidence</th><th>State</th><th></th></tr></thead>
+    <tbody>
+    {% for f in view.findings %}
+    <tr>
+      <td class="small">{{ f.statement }}<div class="tiny faint">{{ f.id }} · {{ f.produced_by }}</div></td>
+      <td><span class="pill {{ f.classification }}">{{ f.classification }}</span></td>
+      <td class="small muted">{{ '%.2f'|format(f.confidence_score) }}</td>
+      <td id="rv-{{ f.id }}">{{ review_pill(f.review) }}</td>
+      <td>{{ explain(f.id, 'Review') }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  </div>
+</div>
+
+<div id="why"></div>
+
+<section class="panel" id="audit">
+  <div class="panel-head"><h2>Audit trail</h2><span class="aside control-label">{{ review_label }}</span></div>
+  <div id="review-summary">{% include "fire/partials/review_summary.html" %}</div>
+</section>
+{% endif %}
+{% endblock %}

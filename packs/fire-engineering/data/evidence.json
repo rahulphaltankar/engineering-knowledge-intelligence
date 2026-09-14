@@ -1,0 +1,102 @@
+{
+  "entity": "Evidence",
+  "description": "Evidence records derived from results and documents.",
+  "data_classification": "SIMULATED — PUBLIC DEMONSTRATOR DATA",
+  "generated_by": "Engineering Knowledge Intelligence demonstrator",
+  "seed": 42,
+  "records": [
+    {
+      "id": "FEV-001",
+      "evidence_type": "assessment_report",
+      "source_record_type": "TestResult",
+      "source_record_id": "FTR-001",
+      "title": "Stair capacity and evacuation assessment report",
+      "status": "pass",
+      "strength": "moderate",
+      "basis": "office",
+      "supports_requirements": [
+        "FREQ-001",
+        "FREQ-002"
+      ],
+      "recorded_date": "2024-03-14",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "FEV-002",
+      "evidence_type": "test_certificate",
+      "source_record_type": "TestResult",
+      "source_record_id": "FTR-002",
+      "title": "Fire alarm cause-and-effect test certificate (partial)",
+      "status": "inconclusive",
+      "strength": "weak",
+      "basis": "office",
+      "supports_requirements": [
+        "FREQ-005"
+      ],
+      "recorded_date": "2025-11-06",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "FEV-003",
+      "evidence_type": "inspection_record",
+      "source_record_type": "TestResult",
+      "source_record_id": "FTR-004",
+      "title": "Stair lobby fire doorset inspection record",
+      "status": "pass",
+      "strength": "strong",
+      "basis": "not_occupancy_dependent",
+      "supports_requirements": [
+        "FREQ-003"
+      ],
+      "recorded_date": "2026-02-18",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "FEV-004",
+      "evidence_type": "document_review",
+      "source_record_type": "TestResult",
+      "source_record_id": "FTR-005",
+      "title": "Compartment floor fire-resistance review record",
+      "status": "pass",
+      "strength": "strong",
+      "basis": "not_occupancy_dependent",
+      "supports_requirements": [
+        "FREQ-007"
+      ],
+      "recorded_date": "2026-01-22",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "FEV-005",
+      "evidence_type": "test_certificate",
+      "source_record_type": "TestResult",
+      "source_record_id": "FTR-008",
+      "title": "Dry rising main test certificate",
+      "status": "pass",
+      "strength": "strong",
+      "basis": "not_occupancy_dependent",
+      "supports_requirements": [
+        "FREQ-009"
+      ],
+      "recorded_date": "2025-09-10",
+      "record_type": "Evidence"
+    },
+    {
+      "id": "FEV-006",
+      "evidence_type": "fire_strategy",
+      "source_record_type": "Document",
+      "source_record_id": "FDOC-001",
+      "title": "Existing fire strategy (office use, simultaneous evacuation)",
+      "status": "current_for_previous_use",
+      "strength": "moderate",
+      "basis": "office",
+      "supports_requirements": [
+        "FREQ-001",
+        "FREQ-002",
+        "FREQ-005"
+      ],
+      "recorded_date": "2023-10-01",
+      "record_type": "Evidence"
+    }
+  ]
+}

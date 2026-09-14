@@ -1,0 +1,168 @@
+{
+  "entity": "VVActivity",
+  "description": "Verification activity packages.",
+  "data_classification": "SIMULATED ENTERPRISE ARTEFACT - not OEM, customer or proprietary data",
+  "generated_by": "scripts/generate_simulation.py",
+  "seed": 20260823,
+  "records": [
+    {
+      "id": "VER-001",
+      "activity_type": "verification",
+      "title": "HV battery design verification package",
+      "phase": "DV",
+      "scope": "system SYS-001",
+      "test_ids": [
+        "TEST-001",
+        "TEST-003",
+        "TEST-005",
+        "TEST-006",
+        "TEST-007",
+        "TEST-014",
+        "TEST-015"
+      ],
+      "status": "in_progress",
+      "planned_start": "2026-04-01",
+      "planned_end": "2026-09-30",
+      "owner_domain": "Battery",
+      "record_type": "VVActivity"
+    },
+    {
+      "id": "VER-002",
+      "activity_type": "verification",
+      "title": "Thermal management design verification package",
+      "phase": "DV",
+      "scope": "system SYS-002",
+      "test_ids": [
+        "TEST-002",
+        "TEST-008",
+        "TEST-030",
+        "TEST-031",
+        "TEST-032",
+        "TEST-033",
+        "TEST-034"
+      ],
+      "status": "in_progress",
+      "planned_start": "2026-05-01",
+      "planned_end": "2026-10-15",
+      "owner_domain": "Thermal",
+      "record_type": "VVActivity"
+    },
+    {
+      "id": "VER-003",
+      "activity_type": "verification",
+      "title": "Charging system design verification package",
+      "phase": "DV",
+      "scope": "system SYS-003",
+      "test_ids": [
+        "TEST-040",
+        "TEST-041",
+        "TEST-042",
+        "TEST-043",
+        "TEST-045",
+        "TEST-046"
+      ],
+      "status": "in_progress",
+      "planned_start": "2026-05-15",
+      "planned_end": "2026-10-30",
+      "owner_domain": "Charging",
+      "record_type": "VVActivity"
+    },
+    {
+      "id": "VER-004",
+      "activity_type": "verification",
+      "title": "Electric drive unit design verification package",
+      "phase": "DV",
+      "scope": "system SYS-004",
+      "test_ids": [
+        "TEST-050",
+        "TEST-051",
+        "TEST-052",
+        "TEST-053",
+        "TEST-054",
+        "TEST-055"
+      ],
+      "status": "in_progress",
+      "planned_start": "2026-04-15",
+      "planned_end": "2026-09-15",
+      "owner_domain": "EDU",
+      "record_type": "VVActivity"
+    },
+    {
+      "id": "VER-005",
+      "activity_type": "verification",
+      "title": "Brake system design verification package",
+      "phase": "DV",
+      "scope": "system SYS-005",
+      "test_ids": [
+        "TEST-060",
+        "TEST-061",
+        "TEST-062",
+        "TEST-063",
+        "TEST-064",
+        "TEST-065",
+        "TEST-066"
+      ],
+      "status": "in_progress",
+      "planned_start": "2026-05-20",
+      "planned_end": "2026-11-15",
+      "owner_domain": "Brakes",
+      "record_type": "VVActivity"
+    },
+    {
+      "id": "VER-006",
+      "activity_type": "verification",
+      "title": "Chassis design verification package",
+      "phase": "DV",
+      "scope": "system SYS-006",
+      "test_ids": [
+        "TEST-070",
+        "TEST-071",
+        "TEST-073",
+        "TEST-074",
+        "TEST-075",
+        "TEST-076"
+      ],
+      "status": "in_progress",
+      "planned_start": "2026-03-15",
+      "planned_end": "2026-10-01",
+      "owner_domain": "Chassis",
+      "record_type": "VVActivity"
+    },
+    {
+      "id": "VER-007",
+      "activity_type": "verification",
+      "title": "EMC design verification package",
+      "phase": "DV",
+      "scope": "system SYS-008",
+      "test_ids": [
+        "TEST-090",
+        "TEST-091",
+        "TEST-092",
+        "TEST-093"
+      ],
+      "status": "in_progress",
+      "planned_start": "2026-06-01",
+      "planned_end": "2026-10-20",
+      "owner_domain": "EMC",
+      "record_type": "VVActivity"
+    },
+    {
+      "id": "VER-008",
+      "activity_type": "verification",
+      "title": "Steering functional safety verification package",
+      "phase": "DV",
+      "scope": "system SYS-007",
+      "test_ids": [
+        "TEST-080",
+        "TEST-081",
+        "TEST-082",
+        "TEST-083"
+      ],
+      "status": "in_progress",
+      "planned_start": "2026-04-01",
+      "planned_end": "2026-11-30",
+      "owner_domain": "Safety",
+      "record_type": "VVActivity"
+    }
+  ]
+}

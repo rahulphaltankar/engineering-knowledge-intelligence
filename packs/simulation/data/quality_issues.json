@@ -1,0 +1,491 @@
+{
+  "entity": "QualityIssue",
+  "description": "Quality issues from field, plant, supplier and test origins.",
+  "data_classification": "SIMULATED ENTERPRISE ARTEFACT - not OEM, customer or proprietary data",
+  "generated_by": "scripts/generate_simulation.py",
+  "seed": 20260823,
+  "records": [
+    {
+      "id": "QI-001",
+      "title": "Thermal derate during sustained high ambient highway operation",
+      "description": "Multiple DV vehicles report a reduction in available drive power after approximately 40 to 55 minutes of sustained highway operation at ambient temperatures above 35 degC. Derate is accompanied by battery maximum cell temperature approaching the protection threshold.",
+      "origin": "vehicle_test",
+      "detected_at": "DV test fleet, hot climate route",
+      "severity": "major",
+      "occurrence_count": 14,
+      "affected_component_ids": [
+        "COMP-012",
+        "COMP-049",
+        "COMP-015"
+      ],
+      "system_id": "SYS-002",
+      "programme_id": "PRG-001",
+      "status": "open",
+      "opened_date": "2026-07-02",
+      "containment_state": "not_required",
+      "record_type": "QualityIssue"
+    },
+    {
+      "id": "QI-002",
+      "title": "DC fast charge time exceeds target at low ambient",
+      "description": "DC charge time from 10 to 80 percent measured at 8 degC ambient exceeds the target by 9 to 14 minutes across three vehicles.",
+      "origin": "vehicle_test",
+      "detected_at": "DV test fleet, cold chamber",
+      "severity": "major",
+      "occurrence_count": 6,
+      "affected_component_ids": [
+        "COMP-015",
+        "COMP-004"
+      ],
+      "system_id": "SYS-003",
+      "programme_id": "PRG-001",
+      "status": "open",
+      "opened_date": "2026-06-19",
+      "containment_state": "not_required",
+      "record_type": "QualityIssue"
+    },
+    {
+      "id": "QI-003",
+      "title": "Charge session termination at high state of charge on specific stations",
+      "description": "Charging sessions terminate unexpectedly above 70 percent state of charge on a subset of DC charging stations. Vehicle side logs show a current step change immediately preceding termination.",
+      "origin": "field",
+      "detected_at": "Fleet trial, three markets",
+      "severity": "major",
+      "occurrence_count": 23,
+      "affected_component_ids": [
+        "COMP-020",
+        "COMP-018"
+      ],
+      "system_id": "SYS-003",
+      "programme_id": "PRG-001",
+      "status": "open",
+      "opened_date": "2026-06-28",
+      "containment_state": "in_place",
+      "record_type": "QualityIssue"
+    },
+    {
+      "id": "QI-004",
+      "title": "Intermittent radiated emissions failure in the 76 to 108 MHz band",
+      "description": "Full vehicle EMC measurement shows an intermittent exceedance in the FM broadcast band during DC charging. The exceedance is not reproducible on every run.",
+      "origin": "vehicle_test",
+      "detected_at": "EMC chamber",
+      "severity": "critical",
+      "occurrence_count": 4,
+      "affected_component_ids": [
+        "COMP-043",
+        "COMP-044"
+      ],
+      "system_id": "SYS-008",
+      "programme_id": "PRG-001",
+      "status": "open",
+      "opened_date": "2026-07-21",
+      "containment_state": "not_required",
+      "record_type": "QualityIssue"
+    },
+    {
+      "id": "QI-005",
+      "title": "Front suspension knock noise on rough road surfaces",
+      "description": "Knock or clonk noise reported from the front suspension over sharp road inputs. Reported on vehicles built after week 22.",
+      "origin": "field",
+      "detected_at": "Fleet trial",
+      "severity": "major",
+      "occurrence_count": 31,
+      "affected_component_ids": [
+        "COMP-035",
+        "COMP-034"
+      ],
+      "system_id": "SYS-006",
+      "programme_id": "PRG-001",
+      "status": "open",
+      "opened_date": "2026-06-08",
+      "containment_state": "in_place",
+      "record_type": "QualityIssue"
+    },
+    {
+      "id": "QI-006",
+      "title": "Cooling plate coolant leak found at pack assembly",
+      "description": "Two cooling plates rejected at pack final assembly leak test. Both traced to the same supplier production week.",
+      "origin": "plant",
+      "detected_at": "Pack assembly line, leak test station",
+      "severity": "critical",
+      "occurrence_count": 2,
+      "affected_component_ids": [
+        "COMP-012"
+      ],
+      "system_id": "SYS-001",
+      "programme_id": "PRG-001",
+      "status": "open",
+      "opened_date": "2026-06-14",
+      "containment_state": "in_place",
+      "record_type": "QualityIssue"
+    },
+    {
+      "id": "QI-007",
+      "title": "Brake judder reported after 8000 km",
+      "description": "Steering wheel vibration under moderate braking from 100 km/h reported on early DV vehicles with the revised friction compound.",
+      "origin": "field",
+      "detected_at": "Fleet trial",
+      "severity": "major",
+      "occurrence_count": 11,
+      "affected_component_ids": [
+        "COMP-029",
+        "COMP-028"
+      ],
+      "system_id": "SYS-005",
+      "programme_id": "PRG-001",
+      "status": "open",
+      "opened_date": "2026-07-11",
+      "containment_state": "not_required",
+      "record_type": "QualityIssue"
+    },
+    {
+      "id": "QI-008",
+      "title": "Low speed brake squeal",
+      "description": "Audible squeal during low speed braking, more frequent in humid conditions and after overnight parking.",
+      "origin": "field",
+      "detected_at": "Fleet trial",
+      "severity": "minor",
+      "occurrence_count": 27,
+      "affected_component_ids": [
+        "COMP-029"
+      ],
+      "system_id": "SYS-005",
+      "programme_id": "PRG-001",
+      "status": "open",
+      "opened_date": "2026-06-30",
+      "containment_state": "not_required",
+      "record_type": "QualityIssue"
+    },
+    {
+      "id": "QI-009",
+      "title": "Cell voltage spread growth after extended parking",
+      "description": "Cell voltage spread exceeds the expected value after vehicles are parked for more than 14 days.",
+      "origin": "field",
+      "detected_at": "Fleet trial",
+      "severity": "major",
+      "occurrence_count": 9,
+      "affected_component_ids": [
+        "COMP-005",
+        "COMP-004"
+      ],
+      "system_id": "SYS-001",
+      "programme_id": "PRG-001",
+      "status": "closed",
+      "opened_date": "2026-05-22",
+      "containment_state": "not_required",
+      "record_type": "QualityIssue"
+    },
+    {
+      "id": "QI-010",
+      "title": "Continuous power shortfall on extended gradient",
+      "description": "Vehicles show power reduction during sustained gradient climbing before the expected thermal limit is reached.",
+      "origin": "vehicle_test",
+      "detected_at": "DV test fleet, mountain route",
+      "severity": "major",
+      "occurrence_count": 8,
+      "affected_component_ids": [
+        "COMP-024",
+        "COMP-025"
+      ],
+      "system_id": "SYS-004",
+      "programme_id": "PRG-001",
+      "status": "open",
+      "opened_date": "2026-06-25",
+      "containment_state": "not_required",
+      "record_type": "QualityIssue"
+    },
+    {
+      "id": "QI-011",
+      "title": "Bushing radial stiffness out of specification at incoming inspection",
+      "description": "Incoming inspection identified a batch of front lower control arm bushings with radial stiffness below the lower specification limit.",
+      "origin": "supplier",
+      "detected_at": "Incoming inspection",
+      "severity": "major",
+      "occurrence_count": 240,
+      "affected_component_ids": [
+        "COMP-035"
+      ],
+      "system_id": "SYS-006",
+      "programme_id": "PRG-001",
+      "status": "open",
+      "opened_date": "2026-06-05",
+      "containment_state": "in_place",
+      "record_type": "QualityIssue"
+    },
+    {
+      "id": "QI-012",
+      "title": "Busbar weld resistance high on module line",
+      "description": "In-process weld monitoring flagged elevated resistance on a sequence of modules.",
+      "origin": "plant",
+      "detected_at": "Module assembly line",
+      "severity": "major",
+      "occurrence_count": 17,
+      "affected_component_ids": [
+        "COMP-002"
+      ],
+      "system_id": "SYS-001",
+      "programme_id": "PRG-001",
+      "status": "closed",
+      "opened_date": "2026-04-16",
+      "containment_state": "in_place",
+      "record_type": "QualityIssue"
+    },
+    {
+      "id": "QI-013",
+      "title": "HV contactor fails to open after DC fast charge",
+      "description": "One vehicle reported a fault indicating the DC charge contactor did not confirm the open state after a fast charge session.",
+      "origin": "field",
+      "detected_at": "Fleet trial",
+      "severity": "critical",
+      "occurrence_count": 1,
+      "affected_component_ids": [
+        "COMP-019",
+        "COMP-006"
+      ],
+      "system_id": "SYS-003",
+      "programme_id": "PRG-001",
+      "status": "open",
+      "opened_date": "2026-07-19",
+      "containment_state": "in_place",
+      "record_type": "QualityIssue"
+    },
+    {
+      "id": "QI-014",
+      "title": "Compressor tonal noise audible in cabin at idle",
+      "description": "Tonal noise from the HVAC compressor audible in the cabin when the vehicle is stationary with high cooling demand.",
+      "origin": "vehicle_test",
+      "detected_at": "NVH evaluation",
+      "severity": "minor",
+      "occurrence_count": 5,
+      "affected_component_ids": [
+        "COMP-050"
+      ],
+      "system_id": "SYS-010",
+      "programme_id": "PRG-001",
+      "status": "open",
+      "opened_date": "2026-07-28",
+      "containment_state": "not_required",
+      "record_type": "QualityIssue"
+    },
+    {
+      "id": "QI-015",
+      "title": "Range estimate optimistic in cold conditions",
+      "description": "Displayed range over-estimates achievable range by 12 to 18 percent at ambient temperatures below 5 degC.",
+      "origin": "field",
+      "detected_at": "Fleet trial",
+      "severity": "major",
+      "occurrence_count": 42,
+      "affected_component_ids": [
+        "COMP-004"
+      ],
+      "system_id": "SYS-011",
+      "programme_id": "PRG-001",
+      "status": "open",
+      "opened_date": "2026-06-12",
+      "containment_state": "not_required",
+      "record_type": "QualityIssue"
+    },
+    {
+      "id": "QI-016",
+      "title": "Rear subframe boom noise at 45 to 60 km/h on coarse surfaces",
+      "description": "Low frequency boom noise reported on coarse asphalt in the 45 to 60 km/h range.",
+      "origin": "vehicle_test",
+      "detected_at": "NVH evaluation",
+      "severity": "major",
+      "occurrence_count": 7,
+      "affected_component_ids": [
+        "COMP-039"
+      ],
+      "system_id": "SYS-006",
+      "programme_id": "PRG-001",
+      "status": "open",
+      "opened_date": "2026-06-02",
+      "containment_state": "not_required",
+      "record_type": "QualityIssue"
+    },
+    {
+      "id": "QI-017",
+      "title": "Pack pressure equalisation vent blocked",
+      "description": "One pack rejected at end of line for failing the vent flow verification.",
+      "origin": "plant",
+      "detected_at": "Pack assembly line",
+      "severity": "major",
+      "occurrence_count": 1,
+      "affected_component_ids": [
+        "COMP-011"
+      ],
+      "system_id": "SYS-001",
+      "programme_id": "PRG-001",
+      "status": "closed",
+      "opened_date": "2026-05-09",
+      "containment_state": "in_place",
+      "record_type": "QualityIssue"
+    },
+    {
+      "id": "QI-018",
+      "title": "Catalyst light-off time increased on aged parts",
+      "description": "Aged catalyst samples with the reduced loading show longer light-off time than the previous formulation.",
+      "origin": "bench_test",
+      "detected_at": "Emissions laboratory",
+      "severity": "critical",
+      "occurrence_count": 3,
+      "affected_component_ids": [
+        "COMP-059"
+      ],
+      "system_id": "SYS-015",
+      "programme_id": "PRG-003",
+      "status": "open",
+      "opened_date": "2026-06-20",
+      "containment_state": "not_required",
+      "record_type": "QualityIssue"
+    },
+    {
+      "id": "QI-019",
+      "title": "Steering assist response slower than target on the successor microcontroller",
+      "description": "Bench measurement on the prototype ECU with the successor microcontroller shows assist response outside the specified time constant.",
+      "origin": "bench_test",
+      "detected_at": "Steering test bench",
+      "severity": "major",
+      "occurrence_count": 4,
+      "affected_component_ids": [
+        "COMP-042",
+        "COMP-041"
+      ],
+      "system_id": "SYS-007",
+      "programme_id": "PRG-001",
+      "status": "open",
+      "opened_date": "2026-08-04",
+      "containment_state": "not_required",
+      "record_type": "QualityIssue"
+    },
+    {
+      "id": "QI-020",
+      "title": "Tyre rolling resistance above allocation on the 20 inch specification",
+      "description": "Bench measurement of the 255/45R20 tyre shows rolling resistance above the vehicle energy budget allocation.",
+      "origin": "bench_test",
+      "detected_at": "Tyre laboratory",
+      "severity": "major",
+      "occurrence_count": 3,
+      "affected_component_ids": [
+        "COMP-064"
+      ],
+      "system_id": "SYS-016",
+      "programme_id": "PRG-001",
+      "status": "open",
+      "opened_date": "2026-07-06",
+      "containment_state": "not_required",
+      "record_type": "QualityIssue"
+    },
+    {
+      "id": "QI-021",
+      "title": "12V supply dip during simultaneous high load events",
+      "description": "Bench measurement shows LV supply voltage dipping below the specified band during simultaneous steering, braking and thermal system demand after the battery relocation proposal.",
+      "origin": "bench_test",
+      "detected_at": "LV power bench",
+      "severity": "major",
+      "occurrence_count": 2,
+      "affected_component_ids": [
+        "COMP-067",
+        "COMP-045",
+        "COMP-066"
+      ],
+      "system_id": "SYS-018",
+      "programme_id": "PRG-001",
+      "status": "open",
+      "opened_date": "2026-07-30",
+      "containment_state": "not_required",
+      "record_type": "QualityIssue"
+    },
+    {
+      "id": "QI-022",
+      "title": "Cell voltage sense intermittent on vibration test",
+      "description": "Cell voltage sense signal dropout observed during pack vibration testing.",
+      "origin": "bench_test",
+      "detected_at": "Pack vibration rig",
+      "severity": "major",
+      "occurrence_count": 3,
+      "affected_component_ids": [
+        "COMP-003"
+      ],
+      "system_id": "SYS-001",
+      "programme_id": "PRG-001",
+      "status": "open",
+      "opened_date": "2026-05-18",
+      "containment_state": "not_required",
+      "record_type": "QualityIssue"
+    },
+    {
+      "id": "QI-023",
+      "title": "Bus load exceeded limit on the integration bench",
+      "description": "Communication bus utilisation exceeded the defined limit after the addition of new charge control signals.",
+      "origin": "bench_test",
+      "detected_at": "Integration bench",
+      "severity": "minor",
+      "occurrence_count": 1,
+      "affected_component_ids": [
+        "COMP-046"
+      ],
+      "system_id": "SYS-008",
+      "programme_id": "PRG-001",
+      "status": "open",
+      "opened_date": "2026-08-01",
+      "containment_state": "not_required",
+      "record_type": "QualityIssue"
+    },
+    {
+      "id": "QI-024",
+      "title": "Seal compression set after thermal cycling",
+      "description": "Pack perimeter seal shows compression set beyond the qualification limit after accelerated thermal cycling.",
+      "origin": "bench_test",
+      "detected_at": "Environmental laboratory",
+      "severity": "critical",
+      "occurrence_count": 2,
+      "affected_component_ids": [
+        "COMP-010"
+      ],
+      "system_id": "SYS-001",
+      "programme_id": "PRG-001",
+      "status": "open",
+      "opened_date": "2026-04-28",
+      "containment_state": "not_required",
+      "record_type": "QualityIssue"
+    },
+    {
+      "id": "QI-025",
+      "title": "Supplier PPAP submission incomplete for transferred bushing",
+      "description": "PPAP submission for the transferred bushing production location is missing process capability evidence for the cure process.",
+      "origin": "supplier",
+      "detected_at": "Supplier quality review",
+      "severity": "major",
+      "occurrence_count": 1,
+      "affected_component_ids": [
+        "COMP-035"
+      ],
+      "system_id": "SYS-006",
+      "programme_id": "PRG-001",
+      "status": "open",
+      "opened_date": "2026-05-16",
+      "containment_state": "not_required",
+      "record_type": "QualityIssue"
+    },
+    {
+      "id": "QI-026",
+      "title": "Ride comfort target exceeded with the 20 inch wheel specification",
+      "description": "Vertical ride acceleration on reference surfaces exceeds the comfort target with the 20 inch wheel and tyre combination.",
+      "origin": "vehicle_test",
+      "detected_at": "Ride evaluation",
+      "severity": "major",
+      "occurrence_count": 4,
+      "affected_component_ids": [
+        "COMP-062",
+        "COMP-064"
+      ],
+      "system_id": "SYS-006",
+      "programme_id": "PRG-001",
+      "status": "open",
+      "opened_date": "2026-07-16",
+      "containment_state": "not_required",
+      "record_type": "QualityIssue"
+    }
+  ]
+}

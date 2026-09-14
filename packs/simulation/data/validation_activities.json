@@ -1,0 +1,98 @@
+{
+  "entity": "VVActivity",
+  "description": "Validation activity packages.",
+  "data_classification": "SIMULATED ENTERPRISE ARTEFACT - not OEM, customer or proprietary data",
+  "generated_by": "scripts/generate_simulation.py",
+  "seed": 20260823,
+  "records": [
+    {
+      "id": "VAL-001",
+      "activity_type": "validation",
+      "title": "Vehicle level hot climate validation",
+      "phase": "PV",
+      "scope": "vehicle VEH-001 and VEH-002",
+      "test_ids": [
+        "TEST-002",
+        "TEST-030",
+        "TEST-100",
+        "TEST-101"
+      ],
+      "status": "planned",
+      "planned_start": "2026-09-01",
+      "planned_end": "2027-01-31",
+      "owner_domain": "Vehicle integration",
+      "record_type": "VVActivity"
+    },
+    {
+      "id": "VAL-002",
+      "activity_type": "validation",
+      "title": "Vehicle level durability validation",
+      "phase": "PV",
+      "scope": "vehicle VEH-001",
+      "test_ids": [
+        "TEST-064",
+        "TEST-070",
+        "TEST-004"
+      ],
+      "status": "planned",
+      "planned_start": "2026-09-15",
+      "planned_end": "2027-04-30",
+      "owner_domain": "Durability",
+      "record_type": "VVActivity"
+    },
+    {
+      "id": "VAL-003",
+      "activity_type": "validation",
+      "title": "Homologation validation package",
+      "phase": "PV",
+      "scope": "vehicle VEH-001 and VEH-002",
+      "test_ids": [
+        "TEST-060",
+        "TEST-083",
+        "TEST-090",
+        "TEST-121",
+        "TEST-122",
+        "TEST-124",
+        "TEST-150"
+      ],
+      "status": "planned",
+      "planned_start": "2026-11-01",
+      "planned_end": "2027-05-31",
+      "owner_domain": "Homologation",
+      "record_type": "VVActivity"
+    },
+    {
+      "id": "VAL-004",
+      "activity_type": "validation",
+      "title": "Charging interoperability validation",
+      "phase": "PV",
+      "scope": "vehicle VEH-001",
+      "test_ids": [
+        "TEST-044",
+        "TEST-041"
+      ],
+      "status": "in_progress",
+      "planned_start": "2026-06-15",
+      "planned_end": "2026-12-15",
+      "owner_domain": "Charging",
+      "record_type": "VVActivity"
+    },
+    {
+      "id": "VAL-005",
+      "activity_type": "validation",
+      "title": "Emissions in-service conformity validation",
+      "phase": "PV",
+      "scope": "vehicle VEH-004",
+      "test_ids": [
+        "TEST-140",
+        "TEST-142",
+        "TEST-143"
+      ],
+      "status": "in_progress",
+      "planned_start": "2026-02-01",
+      "planned_end": "2026-10-31",
+      "owner_domain": "Emissions",
+      "record_type": "VVActivity"
+    }
+  ]
+}

@@ -1,0 +1,411 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/engineering-intelligence-simulation/relationships.schema.json",
+  "title": "Simulated Engineering Environment - Relationship Schema",
+  "description": "Directed edges connecting entity records. This graph is what makes change-impact, traceability and regression reasoning possible.",
+  "type": "object",
+  "properties": {
+    "source_type": {
+      "type": "string",
+      "enum": [
+        "Component",
+        "Configuration",
+        "CorrectiveAction",
+        "Document",
+        "EngineeringChange",
+        "Evidence",
+        "FMEA",
+        "FailureMode",
+        "Measurement",
+        "NCR",
+        "Programme",
+        "QualityIssue",
+        "Requirement",
+        "Risk",
+        "RootCause",
+        "Signal",
+        "Standard",
+        "Subsystem",
+        "Supplier",
+        "SupplierIssue",
+        "System",
+        "TestCase",
+        "TestResult",
+        "VVActivity",
+        "Vehicle"
+      ]
+    },
+    "source_id": {
+      "type": "string"
+    },
+    "relationship": {
+      "type": "string",
+      "enum": [
+        "ADDRESSED_BY",
+        "AFFECTS",
+        "ALLOCATED_TO",
+        "APPLIES_TO",
+        "ASSOCIATED_WITH",
+        "CAUSED_BY",
+        "CONTAINS",
+        "COVERS",
+        "CREATES",
+        "DERIVED_FROM",
+        "DESCRIBES",
+        "EVIDENCES",
+        "EXECUTED_ON",
+        "EXPOSES",
+        "HAS_COMPONENT",
+        "HAS_CONFIGURATION",
+        "HAS_FAILURE_MODE",
+        "HAS_ISSUE",
+        "HAS_SUBSYSTEM",
+        "HAS_VEHICLE",
+        "INCLUDES",
+        "MEASURES",
+        "PRODUCES",
+        "PROVIDES",
+        "RAISED_AGAINST",
+        "RAISED_FOR",
+        "RELATES_TO",
+        "SUPPORTS",
+        "VERIFIED_BY"
+      ]
+    },
+    "target_type": {
+      "type": "string",
+      "enum": [
+        "Component",
+        "Configuration",
+        "CorrectiveAction",
+        "Document",
+        "EngineeringChange",
+        "Evidence",
+        "FMEA",
+        "FailureMode",
+        "Measurement",
+        "NCR",
+        "Programme",
+        "QualityIssue",
+        "Requirement",
+        "Risk",
+        "RootCause",
+        "Signal",
+        "Standard",
+        "Subsystem",
+        "Supplier",
+        "SupplierIssue",
+        "System",
+        "TestCase",
+        "TestResult",
+        "VVActivity",
+        "Vehicle"
+      ]
+    },
+    "target_id": {
+      "type": "string"
+    },
+    "note": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Present when the edge was inferred rather than stated."
+    }
+  },
+  "required": [
+    "source_type",
+    "source_id",
+    "relationship",
+    "target_type",
+    "target_id"
+  ],
+  "additionalProperties": false,
+  "x-permitted-triples": [
+    {
+      "source": "Component",
+      "relationship": "HAS_FAILURE_MODE",
+      "target": "FailureMode"
+    },
+    {
+      "source": "Configuration",
+      "relationship": "APPLIES_TO",
+      "target": "Vehicle"
+    },
+    {
+      "source": "Document",
+      "relationship": "DESCRIBES",
+      "target": "Configuration"
+    },
+    {
+      "source": "Document",
+      "relationship": "DESCRIBES",
+      "target": "EngineeringChange"
+    },
+    {
+      "source": "Document",
+      "relationship": "DESCRIBES",
+      "target": "Programme"
+    },
+    {
+      "source": "Document",
+      "relationship": "DESCRIBES",
+      "target": "Subsystem"
+    },
+    {
+      "source": "Document",
+      "relationship": "DESCRIBES",
+      "target": "System"
+    },
+    {
+      "source": "Document",
+      "relationship": "DESCRIBES",
+      "target": "Vehicle"
+    },
+    {
+      "source": "Document",
+      "relationship": "SUPPORTS",
+      "target": "Evidence"
+    },
+    {
+      "source": "EngineeringChange",
+      "relationship": "AFFECTS",
+      "target": "Component"
+    },
+    {
+      "source": "EngineeringChange",
+      "relationship": "AFFECTS",
+      "target": "Requirement"
+    },
+    {
+      "source": "EngineeringChange",
+      "relationship": "AFFECTS",
+      "target": "Subsystem"
+    },
+    {
+      "source": "EngineeringChange",
+      "relationship": "AFFECTS",
+      "target": "System"
+    },
+    {
+      "source": "EngineeringChange",
+      "relationship": "RAISED_AGAINST",
+      "target": "Programme"
+    },
+    {
+      "source": "Evidence",
+      "relationship": "SUPPORTS",
+      "target": "FailureMode"
+    },
+    {
+      "source": "Evidence",
+      "relationship": "SUPPORTS",
+      "target": "Requirement"
+    },
+    {
+      "source": "FMEA",
+      "relationship": "CONTAINS",
+      "target": "FailureMode"
+    },
+    {
+      "source": "FMEA",
+      "relationship": "COVERS",
+      "target": "Subsystem"
+    },
+    {
+      "source": "FMEA",
+      "relationship": "COVERS",
+      "target": "System"
+    },
+    {
+      "source": "FailureMode",
+      "relationship": "CREATES",
+      "target": "Risk"
+    },
+    {
+      "source": "FailureMode",
+      "relationship": "VERIFIED_BY",
+      "target": "TestCase"
+    },
+    {
+      "source": "Measurement",
+      "relationship": "EVIDENCES",
+      "target": "QualityIssue"
+    },
+    {
+      "source": "Measurement",
+      "relationship": "EVIDENCES",
+      "target": "TestCase"
+    },
+    {
+      "source": "Measurement",
+      "relationship": "EVIDENCES",
+      "target": "TestResult"
+    },
+    {
+      "source": "Measurement",
+      "relationship": "MEASURES",
+      "target": "Signal"
+    },
+    {
+      "source": "Measurement",
+      "relationship": "SUPPORTS",
+      "target": "Evidence"
+    },
+    {
+      "source": "NCR",
+      "relationship": "RAISED_FOR",
+      "target": "QualityIssue"
+    },
+    {
+      "source": "Programme",
+      "relationship": "HAS_CONFIGURATION",
+      "target": "Configuration"
+    },
+    {
+      "source": "Programme",
+      "relationship": "HAS_VEHICLE",
+      "target": "Vehicle"
+    },
+    {
+      "source": "QualityIssue",
+      "relationship": "ADDRESSED_BY",
+      "target": "CorrectiveAction"
+    },
+    {
+      "source": "QualityIssue",
+      "relationship": "ASSOCIATED_WITH",
+      "target": "Component"
+    },
+    {
+      "source": "QualityIssue",
+      "relationship": "ASSOCIATED_WITH",
+      "target": "FailureMode"
+    },
+    {
+      "source": "QualityIssue",
+      "relationship": "ASSOCIATED_WITH",
+      "target": "System"
+    },
+    {
+      "source": "QualityIssue",
+      "relationship": "CAUSED_BY",
+      "target": "RootCause"
+    },
+    {
+      "source": "Requirement",
+      "relationship": "ALLOCATED_TO",
+      "target": "Component"
+    },
+    {
+      "source": "Requirement",
+      "relationship": "ALLOCATED_TO",
+      "target": "Subsystem"
+    },
+    {
+      "source": "Requirement",
+      "relationship": "ALLOCATED_TO",
+      "target": "System"
+    },
+    {
+      "source": "Requirement",
+      "relationship": "DERIVED_FROM",
+      "target": "Requirement"
+    },
+    {
+      "source": "Requirement",
+      "relationship": "VERIFIED_BY",
+      "target": "TestCase"
+    },
+    {
+      "source": "RootCause",
+      "relationship": "ADDRESSED_BY",
+      "target": "CorrectiveAction"
+    },
+    {
+      "source": "Standard",
+      "relationship": "APPLIES_TO",
+      "target": "FMEA"
+    },
+    {
+      "source": "Standard",
+      "relationship": "APPLIES_TO",
+      "target": "Requirement"
+    },
+    {
+      "source": "Standard",
+      "relationship": "APPLIES_TO",
+      "target": "TestCase"
+    },
+    {
+      "source": "Subsystem",
+      "relationship": "HAS_COMPONENT",
+      "target": "Component"
+    },
+    {
+      "source": "Subsystem",
+      "relationship": "HAS_FAILURE_MODE",
+      "target": "FailureMode"
+    },
+    {
+      "source": "Supplier",
+      "relationship": "HAS_ISSUE",
+      "target": "SupplierIssue"
+    },
+    {
+      "source": "Supplier",
+      "relationship": "PROVIDES",
+      "target": "Component"
+    },
+    {
+      "source": "SupplierIssue",
+      "relationship": "RELATES_TO",
+      "target": "QualityIssue"
+    },
+    {
+      "source": "System",
+      "relationship": "EXPOSES",
+      "target": "Signal"
+    },
+    {
+      "source": "System",
+      "relationship": "HAS_FAILURE_MODE",
+      "target": "FailureMode"
+    },
+    {
+      "source": "System",
+      "relationship": "HAS_SUBSYSTEM",
+      "target": "Subsystem"
+    },
+    {
+      "source": "TestCase",
+      "relationship": "PRODUCES",
+      "target": "TestResult"
+    },
+    {
+      "source": "TestResult",
+      "relationship": "EXECUTED_ON",
+      "target": "Configuration"
+    },
+    {
+      "source": "TestResult",
+      "relationship": "EXECUTED_ON",
+      "target": "Vehicle"
+    },
+    {
+      "source": "TestResult",
+      "relationship": "RELATES_TO",
+      "target": "QualityIssue"
+    },
+    {
+      "source": "TestResult",
+      "relationship": "SUPPORTS",
+      "target": "Evidence"
+    },
+    {
+      "source": "VVActivity",
+      "relationship": "INCLUDES",
+      "target": "TestCase"
+    }
+  ]
+}

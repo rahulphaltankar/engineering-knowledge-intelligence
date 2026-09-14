@@ -1,0 +1,101 @@
+{
+  "scenario_id": "SCN-012",
+  "category": "Obsolescence and functional safety",
+  "title": "Safety-relevant processing element replacement driven by obsolescence",
+  "engineering_question": "A safety-relevant electronic component must be replaced because of obsolescence. What safety work is required and can the existing evidence be reused?",
+  "one_liner": "A component must be replaced for lifecycle reasons. Determine the engineering and safety consequences.",
+  "initial_input": "Engineering change ECR-011 replaces a safety-relevant processing element with its successor device following an end-of-life notification from the semiconductor supplier.",
+  "relevant_entities": {
+    "engineering_changes": [
+      "ECR-011"
+    ],
+    "quality_issues": [
+      "QI-019"
+    ],
+    "systems": [
+      "SYS-007"
+    ],
+    "subsystems": [
+      "SUB-023",
+      "SUB-022"
+    ],
+    "components": [
+      "COMP-041",
+      "COMP-042"
+    ],
+    "suppliers": [
+      "SUP-013",
+      "SUP-014"
+    ],
+    "requirements": [
+      "REQ-080",
+      "REQ-081",
+      "REQ-082",
+      "REQ-083"
+    ],
+    "failure_modes": [
+      "FM-080",
+      "FM-081",
+      "FM-082"
+    ],
+    "tests": [
+      "TEST-080",
+      "TEST-081",
+      "TEST-082",
+      "TEST-083"
+    ],
+    "standards": [
+      "STD-001",
+      "STD-042",
+      "STD-018",
+      "STD-003"
+    ],
+    "documents": [
+      "DOC-014",
+      "DOC-015"
+    ]
+  },
+  "expected_impacted_domains": [
+    "Functional safety at the highest allocated integrity level",
+    "Steering performance and response",
+    "Approval and homologation evidence validity",
+    "Supplier qualification of the successor device",
+    "Cybersecurity implications of a changed processing element"
+  ],
+  "expected_evidence": [
+    "TR-036",
+    "TR-037",
+    "TR-038"
+  ],
+  "expected_reasoning_paths": [
+    "TR-038 passes but was executed on the incumbent device, so safety evidence for an ASIL D requirement is not transferable to a different processing element",
+    "TR-037 not_run means the diagnostic coverage analysis required by REQ-082 has not started, which is the critical path item",
+    "TR-036 already fails the performance requirement REQ-083 on the prototype, so there is a performance problem in addition to the unstarted safety work",
+    "DOC-015 is still draft and explicitly records the outstanding safety element analysis, so the change is not ready for approval"
+  ],
+  "candidate_outputs": [
+    "Engineering Change Impact",
+    "Risk Assessment",
+    "DFMEA Review",
+    "Failure Mode Analysis",
+    "Requirements Impact Analysis",
+    "Traceability Matrix",
+    "Verification Plan",
+    "Validation Plan",
+    "Test Strategy",
+    "Regression Impact Analysis",
+    "Evidence Gap Analysis",
+    "Design Review",
+    "Compliance / Standards Impact",
+    "Supplier Quality Assessment",
+    "Engineering Executive Summary",
+    "Engineering Decision Brief"
+  ],
+  "known_unknowns": [
+    "The successor device safety manual and assumed diagnostic coverage are not in the environment",
+    "Last time buy date and available inventory are not represented",
+    "Whether the successor device changes the cybersecurity attack surface is not assessed"
+  ],
+  "data_classification": "SIMULATED ENTERPRISE ARTEFACT - not OEM, customer or proprietary data",
+  "connector": "SIMULATION"
+}

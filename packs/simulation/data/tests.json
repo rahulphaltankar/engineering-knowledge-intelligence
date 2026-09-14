@@ -1,0 +1,2205 @@
+{
+  "entity": "TestCase",
+  "description": "Test cases with acceptance criteria and traceability.",
+  "data_classification": "SIMULATED ENTERPRISE ARTEFACT - not OEM, customer or proprietary data",
+  "generated_by": "scripts/generate_simulation.py",
+  "seed": 20260823,
+  "records": [
+    {
+      "id": "TEST-001",
+      "title": "Pack usable energy verification",
+      "method": "bench_test",
+      "level": "system",
+      "conditions": "Reference discharge at 25 degC ambient, conditioned pack, standard rate.",
+      "sample_size": 3,
+      "acceptance_criterion": "Usable energy not less than 78.0 kWh",
+      "acceptance_criterion_established": true,
+      "phase": "DV",
+      "verifies_requirements": [
+        "REQ-010"
+      ],
+      "addresses_failure_modes": [
+        "FM-001"
+      ],
+      "standard_ids": [
+        "STD-012"
+      ],
+      "responsible_domain": "Battery",
+      "derived_from_sources": [
+        "SRC-001"
+      ],
+      "record_type": "TestCase"
+    },
+    {
+      "id": "TEST-002",
+      "title": "Pack thermal performance at high ambient sustained load",
+      "method": "vehicle_test",
+      "level": "vehicle",
+      "conditions": "40 degC ambient, sustained 130 km/h highway load for 90 minutes, cabin cooling active.",
+      "sample_size": 2,
+      "acceptance_criterion": "No power derate before 75 minutes and maximum cell temperature within the qualified window",
+      "acceptance_criterion_established": true,
+      "phase": "DV",
+      "verifies_requirements": [
+        "REQ-011",
+        "REQ-030"
+      ],
+      "addresses_failure_modes": [
+        "FM-002",
+        "FM-030"
+      ],
+      "standard_ids": [],
+      "responsible_domain": "Thermal",
+      "derived_from_sources": [
+        "SRC-010"
+      ],
+      "record_type": "TestCase"
+    },
+    {
+      "id": "TEST-003",
+      "title": "Cell temperature gradient mapping",
+      "method": "bench_test",
+      "level": "system",
+      "conditions": "Instrumented pack, 2C discharge from full, coolant inlet at 25 degC.",
+      "sample_size": 2,
+      "acceptance_criterion": "Maximum cell to cell temperature difference not more than 6 K",
+      "acceptance_criterion_established": true,
+      "phase": "DV",
+      "verifies_requirements": [
+        "REQ-012"
+      ],
+      "addresses_failure_modes": [
+        "FM-003"
+      ],
+      "standard_ids": [],
+      "responsible_domain": "Thermal",
+      "derived_from_sources": [],
+      "record_type": "TestCase"
+    },
+    {
+      "id": "TEST-004",
+      "title": "Accelerated battery ageing durability",
+      "method": "durability_test",
+      "level": "system",
+      "conditions": "Cycling schedule representative of the qualified duty mix at elevated temperature.",
+      "sample_size": 6,
+      "acceptance_criterion": "TBD_PROGRAMME_SPECIFIC - equivalent cycle count and retained energy acceptance not established for the revised chemistry",
+      "acceptance_criterion_established": false,
+      "phase": "DV",
+      "verifies_requirements": [
+        "REQ-013"
+      ],
+      "addresses_failure_modes": [
+        "FM-004",
+        "FM-023"
+      ],
+      "standard_ids": [
+        "STD-010",
+        "STD-011"
+      ],
+      "responsible_domain": "Battery",
+      "derived_from_sources": [
+        "SRC-001",
+        "SRC-002",
+        "SRC-003"
+      ],
+      "record_type": "TestCase"
+    },
+    {
+      "id": "TEST-005",
+      "title": "Pack ingress protection verification",
+      "method": "environmental_test",
+      "level": "system",
+      "conditions": "Dust and water ingress exposure per the specified classification after thermal cycling.",
+      "sample_size": 2,
+      "acceptance_criterion": "No ingress beyond the specified classification and isolation resistance maintained",
+      "acceptance_criterion_established": true,
+      "phase": "DV",
+      "verifies_requirements": [
+        "REQ-015"
+      ],
+      "addresses_failure_modes": [
+        "FM-005"
+      ],
+      "standard_ids": [
+        "STD-026"
+      ],
+      "responsible_domain": "Battery",
+      "derived_from_sources": [],
+      "record_type": "TestCase"
+    },
+    {
+      "id": "TEST-006",
+      "title": "Pack seal compression set after thermal cycling",
+      "method": "environmental_test",
+      "level": "component",
+      "conditions": "Accelerated thermal cycling followed by compression set measurement.",
+      "sample_size": 8,
+      "acceptance_criterion": "Compression set within the qualification limit",
+      "acceptance_criterion_established": true,
+      "phase": "DV",
+      "verifies_requirements": [
+        "REQ-015"
+      ],
+      "addresses_failure_modes": [
+        "FM-005"
+      ],
+      "standard_ids": [],
+      "responsible_domain": "Battery",
+      "derived_from_sources": [],
+      "record_type": "TestCase"
+    },
+    {
+      "id": "TEST-007",
+      "title": "Pack pressure equalisation verification",
+      "method": "environmental_test",
+      "level": "system",
+      "conditions": "Altitude and temperature sweep across the specified operating envelope.",
+      "sample_size": 2,
+      "acceptance_criterion": "Internal pressure differential remains within the sealing capability",
+      "acceptance_criterion_established": true,
+      "phase": "DV",
+      "verifies_requirements": [
+        "REQ-016"
+      ],
+      "addresses_failure_modes": [
+        "FM-006"
+      ],
+      "standard_ids": [],
+      "responsible_domain": "Battery",
+      "derived_from_sources": [],
+      "record_type": "TestCase"
+    },
+    {
+      "id": "TEST-008",
+      "title": "Cooling plate heat rejection verification",
+      "method": "bench_test",
+      "level": "subsystem",
+      "conditions": "Defined thermal load applied at specified coolant inlet temperature and flow rate.",
+      "sample_size": 4,
+      "acceptance_criterion": "Heat rejection not less than the specified value",
+      "acceptance_criterion_established": true,
+      "phase": "DV",
+      "verifies_requirements": [
+        "REQ-022"
+      ],
+      "addresses_failure_modes": [
+        "FM-007"
+      ],
+      "standard_ids": [],
+      "responsible_domain": "Thermal",
+      "derived_from_sources": [],
+      "record_type": "TestCase"
+    },
+    {
+      "id": "TEST-009",
+      "title": "Cooling plate helium leak test",
+      "method": "bench_test",
+      "level": "component",
+      "conditions": "Helium leak detection at proof pressure after thermal and vibration conditioning.",
+      "sample_size": 100,
+      "acceptance_criterion": "Leak rate below the specified limit with zero failures",
+      "acceptance_criterion_established": true,
+      "phase": "PV",
+      "verifies_requirements": [
+        "REQ-023"
+      ],
+      "addresses_failure_modes": [
+        "FM-008",
+        "FM-201"
+      ],
+      "standard_ids": [],
+      "responsible_domain": "Battery",
+      "derived_from_sources": [],
+      "record_type": "TestCase"
+    },
+    {
+      "id": "TEST-010",
+      "title": "Cooling plate braze coverage sectioning",
+      "method": "destructive_test",
+      "level": "component",
+      "conditions": "Sectioning at defined locations and measurement of braze joint coverage.",
+      "sample_size": 5,
+      "acceptance_criterion": "Braze joint coverage not less than the specified minimum with no through-wall porosity",
+      "acceptance_criterion_established": true,
+      "phase": "PV",
+      "verifies_requirements": [
+        "REQ-130"
+      ],
+      "addresses_failure_modes": [
+        "FM-200",
+        "FM-201"
+      ],
+      "standard_ids": [],
+      "responsible_domain": "Supplier quality",
+      "derived_from_sources": [
+        "SRC-009"
+      ],
+      "record_type": "TestCase"
+    },
+    {
+      "id": "TEST-011",
+      "title": "Cooling plate flatness measurement",
+      "method": "measurement",
+      "level": "component",
+      "conditions": "Coordinate measurement of plate flatness after braze.",
+      "sample_size": 20,
+      "acceptance_criterion": "Flatness within the specified tolerance",
+      "acceptance_criterion_established": true,
+      "phase": "PV",
+      "verifies_requirements": [
+        "REQ-130"
+      ],
+      "addresses_failure_modes": [
+        "FM-202"
+      ],
+      "standard_ids": [],
+      "responsible_domain": "Supplier quality",
+      "derived_from_sources": [],
+      "record_type": "TestCase"
+    },
+    {
+      "id": "TEST-012",
+      "title": "Leak tester measurement system analysis",
+      "method": "msa",
+      "level": "process",
+      "conditions": "Gauge repeatability and reproducibility study using calibrated master leak parts.",
+      "sample_size": 30,
+      "acceptance_criterion": "Measurement system capability adequate for the specified leak rate limit",
+      "acceptance_criterion_established": true,
+      "phase": "PV",
+      "verifies_requirements": [
+        "REQ-131"
+      ],
+      "addresses_failure_modes": [
+        "FM-203"
+      ],
+      "standard_ids": [
+        "STD-043"
+      ],
+      "responsible_domain": "Quality",
+      "derived_from_sources": [
+        "SRC-019"
+      ],
+      "record_type": "TestCase"
+    },
+    {
+      "id": "TEST-013",
+      "title": "Busbar weld tensile and resistance verification",
+      "method": "destructive_test",
+      "level": "component",
+      "conditions": "Tensile pull and four-wire resistance measurement on welded busbar joints.",
+      "sample_size": 30,
+      "acceptance_criterion": "Tensile strength and resistance within specified limits",
+      "acceptance_criterion_established": true,
+      "phase": "PV",
+      "verifies_requirements": [
+        "REQ-133"
+      ],
+      "addresses_failure_modes": [
+        "FM-009",
+        "FM-210"
+      ],
+      "standard_ids": [],
+      "responsible_domain": "Manufacturing",
+      "derived_from_sources": [],
+      "record_type": "TestCase"
+    },
+    {
+      "id": "TEST-014",
+      "title": "Pack vibration durability with continuous monitoring",
+      "method": "durability_test",
+      "level": "system",
+      "conditions": "Vibration profile per the environmental specification with continuous cell voltage monitoring.",
+      "sample_size": 2,
+      "acceptance_criterion": "No signal dropout and no mechanical damage",
+      "acceptance_criterion_established": true,
+      "phase": "DV",
+      "verifies_requirements": [
+        "REQ-011"
+      ],
+      "addresses_failure_modes": [
+        "FM-010",
+        "FM-212"
+      ],
+      "standard_ids": [
+        "STD-024"
+      ],
+      "responsible_domain": "Battery",
+      "derived_from_sources": [],
+      "record_type": "TestCase"
+    },
+    {
+      "id": "TEST-015",
+      "title": "HV isolation resistance verification",
+      "method": "bench_test",
+      "level": "system",
+      "conditions": "Isolation measurement across the specified environmental conditions.",
+      "sample_size": 3,
+      "acceptance_criterion": "Isolation resistance above the qualified minimum",
+      "acceptance_criterion_established": true,
+      "phase": "DV",
+      "verifies_requirements": [
+        "REQ-014"
+      ],
+      "addresses_failure_modes": [
+        "FM-005"
+      ],
+      "standard_ids": [
+        "STD-009"
+      ],
+      "responsible_domain": "HV Safety",
+      "derived_from_sources": [],
+      "record_type": "TestCase"
+    },
+    {
+      "id": "TEST-016",
+      "title": "HV contactor endurance",
+      "method": "bench_test",
+      "level": "component",
+      "conditions": "Load switching cycles at the specified current and voltage.",
+      "sample_size": 6,
+      "acceptance_criterion": "Specified cycle count completed without welding or degradation beyond limit",
+      "acceptance_criterion_established": true,
+      "phase": "DV",
+      "verifies_requirements": [
+        "REQ-021"
+      ],
+      "addresses_failure_modes": [
+        "FM-043"
+      ],
+      "standard_ids": [],
+      "responsible_domain": "HV Safety",
+      "derived_from_sources": [],
+      "record_type": "TestCase"
+    },
+    {
+      "id": "TEST-020",
+      "title": "SOC estimation accuracy across temperature",
+      "method": "bench_test",
+      "level": "subsystem",
+      "conditions": "SOC estimation error measured against reference coulomb counting across the qualified temperature and current range.",
+      "sample_size": 3,
+      "acceptance_criterion": "Absolute error not more than 3 percent",
+      "acceptance_criterion_established": true,
+      "phase": "DV",
+      "verifies_requirements": [
+        "REQ-017"
+      ],
+      "addresses_failure_modes": [
+        "FM-020"
+      ],
+      "standard_ids": [],
+      "responsible_domain": "BMS",
+      "derived_from_sources": [],
+      "record_type": "TestCase"
+    },
+    {
+      "id": "TEST-021",
+      "title": "Cell overtemperature protection verification",
+      "method": "bench_test",
+      "level": "subsystem",
+      "conditions": "Controlled cell heating to the protection threshold with monitored response.",
+      "sample_size": 3,
+      "acceptance_criterion": "Protection engages within the specified response time at the defined threshold",
+      "acceptance_criterion_established": true,
+      "phase": "DV",
+      "verifies_requirements": [
+        "REQ-018"
+      ],
+      "addresses_failure_modes": [
+        "FM-021"
+      ],
+      "standard_ids": [
+        "STD-001"
+      ],
+      "responsible_domain": "BMS",
+      "derived_from_sources": [],
+      "record_type": "TestCase"
+    },
+    {
+      "id": "TEST-022",
+      "title": "Temperature sensor representativeness verification",
+      "method": "bench_test",
+      "level": "system",
+      "conditions": "Instrumented pack with reference thermocouples at predicted hot spots under worst-case load.",
+      "sample_size": 2,
+      "acceptance_criterion": "Monitored sensor tracks the hottest cell within the specified error",
+      "acceptance_criterion_established": true,
+      "phase": "DV",
+      "verifies_requirements": [
+        "REQ-018"
+      ],
+      "addresses_failure_modes": [
+        "FM-021"
+      ],
+      "standard_ids": [],
+      "responsible_domain": "Thermal",
+      "derived_from_sources": [],
+      "record_type": "TestCase"
+    },
+    {
+      "id": "TEST-023",
+      "title": "Cell balancing convergence verification",
+      "method": "bench_test",
+      "level": "subsystem",
+      "conditions": "Induced cell voltage spread balanced over the specified duration.",
+      "sample_size": 3,
+      "acceptance_criterion": "Spread reduced below the convergence limit within the specified duration",
+      "acceptance_criterion_established": true,
+      "phase": "PV",
+      "verifies_requirements": [
+        "REQ-019"
+      ],
+      "addresses_failure_modes": [
+        "FM-022"
+      ],
+      "standard_ids": [],
+      "responsible_domain": "BMS",
+      "derived_from_sources": [],
+      "record_type": "TestCase"
+    },
+    {
+      "id": "TEST-024",
+      "title": "Power limit map verification against cell capability",
+      "method": "bench_test",
+      "level": "subsystem",
+      "conditions": "Reported power limits compared with measured cell capability across temperature and SOC.",
+      "sample_size": 3,
+      "acceptance_criterion": "Reported limits within the specified margin of measured capability",
+      "acceptance_criterion_established": true,
+      "phase": "DV",
+      "verifies_requirements": [
+        "REQ-017"
+      ],
+      "addresses_failure_modes": [
+        "FM-024"
+      ],
+      "standard_ids": [],
+      "responsible_domain": "BMS",
+      "derived_from_sources": [],
+      "record_type": "TestCase"
+    },
+    {
+      "id": "TEST-025",
+      "title": "State of health estimate correlation",
+      "method": "vehicle_test",
+      "level": "system",
+      "conditions": "Periodic reference capacity measurement compared with the reported state of health.",
+      "sample_size": 6,
+      "acceptance_criterion": "TBD_PROGRAMME_SPECIFIC - correlation acceptance band not established for the revised chemistry",
+      "acceptance_criterion_established": false,
+      "phase": "PV",
+      "verifies_requirements": [
+        "REQ-013"
+      ],
+      "addresses_failure_modes": [
+        "FM-023"
+      ],
+      "standard_ids": [],
+      "responsible_domain": "BMS",
+      "derived_from_sources": [
+        "SRC-001"
+      ],
+      "record_type": "TestCase"
+    },
+    {
+      "id": "TEST-030",
+      "title": "Concurrent thermal load capability",
+      "method": "vehicle_test",
+      "level": "vehicle",
+      "conditions": "40 degC ambient with concurrent maximum cabin cooling demand and sustained high drive load.",
+      "sample_size": 2,
+      "acceptance_criterion": "Battery temperature remains within the operating window for the specified duration",
+      "acceptance_criterion_established": true,
+      "phase": "DV",
+      "verifies_requirements": [
+        "REQ-030",
+        "REQ-032"
+      ],
+      "addresses_failure_modes": [
+        "FM-030",
+        "FM-031"
+      ],
+      "standard_ids": [],
+      "responsible_domain": "Thermal",
+      "derived_from_sources": [
+        "SRC-010"
+      ],
+      "record_type": "TestCase"
+    },
+    {
+      "id": "TEST-031",
+      "title": "Thermal arbitration HIL verification",
+      "method": "hil_test",
+      "level": "subsystem",
+      "conditions": "Simulated concurrent demand scenarios exercising the arbitration priority scheme.",
+      "sample_size": 1,
+      "acceptance_criterion": "Arbitration follows the defined priority scheme in all scenarios",
+      "acceptance_criterion_established": true,
+      "phase": "DV",
+      "verifies_requirements": [
+        "REQ-032"
+      ],
+      "addresses_failure_modes": [
+        "FM-031"
+      ],
+      "standard_ids": [],
+      "responsible_domain": "Thermal",
+      "derived_from_sources": [],
+      "record_type": "TestCase"
+    },
+    {
+      "id": "TEST-032",
+      "title": "Coolant flow rate verification",
+      "method": "bench_test",
+      "level": "subsystem",
+      "conditions": "Flow measurement at rated pump duty and nominal circuit restriction.",
+      "sample_size": 5,
+      "acceptance_criterion": "Flow rate not less than the specified value",
+      "acceptance_criterion_established": true,
+      "phase": "DV",
+      "verifies_requirements": [
+        "REQ-033"
+      ],
+      "addresses_failure_modes": [
+        "FM-032"
+      ],
+      "standard_ids": [],
+      "responsible_domain": "Thermal",
+      "derived_from_sources": [],
+      "record_type": "TestCase"
+    },
+    {
+      "id": "TEST-033",
+      "title": "Diverter valve position fault detection",
+      "method": "bench_test",
+      "level": "component",
+      "conditions": "Induced valve stall with monitored diagnostic response.",
+      "sample_size": 3,
+      "acceptance_criterion": "Fault detected and reported within the specified time",
+      "acceptance_criterion_established": true,
+      "phase": "DV",
+      "verifies_requirements": [
+        "REQ-031"
+      ],
+      "addresses_failure_modes": [
+        "FM-033"
+      ],
+      "standard_ids": [
+        "STD-031"
+      ],
+      "responsible_domain": "Thermal",
+      "derived_from_sources": [],
+      "record_type": "TestCase"
+    },
+    {
+      "id": "TEST-034",
+      "title": "Thermal derate driver communication",
+      "method": "vehicle_test",
+      "level": "vehicle",
+      "conditions": "Induced thermal derate with observation of driver information and diagnostic recording.",
+      "sample_size": 2,
+      "acceptance_criterion": "Derate communicated to the driver and recorded in diagnostics",
+      "acceptance_criterion_established": true,
+      "phase": "DV",
+      "verifies_requirements": [
+        "REQ-031"
+      ],
+      "addresses_failure_modes": [
+        "FM-002"
+      ],
+      "standard_ids": [
+        "STD-031"
+      ],
+      "responsible_domain": "Thermal",
+      "derived_from_sources": [],
+      "record_type": "TestCase"
+    },
+    {
+      "id": "TEST-040",
+      "title": "DC fast charge time at reference conditions",
+      "method": "vehicle_test",
+      "level": "vehicle",
+      "conditions": "25 degC ambient, reference DC station, 10 to 80 percent state of charge.",
+      "sample_size": 3,
+      "acceptance_criterion": "Charge time not more than 32 minutes",
+      "acceptance_criterion_established": true,
+      "phase": "DV",
+      "verifies_requirements": [
+        "REQ-040"
+      ],
+      "addresses_failure_modes": [
+        "FM-040"
+      ],
+      "standard_ids": [],
+      "responsible_domain": "Charging",
+      "derived_from_sources": [
+        "SRC-003"
+      ],
+      "record_type": "TestCase"
+    },
+    {
+      "id": "TEST-041",
+      "title": "DC fast charge time at low ambient",
+      "method": "vehicle_test",
+      "level": "vehicle",
+      "conditions": "8 degC ambient soak, reference DC station, 10 to 80 percent state of charge.",
+      "sample_size": 3,
+      "acceptance_criterion": "TBD_PROGRAMME_SPECIFIC - low ambient charge time target not established",
+      "acceptance_criterion_established": false,
+      "phase": "DV",
+      "verifies_requirements": [
+        "REQ-040"
+      ],
+      "addresses_failure_modes": [
+        "FM-040"
+      ],
+      "standard_ids": [],
+      "responsible_domain": "Charging",
+      "derived_from_sources": [],
+      "record_type": "TestCase"
+    },
+    {
+      "id": "TEST-042",
+      "title": "Charge inlet contact temperature characterisation",
+      "method": "bench_test",
+      "level": "component",
+      "conditions": "Sustained maximum current with instrumented inlet contacts at elevated ambient.",
+      "sample_size": 4,
+      "acceptance_criterion": "Contact temperature remains below the specified protection threshold",
+      "acceptance_criterion_established": true,
+      "phase": "DV",
+      "verifies_requirements": [
+        "REQ-042",
+        "REQ-043"
+      ],
+      "addresses_failure_modes": [
+        "FM-041"
+      ],
+      "standard_ids": [
+        "STD-033"
+      ],
+      "responsible_domain": "Charging",
+      "derived_from_sources": [],
+      "record_type": "TestCase"
+    },
+    {
+      "id": "TEST-043",
+      "title": "Charge current derate ramp verification",
+      "method": "bench_test",
+      "level": "subsystem",
+      "conditions": "Induced derate condition with measurement of current ramp profile.",
+      "sample_size": 3,
+      "acceptance_criterion": "Ramp profile within the defined rate limits",
+      "acceptance_criterion_established": true,
+      "phase": "DV",
+      "verifies_requirements": [
+        "REQ-044"
+      ],
+      "addresses_failure_modes": [
+        "FM-042"
+      ],
+      "standard_ids": [
+        "STD-032"
+      ],
+      "responsible_domain": "Charging",
+      "derived_from_sources": [],
+      "record_type": "TestCase"
+    },
+    {
+      "id": "TEST-044",
+      "title": "Charging interoperability campaign",
+      "method": "interoperability_test",
+      "level": "vehicle",
+      "conditions": "Charging sessions across a representative population of DC charging stations.",
+      "sample_size": 40,
+      "acceptance_criterion": "TBD_PROGRAMME_SPECIFIC - station population coverage and pass rate target not established",
+      "acceptance_criterion_established": false,
+      "phase": "PV",
+      "verifies_requirements": [
+        "REQ-041",
+        "REQ-044"
+      ],
+      "addresses_failure_modes": [
+        "FM-042"
+      ],
+      "standard_ids": [
+        "STD-032"
+      ],
+      "responsible_domain": "Charging",
+      "derived_from_sources": [],
+      "record_type": "TestCase"
+    },
+    {
+      "id": "TEST-045",
+      "title": "DC charge contactor open state confirmation",
+      "method": "bench_test",
+      "level": "component",
+      "conditions": "Repeated high current interruption followed by open state verification.",
+      "sample_size": 6,
+      "acceptance_criterion": "Open state confirmed on every cycle with no contact welding",
+      "acceptance_criterion_established": true,
+      "phase": "DV",
+      "verifies_requirements": [
+        "REQ-020"
+      ],
+      "addresses_failure_modes": [
+        "FM-043"
+      ],
+      "standard_ids": [],
+      "responsible_domain": "HV Safety",
+      "derived_from_sources": [],
+      "record_type": "TestCase"
+    },
+    {
+      "id": "TEST-046",
+      "title": "AC charging power verification at temperature",
+      "method": "bench_test",
+      "level": "subsystem",
+      "conditions": "AC charge power measured across the qualified ambient range.",
+      "sample_size": 3,
+      "acceptance_criterion": "Rated 11 kW delivered at nominal supply within the qualified range",
+      "acceptance_criterion_established": true,
+      "phase": "DV",
+      "verifies_requirements": [
+        "REQ-045"
+      ],
+      "addresses_failure_modes": [
+        "FM-044"
+      ],
+      "standard_ids": [],
+      "responsible_domain": "Charging",
+      "derived_from_sources": [],
+      "record_type": "TestCase"
+    },
+    {
+      "id": "TEST-050",
+      "title": "Peak power verification",
+      "method": "bench_test",
+      "level": "system",
+      "conditions": "Peak power from thermally conditioned start state.",
+      "sample_size": 3,
+      "acceptance_criterion": "Specified peak power delivered for the defined duration",
+      "acceptance_criterion_established": true,
+      "phase": "DV",
+      "verifies_requirements": [
+        "REQ-050"
+      ],
+      "addresses_failure_modes": [
+        "FM-050"
+      ],
+      "standard_ids": [],
+      "responsible_domain": "EDU",
+      "derived_from_sources": [],
+      "record_type": "TestCase"
+    },
+    {
+      "id": "TEST-051",
+      "title": "Continuous power on sustained gradient",
+      "method": "vehicle_test",
+      "level": "vehicle",
+      "conditions": "Sustained gradient climb at maximum permissible mass, 30 degC ambient.",
+      "sample_size": 2,
+      "acceptance_criterion": "Specified continuous power sustained without derate below the target",
+      "acceptance_criterion_established": true,
+      "phase": "DV",
+      "verifies_requirements": [
+        "REQ-051"
+      ],
+      "addresses_failure_modes": [
+        "FM-050",
+        "FM-052"
+      ],
+      "standard_ids": [],
+      "responsible_domain": "EDU",
+      "derived_from_sources": [],
+      "record_type": "TestCase"
+    },
+    {
+      "id": "TEST-052",
+      "title": "Inverter thermal derate onset verification",
+      "method": "bench_test",
+      "level": "subsystem",
+      "conditions": "Controlled thermal ramp with monitored derate onset.",
+      "sample_size": 3,
+      "acceptance_criterion": "Derate initiates at the defined junction temperature threshold",
+      "acceptance_criterion_established": true,
+      "phase": "DV",
+      "verifies_requirements": [
+        "REQ-053"
+      ],
+      "addresses_failure_modes": [
+        "FM-052"
+      ],
+      "standard_ids": [],
+      "responsible_domain": "EDU",
+      "derived_from_sources": [],
+      "record_type": "TestCase"
+    },
+    {
+      "id": "TEST-053",
+      "title": "Unintended torque fault injection",
+      "method": "hil_test",
+      "level": "system",
+      "conditions": "Systematic fault injection across the torque path with monitored safe state response.",
+      "sample_size": 1,
+      "acceptance_criterion": "No unintended torque exceeding the safe limit for any injected fault",
+      "acceptance_criterion_established": true,
+      "phase": "DV",
+      "verifies_requirements": [
+        "REQ-052"
+      ],
+      "addresses_failure_modes": [
+        "FM-051"
+      ],
+      "standard_ids": [
+        "STD-001",
+        "STD-042"
+      ],
+      "responsible_domain": "Safety",
+      "derived_from_sources": [],
+      "record_type": "TestCase"
+    },
+    {
+      "id": "TEST-054",
+      "title": "Resolver signal plausibility verification",
+      "method": "bench_test",
+      "level": "component",
+      "conditions": "Induced resolver offset and noise with monitored diagnostic response.",
+      "sample_size": 3,
+      "acceptance_criterion": "Implausible position detected and safe state entered within the specified time",
+      "acceptance_criterion_established": true,
+      "phase": "DV",
+      "verifies_requirements": [
+        "REQ-052"
+      ],
+      "addresses_failure_modes": [
+        "FM-053"
+      ],
+      "standard_ids": [],
+      "responsible_domain": "EDU",
+      "derived_from_sources": [],
+      "record_type": "TestCase"
+    },
+    {
+      "id": "TEST-055",
+      "title": "Motor insulation dielectric verification",
+      "method": "bench_test",
+      "level": "component",
+      "conditions": "Dielectric withstand test after environmental and durability conditioning.",
+      "sample_size": 6,
+      "acceptance_criterion": "No breakdown at the specified test voltage",
+      "acceptance_criterion_established": true,
+      "phase": "DV",
+      "verifies_requirements": [
+        "REQ-054"
+      ],
+      "addresses_failure_modes": [
+        "FM-051"
+      ],
+      "standard_ids": [
+        "STD-009"
+      ],
+      "responsible_domain": "EDU",
+      "derived_from_sources": [],
+      "record_type": "TestCase"
+    },
+    {
+      "id": "TEST-056",
+      "title": "Gearbox noise evaluation",
+      "method": "nvh_test",
+      "level": "vehicle",
+      "conditions": "Coast and drive sweeps across the speed range with cabin noise measurement.",
+      "sample_size": 2,
+      "acceptance_criterion": "Gear whine below the defined level in the target orders",
+      "acceptance_criterion_established": true,
+      "phase": "DV",
+      "verifies_requirements": [
+        "REQ-073"
+      ],
+      "addresses_failure_modes": [
+        "FM-054"
+      ],
+      "standard_ids": [],
+      "responsible_domain": "NVH",
+      "derived_from_sources": [],
+      "record_type": "TestCase"
+    },
+    {
+      "id": "TEST-060",
+      "title": "Cold performance stopping distance",
+      "method": "vehicle_test",
+      "level": "vehicle",
+      "conditions": "Cold brake performance runs at the conditions defined by the approval requirement.",
+      "sample_size": 3,
+      "acceptance_criterion": "Stopping distance meets the applicable approval requirement",
+      "acceptance_criterion_established": true,
+      "phase": "DV",
+      "verifies_requirements": [
+        "REQ-004",
+        "REQ-060"
+      ],
+      "addresses_failure_modes": [
+        "FM-060"
+      ],
+      "standard_ids": [
+        "STD-015",
+        "STD-040"
+      ],
+      "responsible_domain": "Brakes",
+      "derived_from_sources": [],
+      "record_type": "TestCase"
+    },
+    {
+      "id": "TEST-061",
+      "title": "Fade and recovery test",
+      "method": "vehicle_test",
+      "level": "vehicle",
+      "conditions": "Repeated high energy stops followed by recovery stops per the approval procedure.",
+      "sample_size": 3,
+      "acceptance_criterion": "Fade and recovery performance meets the applicable approval requirement",
+      "acceptance_criterion_established": true,
+      "phase": "DV",
+      "verifies_requirements": [
+        "REQ-061"
+      ],
+      "addresses_failure_modes": [
+        "FM-061"
+      ],
+      "standard_ids": [
+        "STD-015"
+      ],
+      "responsible_domain": "Brakes",
+      "derived_from_sources": [],
+      "record_type": "TestCase"
+    },
+    {
+      "id": "TEST-062",
+      "title": "Friction coefficient characterisation",
+      "method": "dyno_test",
+      "level": "component",
+      "conditions": "Friction coefficient measured across the qualified temperature, pressure and speed envelope.",
+      "sample_size": 6,
+      "acceptance_criterion": "Friction coefficient within the specified band across the envelope",
+      "acceptance_criterion_established": true,
+      "phase": "DV",
+      "verifies_requirements": [
+        "REQ-065"
+      ],
+      "addresses_failure_modes": [
+        "FM-060",
+        "FM-061"
+      ],
+      "standard_ids": [],
+      "responsible_domain": "Brakes",
+      "derived_from_sources": [],
+      "record_type": "TestCase"
+    },
+    {
+      "id": "TEST-063",
+      "title": "Regenerative blending subjective and objective evaluation",
+      "method": "vehicle_test",
+      "level": "vehicle",
+      "conditions": "Blending transitions across deceleration rates and compound temperature states.",
+      "sample_size": 2,
+      "acceptance_criterion": "TBD_PROGRAMME_SPECIFIC - objective blending discontinuity limit not established",
+      "acceptance_criterion_established": false,
+      "phase": "DV",
+      "verifies_requirements": [
+        "REQ-062"
+      ],
+      "addresses_failure_modes": [
+        "FM-062"
+      ],
+      "standard_ids": [],
+      "responsible_domain": "Brakes",
+      "derived_from_sources": [],
+      "record_type": "TestCase"
+    },
+    {
+      "id": "TEST-064",
+      "title": "Judder durability schedule with thickness variation measurement",
+      "method": "durability_test",
+      "level": "vehicle",
+      "conditions": "Defined judder durability schedule with periodic disc thickness variation measurement.",
+      "sample_size": 2,
+      "acceptance_criterion": "Disc thickness variation below the specified limit throughout the schedule",
+      "acceptance_criterion_established": true,
+      "phase": "DV",
+      "verifies_requirements": [
+        "REQ-063",
+        "REQ-066"
+      ],
+      "addresses_failure_modes": [
+        "FM-063",
+        "FM-066"
+      ],
+      "standard_ids": [],
+      "responsible_domain": "Brakes",
+      "derived_from_sources": [],
+      "record_type": "TestCase"
+    },
+    {
+      "id": "TEST-065",
+      "title": "Brake noise evaluation schedule",
+      "method": "vehicle_test",
+      "level": "vehicle",
+      "conditions": "Defined noise evaluation matrix across temperature, humidity and pressure conditions.",
+      "sample_size": 2,
+      "acceptance_criterion": "Noise occurrence rate below the defined limit",
+      "acceptance_criterion_established": true,
+      "phase": "DV",
+      "verifies_requirements": [
+        "REQ-067"
+      ],
+      "addresses_failure_modes": [
+        "FM-064"
+      ],
+      "standard_ids": [],
+      "responsible_domain": "Brakes",
+      "derived_from_sources": [],
+      "record_type": "TestCase"
+    },
+    {
+      "id": "TEST-066",
+      "title": "Friction material restricted substance analysis",
+      "method": "material_analysis",
+      "level": "component",
+      "conditions": "Laboratory analysis of restricted substance content on production representative samples.",
+      "sample_size": 10,
+      "acceptance_criterion": "Restricted substance content within the permitted level for the target markets",
+      "acceptance_criterion_established": true,
+      "phase": "PV",
+      "verifies_requirements": [
+        "REQ-064"
+      ],
+      "addresses_failure_modes": [
+        "FM-065",
+        "FM-251"
+      ],
+      "standard_ids": [],
+      "responsible_domain": "Materials",
+      "derived_from_sources": [],
+      "record_type": "TestCase"
+    },
+    {
+      "id": "TEST-067",
+      "title": "Friction material density verification",
+      "method": "measurement",
+      "level": "component",
+      "conditions": "Density measurement on moulded friction material samples.",
+      "sample_size": 30,
+      "acceptance_criterion": "Density within the specified range",
+      "acceptance_criterion_established": true,
+      "phase": "PV",
+      "verifies_requirements": [
+        "REQ-065"
+      ],
+      "addresses_failure_modes": [
+        "FM-250"
+      ],
+      "standard_ids": [],
+      "responsible_domain": "Supplier quality",
+      "derived_from_sources": [],
+      "record_type": "TestCase"
+    },
+    {
+      "id": "TEST-070",
+      "title": "Suspension rig durability",
+      "method": "durability_test",
+      "level": "subsystem",
+      "conditions": "Load spectrum representative of the vehicle durability schedule applied on a rig.",
+      "sample_size": 4,
+      "acceptance_criterion": "No crack initiation or loss of function at the completion of the schedule",
+      "acceptance_criterion_established": true,
+      "phase": "DV",
+      "verifies_requirements": [
+        "REQ-070"
+      ],
+      "addresses_failure_modes": [
+        "FM-070"
+      ],
+      "standard_ids": [],
+      "responsible_domain": "Chassis",
+      "derived_from_sources": [
+        "SRC-010"
+      ],
+      "record_type": "TestCase"
+    },
+    {
+      "id": "TEST-071",
+      "title": "Control arm bushing radial stiffness measurement",
+      "method": "bench_test",
+      "level": "component",
+      "conditions": "Radial stiffness measured at reference temperature and preload.",
+      "sample_size": 20,
+      "acceptance_criterion": "Radial stiffness within the specified tolerance band",
+      "acceptance_criterion_established": true,
+      "phase": "PV",
+      "verifies_requirements": [
+        "REQ-071"
+      ],
+      "addresses_failure_modes": [
+        "FM-071",
+        "FM-232"
+      ],
+      "standard_ids": [],
+      "responsible_domain": "Chassis",
+      "derived_from_sources": [],
+      "record_type": "TestCase"
+    },
+    {
+      "id": "TEST-072",
+      "title": "Bushing press-fit process capability study",
+      "method": "process_capability",
+      "level": "process",
+      "conditions": "Press force and final position recorded across consecutive production.",
+      "sample_size": 125,
+      "acceptance_criterion": "Process capability index meets the specified minimum on both characteristics",
+      "acceptance_criterion_established": true,
+      "phase": "PV",
+      "verifies_requirements": [
+        "REQ-132"
+      ],
+      "addresses_failure_modes": [
+        "FM-230",
+        "FM-231"
+      ],
+      "standard_ids": [
+        "STD-044"
+      ],
+      "responsible_domain": "Supplier quality",
+      "derived_from_sources": [
+        "SRC-009"
+      ],
+      "record_type": "TestCase"
+    },
+    {
+      "id": "TEST-073",
+      "title": "Bushing retention under load",
+      "method": "bench_test",
+      "level": "component",
+      "conditions": "Axial and radial load applied with displacement measurement.",
+      "sample_size": 10,
+      "acceptance_criterion": "No displacement beyond the specified limit",
+      "acceptance_criterion_established": true,
+      "phase": "DV",
+      "verifies_requirements": [
+        "REQ-071"
+      ],
+      "addresses_failure_modes": [
+        "FM-072"
+      ],
+      "standard_ids": [],
+      "responsible_domain": "Chassis",
+      "derived_from_sources": [],
+      "record_type": "TestCase"
+    },
+    {
+      "id": "TEST-074",
+      "title": "Ride comfort evaluation on reference surfaces",
+      "method": "vehicle_test",
+      "level": "vehicle",
+      "conditions": "Vertical acceleration measurement on the defined reference road surfaces.",
+      "sample_size": 2,
+      "acceptance_criterion": "Vertical ride acceleration below the defined comfort target",
+      "acceptance_criterion_established": true,
+      "phase": "DV",
+      "verifies_requirements": [
+        "REQ-072"
+      ],
+      "addresses_failure_modes": [
+        "FM-074"
+      ],
+      "standard_ids": [],
+      "responsible_domain": "Chassis",
+      "derived_from_sources": [],
+      "record_type": "TestCase"
+    },
+    {
+      "id": "TEST-075",
+      "title": "Road noise transfer path measurement",
+      "method": "nvh_test",
+      "level": "vehicle",
+      "conditions": "Structure-borne transfer path measurement on coarse surfaces.",
+      "sample_size": 2,
+      "acceptance_criterion": "Transferred level below the defined limit in the specified frequency bands",
+      "acceptance_criterion_established": true,
+      "phase": "DV",
+      "verifies_requirements": [
+        "REQ-073",
+        "REQ-074"
+      ],
+      "addresses_failure_modes": [
+        "FM-073"
+      ],
+      "standard_ids": [],
+      "responsible_domain": "NVH",
+      "derived_from_sources": [],
+      "record_type": "TestCase"
+    },
+    {
+      "id": "TEST-076",
+      "title": "Handling stability at maximum mass",
+      "method": "vehicle_test",
+      "level": "vehicle",
+      "conditions": "Defined handling manoeuvres at maximum permissible mass and load distribution.",
+      "sample_size": 2,
+      "acceptance_criterion": "Handling stability targets met in all manoeuvres",
+      "acceptance_criterion_established": true,
+      "phase": "DV",
+      "verifies_requirements": [
+        "REQ-075"
+      ],
+      "addresses_failure_modes": [
+        "FM-070"
+      ],
+      "standard_ids": [],
+      "responsible_domain": "Chassis",
+      "derived_from_sources": [],
+      "record_type": "TestCase"
+    },
+    {
+      "id": "TEST-080",
+      "title": "Steering assist loss safe state verification",
+      "method": "hil_test",
+      "level": "system",
+      "conditions": "Fault injection across the assist path with monitored safe state entry.",
+      "sample_size": 1,
+      "acceptance_criterion": "Defined safe state entered with manual steerability retained for every injected fault",
+      "acceptance_criterion_established": true,
+      "phase": "DV",
+      "verifies_requirements": [
+        "REQ-081"
+      ],
+      "addresses_failure_modes": [
+        "FM-080"
+      ],
+      "standard_ids": [
+        "STD-001"
+      ],
+      "responsible_domain": "Safety",
+      "derived_from_sources": [],
+      "record_type": "TestCase"
+    },
+    {
+      "id": "TEST-081",
+      "title": "Steering ECU diagnostic coverage verification",
+      "method": "analysis",
+      "level": "component",
+      "conditions": "Safety analysis and fault injection on the target processing element.",
+      "sample_size": 1,
+      "acceptance_criterion": "Diagnostic coverage meets the allocated safety integrity requirement",
+      "acceptance_criterion_established": true,
+      "phase": "DV",
+      "verifies_requirements": [
+        "REQ-082"
+      ],
+      "addresses_failure_modes": [
+        "FM-081"
+      ],
+      "standard_ids": [
+        "STD-001"
+      ],
+      "responsible_domain": "Safety",
+      "derived_from_sources": [],
+      "record_type": "TestCase"
+    },
+    {
+      "id": "TEST-082",
+      "title": "Steering assist response time measurement",
+      "method": "bench_test",
+      "level": "subsystem",
+      "conditions": "Step and sweep driver torque input with assist torque response measurement.",
+      "sample_size": 3,
+      "acceptance_criterion": "Response within the specified time constant",
+      "acceptance_criterion_established": true,
+      "phase": "DV",
+      "verifies_requirements": [
+        "REQ-083"
+      ],
+      "addresses_failure_modes": [
+        "FM-082"
+      ],
+      "standard_ids": [],
+      "responsible_domain": "Steering",
+      "derived_from_sources": [],
+      "record_type": "TestCase"
+    },
+    {
+      "id": "TEST-083",
+      "title": "Steering approval verification",
+      "method": "vehicle_test",
+      "level": "vehicle",
+      "conditions": "Steering behaviour assessment per the applicable approval requirement.",
+      "sample_size": 2,
+      "acceptance_criterion": "Compliance with the applicable steering approval requirement",
+      "acceptance_criterion_established": true,
+      "phase": "PV",
+      "verifies_requirements": [
+        "REQ-080"
+      ],
+      "addresses_failure_modes": [
+        "FM-080"
+      ],
+      "standard_ids": [
+        "STD-018"
+      ],
+      "responsible_domain": "Homologation",
+      "derived_from_sources": [],
+      "record_type": "TestCase"
+    },
+    {
+      "id": "TEST-090",
+      "title": "Full vehicle radiated emissions measurement",
+      "method": "emc_test",
+      "level": "vehicle",
+      "conditions": "Chamber measurement across the required frequency range in drive and DC charge modes.",
+      "sample_size": 1,
+      "acceptance_criterion": "Emissions within the applicable approval limits in all modes",
+      "acceptance_criterion_established": true,
+      "phase": "DV",
+      "verifies_requirements": [
+        "REQ-006",
+        "REQ-090"
+      ],
+      "addresses_failure_modes": [
+        "FM-090",
+        "FM-091",
+        "FM-092"
+      ],
+      "standard_ids": [
+        "STD-014",
+        "STD-027"
+      ],
+      "responsible_domain": "EMC",
+      "derived_from_sources": [],
+      "record_type": "TestCase"
+    },
+    {
+      "id": "TEST-091",
+      "title": "Full vehicle radiated immunity measurement",
+      "method": "emc_test",
+      "level": "vehicle",
+      "conditions": "Chamber exposure at the applicable field strengths with function monitoring.",
+      "sample_size": 1,
+      "acceptance_criterion": "All monitored functions remain within the defined performance criteria",
+      "acceptance_criterion_established": true,
+      "phase": "DV",
+      "verifies_requirements": [
+        "REQ-091"
+      ],
+      "addresses_failure_modes": [
+        "FM-090"
+      ],
+      "standard_ids": [
+        "STD-014",
+        "STD-028"
+      ],
+      "responsible_domain": "EMC",
+      "derived_from_sources": [],
+      "record_type": "TestCase"
+    },
+    {
+      "id": "TEST-092",
+      "title": "HV harness shield continuity measurement",
+      "method": "bench_test",
+      "level": "subsystem",
+      "conditions": "Termination to termination impedance measurement along the routing path.",
+      "sample_size": 10,
+      "acceptance_criterion": "Impedance below the specified limit at every termination",
+      "acceptance_criterion_established": true,
+      "phase": "DV",
+      "verifies_requirements": [
+        "REQ-092"
+      ],
+      "addresses_failure_modes": [
+        "FM-091",
+        "FM-241"
+      ],
+      "standard_ids": [],
+      "responsible_domain": "EMC",
+      "derived_from_sources": [],
+      "record_type": "TestCase"
+    },
+    {
+      "id": "TEST-093",
+      "title": "HV harness routing verification against the standard",
+      "method": "measurement",
+      "level": "subsystem",
+      "conditions": "Physical build routing compared with the released routing standard.",
+      "sample_size": 6,
+      "acceptance_criterion": "Minimum separation from sensitive circuits maintained along the full path",
+      "acceptance_criterion_established": true,
+      "phase": "DV",
+      "verifies_requirements": [
+        "REQ-093"
+      ],
+      "addresses_failure_modes": [
+        "FM-092",
+        "FM-240"
+      ],
+      "standard_ids": [],
+      "responsible_domain": "E/E",
+      "derived_from_sources": [],
+      "record_type": "TestCase"
+    },
+    {
+      "id": "TEST-094",
+      "title": "Bus load measurement on the integration bench",
+      "method": "bench_test",
+      "level": "subsystem",
+      "conditions": "Bus utilisation measured under worst-case message loading.",
+      "sample_size": 1,
+      "acceptance_criterion": "Utilisation below the defined maximum",
+      "acceptance_criterion_established": true,
+      "phase": "DV",
+      "verifies_requirements": [
+        "REQ-094"
+      ],
+      "addresses_failure_modes": [
+        "FM-093"
+      ],
+      "standard_ids": [
+        "STD-030"
+      ],
+      "responsible_domain": "E/E",
+      "derived_from_sources": [
+        "SRC-008"
+      ],
+      "record_type": "TestCase"
+    },
+    {
+      "id": "TEST-095",
+      "title": "Diagnostic service coverage verification",
+      "method": "bench_test",
+      "level": "vehicle",
+      "conditions": "Diagnostic service requests exercised across all safety and emissions relevant functions.",
+      "sample_size": 1,
+      "acceptance_criterion": "All required services supported with correct responses",
+      "acceptance_criterion_established": true,
+      "phase": "PV",
+      "verifies_requirements": [
+        "REQ-095"
+      ],
+      "addresses_failure_modes": [
+        "FM-093"
+      ],
+      "standard_ids": [
+        "STD-031",
+        "STD-039"
+      ],
+      "responsible_domain": "Diagnostics",
+      "derived_from_sources": [],
+      "record_type": "TestCase"
+    },
+    {
+      "id": "TEST-096",
+      "title": "Cybersecurity penetration testing on external interfaces",
+      "method": "security_test",
+      "level": "vehicle",
+      "conditions": "Structured penetration testing on the identified attack surfaces.",
+      "sample_size": 1,
+      "acceptance_criterion": "No unmitigated finding above the defined risk acceptance level",
+      "acceptance_criterion_established": true,
+      "phase": "PV",
+      "verifies_requirements": [
+        "REQ-096"
+      ],
+      "addresses_failure_modes": [
+        "FM-094"
+      ],
+      "standard_ids": [
+        "STD-003"
+      ],
+      "responsible_domain": "Cybersecurity",
+      "derived_from_sources": [
+        "SRC-012"
+      ],
+      "record_type": "TestCase"
+    },
+    {
+      "id": "TEST-097",
+      "title": "LV conducted transient immunity",
+      "method": "bench_test",
+      "level": "component",
+      "conditions": "Conducted transient pulses applied on supply lines with function monitoring.",
+      "sample_size": 3,
+      "acceptance_criterion": "No loss of function at the specified severity level",
+      "acceptance_criterion_established": true,
+      "phase": "DV",
+      "verifies_requirements": [
+        "REQ-097"
+      ],
+      "addresses_failure_modes": [
+        "FM-120"
+      ],
+      "standard_ids": [
+        "STD-029"
+      ],
+      "responsible_domain": "E/E",
+      "derived_from_sources": [],
+      "record_type": "TestCase"
+    },
+    {
+      "id": "TEST-100",
+      "title": "Cabin cool-down time measurement",
+      "method": "vehicle_test",
+      "level": "vehicle",
+      "conditions": "Hot soak at the specified condition followed by cool-down to the target temperature.",
+      "sample_size": 2,
+      "acceptance_criterion": "Cool-down achieved within the defined time",
+      "acceptance_criterion_established": true,
+      "phase": "DV",
+      "verifies_requirements": [
+        "REQ-100"
+      ],
+      "addresses_failure_modes": [
+        "FM-100"
+      ],
+      "standard_ids": [],
+      "responsible_domain": "HVAC",
+      "derived_from_sources": [],
+      "record_type": "TestCase"
+    },
+    {
+      "id": "TEST-101",
+      "title": "HVAC energy consumption over the reference climate cycle",
+      "method": "vehicle_test",
+      "level": "vehicle",
+      "conditions": "Energy consumption measured over the reference climate cycle.",
+      "sample_size": 2,
+      "acceptance_criterion": "Consumption within the allocated energy budget",
+      "acceptance_criterion_established": true,
+      "phase": "DV",
+      "verifies_requirements": [
+        "REQ-101"
+      ],
+      "addresses_failure_modes": [
+        "FM-102"
+      ],
+      "standard_ids": [],
+      "responsible_domain": "HVAC",
+      "derived_from_sources": [
+        "SRC-017"
+      ],
+      "record_type": "TestCase"
+    },
+    {
+      "id": "TEST-102",
+      "title": "Compressor operating envelope verification",
+      "method": "bench_test",
+      "level": "component",
+      "conditions": "Operation swept across the specified pressure and speed envelope.",
+      "sample_size": 3,
+      "acceptance_criterion": "No protective shutdown across the envelope",
+      "acceptance_criterion_established": true,
+      "phase": "DV",
+      "verifies_requirements": [
+        "REQ-102"
+      ],
+      "addresses_failure_modes": [
+        "FM-100"
+      ],
+      "standard_ids": [],
+      "responsible_domain": "HVAC",
+      "derived_from_sources": [],
+      "record_type": "TestCase"
+    },
+    {
+      "id": "TEST-103",
+      "title": "Compressor cabin noise measurement",
+      "method": "nvh_test",
+      "level": "vehicle",
+      "conditions": "Cabin noise measured across compressor speed at stationary and driving conditions.",
+      "sample_size": 2,
+      "acceptance_criterion": "Cabin noise below the defined level at every operating point",
+      "acceptance_criterion_established": true,
+      "phase": "DV",
+      "verifies_requirements": [
+        "REQ-103"
+      ],
+      "addresses_failure_modes": [
+        "FM-101"
+      ],
+      "standard_ids": [],
+      "responsible_domain": "NVH",
+      "derived_from_sources": [],
+      "record_type": "TestCase"
+    },
+    {
+      "id": "TEST-110",
+      "title": "Calibration identifier readback verification",
+      "method": "bench_test",
+      "level": "vehicle",
+      "conditions": "Diagnostic readback of the active calibration identifier.",
+      "sample_size": 5,
+      "acceptance_criterion": "Active calibration identifier readable and matching the build record",
+      "acceptance_criterion_established": true,
+      "phase": "PV",
+      "verifies_requirements": [
+        "REQ-111"
+      ],
+      "addresses_failure_modes": [
+        "FM-140"
+      ],
+      "standard_ids": [
+        "STD-031"
+      ],
+      "responsible_domain": "Software",
+      "derived_from_sources": [],
+      "record_type": "TestCase"
+    },
+    {
+      "id": "TEST-111",
+      "title": "Update interruption and rollback verification",
+      "method": "hil_test",
+      "level": "subsystem",
+      "conditions": "Update interrupted at defined points with monitored rollback behaviour.",
+      "sample_size": 1,
+      "acceptance_criterion": "Previous approved state restored on every interruption point",
+      "acceptance_criterion_established": true,
+      "phase": "DV",
+      "verifies_requirements": [
+        "REQ-112"
+      ],
+      "addresses_failure_modes": [
+        "FM-142"
+      ],
+      "standard_ids": [],
+      "responsible_domain": "Software",
+      "derived_from_sources": [],
+      "record_type": "TestCase"
+    },
+    {
+      "id": "TEST-112",
+      "title": "Range estimate accuracy on the reference cycle",
+      "method": "vehicle_test",
+      "level": "vehicle",
+      "conditions": "Displayed range compared with achieved range over the reference cycle at multiple ambients.",
+      "sample_size": 3,
+      "acceptance_criterion": "Range estimate error within the defined band",
+      "acceptance_criterion_established": true,
+      "phase": "DV",
+      "verifies_requirements": [
+        "REQ-113"
+      ],
+      "addresses_failure_modes": [
+        "FM-141"
+      ],
+      "standard_ids": [],
+      "responsible_domain": "Calibration",
+      "derived_from_sources": [],
+      "record_type": "TestCase"
+    },
+    {
+      "id": "TEST-113",
+      "title": "Configuration control audit",
+      "method": "audit",
+      "level": "process",
+      "conditions": "Audit of calibration release and plant application against the configuration control procedure.",
+      "sample_size": 1,
+      "acceptance_criterion": "No major non-conformance against the procedure",
+      "acceptance_criterion_established": true,
+      "phase": "PV",
+      "verifies_requirements": [
+        "REQ-110"
+      ],
+      "addresses_failure_modes": [
+        "FM-140"
+      ],
+      "standard_ids": [
+        "STD-004"
+      ],
+      "responsible_domain": "Quality",
+      "derived_from_sources": [],
+      "record_type": "TestCase"
+    },
+    {
+      "id": "TEST-120",
+      "title": "Tyre rolling resistance measurement",
+      "method": "bench_test",
+      "level": "component",
+      "conditions": "Rolling resistance measured on the specified test drum condition.",
+      "sample_size": 3,
+      "acceptance_criterion": "Rolling resistance within the vehicle energy budget allocation",
+      "acceptance_criterion_established": true,
+      "phase": "DV",
+      "verifies_requirements": [
+        "REQ-120"
+      ],
+      "addresses_failure_modes": [
+        "FM-110"
+      ],
+      "standard_ids": [
+        "STD-017"
+      ],
+      "responsible_domain": "Chassis",
+      "derived_from_sources": [],
+      "record_type": "TestCase"
+    },
+    {
+      "id": "TEST-121",
+      "title": "Pass-by noise measurement with fitted tyre",
+      "method": "vehicle_test",
+      "level": "vehicle",
+      "conditions": "Pass-by noise measured on the specified test surface per the approval procedure.",
+      "sample_size": 2,
+      "acceptance_criterion": "Sound emission within the applicable approval limits",
+      "acceptance_criterion_established": true,
+      "phase": "PV",
+      "verifies_requirements": [
+        "REQ-005",
+        "REQ-122"
+      ],
+      "addresses_failure_modes": [
+        "FM-111"
+      ],
+      "standard_ids": [
+        "STD-016",
+        "STD-037",
+        "STD-038"
+      ],
+      "responsible_domain": "Homologation",
+      "derived_from_sources": [],
+      "record_type": "TestCase"
+    },
+    {
+      "id": "TEST-122",
+      "title": "Axle load and tyre load index verification",
+      "method": "measurement",
+      "level": "vehicle",
+      "conditions": "Axle load measurement at maximum permissible mass with load index comparison.",
+      "sample_size": 2,
+      "acceptance_criterion": "Tyre load capability meets or exceeds measured maximum axle load",
+      "acceptance_criterion_established": true,
+      "phase": "DV",
+      "verifies_requirements": [
+        "REQ-003",
+        "REQ-121"
+      ],
+      "addresses_failure_modes": [
+        "FM-112"
+      ],
+      "standard_ids": [
+        "STD-017"
+      ],
+      "responsible_domain": "Homologation",
+      "derived_from_sources": [],
+      "record_type": "TestCase"
+    },
+    {
+      "id": "TEST-123",
+      "title": "Wheel and tyre assembly mass measurement",
+      "method": "measurement",
+      "level": "component",
+      "conditions": "Mass measurement of the complete wheel and tyre assembly.",
+      "sample_size": 8,
+      "acceptance_criterion": "Assembly mass within the unsprung mass allocation",
+      "acceptance_criterion_established": true,
+      "phase": "DV",
+      "verifies_requirements": [
+        "REQ-123"
+      ],
+      "addresses_failure_modes": [
+        "FM-113"
+      ],
+      "standard_ids": [],
+      "responsible_domain": "Chassis",
+      "derived_from_sources": [],
+      "record_type": "TestCase"
+    },
+    {
+      "id": "TEST-124",
+      "title": "Vehicle certified range measurement",
+      "method": "vehicle_test",
+      "level": "vehicle",
+      "conditions": "Range measurement over the applicable light-duty test procedure.",
+      "sample_size": 2,
+      "acceptance_criterion": "Certified combined range not less than 490 km",
+      "acceptance_criterion_established": true,
+      "phase": "PV",
+      "verifies_requirements": [
+        "REQ-001"
+      ],
+      "addresses_failure_modes": [
+        "FM-001",
+        "FM-110",
+        "FM-102"
+      ],
+      "standard_ids": [
+        "STD-023"
+      ],
+      "responsible_domain": "Homologation",
+      "derived_from_sources": [
+        "SRC-017"
+      ],
+      "record_type": "TestCase"
+    },
+    {
+      "id": "TEST-125",
+      "title": "Vehicle kerb mass measurement",
+      "method": "measurement",
+      "level": "vehicle",
+      "conditions": "Kerb mass measurement in the specified configuration.",
+      "sample_size": 3,
+      "acceptance_criterion": "Kerb mass not more than 2100 kg",
+      "acceptance_criterion_established": true,
+      "phase": "DV",
+      "verifies_requirements": [
+        "REQ-002"
+      ],
+      "addresses_failure_modes": [
+        "FM-113"
+      ],
+      "standard_ids": [],
+      "responsible_domain": "Vehicle integration",
+      "derived_from_sources": [],
+      "record_type": "TestCase"
+    },
+    {
+      "id": "TEST-130",
+      "title": "LV supply worst case load verification",
+      "method": "bench_test",
+      "level": "system",
+      "conditions": "Simultaneous peak demand from steering, braking and thermal systems.",
+      "sample_size": 3,
+      "acceptance_criterion": "Supply voltage remains within the specified band for all safety relevant loads",
+      "acceptance_criterion_established": true,
+      "phase": "DV",
+      "verifies_requirements": [
+        "REQ-160"
+      ],
+      "addresses_failure_modes": [
+        "FM-120"
+      ],
+      "standard_ids": [],
+      "responsible_domain": "E/E",
+      "derived_from_sources": [],
+      "record_type": "TestCase"
+    },
+    {
+      "id": "TEST-131",
+      "title": "DC-DC converter output at temperature",
+      "method": "bench_test",
+      "level": "subsystem",
+      "conditions": "Rated output measured across the qualified HV input and thermal range.",
+      "sample_size": 3,
+      "acceptance_criterion": "Rated output delivered across the qualified range",
+      "acceptance_criterion_established": true,
+      "phase": "DV",
+      "verifies_requirements": [
+        "REQ-161"
+      ],
+      "addresses_failure_modes": [
+        "FM-121"
+      ],
+      "standard_ids": [],
+      "responsible_domain": "E/E",
+      "derived_from_sources": [],
+      "record_type": "TestCase"
+    },
+    {
+      "id": "TEST-140",
+      "title": "Tailpipe emissions over the required test procedures",
+      "method": "vehicle_test",
+      "level": "vehicle",
+      "conditions": "Emissions measured over the required test procedures on the applicable configuration.",
+      "sample_size": 2,
+      "acceptance_criterion": "Emissions within the applicable approval limits",
+      "acceptance_criterion_established": true,
+      "phase": "PV",
+      "verifies_requirements": [
+        "REQ-140"
+      ],
+      "addresses_failure_modes": [
+        "FM-130"
+      ],
+      "standard_ids": [
+        "STD-022",
+        "STD-023"
+      ],
+      "responsible_domain": "Emissions",
+      "derived_from_sources": [],
+      "record_type": "TestCase"
+    },
+    {
+      "id": "TEST-141",
+      "title": "Cold start light-off characterisation",
+      "method": "bench_test",
+      "level": "system",
+      "conditions": "Cold start emissions measurement with catalyst temperature instrumentation.",
+      "sample_size": 3,
+      "acceptance_criterion": "Effective conversion reached within the defined time",
+      "acceptance_criterion_established": true,
+      "phase": "DV",
+      "verifies_requirements": [
+        "REQ-141"
+      ],
+      "addresses_failure_modes": [
+        "FM-131"
+      ],
+      "standard_ids": [],
+      "responsible_domain": "Emissions",
+      "derived_from_sources": [],
+      "record_type": "TestCase"
+    },
+    {
+      "id": "TEST-142",
+      "title": "Aged catalyst emissions verification",
+      "method": "bench_test",
+      "level": "system",
+      "conditions": "Emissions measurement on catalyst samples aged to the required durability equivalent.",
+      "sample_size": 3,
+      "acceptance_criterion": "Emissions within the applicable limits on aged parts",
+      "acceptance_criterion_established": true,
+      "phase": "PV",
+      "verifies_requirements": [
+        "REQ-142"
+      ],
+      "addresses_failure_modes": [
+        "FM-130",
+        "FM-131"
+      ],
+      "standard_ids": [
+        "STD-022"
+      ],
+      "responsible_domain": "Emissions",
+      "derived_from_sources": [],
+      "record_type": "TestCase"
+    },
+    {
+      "id": "TEST-143",
+      "title": "OBD catalyst monitor demonstration",
+      "method": "vehicle_test",
+      "level": "vehicle",
+      "conditions": "Demonstration using threshold catalyst parts.",
+      "sample_size": 2,
+      "acceptance_criterion": "Monitor correctly distinguishes threshold and compliant parts",
+      "acceptance_criterion_established": true,
+      "phase": "PV",
+      "verifies_requirements": [
+        "REQ-143"
+      ],
+      "addresses_failure_modes": [
+        "FM-132"
+      ],
+      "standard_ids": [
+        "STD-039"
+      ],
+      "responsible_domain": "Emissions",
+      "derived_from_sources": [],
+      "record_type": "TestCase"
+    },
+    {
+      "id": "TEST-150",
+      "title": "Frontal impact occupant protection",
+      "method": "crash_test",
+      "level": "vehicle",
+      "conditions": "Frontal impact per the applicable approval procedure.",
+      "sample_size": 2,
+      "acceptance_criterion": "Occupant injury criteria within the applicable approval limits",
+      "acceptance_criterion_established": true,
+      "phase": "PV",
+      "verifies_requirements": [
+        "REQ-008",
+        "REQ-150"
+      ],
+      "addresses_failure_modes": [],
+      "standard_ids": [
+        "STD-019"
+      ],
+      "responsible_domain": "Safety",
+      "derived_from_sources": [],
+      "record_type": "TestCase"
+    },
+    {
+      "id": "TEST-151",
+      "title": "Restraint inadvertent deployment verification",
+      "method": "hil_test",
+      "level": "system",
+      "conditions": "Non-crash stimulus matrix with monitored deployment outputs.",
+      "sample_size": 1,
+      "acceptance_criterion": "No deployment for any non-crash stimulus",
+      "acceptance_criterion_established": true,
+      "phase": "DV",
+      "verifies_requirements": [
+        "REQ-151"
+      ],
+      "addresses_failure_modes": [],
+      "standard_ids": [
+        "STD-001"
+      ],
+      "responsible_domain": "Safety",
+      "derived_from_sources": [],
+      "record_type": "TestCase"
+    },
+    {
+      "id": "TEST-160",
+      "title": "Radar detection range and accuracy verification",
+      "method": "bench_test",
+      "level": "component",
+      "conditions": "Detection range and angular accuracy measured across the qualified environmental envelope.",
+      "sample_size": 3,
+      "acceptance_criterion": "Detection range and accuracy within specification",
+      "acceptance_criterion_established": true,
+      "phase": "DV",
+      "verifies_requirements": [
+        "REQ-171"
+      ],
+      "addresses_failure_modes": [],
+      "standard_ids": [],
+      "responsible_domain": "ADAS",
+      "derived_from_sources": [],
+      "record_type": "TestCase"
+    },
+    {
+      "id": "TEST-161",
+      "title": "Perception degradation behaviour verification",
+      "method": "vehicle_test",
+      "level": "vehicle",
+      "conditions": "Adverse condition exposure with monitored function degradation and driver communication.",
+      "sample_size": 2,
+      "acceptance_criterion": "Degradation follows the defined and communicated behaviour",
+      "acceptance_criterion_established": true,
+      "phase": "DV",
+      "verifies_requirements": [
+        "REQ-170"
+      ],
+      "addresses_failure_modes": [],
+      "standard_ids": [
+        "STD-002"
+      ],
+      "responsible_domain": "ADAS",
+      "derived_from_sources": [],
+      "record_type": "TestCase"
+    },
+    {
+      "id": "TEST-170",
+      "title": "Pack end of line pressure decay test",
+      "method": "process_test",
+      "level": "process",
+      "conditions": "Pressure decay measurement on every assembled pack.",
+      "sample_size": 100,
+      "acceptance_criterion": "Decay rate below the specified limit with zero failures",
+      "acceptance_criterion_established": true,
+      "phase": "PV",
+      "verifies_requirements": [
+        "REQ-015"
+      ],
+      "addresses_failure_modes": [
+        "FM-220"
+      ],
+      "standard_ids": [],
+      "responsible_domain": "Manufacturing",
+      "derived_from_sources": [],
+      "record_type": "TestCase"
+    },
+    {
+      "id": "TEST-171",
+      "title": "Enclosure fastener torque and angle monitoring",
+      "method": "process_test",
+      "level": "process",
+      "conditions": "Torque and angle recorded for every enclosure fastener.",
+      "sample_size": 100,
+      "acceptance_criterion": "Torque and angle within specification for every fastener",
+      "acceptance_criterion_established": true,
+      "phase": "PV",
+      "verifies_requirements": [
+        "REQ-015"
+      ],
+      "addresses_failure_modes": [
+        "FM-221"
+      ],
+      "standard_ids": [],
+      "responsible_domain": "Manufacturing",
+      "derived_from_sources": [],
+      "record_type": "TestCase"
+    },
+    {
+      "id": "TEST-172",
+      "title": "Pack capacity correlation to laboratory measurement",
+      "method": "process_test",
+      "level": "process",
+      "conditions": "End of line capacity measurement correlated against laboratory reference.",
+      "sample_size": 12,
+      "acceptance_criterion": "Correlation within the specified error band",
+      "acceptance_criterion_established": true,
+      "phase": "PV",
+      "verifies_requirements": [
+        "REQ-010"
+      ],
+      "addresses_failure_modes": [
+        "FM-222"
+      ],
+      "standard_ids": [],
+      "responsible_domain": "Quality",
+      "derived_from_sources": [],
+      "record_type": "TestCase"
+    },
+    {
+      "id": "TEST-173",
+      "title": "Thermal interface material coverage vision inspection",
+      "method": "process_test",
+      "level": "process",
+      "conditions": "Vision inspection of the applied thermal interface bead.",
+      "sample_size": 100,
+      "acceptance_criterion": "Coverage within the specified pattern on every module",
+      "acceptance_criterion_established": true,
+      "phase": "PV",
+      "verifies_requirements": [
+        "REQ-012"
+      ],
+      "addresses_failure_modes": [
+        "FM-211"
+      ],
+      "standard_ids": [],
+      "responsible_domain": "Manufacturing",
+      "derived_from_sources": [],
+      "record_type": "TestCase"
+    },
+    {
+      "id": "TEST-174",
+      "title": "Power module thermal resistance verification",
+      "method": "bench_test",
+      "level": "component",
+      "conditions": "Thermal resistance measured after module attach.",
+      "sample_size": 15,
+      "acceptance_criterion": "Thermal resistance below the specified limit",
+      "acceptance_criterion_established": true,
+      "phase": "PV",
+      "verifies_requirements": [
+        "REQ-053"
+      ],
+      "addresses_failure_modes": [
+        "FM-260"
+      ],
+      "standard_ids": [],
+      "responsible_domain": "Supplier quality",
+      "derived_from_sources": [],
+      "record_type": "TestCase"
+    },
+    {
+      "id": "TEST-175",
+      "title": "Catalyst canning force monitoring",
+      "method": "process_test",
+      "level": "process",
+      "conditions": "Canning force recorded for every part.",
+      "sample_size": 100,
+      "acceptance_criterion": "Canning force within the specified window for every part",
+      "acceptance_criterion_established": true,
+      "phase": "PV",
+      "verifies_requirements": [
+        "REQ-140"
+      ],
+      "addresses_failure_modes": [
+        "FM-270"
+      ],
+      "standard_ids": [],
+      "responsible_domain": "Manufacturing",
+      "derived_from_sources": [],
+      "record_type": "TestCase"
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "description": "Engineering scenarios available in the simulated environment.",
+  "data_classification": "SIMULATED ENTERPRISE ARTEFACT - not OEM, customer or proprietary data",
+  "scenarios": [
+    {
+      "scenario_id": "SCN-001",
+      "category": "Engineering Change Impact",
+      "title": "Energy storage capacity increase",
+      "one_liner": "Assess the impact of this engineering change.",
+      "candidate_output_count": 13,
+      "known_unknown_count": 5
+    },
+    {
+      "scenario_id": "SCN-002",
+      "category": "Requirements Impact",
+      "title": "Friction material substitution driven by substance restriction",
+      "one_liner": "Review the verification implications of this design change.",
+      "candidate_output_count": 16,
+      "known_unknown_count": 3
+    },
+    {
+      "scenario_id": "SCN-003",
+      "category": "Vehicle / system validation issue",
+      "title": "Power reduction during sustained high ambient operation",
+      "one_liner": "Investigate intermittent thermal derating during high-load operation.",
+      "candidate_output_count": 15,
+      "known_unknown_count": 4
+    },
+    {
+      "scenario_id": "SCN-004",
+      "category": "Thermal / performance issue",
+      "title": "Charging performance shortfall at low ambient temperature",
+      "one_liner": "Determine whether the observed charging performance constitutes a non-conformance.",
+      "candidate_output_count": 11,
+      "known_unknown_count": 3
+    },
+    {
+      "scenario_id": "SCN-005",
+      "category": "Quality failure - field",
+      "title": "Safety-relevant disconnect device does not confirm its commanded state",
+      "one_liner": "Identify the likely causes of this field failure and the required containment.",
+      "candidate_output_count": 13,
+      "known_unknown_count": 3
+    },
+    {
+      "scenario_id": "SCN-006",
+      "category": "Supplier quality issue",
+      "title": "Characteristic drift following a production location transfer",
+      "one_liner": "Assess the supplier quality risk associated with this failure pattern.",
+      "candidate_output_count": 13,
+      "known_unknown_count": 3
+    },
+    {
+      "scenario_id": "SCN-007",
+      "category": "Intermittent test failure",
+      "title": "Intermittent electromagnetic compatibility exceedance after a packaging-driven routing change",
+      "one_liner": "A compliance measurement fails intermittently. Investigate.",
+      "candidate_output_count": 15,
+      "known_unknown_count": 3
+    },
+    {
+      "scenario_id": "SCN-008",
+      "category": "Regression impact",
+      "title": "Control software calibration release",
+      "one_liner": "Determine whether this software release requires regression testing, and of what.",
+      "candidate_output_count": 13,
+      "known_unknown_count": 3
+    },
+    {
+      "scenario_id": "SCN-009",
+      "category": "Design review",
+      "title": "Addition of a protective sensing function",
+      "one_liner": "A new component variant is being introduced. Determine the verification implications.",
+      "candidate_output_count": 13,
+      "known_unknown_count": 3
+    },
+    {
+      "scenario_id": "SCN-010",
+      "category": "Compliance / standards impact",
+      "title": "Wheel and tyre specification change on a derivative variant",
+      "one_liner": "Assess the compliance and certification consequences of this specification change.",
+      "candidate_output_count": 15,
+      "known_unknown_count": 3
+    },
+    {
+      "scenario_id": "SCN-011",
+      "category": "Manufacturing / process quality",
+      "title": "Process change followed by an escape at end of line",
+      "one_liner": "Investigate this manufacturing quality escape and determine corrective action.",
+      "candidate_output_count": 13,
+      "known_unknown_count": 3
+    },
+    {
+      "scenario_id": "SCN-012",
+      "category": "Obsolescence and functional safety",
+      "title": "Safety-relevant processing element replacement driven by obsolescence",
+      "one_liner": "A component must be replaced for lifecycle reasons. Determine the engineering and safety consequences.",
+      "candidate_output_count": 16,
+      "known_unknown_count": 3
+    }
+  ]
+}

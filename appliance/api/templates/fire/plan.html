@@ -1,0 +1,27 @@
+{% extends "fire/base.html" %}
+{% from "fire/_macros.html" import no_analysis with context %}
+{% block title %}Verification Plan &middot; {{ S.product_name }}{% endblock %}
+{% block body %}
+<div class="page-head">
+  <h1>Verification &amp; Evidence Plan</h1>
+  <p>Technical decision outputs generated from the same analysis. Every plan row traces
+     requirement &rarr; verification activity &rarr; result and evidence &rarr; the findings that justify its
+     action. Where no acceptance criterion is established the plan says so; none is ever assumed. Engineering
+     review decisions are applied when an output is generated.</p>
+</div>
+
+{% if not view %}{{ no_analysis('/verification-plan', 'Verification & Evidence Plans') }}{% else %}
+<div class="row" style="margin-bottom:14px">
+  {% for o_ in S.outputs if o_.workflow %}
+  <a class="btn" href="/verification-plan?output={{ o_.workflow }}"
+     {% if o_.workflow == selected %}style="background:var(--accent);border-color:var(--accent);color:#fff;font-weight:560"{% endif %}>{{ o_.name }}</a>
+  {% endfor %}
+  <span class="small muted">Engineering review decisions this session: <strong id="review-count">{{ reviews.log|length }}</strong>
+    &middot; <a href="/review">Review findings</a></span>
+</div>
+
+{% if error %}<div class="panel"><div class="note warn">{{ error.message }}</div></div>{% endif %}
+<div id="why"></div>
+<div id="output">{% if o %}{% include "fire/partials/output.html" %}{% endif %}</div>
+{% endif %}
+{% endblock %}

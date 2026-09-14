@@ -1,0 +1,71 @@
+{
+  "entity": "Vehicle",
+  "description": "Vehicle variants within each programme.",
+  "data_classification": "SIMULATED ENTERPRISE ARTEFACT - not OEM, customer or proprietary data",
+  "generated_by": "scripts/generate_simulation.py",
+  "seed": 20260823,
+  "records": [
+    {
+      "id": "VEH-001",
+      "programme_id": "PRG-001",
+      "name": "ATLAS AWD Long Range",
+      "body_class": "Crossover SUV",
+      "drive": "AWD",
+      "usable_energy_kwh": 78.0,
+      "target_range_wltp_km": 505,
+      "kerb_mass_kg": 2085,
+      "max_dc_charge_kw": 150,
+      "derived_from": [
+        "SRC-011",
+        "SRC-017"
+      ],
+      "record_type": "Vehicle"
+    },
+    {
+      "id": "VEH-002",
+      "programme_id": "PRG-001",
+      "name": "ATLAS RWD Standard Range",
+      "body_class": "Crossover SUV",
+      "drive": "RWD",
+      "usable_energy_kwh": 58.0,
+      "target_range_wltp_km": 410,
+      "kerb_mass_kg": 1930,
+      "max_dc_charge_kw": 120,
+      "derived_from": [
+        "SRC-011",
+        "SRC-017"
+      ],
+      "record_type": "Vehicle"
+    },
+    {
+      "id": "VEH-003",
+      "programme_id": "PRG-002",
+      "name": "VEGA PHEV AWD",
+      "body_class": "SUV",
+      "drive": "AWD",
+      "usable_energy_kwh": 18.5,
+      "target_range_wltp_km": 95,
+      "kerb_mass_kg": 2210,
+      "max_dc_charge_kw": 50,
+      "derived_from": [
+        "SRC-017"
+      ],
+      "record_type": "Vehicle"
+    },
+    {
+      "id": "VEH-004",
+      "programme_id": "PRG-003",
+      "name": "ORION Panel Van L2H2",
+      "body_class": "Light Commercial Van",
+      "drive": "FWD",
+      "usable_energy_kwh": 0.5,
+      "target_range_wltp_km": null,
+      "kerb_mass_kg": 2040,
+      "max_dc_charge_kw": null,
+      "derived_from": [
+        "SRC-010"
+      ],
+      "record_type": "Vehicle"
+    }
+  ]
+}

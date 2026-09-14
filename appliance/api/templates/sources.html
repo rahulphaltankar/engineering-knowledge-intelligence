@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+{% block title %}Data Sources{% endblock %}
+{% block body %}
+<div class="page-head">
+  <h1>Data sources</h1>
+  <p>The customer's systems remain outside the appliance. A connector is enabled only
+     when the customer authorises it, and every connector is read-only by construction.</p>
+</div>
+
+<div class="panel tight">
+  <div class="row" style="gap:26px">
+    <span class="small"><strong>{{ summary.total }}</strong>
+      <span class="muted">connector categories</span></span>
+    <span class="small"><span class="pill ACTIVE">{{ summary.active }} active</span></span>
+    <span class="small"><span class="pill NO_ADAPTER">{{ summary.no_adapter }} no adapter yet</span></span>
+    {% if summary.disabled %}
+      <span class="small"><span class="pill DISABLED">{{ summary.disabled }} disabled</span></span>
+    {% endif %}
+    {% if summary.error %}
+      <span class="small"><span class="pill ERROR">{{ summary.error }} error</span></span>
+    {% endif %}
+  </div>
+</div>
+
+<div class="panel">
+  <div class="panel-head">
+    <h2>Active source</h2>
+    <span class="aside">Enable and disable takes effect at runtime, with no restart
+      and no image rebuild</span>
+  </div>
+  {% for c in catalogue if c.display_state == 'ACTIVE' %}
+  <div style="border:1px solid var(--ok);border-radius:7px;padding:14px 16px;
+              background:var(--ok-soft)">
+    <div class="row" style="justify-content:space-between">
+      <div>
+        <div style="font-weight:600">{{ c.name }}</div>
+        <div class="small muted" style="margin-top:3px">
+          {{ c.diagnosis.detail if c.diagnosis else '' }}</div>
+      </div>
+      <span class="pill ACTIVE">Active</span>
+    </div>
+  </div>
+  <p class="tiny muted" style="margin:11px 0 0">
+    Simulation is simply the connector authorised for this demonstration. The
+    architecture does not depend on it: the agent layer never references a connector,
+    and a test asserts that no simulation-specific branch exists above the adapter.
+  </p>
+  {% endfor %}
+</div>
+
+<div class="panel">
+  <div class="panel-head">
+    <h2>Connector catalogue</h2>
+    <span class="aside">Multiple connectors can be active simultaneously; results merge
+      into one engineering context with per-record provenance</span>
+  </div>
+  {% for cat, rows in by_category.items() %}
+  <h3>{{ cat }}</h3>
+  <table>
+    <thead><tr><th style="width:38%">Connector</th><th>State</th><th>Meaning</th></tr></thead>
+    <tbody>
+    {% for c in rows %}
+    <tr>
+      <td style="color:{{ 'var(--ink)' if c.display_state == 'ACTIVE' else 'var(--muted)' }}">
+        {{ c.name }}</td>
+      <td><span class="pill {{ c.display_state|replace(' ','_') }}">{{ c.display_state }}</span></td>
+      <td class="small muted">
+        {% if c.display_state == 'ACTIVE' %}
+          Supplying engineering context to this appliance.
+        {% elif c.display_state == 'NO ADAPTER' %}
+          An integration boundary. The adapter is not built, so the appliance will not
+          claim it is available.
+        {% elif c.display_state == 'ERROR' %}
+          Configured but unreachable.
+        {% else %}
+          Adapter available, currently switched off.
+        {% endif %}
+      </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  {% endfor %}
+</div>
+
+<div class="panel tight">
+  <p class="small muted" style="margin:0">
+    <strong>No enterprise system is connected.</strong> No API call is made to any
+    customer system, and none is simulated. Enabling a connector in a pilot is a
+    customer-authorised configuration step: the adapter implements the same contract,
+    and nothing above the connector changes.
+  </p>
+</div>
+{% endblock %}

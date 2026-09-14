@@ -1,0 +1,135 @@
+{
+  "entity": "System",
+  "description": "Vehicle systems.",
+  "data_classification": "SIMULATED ENTERPRISE ARTEFACT - not OEM, customer or proprietary data",
+  "generated_by": "scripts/generate_simulation.py",
+  "seed": 20260823,
+  "records": [
+    {
+      "id": "SYS-001",
+      "name": "High Voltage Energy Storage",
+      "domain": "Battery",
+      "description": "Traction battery pack: cells, modules, enclosure, BMS and disconnect.",
+      "record_type": "System"
+    },
+    {
+      "id": "SYS-002",
+      "name": "Thermal Management",
+      "domain": "Thermal",
+      "description": "Coolant loops, chiller, heater, pumps, valves and thermal control strategy.",
+      "record_type": "System"
+    },
+    {
+      "id": "SYS-003",
+      "name": "Charging System",
+      "domain": "Charging",
+      "description": "AC on-board charger, DC fast-charge path, charge inlet and charge control.",
+      "record_type": "System"
+    },
+    {
+      "id": "SYS-004",
+      "name": "Electric Drive Unit",
+      "domain": "Powertrain",
+      "description": "Traction motor, inverter, reduction gearbox and drive control.",
+      "record_type": "System"
+    },
+    {
+      "id": "SYS-005",
+      "name": "Brake System",
+      "domain": "Chassis",
+      "description": "Foundation brakes, hydraulic actuation, ESC/ABS and regenerative blending.",
+      "record_type": "System"
+    },
+    {
+      "id": "SYS-006",
+      "name": "Suspension and Chassis",
+      "domain": "Chassis",
+      "description": "Front and rear suspension, subframes, bushings, dampers and springs.",
+      "record_type": "System"
+    },
+    {
+      "id": "SYS-007",
+      "name": "Steering System",
+      "domain": "Chassis",
+      "description": "Electric power steering rack, torque sensing and steering ECU.",
+      "record_type": "System"
+    },
+    {
+      "id": "SYS-008",
+      "name": "E/E Architecture and Wiring",
+      "domain": "Electronics",
+      "description": "Domain controllers, buses, HV and LV harnesses, grounding and EMC design.",
+      "record_type": "System"
+    },
+    {
+      "id": "SYS-009",
+      "name": "ADAS and Perception",
+      "domain": "ADAS",
+      "description": "Camera, radar, ultrasonic sensing and driving assistance functions.",
+      "record_type": "System"
+    },
+    {
+      "id": "SYS-010",
+      "name": "HVAC and Cabin Comfort",
+      "domain": "Thermal",
+      "description": "Cabin climate, heat pump, compressor and cabin air handling.",
+      "record_type": "System"
+    },
+    {
+      "id": "SYS-011",
+      "name": "Vehicle Software and Calibration",
+      "domain": "Software",
+      "description": "Vehicle control software, calibrations, OTA update and configuration management.",
+      "record_type": "System"
+    },
+    {
+      "id": "SYS-012",
+      "name": "Body and Closures",
+      "domain": "Body",
+      "description": "Body-in-white, closures, sealing and corrosion protection.",
+      "record_type": "System"
+    },
+    {
+      "id": "SYS-013",
+      "name": "Restraints and Passive Safety",
+      "domain": "Safety",
+      "description": "Airbags, belts, pretensioners, crash sensing and structural load paths.",
+      "record_type": "System"
+    },
+    {
+      "id": "SYS-014",
+      "name": "Internal Combustion Powertrain",
+      "domain": "Powertrain",
+      "description": "Engine, transmission and hybrid coupling for PHEV and MHEV applications.",
+      "record_type": "System"
+    },
+    {
+      "id": "SYS-015",
+      "name": "Exhaust and Aftertreatment",
+      "domain": "Emissions",
+      "description": "Exhaust line, catalyst, particulate filter and emissions control.",
+      "record_type": "System"
+    },
+    {
+      "id": "SYS-016",
+      "name": "Wheels and Tyres",
+      "domain": "Chassis",
+      "description": "Wheel rims, tyres, TPMS and wheel-end assemblies.",
+      "record_type": "System"
+    },
+    {
+      "id": "SYS-017",
+      "name": "Infotainment and Connectivity",
+      "domain": "Electronics",
+      "description": "Head unit, telematics control unit and connectivity services.",
+      "record_type": "System"
+    },
+    {
+      "id": "SYS-018",
+      "name": "Low Voltage Power Supply",
+      "domain": "Electronics",
+      "description": "12V and 48V supply, DC-DC converter, LV battery and power distribution.",
+      "record_type": "System"
+    }
+  ]
+}

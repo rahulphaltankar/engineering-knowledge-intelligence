@@ -1,0 +1,89 @@
+{
+  "entity": "Standard",
+  "description": "Standards and legislation. Identifier and title only.",
+  "data_classification": "SIMULATED — PUBLIC DEMONSTRATOR DATA",
+  "generated_by": "Engineering Knowledge Intelligence demonstrator",
+  "seed": 42,
+  "records": [
+    {
+      "id": "FSTD-001",
+      "identifier": "Approved Document B, Volume 1",
+      "title": "Fire safety - Volume 1: Dwellings",
+      "body": "HM Government",
+      "scope_tag": "statutory_guidance",
+      "content_policy": "IDENTIFIER AND TITLE ONLY - no clause text, limit, table or test procedure from this document is reproduced",
+      "edition": "Edition not pinned in the demonstrator; the reviewer confirms the current edition.",
+      "record_type": "Standard"
+    },
+    {
+      "id": "FSTD-002",
+      "identifier": "Approved Document B, Volume 2",
+      "title": "Fire safety - Volume 2: Buildings other than dwellings",
+      "body": "HM Government",
+      "scope_tag": "statutory_guidance",
+      "content_policy": "IDENTIFIER AND TITLE ONLY - no clause text, limit, table or test procedure from this document is reproduced",
+      "edition": "Edition not pinned in the demonstrator; the reviewer confirms the current edition.",
+      "record_type": "Standard"
+    },
+    {
+      "id": "FSTD-003",
+      "identifier": "BS 9991",
+      "title": "Fire safety in the design, management and use of residential buildings - Code of practice",
+      "body": "BSI",
+      "scope_tag": "code_of_practice",
+      "content_policy": "IDENTIFIER AND TITLE ONLY - no clause text, limit, table or test procedure from this document is reproduced",
+      "edition": "Edition not pinned in the demonstrator; the reviewer confirms the current edition.",
+      "record_type": "Standard"
+    },
+    {
+      "id": "FSTD-004",
+      "identifier": "BS 5839-1",
+      "title": "Fire detection and fire alarm systems for buildings - Code of practice for non-domestic premises",
+      "body": "BSI",
+      "scope_tag": "code_of_practice",
+      "content_policy": "IDENTIFIER AND TITLE ONLY - no clause text, limit, table or test procedure from this document is reproduced",
+      "edition": "Edition not pinned in the demonstrator; the reviewer confirms the current edition.",
+      "record_type": "Standard"
+    },
+    {
+      "id": "FSTD-005",
+      "identifier": "BS 5839-6",
+      "title": "Fire detection and fire alarm systems for buildings - Code of practice for domestic premises",
+      "body": "BSI",
+      "scope_tag": "code_of_practice",
+      "content_policy": "IDENTIFIER AND TITLE ONLY - no clause text, limit, table or test procedure from this document is reproduced",
+      "edition": "Edition not pinned in the demonstrator; the reviewer confirms the current edition.",
+      "record_type": "Standard"
+    },
+    {
+      "id": "FSTD-006",
+      "identifier": "BS 9251",
+      "title": "Fire sprinkler systems for domestic and residential occupancies - Code of practice",
+      "body": "BSI",
+      "scope_tag": "code_of_practice",
+      "content_policy": "IDENTIFIER AND TITLE ONLY - no clause text, limit, table or test procedure from this document is reproduced",
+      "edition": "Edition not pinned in the demonstrator; the reviewer confirms the current edition.",
+      "record_type": "Standard"
+    },
+    {
+      "id": "FSTD-007",
+      "identifier": "Building Safety Act 2022",
+      "title": "Building Safety Act 2022",
+      "body": "UK Parliament",
+      "scope_tag": "legislation",
+      "content_policy": "IDENTIFIER AND TITLE ONLY - no clause text, limit, table or test procedure from this document is reproduced",
+      "edition": "Edition not pinned in the demonstrator; the reviewer confirms the current edition.",
+      "record_type": "Standard"
+    },
+    {
+      "id": "FSTD-008",
+      "identifier": "The Building Regulations 2010",
+      "title": "The Building Regulations 2010 (SI 2010/2214)",
+      "body": "UK Parliament",
+      "scope_tag": "legislation",
+      "content_policy": "IDENTIFIER AND TITLE ONLY - no clause text, limit, table or test procedure from this document is reproduced",
+      "edition": "Edition not pinned in the demonstrator; the reviewer confirms the current edition.",
+      "record_type": "Standard"
+    }
+  ]
+}

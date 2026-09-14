@@ -1,0 +1,29 @@
+{% macro lbl(key) -%}{{ labels.get(key) or (key|string)|replace('_',' ') }}{%- endmacro %}
+
+{% macro explain(fid, text='Explain') -%}
+<button class="ghost" hx-get="/explain/{{ fid }}" hx-target="#why" hx-swap="innerHTML">{{ text }}</button>
+{%- endmacro %}
+
+{% macro review_pill(rv) -%}
+{% if rv and rv.decision == 'accepted' %}<span class="pill ok" title="{{ rv.reviewer }} · {{ rv.timestamp }}">Accepted</span>{% elif rv and rv.decision == 'rejected' %}<span class="pill bad" title="{{ rv.reviewer }} · {{ rv.timestamp }}: {{ rv.note }}">Rejected</span>{% else %}<span class="pill PLANNED">Pending review</span>{% endif %}
+{%- endmacro %}
+
+{% macro status_pill(status) -%}
+<span class="pill {{ 'ok' if status == 'pass' else ('bad' if status == 'fail' else 'warn') }}">{{ (status or 'no result')|replace('_',' ') }}</span>
+{%- endmacro %}
+
+{% macro no_analysis(next_page, what) -%}
+<div class="panel">
+  <p style="margin:0 0 12px">{{ what }} are produced by analysing a change. No change has been
+    analysed in this session.</p>
+  <form method="post" action="/run/{{ S.hero_scenario }}" style="display:inline">
+    <input type="hidden" name="next" value="{{ next_page }}">
+    <button class="primary" type="submit">Analyse {{ S.hero_scenario }}</button>
+  </form>
+  <a href="/analyse-change" style="margin-left:12px" class="small">or open Analyse Change</a>
+</div>
+{%- endmacro %}
+
+{% macro step(n, title, aside='') -%}
+<div class="step"><span class="num">{{ n }}</span><h2>{{ title }}</h2>{% if aside %}<span class="aside">{{ aside }}</span>{% endif %}</div>
+{%- endmacro %}

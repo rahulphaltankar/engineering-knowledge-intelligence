@@ -1,0 +1,79 @@
+{
+  "entity": "NCR",
+  "description": "Non-conformance reports.",
+  "data_classification": "SIMULATED ENTERPRISE ARTEFACT - not OEM, customer or proprietary data",
+  "generated_by": "scripts/generate_simulation.py",
+  "seed": 20260823,
+  "records": [
+    {
+      "id": "NCR-001",
+      "quality_issue_id": "QI-006",
+      "title": "Cooling plate leak at pack final assembly leak test",
+      "disposition": "scrap",
+      "quantity_affected": 2,
+      "raised_date": "2026-06-14",
+      "status": "closed",
+      "record_type": "NCR"
+    },
+    {
+      "id": "NCR-002",
+      "quality_issue_id": "QI-011",
+      "title": "Bushing radial stiffness below lower specification limit",
+      "disposition": "return_to_supplier",
+      "quantity_affected": 240,
+      "raised_date": "2026-06-05",
+      "status": "open",
+      "record_type": "NCR"
+    },
+    {
+      "id": "NCR-003",
+      "quality_issue_id": "QI-012",
+      "title": "Module busbar weld resistance above limit",
+      "disposition": "rework",
+      "quantity_affected": 17,
+      "raised_date": "2026-04-16",
+      "status": "closed",
+      "record_type": "NCR"
+    },
+    {
+      "id": "NCR-004",
+      "quality_issue_id": "QI-017",
+      "title": "Pack vent flow verification failure",
+      "disposition": "rework",
+      "quantity_affected": 1,
+      "raised_date": "2026-05-09",
+      "status": "closed",
+      "record_type": "NCR"
+    },
+    {
+      "id": "NCR-005",
+      "quality_issue_id": "QI-024",
+      "title": "Perimeter seal compression set beyond qualification limit",
+      "disposition": "engineering_review",
+      "quantity_affected": 2,
+      "raised_date": "2026-04-28",
+      "status": "open",
+      "record_type": "NCR"
+    },
+    {
+      "id": "NCR-006",
+      "quality_issue_id": "QI-013",
+      "title": "DC charge contactor open state not confirmed",
+      "disposition": "quarantine",
+      "quantity_affected": 1,
+      "raised_date": "2026-07-19",
+      "status": "open",
+      "record_type": "NCR"
+    },
+    {
+      "id": "NCR-007",
+      "quality_issue_id": "QI-025",
+      "title": "Incomplete PPAP submission for transferred production location",
+      "disposition": "supplier_action",
+      "quantity_affected": 1,
+      "raised_date": "2026-05-16",
+      "status": "open",
+      "record_type": "NCR"
+    }
+  ]
+}

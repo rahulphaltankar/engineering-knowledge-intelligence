@@ -1,0 +1,63 @@
+{
+  "entity": "Programme",
+  "description": "Vehicle programmes in the simulated environment.",
+  "data_classification": "SIMULATED ENTERPRISE ARTEFACT - not OEM, customer or proprietary data",
+  "generated_by": "scripts/generate_simulation.py",
+  "seed": 20260823,
+  "records": [
+    {
+      "id": "PRG-001",
+      "name": "ATLAS",
+      "description": "C-segment battery-electric crossover, global programme",
+      "propulsion": "BEV",
+      "sop": "2027-Q3",
+      "markets": [
+        "EU",
+        "UK",
+        "NA",
+        "IN"
+      ],
+      "current_phase": "DV",
+      "derived_from": [
+        "SRC-011",
+        "SRC-017"
+      ],
+      "record_type": "Programme"
+    },
+    {
+      "id": "PRG-002",
+      "name": "VEGA",
+      "description": "D-segment plug-in hybrid SUV",
+      "propulsion": "PHEV",
+      "sop": "2026-Q4",
+      "markets": [
+        "EU",
+        "UK",
+        "NA"
+      ],
+      "current_phase": "PV",
+      "derived_from": [
+        "SRC-017"
+      ],
+      "record_type": "Programme"
+    },
+    {
+      "id": "PRG-003",
+      "name": "ORION",
+      "description": "N1-class light commercial vehicle, diesel with 48V mild hybrid",
+      "propulsion": "ICE-MHEV",
+      "sop": "2026-Q2",
+      "markets": [
+        "EU",
+        "UK",
+        "IN"
+      ],
+      "current_phase": "Production",
+      "derived_from": [
+        "SRC-010",
+        "SRC-017"
+      ],
+      "record_type": "Programme"
+    }
+  ]
+}

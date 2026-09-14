@@ -1,0 +1,214 @@
+{% from "fire/_macros.html" import lbl, explain, review_pill, status_pill, step with context %}
+{% set v = view %}
+{% set ctx = v.result.context %}
+{% set k = v.k %}
+
+<!-- 1 CHANGE -->
+<section class="panel" id="change">
+  {{ step(1, 'Change', v.subject.id ~ ' · status ' ~ (v.subject.get('status') or '')) }}
+  <h3 style="margin-top:0">{{ v.subject.title }}</h3>
+  <p class="change-text" style="margin-top:4px">{{ v.subject.get('description') }}</p>
+  {% if v.change_classification %}
+  {% set c = v.change_classification.detail %}
+  <div class="split" style="gap:14px">
+    <div>
+      <dl class="kv">
+        <dt>Classification</dt><dd><strong>{{ c.label|capitalize }}</strong></dd>
+        <dt>Design basis</dt><dd><code>{{ c.baseline_basis }}</code> &rarr; <code>{{ c.proposed_basis }}</code></dd>
+        <dt>Affected areas</dt><dd>{{ c.affected_areas|join('; ') }}</dd>
+      </dl>
+      <div style="margin-top:6px">{{ explain(v.change_classification.id, 'Explain classification') }}</div>
+    </div>
+    <div>
+      <div class="tiny faint" style="text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px">Existing conditions recorded</div>
+      {% for x in c.existing_conditions %}<span class="chip">{{ x }}</span>{% endfor %}
+      {% if v.design_inputs %}
+      <div class="note unknown tiny" style="margin-top:10px">
+        <strong>Not recorded in the change &mdash; reported as UNKNOWN:</strong>
+        {{ v.design_inputs.detail.inputs|join('; ') }}.
+      </div>
+      {% endif %}
+    </div>
+  </div>
+  {% endif %}
+</section>
+
+<!-- 2 DOMAINS -->
+<section class="panel" id="domains">
+  {{ step(2, 'Impacted fire-safety domains', v.impacted|length ~ ' reached from ' ~ v.subject.id) }}
+  <div class="grid3">
+    {% for f in v.impacted %}
+    {% set sys = ctx.get(f.detail.system_id) %}
+    <div class="tile">
+      <div class="row" style="justify-content:space-between;gap:6px">
+        <h4>{{ sys.title }}</h4>
+        {% if f.detail.direct %}<span class="pill bad">Direct</span>{% else %}<span class="pill warn">Via relationships</span>{% endif %}
+      </div>
+      <div>{% for a in (sys.get('domain_areas') or []) %}<span class="chip hot">{{ a }}</span>{% endfor %}</div>
+      <div class="tiny muted" style="margin-top:6px">
+        {% if f.detail.direct %}Named directly in the change{% else %}Reached through a {{ f.detail.hops }}-step relationship path{% endif %}
+        · confidence {{ '%.2f'|format(f.confidence_score) }}</div>
+      <div style="margin-top:4px">{{ explain(f.id) }}</div>
+    </div>
+    {% endfor %}
+  </div>
+  <p class="tiny muted" style="margin:10px 0 0">Domains reached only through relationships are the
+    consequences most easily missed when a change is reviewed in isolation.</p>
+</section>
+
+<!-- 3 REQUIREMENTS -->
+<section class="panel" id="requirements">
+  {{ step(3, 'Applicable requirements', k.requirements|length ~ ' in scope · standards by identifier only') }}
+  <div class="scroll" style="max-height:340px">
+  <table>
+    <thead><tr><th>Requirement</th><th>Regulatory reference</th><th>Standards / guidance</th><th>Applicability</th><th>Status</th><th>Basis</th></tr></thead>
+    <tbody>
+    {% for r in k.requirements %}
+    <tr>
+      <td><code>{{ r.requirement }}</code><br><span class="small">{{ r.title }}</span></td>
+      <td class="small muted">{{ r.regulatory_reference }}</td>
+      <td class="small">{% for s in r.standards %}<code>{{ s.id }}</code> {{ s.identifier }}{% if not loop.last %}<br>{% endif %}{% endfor %}</td>
+      <td>{% if r.applicability == 'applies' %}<span class="pill ok">applies</span>{% else %}<span class="pill unknown">{{ r.applicability|replace('_',' ') }}</span>{% endif %}</td>
+      <td class="small">{{ r.status }}</td>
+      <td class="small">{{ r.basis|replace('_',' ') }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  </div>
+  <div class="row small" style="margin-top:10px">
+    {% for u in v.applicability_unknown %}{{ explain(u.id, 'Why is ' ~ u.detail.requirement ~ ' unknown?') }}{% endfor %}
+    {% if k.applicable_finding %}{{ explain(k.applicable_finding, 'Explain applicability') }}{% endif %}
+    <a href="/requirements" class="small">Requirements detail &rarr;</a>
+  </div>
+</section>
+
+<!-- 4 PATHS -->
+<section class="panel" id="paths">
+  {{ step(4, 'Knowledge / relationship paths', v.result.closure|length ~ ' records reached by deterministic traversal') }}
+  <p class="small muted" style="margin:0 0 10px">Every record the analysis relies on carries the recorded path by
+    which it was reached from the change. These are traversal records, not narrative.</p>
+  <div class="scroll" style="max-height:300px">
+  <table>
+    <thead><tr><th>Record</th><th>Type</th><th>Path from the change</th></tr></thead>
+    <tbody>
+    {% for pth in v.paths %}
+    <tr>
+      <td><code>{{ pth.id }}</code><div class="tiny muted">{{ pth.title }}</div></td>
+      <td class="small">{{ pth.type }}</td>
+      <td class="path">{% for s in pth.steps %}{{ s }}{% if not loop.last %}<br>{% endif %}{% endfor %}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<!-- 5 EVIDENCE -->
+<section class="panel" id="evidence">
+  {{ step(5, 'Evidence', k.evidence_cards|length ~ ' items in scope, each with its source') }}
+  <div class="cards">
+    {% for c in k.evidence_cards %}
+    <div class="ev-card">
+      <div class="row" style="justify-content:space-between;gap:6px">
+        <span><code>{{ c.id }}</code> <span class="tiny muted">{{ lbl(c.entity_type) }}</span></span>
+        {{ status_pill(c.status) }}
+      </div>
+      <div style="font-weight:570;margin:6px 0 5px;font-size:13.5px">{{ c.title }}</div>
+      <dl class="kv">
+        {% if c.test %}<dt>Verification activity</dt><dd><code>{{ c.test }}</code>
+          {% if c.criterion_established == false %}<span class="pill unknown">criterion not established</span>{% endif %}</dd>{% endif %}
+        {% if c.requirements %}<dt>Requirements</dt><dd>{{ c.requirements|join(', ') }}</dd>{% endif %}
+        {% if c.evidence_records %}<dt>Evidence records</dt><dd>{{ c.evidence_records|join(', ') }}</dd>{% endif %}
+        <dt>Basis</dt><dd>{{ c.basis|replace('_',' ') }}</dd>
+        <dt>Classification</dt><dd><span class="pill {{ c.classification }}">{{ c.classification }}</span></dd>
+      </dl>
+      <div class="meta">Source: {{ c.provenance.connector_id }} / {{ c.provenance.source_object_id }} &middot; {{ c.provenance.source_version }}<br>{{ c.provenance.data_classification }}</div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<!-- 6 TRANSFERABILITY -->
+<section class="panel" id="transferability">
+  {{ step(6, 'Transferability', k.transferable_count ~ ' of ' ~ k.evidence_cards|length ~ ' items transfer to the proposed basis') }}
+  {% if v.change_classification %}
+  <p class="small" style="margin:0 0 10px">Evidence obtained on the <code>{{ v.change_classification.detail.baseline_basis }}</code>
+    basis is compared with the proposed <code>{{ v.change_classification.detail.proposed_basis }}</code> basis.
+    A pass obtained for the previous use is not coverage for the new one.</p>
+  {% endif %}
+  <div class="cards">
+    {% for c in k.evidence_cards if not c.transferable %}
+    <div class="ev-card blocked">
+      <div class="row" style="justify-content:space-between"><span><code>{{ c.id }}</code> <span class="tiny muted">{{ lbl(c.entity_type) }}</span></span>
+        <span class="pill bad">Not transferable</span></div>
+      <div style="font-weight:570;margin:6px 0 5px">{{ c.title }}</div>
+      <div class="note warn tiny">{{ c.reason or 'The record is marked non-transferable.' }}</div>
+      <div style="margin-top:6px">{{ explain(c.finding_id, 'Explain & review') }}</div>
+    </div>
+    {% endfor %}
+  </div>
+  {% if v.basis_conflict %}
+  <div class="note" style="margin-top:12px">{{ v.basis_conflict.statement }} {{ explain(v.basis_conflict.id) }}</div>
+  {% endif %}
+</section>
+
+<!-- 7 GAPS -->
+<section class="panel" id="gaps">
+  {{ step(7, 'Unknown / evidence gaps', v.unknown_findings|length ~ ' UNKNOWN findings · no value assumed for any of them') }}
+  <table>
+    <thead><tr><th>Evidence condition</th><th>Pairs</th><th>What it means</th><th>Action</th><th></th></tr></thead>
+    <tbody>
+    {% for g in v.gaps %}
+    <tr>
+      <td><strong>{{ g.label }}</strong><div class="tiny muted">{% for i in g.pairs %}{{ i.requirement }} / {{ i.test }}{% if i.result %} / {{ i.result }}{% endif %}{% if not loop.last %}; {% endif %}{% endfor %}</div></td>
+      <td><span class="pill {{ 'unknown' if g.gap_type == 'criterion_not_established' else 'warn' }}">{{ g.pairs|length }}</span></td>
+      <td class="small muted">{{ g.detail }}</td>
+      <td class="small" style="color:var(--accent)">{{ g.action }}</td>
+      <td>{{ explain(g.finding_ids[0]) }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  <h3>Not established from the evidence</h3>
+  <div class="stack">
+    {% for u in v.unknown_findings %}
+    <div class="note unknown small">{{ u.statement }} {{ explain(u.id) }}</div>
+    {% endfor %}
+  </div>
+</section>
+
+<!-- 8 CONFIDENCE -->
+<section class="panel" id="confidence">
+  {{ step(8, 'Confidence', 'deterministic, from evidence properties') }}
+  <div class="metrics">
+    {% for cls, n in v.confidence.by_class.items() %}
+    <div class="metric"><div class="v">{{ n }}</div><div class="k"><span class="pill {{ cls }}">{{ cls }}</span></div></div>
+    {% endfor %}
+    <div class="metric good"><div class="v">{{ '%.2f'|format(v.confidence.mean) }}</div><div class="k">Mean score (excl. unknown)</div></div>
+    <div class="metric"><div class="v">{{ v.confidence.gate.fabricated_citation_count }}</div><div class="k">Fabricated citations</div></div>
+  </div>
+  <p class="tiny muted" style="margin:10px 0 0">Evidence gate: {{ v.result.findings|length }} findings passed,
+    {{ v.confidence.gate.removed|length }} removed, {{ v.confidence.gate.downgraded|length }} downgraded.
+    Confidence is scored from evidence count, sources and classification &mdash; it is not model self-reported.
+    <a href="/reasoning#confidence">All findings &rarr;</a></p>
+</section>
+
+<div id="why"></div>
+
+<!-- 9 REVIEW -->
+<section class="panel" id="review">
+  {{ step(9, 'Human review', review_label) }}
+  <div id="review-summary">{% include "fire/partials/review_summary.html" %}</div>
+</section>
+
+<!-- 10 PLAN -->
+<section class="panel" id="plan">
+  {{ step(10, 'Verification & Evidence Plan', 'generated from this same analysis, with review decisions applied') }}
+  <div class="row">
+    <button class="primary" hx-post="/output/verification-evidence-plan" hx-target="#output" hx-swap="innerHTML">Generate Verification &amp; Evidence Plan</button>
+    <button hx-post="/output/change-impact-assessment" hx-target="#output" hx-swap="innerHTML">Change Impact Assessment</button>
+    <button hx-post="/output/evidence-assessment" hx-target="#output" hx-swap="innerHTML">Evidence Assessment</button>
+  </div>
+  <div id="output" style="margin-top:14px"></div>
+</section>

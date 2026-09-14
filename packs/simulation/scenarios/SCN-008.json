@@ -1,0 +1,102 @@
+{
+  "scenario_id": "SCN-008",
+  "category": "Regression impact",
+  "title": "Control software calibration release",
+  "engineering_question": "A control calibration is being released. Which previously completed verification is invalidated and must be repeated?",
+  "one_liner": "Determine whether this software release requires regression testing, and of what.",
+  "initial_input": "Engineering change ECR-004 releases a control calibration revising the thermal derate map and torque ramp shaping to improve continuous power availability.",
+  "relevant_entities": {
+    "engineering_changes": [
+      "ECR-004"
+    ],
+    "quality_issues": [
+      "QI-010",
+      "QI-001",
+      "QI-015"
+    ],
+    "systems": [
+      "SYS-004",
+      "SYS-002",
+      "SYS-011"
+    ],
+    "components": [
+      "COMP-025",
+      "COMP-024"
+    ],
+    "requirements": [
+      "REQ-050",
+      "REQ-051",
+      "REQ-052",
+      "REQ-053",
+      "REQ-031",
+      "REQ-110",
+      "REQ-111",
+      "REQ-113"
+    ],
+    "failure_modes": [
+      "FM-050",
+      "FM-051",
+      "FM-052",
+      "FM-140",
+      "FM-141"
+    ],
+    "tests": [
+      "TEST-050",
+      "TEST-051",
+      "TEST-052",
+      "TEST-053",
+      "TEST-112",
+      "TEST-110",
+      "TEST-002"
+    ],
+    "documents": [
+      "DOC-016",
+      "DOC-025",
+      "DOC-030"
+    ]
+  },
+  "expected_impacted_domains": [
+    "Drive power availability",
+    "Thermal protection behaviour",
+    "Functional safety verification validity",
+    "Range estimation accuracy",
+    "Configuration control and build records"
+  ],
+  "expected_evidence": [
+    "TR-023",
+    "TR-024",
+    "TR-059",
+    "TR-049",
+    "TR-001",
+    "MEAS-008",
+    "MEAS-009"
+  ],
+  "expected_reasoning_paths": [
+    "TR-059 satisfies the ASIL D requirement REQ-052 but was executed on calibration INV-4.0.2, two revisions behind the proposed release, so the safety evidence is stale",
+    "Changing the derate map directly alters the behaviour verified by TEST-052, so that verification must be repeated",
+    "The thermal derate map is shared with the QI-001 thermal investigation, so this change interacts with an open investigation and could mask or worsen it",
+    "Range estimation TEST-112 already fails, and changing torque ramp shaping affects consumption, so REQ-113 evidence is also invalidated"
+  ],
+  "candidate_outputs": [
+    "Regression Impact Analysis",
+    "Engineering Change Impact",
+    "Traceability Matrix",
+    "Requirements Impact Analysis",
+    "Verification Plan",
+    "Test Strategy",
+    "Test Case Recommendations",
+    "Evidence Gap Analysis",
+    "Risk Assessment",
+    "DFMEA Review",
+    "Design Review",
+    "Engineering Executive Summary",
+    "Engineering Decision Brief"
+  ],
+  "known_unknowns": [
+    "The specific calibration parameters changed between INV-4.1.7 and v4.2 are not enumerated in the environment",
+    "No HIL regression suite definition exists in the environment",
+    "Whether the derate map change has been coordinated with the QI-001 investigation team is not recorded"
+  ],
+  "data_classification": "SIMULATED ENTERPRISE ARTEFACT - not OEM, customer or proprietary data",
+  "connector": "SIMULATION"
+}

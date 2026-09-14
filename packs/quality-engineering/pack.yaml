@@ -1,0 +1,38 @@
+name: quality-engineering
+version: 0.1.0
+source_repo: https://github.com/RBraga01/Quality-Engineering-Skills
+commit: 186d97e8bc885a82af92a0dfb52b495b71fbd232
+licence: MIT
+attribution: RBraga01
+provides:
+  - agent: 8d-coach
+  - agent: audit-guide
+  - agent: control-plan-builder
+  - agent: fmea-reviewer
+  - agent: ncr-writer
+  - agent: ppap-checker
+  - agent: rca-facilitator
+  - agent: skill-auditor
+  - skill: 5why-root-cause
+  - skill: 8d-problem-solving
+  - skill: 8d-report-writing
+  - skill: action-priority-ap
+  - skill: apqp
+  - skill: car-corrective-action
+  - skill: control-plan
+  - skill: dfmea-design
+  - skill: dmaic
+  - skill: dvp-test-plan
+  - skill: fishbone-analysis
+  - skill: iatf-16949-audit
+  - skill: is-is-not-scoping
+  - skill: iso-9001-internal-audit
+  - skill: msa-gauge-rr
+  - skill: ncr-writing
+  - skill: pdca-improvement
+  - skill: pfmea-process
+  - skill: ppap
+  - skill: quality-problem-zeroing
+  - skill: spc-control-charts
+  - skill: supplier-scar
+  - skill: vda-6-3-audit

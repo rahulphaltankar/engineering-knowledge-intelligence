@@ -1,0 +1,945 @@
+{
+  "entity": "Relationship",
+  "description": "Directed relationship graph for the synthetic corpus.",
+  "data_classification": "SIMULATED — PUBLIC DEMONSTRATOR DATA",
+  "generated_by": "Engineering Knowledge Intelligence demonstrator",
+  "seed": 42,
+  "records": [
+    {
+      "source_type": "System",
+      "source_id": "FSYS-001",
+      "relationship": "HAS_SUBSYSTEM",
+      "target_type": "Subsystem",
+      "target_id": "FSUB-001",
+      "note": null
+    },
+    {
+      "source_type": "System",
+      "source_id": "FSYS-002",
+      "relationship": "HAS_SUBSYSTEM",
+      "target_type": "Subsystem",
+      "target_id": "FSUB-002",
+      "note": null
+    },
+    {
+      "source_type": "System",
+      "source_id": "FSYS-003",
+      "relationship": "HAS_SUBSYSTEM",
+      "target_type": "Subsystem",
+      "target_id": "FSUB-003",
+      "note": null
+    },
+    {
+      "source_type": "System",
+      "source_id": "FSYS-004",
+      "relationship": "HAS_SUBSYSTEM",
+      "target_type": "Subsystem",
+      "target_id": "FSUB-004",
+      "note": null
+    },
+    {
+      "source_type": "Subsystem",
+      "source_id": "FSUB-001",
+      "relationship": "HAS_COMPONENT",
+      "target_type": "Component",
+      "target_id": "FCMP-001",
+      "note": null
+    },
+    {
+      "source_type": "Subsystem",
+      "source_id": "FSUB-002",
+      "relationship": "HAS_COMPONENT",
+      "target_type": "Component",
+      "target_id": "FCMP-002",
+      "note": null
+    },
+    {
+      "source_type": "Subsystem",
+      "source_id": "FSUB-003",
+      "relationship": "HAS_COMPONENT",
+      "target_type": "Component",
+      "target_id": "FCMP-003",
+      "note": null
+    },
+    {
+      "source_type": "Subsystem",
+      "source_id": "FSUB-004",
+      "relationship": "HAS_COMPONENT",
+      "target_type": "Component",
+      "target_id": "FCMP-004",
+      "note": null
+    },
+    {
+      "source_type": "EngineeringChange",
+      "source_id": "FEC-001",
+      "relationship": "AFFECTS",
+      "target_type": "System",
+      "target_id": "FSYS-001",
+      "note": null
+    },
+    {
+      "source_type": "EngineeringChange",
+      "source_id": "FEC-001",
+      "relationship": "AFFECTS",
+      "target_type": "Subsystem",
+      "target_id": "FSUB-002",
+      "note": null
+    },
+    {
+      "source_type": "EngineeringChange",
+      "source_id": "FEC-001",
+      "relationship": "AFFECTS",
+      "target_type": "Subsystem",
+      "target_id": "FSUB-003",
+      "note": null
+    },
+    {
+      "source_type": "EngineeringChange",
+      "source_id": "FEC-001",
+      "relationship": "AFFECTS",
+      "target_type": "Component",
+      "target_id": "FCMP-003",
+      "note": null
+    },
+    {
+      "source_type": "EngineeringChange",
+      "source_id": "FEC-001",
+      "relationship": "AFFECTS",
+      "target_type": "Requirement",
+      "target_id": "FREQ-001",
+      "note": null
+    },
+    {
+      "source_type": "Requirement",
+      "source_id": "FREQ-001",
+      "relationship": "ALLOCATED_TO",
+      "target_type": "System",
+      "target_id": "FSYS-001",
+      "note": null
+    },
+    {
+      "source_type": "Standard",
+      "source_id": "FSTD-001",
+      "relationship": "APPLIES_TO",
+      "target_type": "Requirement",
+      "target_id": "FREQ-001",
+      "note": null
+    },
+    {
+      "source_type": "Standard",
+      "source_id": "FSTD-003",
+      "relationship": "APPLIES_TO",
+      "target_type": "Requirement",
+      "target_id": "FREQ-001",
+      "note": null
+    },
+    {
+      "source_type": "EngineeringChange",
+      "source_id": "FEC-001",
+      "relationship": "AFFECTS",
+      "target_type": "Requirement",
+      "target_id": "FREQ-002",
+      "note": null
+    },
+    {
+      "source_type": "Requirement",
+      "source_id": "FREQ-002",
+      "relationship": "ALLOCATED_TO",
+      "target_type": "System",
+      "target_id": "FSYS-001",
+      "note": null
+    },
+    {
+      "source_type": "Standard",
+      "source_id": "FSTD-002",
+      "relationship": "APPLIES_TO",
+      "target_type": "Requirement",
+      "target_id": "FREQ-002",
+      "note": null
+    },
+    {
+      "source_type": "EngineeringChange",
+      "source_id": "FEC-001",
+      "relationship": "AFFECTS",
+      "target_type": "Requirement",
+      "target_id": "FREQ-003",
+      "note": null
+    },
+    {
+      "source_type": "Requirement",
+      "source_id": "FREQ-003",
+      "relationship": "ALLOCATED_TO",
+      "target_type": "System",
+      "target_id": "FSYS-001",
+      "note": null
+    },
+    {
+      "source_type": "Standard",
+      "source_id": "FSTD-001",
+      "relationship": "APPLIES_TO",
+      "target_type": "Requirement",
+      "target_id": "FREQ-003",
+      "note": null
+    },
+    {
+      "source_type": "Standard",
+      "source_id": "FSTD-003",
+      "relationship": "APPLIES_TO",
+      "target_type": "Requirement",
+      "target_id": "FREQ-003",
+      "note": null
+    },
+    {
+      "source_type": "EngineeringChange",
+      "source_id": "FEC-001",
+      "relationship": "AFFECTS",
+      "target_type": "Requirement",
+      "target_id": "FREQ-004",
+      "note": null
+    },
+    {
+      "source_type": "Requirement",
+      "source_id": "FREQ-004",
+      "relationship": "ALLOCATED_TO",
+      "target_type": "System",
+      "target_id": "FSYS-002",
+      "note": null
+    },
+    {
+      "source_type": "Standard",
+      "source_id": "FSTD-005",
+      "relationship": "APPLIES_TO",
+      "target_type": "Requirement",
+      "target_id": "FREQ-004",
+      "note": null
+    },
+    {
+      "source_type": "EngineeringChange",
+      "source_id": "FEC-001",
+      "relationship": "AFFECTS",
+      "target_type": "Requirement",
+      "target_id": "FREQ-005",
+      "note": null
+    },
+    {
+      "source_type": "Requirement",
+      "source_id": "FREQ-005",
+      "relationship": "ALLOCATED_TO",
+      "target_type": "System",
+      "target_id": "FSYS-002",
+      "note": null
+    },
+    {
+      "source_type": "Standard",
+      "source_id": "FSTD-004",
+      "relationship": "APPLIES_TO",
+      "target_type": "Requirement",
+      "target_id": "FREQ-005",
+      "note": null
+    },
+    {
+      "source_type": "EngineeringChange",
+      "source_id": "FEC-001",
+      "relationship": "AFFECTS",
+      "target_type": "Requirement",
+      "target_id": "FREQ-006",
+      "note": null
+    },
+    {
+      "source_type": "Requirement",
+      "source_id": "FREQ-006",
+      "relationship": "ALLOCATED_TO",
+      "target_type": "System",
+      "target_id": "FSYS-003",
+      "note": null
+    },
+    {
+      "source_type": "Standard",
+      "source_id": "FSTD-001",
+      "relationship": "APPLIES_TO",
+      "target_type": "Requirement",
+      "target_id": "FREQ-006",
+      "note": null
+    },
+    {
+      "source_type": "Standard",
+      "source_id": "FSTD-003",
+      "relationship": "APPLIES_TO",
+      "target_type": "Requirement",
+      "target_id": "FREQ-006",
+      "note": null
+    },
+    {
+      "source_type": "EngineeringChange",
+      "source_id": "FEC-001",
+      "relationship": "AFFECTS",
+      "target_type": "Requirement",
+      "target_id": "FREQ-007",
+      "note": "inferred via allocation"
+    },
+    {
+      "source_type": "Requirement",
+      "source_id": "FREQ-007",
+      "relationship": "ALLOCATED_TO",
+      "target_type": "System",
+      "target_id": "FSYS-003",
+      "note": null
+    },
+    {
+      "source_type": "Standard",
+      "source_id": "FSTD-001",
+      "relationship": "APPLIES_TO",
+      "target_type": "Requirement",
+      "target_id": "FREQ-007",
+      "note": null
+    },
+    {
+      "source_type": "Standard",
+      "source_id": "FSTD-002",
+      "relationship": "APPLIES_TO",
+      "target_type": "Requirement",
+      "target_id": "FREQ-007",
+      "note": null
+    },
+    {
+      "source_type": "EngineeringChange",
+      "source_id": "FEC-001",
+      "relationship": "AFFECTS",
+      "target_type": "Requirement",
+      "target_id": "FREQ-008",
+      "note": "inferred via allocation"
+    },
+    {
+      "source_type": "Requirement",
+      "source_id": "FREQ-008",
+      "relationship": "ALLOCATED_TO",
+      "target_type": "System",
+      "target_id": "FSYS-004",
+      "note": null
+    },
+    {
+      "source_type": "Standard",
+      "source_id": "FSTD-001",
+      "relationship": "APPLIES_TO",
+      "target_type": "Requirement",
+      "target_id": "FREQ-008",
+      "note": null
+    },
+    {
+      "source_type": "Standard",
+      "source_id": "FSTD-006",
+      "relationship": "APPLIES_TO",
+      "target_type": "Requirement",
+      "target_id": "FREQ-008",
+      "note": null
+    },
+    {
+      "source_type": "EngineeringChange",
+      "source_id": "FEC-001",
+      "relationship": "AFFECTS",
+      "target_type": "Requirement",
+      "target_id": "FREQ-009",
+      "note": "inferred via allocation"
+    },
+    {
+      "source_type": "Requirement",
+      "source_id": "FREQ-009",
+      "relationship": "ALLOCATED_TO",
+      "target_type": "System",
+      "target_id": "FSYS-004",
+      "note": null
+    },
+    {
+      "source_type": "Standard",
+      "source_id": "FSTD-002",
+      "relationship": "APPLIES_TO",
+      "target_type": "Requirement",
+      "target_id": "FREQ-009",
+      "note": null
+    },
+    {
+      "source_type": "EngineeringChange",
+      "source_id": "FEC-001",
+      "relationship": "AFFECTS",
+      "target_type": "Requirement",
+      "target_id": "FREQ-010",
+      "note": null
+    },
+    {
+      "source_type": "Requirement",
+      "source_id": "FREQ-010",
+      "relationship": "ALLOCATED_TO",
+      "target_type": "System",
+      "target_id": "FSYS-001",
+      "note": null
+    },
+    {
+      "source_type": "Standard",
+      "source_id": "FSTD-007",
+      "relationship": "APPLIES_TO",
+      "target_type": "Requirement",
+      "target_id": "FREQ-010",
+      "note": null
+    },
+    {
+      "source_type": "Standard",
+      "source_id": "FSTD-008",
+      "relationship": "APPLIES_TO",
+      "target_type": "Requirement",
+      "target_id": "FREQ-010",
+      "note": null
+    },
+    {
+      "source_type": "Requirement",
+      "source_id": "FREQ-001",
+      "relationship": "VERIFIED_BY",
+      "target_type": "TestCase",
+      "target_id": "FTST-001",
+      "note": null
+    },
+    {
+      "source_type": "Requirement",
+      "source_id": "FREQ-002",
+      "relationship": "VERIFIED_BY",
+      "target_type": "TestCase",
+      "target_id": "FTST-001",
+      "note": null
+    },
+    {
+      "source_type": "FailureMode",
+      "source_id": "FFM-001",
+      "relationship": "VERIFIED_BY",
+      "target_type": "TestCase",
+      "target_id": "FTST-001",
+      "note": null
+    },
+    {
+      "source_type": "Standard",
+      "source_id": "FSTD-002",
+      "relationship": "APPLIES_TO",
+      "target_type": "TestCase",
+      "target_id": "FTST-001",
+      "note": null
+    },
+    {
+      "source_type": "Requirement",
+      "source_id": "FREQ-005",
+      "relationship": "VERIFIED_BY",
+      "target_type": "TestCase",
+      "target_id": "FTST-002",
+      "note": null
+    },
+    {
+      "source_type": "FailureMode",
+      "source_id": "FFM-002",
+      "relationship": "VERIFIED_BY",
+      "target_type": "TestCase",
+      "target_id": "FTST-002",
+      "note": null
+    },
+    {
+      "source_type": "Standard",
+      "source_id": "FSTD-004",
+      "relationship": "APPLIES_TO",
+      "target_type": "TestCase",
+      "target_id": "FTST-002",
+      "note": null
+    },
+    {
+      "source_type": "Requirement",
+      "source_id": "FREQ-004",
+      "relationship": "VERIFIED_BY",
+      "target_type": "TestCase",
+      "target_id": "FTST-003",
+      "note": null
+    },
+    {
+      "source_type": "FailureMode",
+      "source_id": "FFM-002",
+      "relationship": "VERIFIED_BY",
+      "target_type": "TestCase",
+      "target_id": "FTST-003",
+      "note": null
+    },
+    {
+      "source_type": "Standard",
+      "source_id": "FSTD-005",
+      "relationship": "APPLIES_TO",
+      "target_type": "TestCase",
+      "target_id": "FTST-003",
+      "note": null
+    },
+    {
+      "source_type": "Requirement",
+      "source_id": "FREQ-003",
+      "relationship": "VERIFIED_BY",
+      "target_type": "TestCase",
+      "target_id": "FTST-004",
+      "note": null
+    },
+    {
+      "source_type": "FailureMode",
+      "source_id": "FFM-001",
+      "relationship": "VERIFIED_BY",
+      "target_type": "TestCase",
+      "target_id": "FTST-004",
+      "note": null
+    },
+    {
+      "source_type": "Standard",
+      "source_id": "FSTD-002",
+      "relationship": "APPLIES_TO",
+      "target_type": "TestCase",
+      "target_id": "FTST-004",
+      "note": null
+    },
+    {
+      "source_type": "Requirement",
+      "source_id": "FREQ-007",
+      "relationship": "VERIFIED_BY",
+      "target_type": "TestCase",
+      "target_id": "FTST-005",
+      "note": null
+    },
+    {
+      "source_type": "Standard",
+      "source_id": "FSTD-002",
+      "relationship": "APPLIES_TO",
+      "target_type": "TestCase",
+      "target_id": "FTST-005",
+      "note": null
+    },
+    {
+      "source_type": "Requirement",
+      "source_id": "FREQ-003",
+      "relationship": "VERIFIED_BY",
+      "target_type": "TestCase",
+      "target_id": "FTST-006",
+      "note": null
+    },
+    {
+      "source_type": "Requirement",
+      "source_id": "FREQ-006",
+      "relationship": "VERIFIED_BY",
+      "target_type": "TestCase",
+      "target_id": "FTST-006",
+      "note": null
+    },
+    {
+      "source_type": "FailureMode",
+      "source_id": "FFM-003",
+      "relationship": "VERIFIED_BY",
+      "target_type": "TestCase",
+      "target_id": "FTST-006",
+      "note": null
+    },
+    {
+      "source_type": "Standard",
+      "source_id": "FSTD-001",
+      "relationship": "APPLIES_TO",
+      "target_type": "TestCase",
+      "target_id": "FTST-006",
+      "note": null
+    },
+    {
+      "source_type": "Requirement",
+      "source_id": "FREQ-008",
+      "relationship": "VERIFIED_BY",
+      "target_type": "TestCase",
+      "target_id": "FTST-007",
+      "note": null
+    },
+    {
+      "source_type": "FailureMode",
+      "source_id": "FFM-005",
+      "relationship": "VERIFIED_BY",
+      "target_type": "TestCase",
+      "target_id": "FTST-007",
+      "note": null
+    },
+    {
+      "source_type": "Standard",
+      "source_id": "FSTD-006",
+      "relationship": "APPLIES_TO",
+      "target_type": "TestCase",
+      "target_id": "FTST-007",
+      "note": null
+    },
+    {
+      "source_type": "Standard",
+      "source_id": "FSTD-001",
+      "relationship": "APPLIES_TO",
+      "target_type": "TestCase",
+      "target_id": "FTST-007",
+      "note": null
+    },
+    {
+      "source_type": "Requirement",
+      "source_id": "FREQ-009",
+      "relationship": "VERIFIED_BY",
+      "target_type": "TestCase",
+      "target_id": "FTST-008",
+      "note": null
+    },
+    {
+      "source_type": "FailureMode",
+      "source_id": "FFM-006",
+      "relationship": "VERIFIED_BY",
+      "target_type": "TestCase",
+      "target_id": "FTST-008",
+      "note": null
+    },
+    {
+      "source_type": "Standard",
+      "source_id": "FSTD-002",
+      "relationship": "APPLIES_TO",
+      "target_type": "TestCase",
+      "target_id": "FTST-008",
+      "note": null
+    },
+    {
+      "source_type": "Requirement",
+      "source_id": "FREQ-009",
+      "relationship": "VERIFIED_BY",
+      "target_type": "TestCase",
+      "target_id": "FTST-009",
+      "note": null
+    },
+    {
+      "source_type": "FailureMode",
+      "source_id": "FFM-006",
+      "relationship": "VERIFIED_BY",
+      "target_type": "TestCase",
+      "target_id": "FTST-009",
+      "note": null
+    },
+    {
+      "source_type": "Standard",
+      "source_id": "FSTD-002",
+      "relationship": "APPLIES_TO",
+      "target_type": "TestCase",
+      "target_id": "FTST-009",
+      "note": null
+    },
+    {
+      "source_type": "TestCase",
+      "source_id": "FTST-001",
+      "relationship": "PRODUCES",
+      "target_type": "TestResult",
+      "target_id": "FTR-001",
+      "note": null
+    },
+    {
+      "source_type": "TestCase",
+      "source_id": "FTST-002",
+      "relationship": "PRODUCES",
+      "target_type": "TestResult",
+      "target_id": "FTR-002",
+      "note": null
+    },
+    {
+      "source_type": "TestCase",
+      "source_id": "FTST-003",
+      "relationship": "PRODUCES",
+      "target_type": "TestResult",
+      "target_id": "FTR-003",
+      "note": null
+    },
+    {
+      "source_type": "TestCase",
+      "source_id": "FTST-004",
+      "relationship": "PRODUCES",
+      "target_type": "TestResult",
+      "target_id": "FTR-004",
+      "note": null
+    },
+    {
+      "source_type": "TestCase",
+      "source_id": "FTST-005",
+      "relationship": "PRODUCES",
+      "target_type": "TestResult",
+      "target_id": "FTR-005",
+      "note": null
+    },
+    {
+      "source_type": "TestCase",
+      "source_id": "FTST-006",
+      "relationship": "PRODUCES",
+      "target_type": "TestResult",
+      "target_id": "FTR-006",
+      "note": null
+    },
+    {
+      "source_type": "TestCase",
+      "source_id": "FTST-007",
+      "relationship": "PRODUCES",
+      "target_type": "TestResult",
+      "target_id": "FTR-007",
+      "note": null
+    },
+    {
+      "source_type": "TestCase",
+      "source_id": "FTST-009",
+      "relationship": "PRODUCES",
+      "target_type": "TestResult",
+      "target_id": "FTR-008",
+      "note": null
+    },
+    {
+      "source_type": "System",
+      "source_id": "FSYS-001",
+      "relationship": "HAS_FAILURE_MODE",
+      "target_type": "FailureMode",
+      "target_id": "FFM-001",
+      "note": null
+    },
+    {
+      "source_type": "Subsystem",
+      "source_id": "FSUB-001",
+      "relationship": "HAS_FAILURE_MODE",
+      "target_type": "FailureMode",
+      "target_id": "FFM-001",
+      "note": null
+    },
+    {
+      "source_type": "System",
+      "source_id": "FSYS-002",
+      "relationship": "HAS_FAILURE_MODE",
+      "target_type": "FailureMode",
+      "target_id": "FFM-002",
+      "note": null
+    },
+    {
+      "source_type": "Subsystem",
+      "source_id": "FSUB-002",
+      "relationship": "HAS_FAILURE_MODE",
+      "target_type": "FailureMode",
+      "target_id": "FFM-002",
+      "note": null
+    },
+    {
+      "source_type": "Component",
+      "source_id": "FCMP-003",
+      "relationship": "HAS_FAILURE_MODE",
+      "target_type": "FailureMode",
+      "target_id": "FFM-003",
+      "note": null
+    },
+    {
+      "source_type": "Subsystem",
+      "source_id": "FSUB-003",
+      "relationship": "HAS_FAILURE_MODE",
+      "target_type": "FailureMode",
+      "target_id": "FFM-004",
+      "note": null
+    },
+    {
+      "source_type": "Subsystem",
+      "source_id": "FSUB-003",
+      "relationship": "HAS_FAILURE_MODE",
+      "target_type": "FailureMode",
+      "target_id": "FFM-005",
+      "note": null
+    },
+    {
+      "source_type": "System",
+      "source_id": "FSYS-004",
+      "relationship": "HAS_FAILURE_MODE",
+      "target_type": "FailureMode",
+      "target_id": "FFM-005",
+      "note": null
+    },
+    {
+      "source_type": "System",
+      "source_id": "FSYS-001",
+      "relationship": "HAS_FAILURE_MODE",
+      "target_type": "FailureMode",
+      "target_id": "FFM-006",
+      "note": null
+    },
+    {
+      "source_type": "System",
+      "source_id": "FSYS-004",
+      "relationship": "HAS_FAILURE_MODE",
+      "target_type": "FailureMode",
+      "target_id": "FFM-006",
+      "note": null
+    },
+    {
+      "source_type": "TestResult",
+      "source_id": "FTR-001",
+      "relationship": "SUPPORTS",
+      "target_type": "Evidence",
+      "target_id": "FEV-001",
+      "note": null
+    },
+    {
+      "source_type": "Evidence",
+      "source_id": "FEV-001",
+      "relationship": "SUPPORTS",
+      "target_type": "Requirement",
+      "target_id": "FREQ-001",
+      "note": null
+    },
+    {
+      "source_type": "Evidence",
+      "source_id": "FEV-001",
+      "relationship": "SUPPORTS",
+      "target_type": "Requirement",
+      "target_id": "FREQ-002",
+      "note": null
+    },
+    {
+      "source_type": "TestResult",
+      "source_id": "FTR-002",
+      "relationship": "SUPPORTS",
+      "target_type": "Evidence",
+      "target_id": "FEV-002",
+      "note": null
+    },
+    {
+      "source_type": "Evidence",
+      "source_id": "FEV-002",
+      "relationship": "SUPPORTS",
+      "target_type": "Requirement",
+      "target_id": "FREQ-005",
+      "note": null
+    },
+    {
+      "source_type": "TestResult",
+      "source_id": "FTR-004",
+      "relationship": "SUPPORTS",
+      "target_type": "Evidence",
+      "target_id": "FEV-003",
+      "note": null
+    },
+    {
+      "source_type": "Evidence",
+      "source_id": "FEV-003",
+      "relationship": "SUPPORTS",
+      "target_type": "Requirement",
+      "target_id": "FREQ-003",
+      "note": null
+    },
+    {
+      "source_type": "TestResult",
+      "source_id": "FTR-005",
+      "relationship": "SUPPORTS",
+      "target_type": "Evidence",
+      "target_id": "FEV-004",
+      "note": null
+    },
+    {
+      "source_type": "Evidence",
+      "source_id": "FEV-004",
+      "relationship": "SUPPORTS",
+      "target_type": "Requirement",
+      "target_id": "FREQ-007",
+      "note": null
+    },
+    {
+      "source_type": "TestResult",
+      "source_id": "FTR-008",
+      "relationship": "SUPPORTS",
+      "target_type": "Evidence",
+      "target_id": "FEV-005",
+      "note": null
+    },
+    {
+      "source_type": "Evidence",
+      "source_id": "FEV-005",
+      "relationship": "SUPPORTS",
+      "target_type": "Requirement",
+      "target_id": "FREQ-009",
+      "note": null
+    },
+    {
+      "source_type": "Document",
+      "source_id": "FDOC-001",
+      "relationship": "SUPPORTS",
+      "target_type": "Evidence",
+      "target_id": "FEV-006",
+      "note": null
+    },
+    {
+      "source_type": "Evidence",
+      "source_id": "FEV-006",
+      "relationship": "SUPPORTS",
+      "target_type": "Requirement",
+      "target_id": "FREQ-001",
+      "note": null
+    },
+    {
+      "source_type": "Evidence",
+      "source_id": "FEV-006",
+      "relationship": "SUPPORTS",
+      "target_type": "Requirement",
+      "target_id": "FREQ-002",
+      "note": null
+    },
+    {
+      "source_type": "Evidence",
+      "source_id": "FEV-006",
+      "relationship": "SUPPORTS",
+      "target_type": "Requirement",
+      "target_id": "FREQ-005",
+      "note": null
+    },
+    {
+      "source_type": "Document",
+      "source_id": "FDOC-001",
+      "relationship": "DESCRIBES",
+      "target_type": "EngineeringChange",
+      "target_id": "FEC-001",
+      "note": null
+    },
+    {
+      "source_type": "Document",
+      "source_id": "FDOC-001",
+      "relationship": "DESCRIBES",
+      "target_type": "System",
+      "target_id": "FSYS-001",
+      "note": null
+    },
+    {
+      "source_type": "Document",
+      "source_id": "FDOC-002",
+      "relationship": "DESCRIBES",
+      "target_type": "EngineeringChange",
+      "target_id": "FEC-001",
+      "note": null
+    },
+    {
+      "source_type": "Document",
+      "source_id": "FDOC-002",
+      "relationship": "DESCRIBES",
+      "target_type": "System",
+      "target_id": "FSYS-002",
+      "note": null
+    },
+    {
+      "source_type": "Document",
+      "source_id": "FDOC-003",
+      "relationship": "DESCRIBES",
+      "target_type": "EngineeringChange",
+      "target_id": "FEC-001",
+      "note": null
+    },
+    {
+      "source_type": "Document",
+      "source_id": "FDOC-004",
+      "relationship": "DESCRIBES",
+      "target_type": "EngineeringChange",
+      "target_id": "FEC-001",
+      "note": null
+    },
+    {
+      "source_type": "Document",
+      "source_id": "FDOC-004",
+      "relationship": "DESCRIBES",
+      "target_type": "System",
+      "target_id": "FSYS-004",
+      "note": null
+    }
+  ]
+}

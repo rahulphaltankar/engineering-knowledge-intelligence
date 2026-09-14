@@ -1,0 +1,225 @@
+{
+  "entity": "FMEA",
+  "description": "Design FMEA headers.",
+  "data_classification": "SIMULATED ENTERPRISE ARTEFACT - not OEM, customer or proprietary data",
+  "generated_by": "scripts/generate_simulation.py",
+  "seed": 20260823,
+  "records": [
+    {
+      "id": "FMEA-D-001",
+      "fmea_type": "DFMEA",
+      "title": "HV Battery Pack Design FMEA",
+      "scope_ref_type": "system",
+      "scope_ref_id": "SYS-001",
+      "revision": "C",
+      "revision_date": "2026-04-18",
+      "status": "released",
+      "team": "Battery engineering, Thermal, Safety, Quality",
+      "standard_ids": [
+        "STD-006",
+        "STD-001"
+      ],
+      "record_type": "FMEA"
+    },
+    {
+      "id": "FMEA-D-002",
+      "fmea_type": "DFMEA",
+      "title": "Battery Management System Design FMEA",
+      "scope_ref_type": "subsystem",
+      "scope_ref_id": "SUB-002",
+      "revision": "B",
+      "revision_date": "2026-03-22",
+      "status": "released",
+      "team": "BMS software, Electronics, Safety",
+      "standard_ids": [
+        "STD-006",
+        "STD-001"
+      ],
+      "record_type": "FMEA"
+    },
+    {
+      "id": "FMEA-D-003",
+      "fmea_type": "DFMEA",
+      "title": "Thermal Management Design FMEA",
+      "scope_ref_type": "system",
+      "scope_ref_id": "SYS-002",
+      "revision": "B",
+      "revision_date": "2026-04-02",
+      "status": "released",
+      "team": "Thermal, Battery, Calibration",
+      "standard_ids": [
+        "STD-006"
+      ],
+      "record_type": "FMEA"
+    },
+    {
+      "id": "FMEA-D-004",
+      "fmea_type": "DFMEA",
+      "title": "Charging System Design FMEA",
+      "scope_ref_type": "system",
+      "scope_ref_id": "SYS-003",
+      "revision": "A",
+      "revision_date": "2026-02-27",
+      "status": "released",
+      "team": "Charging, Electronics, Safety",
+      "standard_ids": [
+        "STD-006"
+      ],
+      "record_type": "FMEA"
+    },
+    {
+      "id": "FMEA-D-005",
+      "fmea_type": "DFMEA",
+      "title": "Electric Drive Unit Design FMEA",
+      "scope_ref_type": "system",
+      "scope_ref_id": "SYS-004",
+      "revision": "B",
+      "revision_date": "2026-03-14",
+      "status": "released",
+      "team": "EDU, Power electronics, Safety",
+      "standard_ids": [
+        "STD-006",
+        "STD-001"
+      ],
+      "record_type": "FMEA"
+    },
+    {
+      "id": "FMEA-D-006",
+      "fmea_type": "DFMEA",
+      "title": "Brake System Design FMEA",
+      "scope_ref_type": "system",
+      "scope_ref_id": "SYS-005",
+      "revision": "C",
+      "revision_date": "2026-05-06",
+      "status": "released",
+      "team": "Brakes, Chassis, NVH, Safety",
+      "standard_ids": [
+        "STD-006",
+        "STD-001"
+      ],
+      "record_type": "FMEA"
+    },
+    {
+      "id": "FMEA-D-007",
+      "fmea_type": "DFMEA",
+      "title": "Suspension and Chassis Design FMEA",
+      "scope_ref_type": "system",
+      "scope_ref_id": "SYS-006",
+      "revision": "B",
+      "revision_date": "2026-03-30",
+      "status": "released",
+      "team": "Chassis, Durability, NVH",
+      "standard_ids": [
+        "STD-006"
+      ],
+      "record_type": "FMEA"
+    },
+    {
+      "id": "FMEA-D-008",
+      "fmea_type": "DFMEA",
+      "title": "Steering System Design FMEA",
+      "scope_ref_type": "system",
+      "scope_ref_id": "SYS-007",
+      "revision": "B",
+      "revision_date": "2026-04-11",
+      "status": "released",
+      "team": "Steering, Safety, Electronics",
+      "standard_ids": [
+        "STD-006",
+        "STD-001"
+      ],
+      "record_type": "FMEA"
+    },
+    {
+      "id": "FMEA-D-009",
+      "fmea_type": "DFMEA",
+      "title": "E/E Architecture and Wiring Design FMEA",
+      "scope_ref_type": "system",
+      "scope_ref_id": "SYS-008",
+      "revision": "A",
+      "revision_date": "2026-02-19",
+      "status": "released",
+      "team": "E/E, EMC, Harness",
+      "standard_ids": [
+        "STD-006"
+      ],
+      "record_type": "FMEA"
+    },
+    {
+      "id": "FMEA-D-010",
+      "fmea_type": "DFMEA",
+      "title": "HVAC Design FMEA",
+      "scope_ref_type": "system",
+      "scope_ref_id": "SYS-010",
+      "revision": "A",
+      "revision_date": "2026-03-05",
+      "status": "released",
+      "team": "HVAC, Thermal, NVH",
+      "standard_ids": [
+        "STD-006"
+      ],
+      "record_type": "FMEA"
+    },
+    {
+      "id": "FMEA-D-011",
+      "fmea_type": "DFMEA",
+      "title": "Wheels and Tyres Design FMEA",
+      "scope_ref_type": "system",
+      "scope_ref_id": "SYS-016",
+      "revision": "A",
+      "revision_date": "2026-01-30",
+      "status": "released",
+      "team": "Chassis, Homologation",
+      "standard_ids": [
+        "STD-006"
+      ],
+      "record_type": "FMEA"
+    },
+    {
+      "id": "FMEA-D-012",
+      "fmea_type": "DFMEA",
+      "title": "Low Voltage Power Supply Design FMEA",
+      "scope_ref_type": "system",
+      "scope_ref_id": "SYS-018",
+      "revision": "A",
+      "revision_date": "2026-02-12",
+      "status": "released",
+      "team": "E/E, Power supply",
+      "standard_ids": [
+        "STD-006"
+      ],
+      "record_type": "FMEA"
+    },
+    {
+      "id": "FMEA-D-013",
+      "fmea_type": "DFMEA",
+      "title": "Aftertreatment Design FMEA",
+      "scope_ref_type": "system",
+      "scope_ref_id": "SYS-015",
+      "revision": "B",
+      "revision_date": "2025-11-14",
+      "status": "released",
+      "team": "Emissions, Powertrain",
+      "standard_ids": [
+        "STD-006"
+      ],
+      "record_type": "FMEA"
+    },
+    {
+      "id": "FMEA-D-014",
+      "fmea_type": "DFMEA",
+      "title": "Vehicle Software and Calibration Design FMEA",
+      "scope_ref_type": "system",
+      "scope_ref_id": "SYS-011",
+      "revision": "A",
+      "revision_date": "2026-04-24",
+      "status": "draft",
+      "team": "Software, Calibration, Safety",
+      "standard_ids": [
+        "STD-006",
+        "STD-042"
+      ],
+      "record_type": "FMEA"
+    }
+  ]
+}

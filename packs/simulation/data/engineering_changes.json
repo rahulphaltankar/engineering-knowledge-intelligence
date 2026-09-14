@@ -1,0 +1,300 @@
+{
+  "entity": "EngineeringChange",
+  "description": "Engineering change requests across the programmes.",
+  "data_classification": "SIMULATED ENTERPRISE ARTEFACT - not OEM, customer or proprietary data",
+  "generated_by": "scripts/generate_simulation.py",
+  "seed": 20260823,
+  "records": [
+    {
+      "id": "ECR-001",
+      "title": "HV cell capacity uplift 68Ah to 75Ah",
+      "description": "Introduce a higher energy density prismatic cell raising usable pack energy from 78.0 kWh to 86.0 kWh at unchanged pack envelope. Cell chemistry moves from NMC622 to NMC811.",
+      "change_type": "design",
+      "raised_date": "2026-06-12",
+      "status": "under_review",
+      "programme_ids": [
+        "PRG-001"
+      ],
+      "primary_system_id": "SYS-001",
+      "affected_component_ids": [
+        "COMP-001",
+        "COMP-004",
+        "COMP-005",
+        "COMP-012"
+      ],
+      "driver": "Range competitiveness",
+      "phase": "DV",
+      "derived_from_sources": [
+        "SRC-001",
+        "SRC-011"
+      ],
+      "record_type": "EngineeringChange"
+    },
+    {
+      "id": "ECR-002",
+      "title": "Front friction material change to low-copper compound",
+      "description": "Replace the current front brake friction compound with a low-copper formulation to meet market restrictions on restricted substances.",
+      "change_type": "design",
+      "raised_date": "2026-05-28",
+      "status": "approved",
+      "programme_ids": [
+        "PRG-001",
+        "PRG-002"
+      ],
+      "primary_system_id": "SYS-005",
+      "affected_component_ids": [
+        "COMP-029"
+      ],
+      "driver": "Regulatory substance restriction",
+      "phase": "DV",
+      "derived_from_sources": [],
+      "record_type": "EngineeringChange"
+    },
+    {
+      "id": "ECR-003",
+      "title": "Front lower control arm bushing supplier transfer",
+      "description": "Transfer front lower control arm rear bushing production from the incumbent plant to a second-source plant to secure capacity.",
+      "change_type": "sourcing",
+      "raised_date": "2026-04-30",
+      "status": "implemented",
+      "programme_ids": [
+        "PRG-001"
+      ],
+      "primary_system_id": "SYS-006",
+      "affected_component_ids": [
+        "COMP-035"
+      ],
+      "driver": "Capacity and cost",
+      "phase": "PV",
+      "derived_from_sources": [],
+      "record_type": "EngineeringChange"
+    },
+    {
+      "id": "ECR-004",
+      "title": "Inverter calibration release v4.2",
+      "description": "Release inverter calibration v4.2 revising the thermal derate map and torque ramp shaping to improve continuous power availability.",
+      "change_type": "software",
+      "raised_date": "2026-07-18",
+      "status": "under_review",
+      "programme_ids": [
+        "PRG-001"
+      ],
+      "primary_system_id": "SYS-004",
+      "affected_component_ids": [
+        "COMP-025"
+      ],
+      "driver": "Continuous power complaint",
+      "phase": "DV",
+      "derived_from_sources": [],
+      "record_type": "EngineeringChange"
+    },
+    {
+      "id": "ECR-005",
+      "title": "HVAC compressor displacement increase 5cc to 7cc",
+      "description": "Introduce a higher displacement electric compressor to improve cabin cool-down and battery chiller capacity at high ambient.",
+      "change_type": "design",
+      "raised_date": "2026-07-02",
+      "status": "under_review",
+      "programme_ids": [
+        "PRG-001"
+      ],
+      "primary_system_id": "SYS-010",
+      "affected_component_ids": [
+        "COMP-049",
+        "COMP-050"
+      ],
+      "driver": "High ambient thermal capability",
+      "phase": "DV",
+      "derived_from_sources": [
+        "SRC-010"
+      ],
+      "record_type": "EngineeringChange"
+    },
+    {
+      "id": "ECR-006",
+      "title": "Wheel and tyre change 19in to 20in on top trim",
+      "description": "Introduce a 20 inch wheel and 255/45R20 tyre on the top trim level, replacing the 19 inch wheel and 235/55R19 tyre.",
+      "change_type": "design",
+      "raised_date": "2026-06-25",
+      "status": "under_review",
+      "programme_ids": [
+        "PRG-001"
+      ],
+      "primary_system_id": "SYS-016",
+      "affected_component_ids": [
+        "COMP-061",
+        "COMP-062",
+        "COMP-063",
+        "COMP-064"
+      ],
+      "driver": "Product differentiation",
+      "phase": "DV",
+      "derived_from_sources": [],
+      "record_type": "EngineeringChange"
+    },
+    {
+      "id": "ECR-007",
+      "title": "HV harness re-route around rear subframe",
+      "description": "Re-route the HV battery to inverter cable to resolve a packaging clash with the revised rear subframe bracket.",
+      "change_type": "design",
+      "raised_date": "2026-07-09",
+      "status": "implemented",
+      "programme_ids": [
+        "PRG-001"
+      ],
+      "primary_system_id": "SYS-008",
+      "affected_component_ids": [
+        "COMP-043",
+        "COMP-044"
+      ],
+      "driver": "Packaging clash resolution",
+      "phase": "DV",
+      "derived_from_sources": [],
+      "record_type": "EngineeringChange"
+    },
+    {
+      "id": "ECR-008",
+      "title": "Addition of DC charge inlet temperature sensor",
+      "description": "Add an NTC temperature sensor to the DC charge inlet contacts and introduce a charge current derate function based on measured contact temperature.",
+      "change_type": "design",
+      "raised_date": "2026-07-25",
+      "status": "proposed",
+      "programme_ids": [
+        "PRG-001"
+      ],
+      "primary_system_id": "SYS-003",
+      "affected_component_ids": [
+        "COMP-020",
+        "COMP-021"
+      ],
+      "driver": "Charge inlet thermal protection",
+      "phase": "DV",
+      "derived_from_sources": [],
+      "record_type": "EngineeringChange"
+    },
+    {
+      "id": "ECR-009",
+      "title": "BMS cell balancing algorithm update",
+      "description": "Update the BMS balancing algorithm to shorten convergence time and reduce residual cell voltage spread after long parked periods.",
+      "change_type": "software",
+      "raised_date": "2026-06-05",
+      "status": "implemented",
+      "programme_ids": [
+        "PRG-001"
+      ],
+      "primary_system_id": "SYS-001",
+      "affected_component_ids": [
+        "COMP-004",
+        "COMP-005"
+      ],
+      "driver": "Field cell spread observations",
+      "phase": "PV",
+      "derived_from_sources": [
+        "SRC-001"
+      ],
+      "record_type": "EngineeringChange"
+    },
+    {
+      "id": "ECR-010",
+      "title": "Cooling plate braze process change to controlled atmosphere furnace",
+      "description": "Change the cooling plate braze process from the current vacuum furnace to a controlled atmosphere furnace at the supplier to increase throughput.",
+      "change_type": "process",
+      "raised_date": "2026-05-14",
+      "status": "implemented",
+      "programme_ids": [
+        "PRG-001"
+      ],
+      "primary_system_id": "SYS-001",
+      "affected_component_ids": [
+        "COMP-012"
+      ],
+      "driver": "Supplier capacity",
+      "phase": "PV",
+      "derived_from_sources": [
+        "SRC-009",
+        "SRC-019"
+      ],
+      "record_type": "EngineeringChange"
+    },
+    {
+      "id": "ECR-011",
+      "title": "Steering ECU microcontroller lifecycle replacement",
+      "description": "Replace the steering ECU microcontroller with the successor device following an end-of-life notification from the semiconductor supplier.",
+      "change_type": "obsolescence",
+      "raised_date": "2026-07-30",
+      "status": "proposed",
+      "programme_ids": [
+        "PRG-001",
+        "PRG-002"
+      ],
+      "primary_system_id": "SYS-007",
+      "affected_component_ids": [
+        "COMP-041",
+        "COMP-042"
+      ],
+      "driver": "Component obsolescence",
+      "phase": "DV",
+      "derived_from_sources": [],
+      "record_type": "EngineeringChange"
+    },
+    {
+      "id": "ECR-012",
+      "title": "Rear subframe bushing durometer change",
+      "description": "Increase rear subframe isolation bushing durometer to address a low frequency road noise concern.",
+      "change_type": "design",
+      "raised_date": "2026-06-18",
+      "status": "under_review",
+      "programme_ids": [
+        "PRG-001"
+      ],
+      "primary_system_id": "SYS-006",
+      "affected_component_ids": [
+        "COMP-039"
+      ],
+      "driver": "NVH refinement",
+      "phase": "DV",
+      "derived_from_sources": [],
+      "record_type": "EngineeringChange"
+    },
+    {
+      "id": "ECR-013",
+      "title": "Catalyst precious metal loading reduction",
+      "description": "Reduce precious metal loading on the close-coupled catalyst to offset raw material cost increases.",
+      "change_type": "design",
+      "raised_date": "2026-05-20",
+      "status": "under_review",
+      "programme_ids": [
+        "PRG-003"
+      ],
+      "primary_system_id": "SYS-015",
+      "affected_component_ids": [
+        "COMP-059"
+      ],
+      "driver": "Material cost",
+      "phase": "Production",
+      "derived_from_sources": [],
+      "record_type": "EngineeringChange"
+    },
+    {
+      "id": "ECR-014",
+      "title": "12V battery relocation to rear load floor",
+      "description": "Relocate the 12V battery from the front compartment to the rear load floor to improve front axle load margin.",
+      "change_type": "design",
+      "raised_date": "2026-07-14",
+      "status": "proposed",
+      "programme_ids": [
+        "PRG-001"
+      ],
+      "primary_system_id": "SYS-018",
+      "affected_component_ids": [
+        "COMP-067",
+        "COMP-068",
+        "COMP-045"
+      ],
+      "driver": "Axle load balance",
+      "phase": "DV",
+      "derived_from_sources": [],
+      "record_type": "EngineeringChange"
+    }
+  ]
+}

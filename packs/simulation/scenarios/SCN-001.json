@@ -1,0 +1,119 @@
+{
+  "scenario_id": "SCN-001",
+  "category": "Engineering Change Impact",
+  "title": "Energy storage capacity increase",
+  "engineering_question": "A design parameter on the energy storage system has been increased. What is the engineering impact and what must now be re-verified?",
+  "one_liner": "Assess the impact of this engineering change.",
+  "initial_input": "Engineering change ECR-001 proposes increasing HV cell capacity from 68 Ah to 75 Ah, raising usable pack energy from 78.0 kWh to 86.0 kWh at unchanged pack envelope, with a chemistry move from NMC622 to NMC811.",
+  "relevant_entities": {
+    "engineering_changes": [
+      "ECR-001"
+    ],
+    "systems": [
+      "SYS-001",
+      "SYS-002",
+      "SYS-003",
+      "SYS-004",
+      "SYS-006",
+      "SYS-011",
+      "SYS-016"
+    ],
+    "components": [
+      "COMP-001",
+      "COMP-004",
+      "COMP-005",
+      "COMP-012"
+    ],
+    "requirements": [
+      "REQ-001",
+      "REQ-002",
+      "REQ-003",
+      "REQ-010",
+      "REQ-011",
+      "REQ-013",
+      "REQ-017",
+      "REQ-022",
+      "REQ-040",
+      "REQ-113",
+      "REQ-121"
+    ],
+    "failure_modes": [
+      "FM-001",
+      "FM-002",
+      "FM-004",
+      "FM-020",
+      "FM-023",
+      "FM-024",
+      "FM-040",
+      "FM-112",
+      "FM-141"
+    ],
+    "tests": [
+      "TEST-001",
+      "TEST-002",
+      "TEST-004",
+      "TEST-020",
+      "TEST-024",
+      "TEST-025",
+      "TEST-040",
+      "TEST-122",
+      "TEST-124",
+      "TEST-125"
+    ],
+    "documents": [
+      "DOC-001",
+      "DOC-003",
+      "DOC-004",
+      "DOC-005",
+      "DOC-022"
+    ]
+  },
+  "expected_impacted_domains": [
+    "Battery energy and capacity verification",
+    "Thermal management capacity at increased energy and heat generation",
+    "Charging strategy and charge time at revised cell characteristics",
+    "Vehicle mass and axle load distribution",
+    "Tyre load index adequacy at revised axle load",
+    "Range and consumption calibration",
+    "BMS estimation models calibrated on the previous chemistry",
+    "Durability and warranty state-of-health commitment"
+  ],
+  "expected_evidence": [
+    "TR-042",
+    "TR-044",
+    "TR-030",
+    "TR-031",
+    "TR-007",
+    "MEAS-011"
+  ],
+  "expected_reasoning_paths": [
+    "ECR-001 AFFECTS COMP-001 which is part of SUB-001 within SYS-001, so requirements allocated to SYS-001 are candidates for impact",
+    "Higher usable energy increases pack mass, which propagates to REQ-002 kerb mass and REQ-003 axle load, and from there to REQ-121 tyre load capability",
+    "Chemistry change invalidates the BMS estimation calibration behind REQ-017 and REQ-013, so FM-020 and FM-023 become live again",
+    "Existing evidence TR-042 and TR-044 was generated on the 68 Ah cell and is therefore not transferable"
+  ],
+  "candidate_outputs": [
+    "Engineering Impact Assessment",
+    "Requirements Impact Analysis",
+    "Traceability Matrix",
+    "DFMEA Review",
+    "DVP&R",
+    "Verification Plan",
+    "Test Strategy",
+    "Evidence Gap Analysis",
+    "Risk Assessment",
+    "Regression Impact Analysis",
+    "Engineering Change Impact",
+    "Engineering Executive Summary",
+    "Engineering Decision Brief"
+  ],
+  "known_unknowns": [
+    "TEST-004 accelerated ageing acceptance criterion is TBD_PROGRAMME_SPECIFIC for the revised chemistry",
+    "TEST-025 state-of-health correlation acceptance band is not established",
+    "No cell characterisation data for the 75 Ah cell exists in the environment",
+    "Revised pack mass value is not stated in ECR-001; only that the envelope is unchanged",
+    "Crash load path implications of increased pack mass are not represented in the environment"
+  ],
+  "data_classification": "SIMULATED ENTERPRISE ARTEFACT - not OEM, customer or proprietary data",
+  "connector": "SIMULATION"
+}

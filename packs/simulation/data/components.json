@@ -1,0 +1,689 @@
+{
+  "entity": "Component",
+  "description": "Components with supplier allocation and revision level.",
+  "data_classification": "SIMULATED ENTERPRISE ARTEFACT - not OEM, customer or proprietary data",
+  "generated_by": "scripts/generate_simulation.py",
+  "seed": 20260823,
+  "records": [
+    {
+      "id": "COMP-001",
+      "subsystem_id": "SUB-001",
+      "system_id": "SYS-001",
+      "name": "HV Cell 3.7V 68Ah NMC622 Prismatic",
+      "supplier_id": "SUP-001",
+      "part_number": "AT-BAT-CEL-0100",
+      "revision": "B",
+      "record_type": "Component"
+    },
+    {
+      "id": "COMP-002",
+      "subsystem_id": "SUB-001",
+      "system_id": "SYS-001",
+      "name": "Module Busbar Assembly 4P",
+      "supplier_id": "SUP-002",
+      "part_number": "AT-BAT-BUS-0210",
+      "revision": "C",
+      "record_type": "Component"
+    },
+    {
+      "id": "COMP-003",
+      "subsystem_id": "SUB-001",
+      "system_id": "SYS-001",
+      "name": "Cell Voltage Sense Harness",
+      "supplier_id": "SUP-002",
+      "part_number": "AT-BAT-CSH-0215",
+      "revision": "B",
+      "record_type": "Component"
+    },
+    {
+      "id": "COMP-004",
+      "subsystem_id": "SUB-002",
+      "system_id": "SYS-001",
+      "name": "BMS Master Controller",
+      "supplier_id": "SUP-003",
+      "part_number": "AT-BMS-MST-0300",
+      "revision": "D",
+      "record_type": "Component"
+    },
+    {
+      "id": "COMP-005",
+      "subsystem_id": "SUB-002",
+      "system_id": "SYS-001",
+      "name": "Cell Monitoring Unit",
+      "supplier_id": "SUP-003",
+      "part_number": "AT-BMS-CMU-0305",
+      "revision": "C",
+      "record_type": "Component"
+    },
+    {
+      "id": "COMP-006",
+      "subsystem_id": "SUB-003",
+      "system_id": "SYS-001",
+      "name": "HV Main Contactor 500A",
+      "supplier_id": "SUP-004",
+      "part_number": "AT-BDU-CON-0400",
+      "revision": "E",
+      "record_type": "Component"
+    },
+    {
+      "id": "COMP-007",
+      "subsystem_id": "SUB-003",
+      "system_id": "SYS-001",
+      "name": "Pyrotechnic Disconnect",
+      "supplier_id": "SUP-004",
+      "part_number": "AT-BDU-PYR-0405",
+      "revision": "B",
+      "record_type": "Component"
+    },
+    {
+      "id": "COMP-008",
+      "subsystem_id": "SUB-003",
+      "system_id": "SYS-001",
+      "name": "HV Current Sensor Shunt",
+      "supplier_id": "SUP-003",
+      "part_number": "AT-BDU-SHU-0410",
+      "revision": "C",
+      "record_type": "Component"
+    },
+    {
+      "id": "COMP-009",
+      "subsystem_id": "SUB-004",
+      "system_id": "SYS-001",
+      "name": "Pack Upper Cover",
+      "supplier_id": "SUP-005",
+      "part_number": "AT-PCK-COV-0500",
+      "revision": "C",
+      "record_type": "Component"
+    },
+    {
+      "id": "COMP-010",
+      "subsystem_id": "SUB-004",
+      "system_id": "SYS-001",
+      "name": "Pack Perimeter Seal",
+      "supplier_id": "SUP-005",
+      "part_number": "AT-PCK-SEA-0505",
+      "revision": "D",
+      "record_type": "Component"
+    },
+    {
+      "id": "COMP-011",
+      "subsystem_id": "SUB-004",
+      "system_id": "SYS-001",
+      "name": "Pressure Equalisation Vent",
+      "supplier_id": "SUP-005",
+      "part_number": "AT-PCK-VEN-0510",
+      "revision": "B",
+      "record_type": "Component"
+    },
+    {
+      "id": "COMP-012",
+      "subsystem_id": "SUB-005",
+      "system_id": "SYS-001",
+      "name": "Brazed Aluminium Cooling Plate",
+      "supplier_id": "SUP-006",
+      "part_number": "AT-PCK-CPL-0520",
+      "revision": "C",
+      "record_type": "Component"
+    },
+    {
+      "id": "COMP-013",
+      "subsystem_id": "SUB-005",
+      "system_id": "SYS-001",
+      "name": "Thermal Interface Gap Filler",
+      "supplier_id": "SUP-006",
+      "part_number": "AT-PCK-TIM-0525",
+      "revision": "B",
+      "record_type": "Component"
+    },
+    {
+      "id": "COMP-014",
+      "subsystem_id": "SUB-006",
+      "system_id": "SYS-002",
+      "name": "Battery Coolant Pump 12V",
+      "supplier_id": "SUP-006",
+      "part_number": "AT-THM-PMP-0600",
+      "revision": "C",
+      "record_type": "Component"
+    },
+    {
+      "id": "COMP-015",
+      "subsystem_id": "SUB-006",
+      "system_id": "SYS-002",
+      "name": "Refrigerant Chiller",
+      "supplier_id": "SUP-006",
+      "part_number": "AT-THM-CHL-0605",
+      "revision": "B",
+      "record_type": "Component"
+    },
+    {
+      "id": "COMP-016",
+      "subsystem_id": "SUB-006",
+      "system_id": "SYS-002",
+      "name": "Coolant Diverter Valve 4-Way",
+      "supplier_id": "SUP-006",
+      "part_number": "AT-THM-VLV-0610",
+      "revision": "C",
+      "record_type": "Component"
+    },
+    {
+      "id": "COMP-017",
+      "subsystem_id": "SUB-007",
+      "system_id": "SYS-002",
+      "name": "Powertrain Coolant Pump",
+      "supplier_id": "SUP-006",
+      "part_number": "AT-THM-PMP-0620",
+      "revision": "B",
+      "record_type": "Component"
+    },
+    {
+      "id": "COMP-018",
+      "subsystem_id": "SUB-009",
+      "system_id": "SYS-003",
+      "name": "On-Board Charger 11kW",
+      "supplier_id": "SUP-007",
+      "part_number": "AT-CHG-OBC-0700",
+      "revision": "C",
+      "record_type": "Component"
+    },
+    {
+      "id": "COMP-019",
+      "subsystem_id": "SUB-010",
+      "system_id": "SYS-003",
+      "name": "DC Charge Contactor Pair",
+      "supplier_id": "SUP-004",
+      "part_number": "AT-CHG-CON-0710",
+      "revision": "B",
+      "record_type": "Component"
+    },
+    {
+      "id": "COMP-020",
+      "subsystem_id": "SUB-011",
+      "system_id": "SYS-003",
+      "name": "CCS2 Charge Inlet",
+      "supplier_id": "SUP-007",
+      "part_number": "AT-CHG-INL-0720",
+      "revision": "C",
+      "record_type": "Component"
+    },
+    {
+      "id": "COMP-021",
+      "subsystem_id": "SUB-011",
+      "system_id": "SYS-003",
+      "name": "Inlet Temperature Sensor NTC",
+      "supplier_id": "SUP-003",
+      "part_number": "AT-CHG-TSN-0725",
+      "revision": "A",
+      "record_type": "Component"
+    },
+    {
+      "id": "COMP-022",
+      "subsystem_id": "SUB-013",
+      "system_id": "SYS-004",
+      "name": "Traction Motor 150kW PMSM",
+      "supplier_id": "SUP-008",
+      "part_number": "AT-EDU-MOT-0800",
+      "revision": "C",
+      "record_type": "Component"
+    },
+    {
+      "id": "COMP-023",
+      "subsystem_id": "SUB-013",
+      "system_id": "SYS-004",
+      "name": "Motor Position Resolver",
+      "supplier_id": "SUP-008",
+      "part_number": "AT-EDU-RES-0805",
+      "revision": "B",
+      "record_type": "Component"
+    },
+    {
+      "id": "COMP-024",
+      "subsystem_id": "SUB-014",
+      "system_id": "SYS-004",
+      "name": "SiC Power Module 750V",
+      "supplier_id": "SUP-009",
+      "part_number": "AT-EDU-PWM-0810",
+      "revision": "B",
+      "record_type": "Component"
+    },
+    {
+      "id": "COMP-025",
+      "subsystem_id": "SUB-014",
+      "system_id": "SYS-004",
+      "name": "Inverter Control Board",
+      "supplier_id": "SUP-009",
+      "part_number": "AT-EDU-ICB-0815",
+      "revision": "D",
+      "record_type": "Component"
+    },
+    {
+      "id": "COMP-026",
+      "subsystem_id": "SUB-014",
+      "system_id": "SYS-004",
+      "name": "DC Link Capacitor",
+      "supplier_id": "SUP-009",
+      "part_number": "AT-EDU-CAP-0820",
+      "revision": "C",
+      "record_type": "Component"
+    },
+    {
+      "id": "COMP-027",
+      "subsystem_id": "SUB-015",
+      "system_id": "SYS-004",
+      "name": "Single Speed Reducer",
+      "supplier_id": "SUP-008",
+      "part_number": "AT-EDU-GBX-0830",
+      "revision": "C",
+      "record_type": "Component"
+    },
+    {
+      "id": "COMP-028",
+      "subsystem_id": "SUB-016",
+      "system_id": "SYS-005",
+      "name": "Front Brake Disc 355mm Vented",
+      "supplier_id": "SUP-010",
+      "part_number": "AT-BRK-DSC-0900",
+      "revision": "C",
+      "record_type": "Component"
+    },
+    {
+      "id": "COMP-029",
+      "subsystem_id": "SUB-016",
+      "system_id": "SYS-005",
+      "name": "Front Brake Pad Set",
+      "supplier_id": "SUP-010",
+      "part_number": "AT-BRK-PAD-0905",
+      "revision": "D",
+      "record_type": "Component"
+    },
+    {
+      "id": "COMP-030",
+      "subsystem_id": "SUB-016",
+      "system_id": "SYS-005",
+      "name": "Front Caliper Floating",
+      "supplier_id": "SUP-010",
+      "part_number": "AT-BRK-CAL-0910",
+      "revision": "B",
+      "record_type": "Component"
+    },
+    {
+      "id": "COMP-031",
+      "subsystem_id": "SUB-017",
+      "system_id": "SYS-005",
+      "name": "Rear Brake Disc 340mm",
+      "supplier_id": "SUP-010",
+      "part_number": "AT-BRK-DSC-0920",
+      "revision": "B",
+      "record_type": "Component"
+    },
+    {
+      "id": "COMP-032",
+      "subsystem_id": "SUB-017",
+      "system_id": "SYS-005",
+      "name": "Rear Brake Pad Set",
+      "supplier_id": "SUP-010",
+      "part_number": "AT-BRK-PAD-0925",
+      "revision": "C",
+      "record_type": "Component"
+    },
+    {
+      "id": "COMP-033",
+      "subsystem_id": "SUB-018",
+      "system_id": "SYS-005",
+      "name": "Integrated Brake Actuation Unit",
+      "supplier_id": "SUP-011",
+      "part_number": "AT-BRK-IBU-0930",
+      "revision": "D",
+      "record_type": "Component"
+    },
+    {
+      "id": "COMP-034",
+      "subsystem_id": "SUB-019",
+      "system_id": "SYS-006",
+      "name": "Front Lower Control Arm",
+      "supplier_id": "SUP-012",
+      "part_number": "AT-SUS-LCA-1000",
+      "revision": "D",
+      "record_type": "Component"
+    },
+    {
+      "id": "COMP-035",
+      "subsystem_id": "SUB-019",
+      "system_id": "SYS-006",
+      "name": "Front LCA Rear Bushing",
+      "supplier_id": "SUP-012",
+      "part_number": "AT-SUS-BSH-1005",
+      "revision": "E",
+      "record_type": "Component"
+    },
+    {
+      "id": "COMP-036",
+      "subsystem_id": "SUB-019",
+      "system_id": "SYS-006",
+      "name": "Front Strut Assembly",
+      "supplier_id": "SUP-012",
+      "part_number": "AT-SUS-STR-1010",
+      "revision": "C",
+      "record_type": "Component"
+    },
+    {
+      "id": "COMP-037",
+      "subsystem_id": "SUB-020",
+      "system_id": "SYS-006",
+      "name": "Rear Upper Link",
+      "supplier_id": "SUP-012",
+      "part_number": "AT-SUS-RUL-1020",
+      "revision": "B",
+      "record_type": "Component"
+    },
+    {
+      "id": "COMP-038",
+      "subsystem_id": "SUB-020",
+      "system_id": "SYS-006",
+      "name": "Rear Damper",
+      "supplier_id": "SUP-012",
+      "part_number": "AT-SUS-DMP-1025",
+      "revision": "C",
+      "record_type": "Component"
+    },
+    {
+      "id": "COMP-039",
+      "subsystem_id": "SUB-021",
+      "system_id": "SYS-006",
+      "name": "Rear Subframe Isolation Bushing",
+      "supplier_id": "SUP-012",
+      "part_number": "AT-SUS-SBH-1030",
+      "revision": "C",
+      "record_type": "Component"
+    },
+    {
+      "id": "COMP-040",
+      "subsystem_id": "SUB-022",
+      "system_id": "SYS-007",
+      "name": "EPS Rack and Motor Assembly",
+      "supplier_id": "SUP-013",
+      "part_number": "AT-STR-RCK-1100",
+      "revision": "C",
+      "record_type": "Component"
+    },
+    {
+      "id": "COMP-041",
+      "subsystem_id": "SUB-023",
+      "system_id": "SYS-007",
+      "name": "Steering ECU",
+      "supplier_id": "SUP-013",
+      "part_number": "AT-STR-ECU-1110",
+      "revision": "B",
+      "record_type": "Component"
+    },
+    {
+      "id": "COMP-042",
+      "subsystem_id": "SUB-023",
+      "system_id": "SYS-007",
+      "name": "Steering ECU Microcontroller",
+      "supplier_id": "SUP-014",
+      "part_number": "AT-STR-MCU-1115",
+      "revision": "A",
+      "record_type": "Component"
+    },
+    {
+      "id": "COMP-043",
+      "subsystem_id": "SUB-024",
+      "system_id": "SYS-008",
+      "name": "HV Battery to Inverter Cable",
+      "supplier_id": "SUP-002",
+      "part_number": "AT-EEA-HVC-1200",
+      "revision": "C",
+      "record_type": "Component"
+    },
+    {
+      "id": "COMP-044",
+      "subsystem_id": "SUB-024",
+      "system_id": "SYS-008",
+      "name": "HV Shield Ground Strap",
+      "supplier_id": "SUP-002",
+      "part_number": "AT-EEA-GND-1205",
+      "revision": "B",
+      "record_type": "Component"
+    },
+    {
+      "id": "COMP-045",
+      "subsystem_id": "SUB-025",
+      "system_id": "SYS-008",
+      "name": "Front LV Harness",
+      "supplier_id": "SUP-002",
+      "part_number": "AT-EEA-LVH-1210",
+      "revision": "D",
+      "record_type": "Component"
+    },
+    {
+      "id": "COMP-046",
+      "subsystem_id": "SUB-026",
+      "system_id": "SYS-008",
+      "name": "Vehicle Domain Controller",
+      "supplier_id": "SUP-015",
+      "part_number": "AT-EEA-VDC-1220",
+      "revision": "C",
+      "record_type": "Component"
+    },
+    {
+      "id": "COMP-047",
+      "subsystem_id": "SUB-027",
+      "system_id": "SYS-009",
+      "name": "Front Camera Module 8MP",
+      "supplier_id": "SUP-015",
+      "part_number": "AT-ADS-CAM-1300",
+      "revision": "B",
+      "record_type": "Component"
+    },
+    {
+      "id": "COMP-048",
+      "subsystem_id": "SUB-028",
+      "system_id": "SYS-009",
+      "name": "Long Range Radar 77GHz",
+      "supplier_id": "SUP-015",
+      "part_number": "AT-ADS-RAD-1310",
+      "revision": "B",
+      "record_type": "Component"
+    },
+    {
+      "id": "COMP-049",
+      "subsystem_id": "SUB-029",
+      "system_id": "SYS-010",
+      "name": "Electric Scroll Compressor 5cc",
+      "supplier_id": "SUP-006",
+      "part_number": "AT-HVA-CMP-1400",
+      "revision": "C",
+      "record_type": "Component"
+    },
+    {
+      "id": "COMP-050",
+      "subsystem_id": "SUB-029",
+      "system_id": "SYS-010",
+      "name": "Electric Scroll Compressor 7cc",
+      "supplier_id": "SUP-006",
+      "part_number": "AT-HVA-CMP-1405",
+      "revision": "A",
+      "record_type": "Component"
+    },
+    {
+      "id": "COMP-051",
+      "subsystem_id": "SUB-030",
+      "system_id": "SYS-010",
+      "name": "Heat Pump Expansion Valve",
+      "supplier_id": "SUP-006",
+      "part_number": "AT-HVA-EXV-1410",
+      "revision": "B",
+      "record_type": "Component"
+    },
+    {
+      "id": "COMP-052",
+      "subsystem_id": "SUB-031",
+      "system_id": "SYS-010",
+      "name": "Cabin Blower Assembly",
+      "supplier_id": "SUP-016",
+      "part_number": "AT-HVA-BLW-1420",
+      "revision": "C",
+      "record_type": "Component"
+    },
+    {
+      "id": "COMP-053",
+      "subsystem_id": "SUB-035",
+      "system_id": "SYS-012",
+      "name": "Battery Mounting Cross Member",
+      "supplier_id": "SUP-005",
+      "part_number": "AT-BDY-XMB-1500",
+      "revision": "C",
+      "record_type": "Component"
+    },
+    {
+      "id": "COMP-054",
+      "subsystem_id": "SUB-036",
+      "system_id": "SYS-012",
+      "name": "Tailgate Primary Seal",
+      "supplier_id": "SUP-005",
+      "part_number": "AT-BDY-SEA-1510",
+      "revision": "B",
+      "record_type": "Component"
+    },
+    {
+      "id": "COMP-055",
+      "subsystem_id": "SUB-037",
+      "system_id": "SYS-013",
+      "name": "Driver Airbag Module",
+      "supplier_id": "SUP-011",
+      "part_number": "AT-RST-DAB-1600",
+      "revision": "B",
+      "record_type": "Component"
+    },
+    {
+      "id": "COMP-056",
+      "subsystem_id": "SUB-038",
+      "system_id": "SYS-013",
+      "name": "Restraint Control Module",
+      "supplier_id": "SUP-011",
+      "part_number": "AT-RST-RCM-1610",
+      "revision": "C",
+      "record_type": "Component"
+    },
+    {
+      "id": "COMP-057",
+      "subsystem_id": "SUB-039",
+      "system_id": "SYS-014",
+      "name": "1.5L Turbocharged Engine",
+      "supplier_id": "SUP-008",
+      "part_number": "VG-PWT-ENG-1700",
+      "revision": "D",
+      "record_type": "Component"
+    },
+    {
+      "id": "COMP-058",
+      "subsystem_id": "SUB-040",
+      "system_id": "SYS-014",
+      "name": "Hybrid Transmission P2",
+      "supplier_id": "SUP-008",
+      "part_number": "VG-PWT-TRM-1710",
+      "revision": "C",
+      "record_type": "Component"
+    },
+    {
+      "id": "COMP-059",
+      "subsystem_id": "SUB-041",
+      "system_id": "SYS-015",
+      "name": "Close-Coupled Catalyst",
+      "supplier_id": "SUP-016",
+      "part_number": "OR-EMS-CAT-1800",
+      "revision": "C",
+      "record_type": "Component"
+    },
+    {
+      "id": "COMP-060",
+      "subsystem_id": "SUB-042",
+      "system_id": "SYS-015",
+      "name": "Diesel Particulate Filter",
+      "supplier_id": "SUP-016",
+      "part_number": "OR-EMS-DPF-1810",
+      "revision": "B",
+      "record_type": "Component"
+    },
+    {
+      "id": "COMP-061",
+      "subsystem_id": "SUB-043",
+      "system_id": "SYS-016",
+      "name": "19in Alloy Wheel",
+      "supplier_id": "SUP-010",
+      "part_number": "AT-WHL-RIM-1900",
+      "revision": "C",
+      "record_type": "Component"
+    },
+    {
+      "id": "COMP-062",
+      "subsystem_id": "SUB-043",
+      "system_id": "SYS-016",
+      "name": "20in Alloy Wheel",
+      "supplier_id": "SUP-010",
+      "part_number": "AT-WHL-RIM-1905",
+      "revision": "A",
+      "record_type": "Component"
+    },
+    {
+      "id": "COMP-063",
+      "subsystem_id": "SUB-043",
+      "system_id": "SYS-016",
+      "name": "235/55R19 Tyre",
+      "supplier_id": "SUP-010",
+      "part_number": "AT-WHL-TYR-1910",
+      "revision": "C",
+      "record_type": "Component"
+    },
+    {
+      "id": "COMP-064",
+      "subsystem_id": "SUB-043",
+      "system_id": "SYS-016",
+      "name": "255/45R20 Tyre",
+      "supplier_id": "SUP-010",
+      "part_number": "AT-WHL-TYR-1915",
+      "revision": "A",
+      "record_type": "Component"
+    },
+    {
+      "id": "COMP-065",
+      "subsystem_id": "SUB-045",
+      "system_id": "SYS-017",
+      "name": "Telematics Control Unit",
+      "supplier_id": "SUP-015",
+      "part_number": "AT-CON-TCU-2000",
+      "revision": "C",
+      "record_type": "Component"
+    },
+    {
+      "id": "COMP-066",
+      "subsystem_id": "SUB-046",
+      "system_id": "SYS-018",
+      "name": "DC-DC Converter 3kW",
+      "supplier_id": "SUP-009",
+      "part_number": "AT-LVP-DCD-2100",
+      "revision": "C",
+      "record_type": "Component"
+    },
+    {
+      "id": "COMP-067",
+      "subsystem_id": "SUB-047",
+      "system_id": "SYS-018",
+      "name": "12V AGM Battery",
+      "supplier_id": "SUP-001",
+      "part_number": "AT-LVP-BAT-2110",
+      "revision": "B",
+      "record_type": "Component"
+    },
+    {
+      "id": "COMP-068",
+      "subsystem_id": "SUB-047",
+      "system_id": "SYS-018",
+      "name": "Front Power Distribution Box",
+      "supplier_id": "SUP-002",
+      "part_number": "AT-LVP-PDB-2120",
+      "revision": "C",
+      "record_type": "Component"
+    }
+  ]
+}

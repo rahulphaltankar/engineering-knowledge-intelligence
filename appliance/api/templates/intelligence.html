@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% block title %}Engineering Knowledge Intelligence{% endblock %}
+{% block body %}
+
+<div class="page-head">
+  <h1>Engineering Knowledge Intelligence</h1>
+  <p>Evidence-grounded change impact &amp; verification assistant. A change enters; the
+     appliance classifies it, finds the requirements and engineering knowledge it touches,
+     retrieves the evidence, tests whether that evidence still applies, states what is
+     unknown, and prepares verification actions for a human reviewer to accept or reject.</p>
+</div>
+
+<div class="panel tight">
+  <p class="small muted" style="margin:0">
+    Reference demonstration of the engineering-intelligence engine on a synthetic automotive
+    engineering dataset. It is not an OEM implementation.</p>
+</div>
+
+<div class="panel">
+  <div class="panel-head">
+    <h2>Engineering change / scenario</h2>
+    <span class="aside">{{ scenarios|length }} scenarios from the active connectors</span>
+  </div>
+  <form hx-post="/analyse" hx-target="#result" hx-swap="innerHTML" hx-indicator="#spin">
+    <div class="row" style="align-items:flex-end">
+      <div style="flex:1;min-width:280px">
+        <select name="scenario_id" id="scenario" onchange="showChange()">
+          {% set groups = {} %}
+          {% for s in scenarios %}{% set _ = groups.setdefault(s.domain_label, []).append(s) %}{% endfor %}
+          {% for label, rows in groups.items() %}
+          <optgroup label="{{ label }}">
+            {% for s in rows %}
+            <option value="{{ s.scenario_id }}" data-desc="{{ s.initial_input }}"
+                    data-cat="{{ s.category }}">{{ s.scenario_id }} &mdash; {{ s.title }}</option>
+            {% endfor %}
+          </optgroup>
+          {% endfor %}
+        </select>
+      </div>
+      <button class="primary" type="submit">Analyse impact</button>
+      <button type="button" hx-post="/reset" hx-target="#result" hx-swap="innerHTML">Reset</button>
+      <span class="spin" id="spin">Orchestrating analysis…</span>
+    </div>
+    <p class="tiny faint" id="changecat" style="margin:11px 0 2px;text-transform:uppercase;letter-spacing:.05em"></p>
+    <p class="small" id="changedesc" style="margin:0;max-width:95ch"></p>
+  </form>
+</div>
+
+<div id="result">
+  {% include "partials/idle.html" %}
+</div>
+
+<script>
+function showChange(){
+  const s=document.getElementById('scenario');
+  const o=s.options[s.selectedIndex];
+  document.getElementById('changedesc').textContent = o.getAttribute('data-desc') || '';
+  document.getElementById('changecat').textContent = o.getAttribute('data-cat') || '';
+}
+showChange();
+</script>
+{% endblock %}

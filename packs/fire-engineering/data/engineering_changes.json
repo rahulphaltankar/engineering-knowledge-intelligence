@@ -1,0 +1,41 @@
+{
+  "entity": "EngineeringChange",
+  "description": "Engineering changes under assessment.",
+  "data_classification": "SIMULATED — PUBLIC DEMONSTRATOR DATA",
+  "generated_by": "Engineering Knowledge Intelligence demonstrator",
+  "seed": 42,
+  "records": [
+    {
+      "id": "FEC-001",
+      "title": "Change of use of Level 3 from office to six residential apartments",
+      "description": "Change of use on Level 3 of an existing 8-storey mixed-use building from office use to six residential apartments. Single stair. Category L2 fire alarm. Existing fire strategy is based on simultaneous evacuation of the office population. Sprinklers are not fitted above Level 1.",
+      "change_type": "material_change_of_use",
+      "change_type_label": "a material change of use",
+      "baseline_basis": "office",
+      "proposed_basis": "residential",
+      "affected_areas": [
+        "Level 3 (whole floor)",
+        "the single common stair serving all levels",
+        "the building-wide fire alarm cause-and-effect"
+      ],
+      "existing_conditions": [
+        "8 storeys, mixed use",
+        "One common stair serving all storeys",
+        "BS 5839-1 Category L2 fire detection and alarm (office design)",
+        "Fire strategy based on simultaneous evacuation of the office population",
+        "Sprinklers fitted to Levels 0-1 only"
+      ],
+      "unrecorded_design_inputs": [
+        "height of the topmost storey above ground level in metres",
+        "the evacuation strategy intended for the residential floor",
+        "whether sprinkler protection is to be extended to Level 3",
+        "the smoke control provision for the Level 3 common corridor and stair"
+      ],
+      "primary_system_id": "FSYS-001",
+      "status": "under_review",
+      "raised_date": "2026-05-20",
+      "project": "Synthetic project - no real building",
+      "record_type": "EngineeringChange"
+    }
+  ]
+}

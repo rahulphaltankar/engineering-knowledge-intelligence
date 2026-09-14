@@ -1,0 +1,405 @@
+{
+  "entity": "Standard",
+  "description": "Standards and regulations. Identifier, title, body and scope tag only.",
+  "data_classification": "SIMULATED ENTERPRISE ARTEFACT - not OEM, customer or proprietary data",
+  "generated_by": "scripts/generate_simulation.py",
+  "seed": 20260823,
+  "records": [
+    {
+      "id": "STD-001",
+      "identifier": "ISO 26262",
+      "title": "Road vehicles - Functional safety",
+      "body": "ISO",
+      "scope_tag": "functional_safety",
+      "record_type": "Standard",
+      "content_policy": "METADATA ONLY - no clause text, limit or test procedure from this standard is reproduced"
+    },
+    {
+      "id": "STD-002",
+      "identifier": "ISO 21448",
+      "title": "Road vehicles - Safety of the intended functionality",
+      "body": "ISO",
+      "scope_tag": "functional_safety",
+      "record_type": "Standard",
+      "content_policy": "METADATA ONLY - no clause text, limit or test procedure from this standard is reproduced"
+    },
+    {
+      "id": "STD-003",
+      "identifier": "ISO 21434",
+      "title": "Road vehicles - Cybersecurity engineering",
+      "body": "ISO",
+      "scope_tag": "cybersecurity",
+      "record_type": "Standard",
+      "content_policy": "METADATA ONLY - no clause text, limit or test procedure from this standard is reproduced"
+    },
+    {
+      "id": "STD-004",
+      "identifier": "IATF 16949",
+      "title": "Quality management system requirements for automotive production and relevant service part organizations",
+      "body": "IATF",
+      "scope_tag": "quality_management",
+      "record_type": "Standard",
+      "content_policy": "METADATA ONLY - no clause text, limit or test procedure from this standard is reproduced"
+    },
+    {
+      "id": "STD-005",
+      "identifier": "ISO 9001",
+      "title": "Quality management systems - Requirements",
+      "body": "ISO",
+      "scope_tag": "quality_management",
+      "record_type": "Standard",
+      "content_policy": "METADATA ONLY - no clause text, limit or test procedure from this standard is reproduced"
+    },
+    {
+      "id": "STD-006",
+      "identifier": "AIAG-VDA FMEA",
+      "title": "Failure Mode and Effects Analysis handbook",
+      "body": "AIAG / VDA",
+      "scope_tag": "risk_analysis",
+      "record_type": "Standard",
+      "content_policy": "METADATA ONLY - no clause text, limit or test procedure from this standard is reproduced"
+    },
+    {
+      "id": "STD-007",
+      "identifier": "VDA 6.3",
+      "title": "Process audit",
+      "body": "VDA",
+      "scope_tag": "audit",
+      "record_type": "Standard",
+      "content_policy": "METADATA ONLY - no clause text, limit or test procedure from this standard is reproduced"
+    },
+    {
+      "id": "STD-008",
+      "identifier": "ISO 6469-1",
+      "title": "Electrically propelled road vehicles - Safety specifications - Rechargeable energy storage system",
+      "body": "ISO",
+      "scope_tag": "hv_safety",
+      "record_type": "Standard",
+      "content_policy": "METADATA ONLY - no clause text, limit or test procedure from this standard is reproduced"
+    },
+    {
+      "id": "STD-009",
+      "identifier": "ISO 6469-3",
+      "title": "Electrically propelled road vehicles - Safety specifications - Electrical safety",
+      "body": "ISO",
+      "scope_tag": "hv_safety",
+      "record_type": "Standard",
+      "content_policy": "METADATA ONLY - no clause text, limit or test procedure from this standard is reproduced"
+    },
+    {
+      "id": "STD-010",
+      "identifier": "IEC 62660-1",
+      "title": "Secondary lithium-ion cells for the propulsion of electric road vehicles - Performance testing",
+      "body": "IEC",
+      "scope_tag": "battery_test",
+      "record_type": "Standard",
+      "content_policy": "METADATA ONLY - no clause text, limit or test procedure from this standard is reproduced"
+    },
+    {
+      "id": "STD-011",
+      "identifier": "IEC 62660-2",
+      "title": "Secondary lithium-ion cells for the propulsion of electric road vehicles - Reliability and abuse testing",
+      "body": "IEC",
+      "scope_tag": "battery_test",
+      "record_type": "Standard",
+      "content_policy": "METADATA ONLY - no clause text, limit or test procedure from this standard is reproduced"
+    },
+    {
+      "id": "STD-012",
+      "identifier": "ISO 12405-4",
+      "title": "Electrically propelled road vehicles - Test specification for lithium-ion traction battery packs and systems",
+      "body": "ISO",
+      "scope_tag": "battery_test",
+      "record_type": "Standard",
+      "content_policy": "METADATA ONLY - no clause text, limit or test procedure from this standard is reproduced"
+    },
+    {
+      "id": "STD-013",
+      "identifier": "UN R100",
+      "title": "Uniform provisions concerning the approval of vehicles with regard to specific requirements for the electric power train",
+      "body": "UNECE",
+      "scope_tag": "homologation",
+      "record_type": "Standard",
+      "content_policy": "METADATA ONLY - no clause text, limit or test procedure from this standard is reproduced"
+    },
+    {
+      "id": "STD-014",
+      "identifier": "UN R10",
+      "title": "Uniform provisions concerning the approval of vehicles with regard to electromagnetic compatibility",
+      "body": "UNECE",
+      "scope_tag": "emc",
+      "record_type": "Standard",
+      "content_policy": "METADATA ONLY - no clause text, limit or test procedure from this standard is reproduced"
+    },
+    {
+      "id": "STD-015",
+      "identifier": "UN R13-H",
+      "title": "Uniform provisions concerning the approval of passenger cars with regard to braking",
+      "body": "UNECE",
+      "scope_tag": "braking",
+      "record_type": "Standard",
+      "content_policy": "METADATA ONLY - no clause text, limit or test procedure from this standard is reproduced"
+    },
+    {
+      "id": "STD-016",
+      "identifier": "UN R51",
+      "title": "Uniform provisions concerning the approval of motor vehicles with regard to their sound emissions",
+      "body": "UNECE",
+      "scope_tag": "noise",
+      "record_type": "Standard",
+      "content_policy": "METADATA ONLY - no clause text, limit or test procedure from this standard is reproduced"
+    },
+    {
+      "id": "STD-017",
+      "identifier": "UN R117",
+      "title": "Uniform provisions concerning the approval of tyres with regard to rolling sound emissions, wet grip and rolling resistance",
+      "body": "UNECE",
+      "scope_tag": "tyres",
+      "record_type": "Standard",
+      "content_policy": "METADATA ONLY - no clause text, limit or test procedure from this standard is reproduced"
+    },
+    {
+      "id": "STD-018",
+      "identifier": "UN R79",
+      "title": "Uniform provisions concerning the approval of vehicles with regard to steering equipment",
+      "body": "UNECE",
+      "scope_tag": "steering",
+      "record_type": "Standard",
+      "content_policy": "METADATA ONLY - no clause text, limit or test procedure from this standard is reproduced"
+    },
+    {
+      "id": "STD-019",
+      "identifier": "UN R94",
+      "title": "Uniform provisions concerning the approval of vehicles with regard to the protection of the occupants in the event of a frontal collision",
+      "body": "UNECE",
+      "scope_tag": "crash",
+      "record_type": "Standard",
+      "content_policy": "METADATA ONLY - no clause text, limit or test procedure from this standard is reproduced"
+    },
+    {
+      "id": "STD-020",
+      "identifier": "UN R95",
+      "title": "Uniform provisions concerning the approval of vehicles with regard to the protection of the occupants in the event of a lateral collision",
+      "body": "UNECE",
+      "scope_tag": "crash",
+      "record_type": "Standard",
+      "content_policy": "METADATA ONLY - no clause text, limit or test procedure from this standard is reproduced"
+    },
+    {
+      "id": "STD-021",
+      "identifier": "UN GTR 20",
+      "title": "Global technical regulation on electric vehicle safety",
+      "body": "UNECE",
+      "scope_tag": "hv_safety",
+      "record_type": "Standard",
+      "content_policy": "METADATA ONLY - no clause text, limit or test procedure from this standard is reproduced"
+    },
+    {
+      "id": "STD-022",
+      "identifier": "UN R83",
+      "title": "Uniform provisions concerning the approval of vehicles with regard to the emission of pollutants",
+      "body": "UNECE",
+      "scope_tag": "emissions",
+      "record_type": "Standard",
+      "content_policy": "METADATA ONLY - no clause text, limit or test procedure from this standard is reproduced"
+    },
+    {
+      "id": "STD-023",
+      "identifier": "UN R154",
+      "title": "Worldwide harmonised light vehicles test procedure",
+      "body": "UNECE",
+      "scope_tag": "emissions",
+      "record_type": "Standard",
+      "content_policy": "METADATA ONLY - no clause text, limit or test procedure from this standard is reproduced"
+    },
+    {
+      "id": "STD-024",
+      "identifier": "ISO 16750-3",
+      "title": "Road vehicles - Environmental conditions and testing for electrical and electronic equipment - Mechanical loads",
+      "body": "ISO",
+      "scope_tag": "environmental_test",
+      "record_type": "Standard",
+      "content_policy": "METADATA ONLY - no clause text, limit or test procedure from this standard is reproduced"
+    },
+    {
+      "id": "STD-025",
+      "identifier": "ISO 16750-4",
+      "title": "Road vehicles - Environmental conditions and testing for electrical and electronic equipment - Climatic loads",
+      "body": "ISO",
+      "scope_tag": "environmental_test",
+      "record_type": "Standard",
+      "content_policy": "METADATA ONLY - no clause text, limit or test procedure from this standard is reproduced"
+    },
+    {
+      "id": "STD-026",
+      "identifier": "ISO 20653",
+      "title": "Road vehicles - Degrees of protection (IP code)",
+      "body": "ISO",
+      "scope_tag": "environmental_test",
+      "record_type": "Standard",
+      "content_policy": "METADATA ONLY - no clause text, limit or test procedure from this standard is reproduced"
+    },
+    {
+      "id": "STD-027",
+      "identifier": "CISPR 25",
+      "title": "Vehicles, boats and internal combustion engines - Radio disturbance characteristics",
+      "body": "IEC/CISPR",
+      "scope_tag": "emc",
+      "record_type": "Standard",
+      "content_policy": "METADATA ONLY - no clause text, limit or test procedure from this standard is reproduced"
+    },
+    {
+      "id": "STD-028",
+      "identifier": "ISO 11452-2",
+      "title": "Road vehicles - Component test methods for electrical disturbances from narrowband radiated electromagnetic energy - Absorber-lined shielded enclosure",
+      "body": "ISO",
+      "scope_tag": "emc",
+      "record_type": "Standard",
+      "content_policy": "METADATA ONLY - no clause text, limit or test procedure from this standard is reproduced"
+    },
+    {
+      "id": "STD-029",
+      "identifier": "ISO 7637-2",
+      "title": "Road vehicles - Electrical disturbances from conduction and coupling - Transient conduction along supply lines",
+      "body": "ISO",
+      "scope_tag": "emc",
+      "record_type": "Standard",
+      "content_policy": "METADATA ONLY - no clause text, limit or test procedure from this standard is reproduced"
+    },
+    {
+      "id": "STD-030",
+      "identifier": "ISO 11898-1",
+      "title": "Road vehicles - Controller area network - Data link layer and physical signalling",
+      "body": "ISO",
+      "scope_tag": "networking",
+      "record_type": "Standard",
+      "content_policy": "METADATA ONLY - no clause text, limit or test procedure from this standard is reproduced"
+    },
+    {
+      "id": "STD-031",
+      "identifier": "ISO 14229-1",
+      "title": "Road vehicles - Unified diagnostic services - Specification and requirements",
+      "body": "ISO",
+      "scope_tag": "diagnostics",
+      "record_type": "Standard",
+      "content_policy": "METADATA ONLY - no clause text, limit or test procedure from this standard is reproduced"
+    },
+    {
+      "id": "STD-032",
+      "identifier": "ISO 15118-2",
+      "title": "Road vehicles - Vehicle to grid communication interface - Network and application protocol requirements",
+      "body": "ISO",
+      "scope_tag": "charging",
+      "record_type": "Standard",
+      "content_policy": "METADATA ONLY - no clause text, limit or test procedure from this standard is reproduced"
+    },
+    {
+      "id": "STD-033",
+      "identifier": "IEC 62196-3",
+      "title": "Plugs, socket-outlets, vehicle connectors and vehicle inlets - DC charging",
+      "body": "IEC",
+      "scope_tag": "charging",
+      "record_type": "Standard",
+      "content_policy": "METADATA ONLY - no clause text, limit or test procedure from this standard is reproduced"
+    },
+    {
+      "id": "STD-034",
+      "identifier": "SAE J2464",
+      "title": "Electric and hybrid electric vehicle rechargeable energy storage system safety and abuse testing",
+      "body": "SAE",
+      "scope_tag": "battery_test",
+      "record_type": "Standard",
+      "content_policy": "METADATA ONLY - no clause text, limit or test procedure from this standard is reproduced"
+    },
+    {
+      "id": "STD-035",
+      "identifier": "SAE J2929",
+      "title": "Safety standard for electric and hybrid vehicle propulsion battery systems",
+      "body": "SAE",
+      "scope_tag": "hv_safety",
+      "record_type": "Standard",
+      "content_policy": "METADATA ONLY - no clause text, limit or test procedure from this standard is reproduced"
+    },
+    {
+      "id": "STD-036",
+      "identifier": "SAE J1455",
+      "title": "Recommended environmental practices for electronic equipment design in heavy-duty vehicle applications",
+      "body": "SAE",
+      "scope_tag": "environmental_test",
+      "record_type": "Standard",
+      "content_policy": "METADATA ONLY - no clause text, limit or test procedure from this standard is reproduced"
+    },
+    {
+      "id": "STD-037",
+      "identifier": "ISO 10844",
+      "title": "Acoustics - Specification of test tracks for measuring sound emitted by road vehicles",
+      "body": "ISO",
+      "scope_tag": "noise",
+      "record_type": "Standard",
+      "content_policy": "METADATA ONLY - no clause text, limit or test procedure from this standard is reproduced"
+    },
+    {
+      "id": "STD-038",
+      "identifier": "ISO 362-1",
+      "title": "Measurement of noise emitted by accelerating road vehicles",
+      "body": "ISO",
+      "scope_tag": "noise",
+      "record_type": "Standard",
+      "content_policy": "METADATA ONLY - no clause text, limit or test procedure from this standard is reproduced"
+    },
+    {
+      "id": "STD-039",
+      "identifier": "ISO 15031-5",
+      "title": "Road vehicles - Communication between vehicle and external equipment for emissions-related diagnostics",
+      "body": "ISO",
+      "scope_tag": "diagnostics",
+      "record_type": "Standard",
+      "content_policy": "METADATA ONLY - no clause text, limit or test procedure from this standard is reproduced"
+    },
+    {
+      "id": "STD-040",
+      "identifier": "FMVSS 135",
+      "title": "Light vehicle brake systems",
+      "body": "NHTSA",
+      "scope_tag": "braking",
+      "record_type": "Standard",
+      "content_policy": "METADATA ONLY - no clause text, limit or test procedure from this standard is reproduced"
+    },
+    {
+      "id": "STD-041",
+      "identifier": "FMVSS 305",
+      "title": "Electric-powered vehicles - Electrolyte spillage and electrical shock protection",
+      "body": "NHTSA",
+      "scope_tag": "hv_safety",
+      "record_type": "Standard",
+      "content_policy": "METADATA ONLY - no clause text, limit or test procedure from this standard is reproduced"
+    },
+    {
+      "id": "STD-042",
+      "identifier": "ISO 26262-6",
+      "title": "Road vehicles - Functional safety - Product development at the software level",
+      "body": "ISO",
+      "scope_tag": "functional_safety",
+      "record_type": "Standard",
+      "content_policy": "METADATA ONLY - no clause text, limit or test procedure from this standard is reproduced"
+    },
+    {
+      "id": "STD-043",
+      "identifier": "ISO 5725-2",
+      "title": "Accuracy of measurement methods and results - Basic method for repeatability and reproducibility",
+      "body": "ISO",
+      "scope_tag": "measurement",
+      "record_type": "Standard",
+      "content_policy": "METADATA ONLY - no clause text, limit or test procedure from this standard is reproduced"
+    },
+    {
+      "id": "STD-044",
+      "identifier": "ISO 22514-2",
+      "title": "Statistical methods in process management - Capability and performance",
+      "body": "ISO",
+      "scope_tag": "measurement",
+      "record_type": "Standard",
+      "content_policy": "METADATA ONLY - no clause text, limit or test procedure from this standard is reproduced"
+    }
+  ]
+}

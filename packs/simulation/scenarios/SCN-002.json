@@ -1,0 +1,107 @@
+{
+  "scenario_id": "SCN-002",
+  "category": "Requirements Impact",
+  "title": "Friction material substitution driven by substance restriction",
+  "engineering_question": "A material specification has been changed for regulatory reasons. Which requirements are affected and is the existing verification evidence still valid?",
+  "one_liner": "Review the verification implications of this design change.",
+  "initial_input": "Engineering change ECR-002 replaces the front brake friction compound with a low-copper formulation to meet market restrictions on restricted substances.",
+  "relevant_entities": {
+    "engineering_changes": [
+      "ECR-002"
+    ],
+    "systems": [
+      "SYS-005"
+    ],
+    "components": [
+      "COMP-029",
+      "COMP-028"
+    ],
+    "requirements": [
+      "REQ-004",
+      "REQ-060",
+      "REQ-061",
+      "REQ-062",
+      "REQ-063",
+      "REQ-064",
+      "REQ-065",
+      "REQ-066",
+      "REQ-067"
+    ],
+    "failure_modes": [
+      "FM-060",
+      "FM-061",
+      "FM-062",
+      "FM-063",
+      "FM-064",
+      "FM-065",
+      "FM-066",
+      "FM-250",
+      "FM-251"
+    ],
+    "tests": [
+      "TEST-060",
+      "TEST-061",
+      "TEST-062",
+      "TEST-063",
+      "TEST-064",
+      "TEST-065",
+      "TEST-066",
+      "TEST-067"
+    ],
+    "quality_issues": [
+      "QI-007",
+      "QI-008"
+    ],
+    "documents": [
+      "DOC-010",
+      "DOC-011"
+    ]
+  },
+  "expected_impacted_domains": [
+    "Braking performance and approval compliance",
+    "Fade and recovery behaviour",
+    "Regenerative and friction blending calibration",
+    "Judder propensity over service life",
+    "Brake noise propensity",
+    "Supplier process control on the moulding operation"
+  ],
+  "expected_evidence": [
+    "TR-017",
+    "TR-018",
+    "TR-019",
+    "TR-020",
+    "TR-021",
+    "TR-022"
+  ],
+  "expected_reasoning_paths": [
+    "The regulatory driver is satisfied - TR-021 passes REQ-064 - but the change creates consequential effects on adjacent requirements",
+    "REQ-060 and REQ-061 pass, so the approval-critical requirements are currently met",
+    "REQ-063 and REQ-067 fail via TR-017 and TR-022, so the change trades regulatory compliance against perceived quality",
+    "TR-018 is inconclusive because the friction band definition does not extend above 400 degC, which is a specification gap rather than a test failure"
+  ],
+  "candidate_outputs": [
+    "Requirements Impact Analysis",
+    "Engineering Impact Assessment",
+    "Traceability Matrix",
+    "DFMEA Review",
+    "PFMEA Review",
+    "DVP&R",
+    "Verification Plan",
+    "Test Strategy",
+    "Evidence Gap Analysis",
+    "Risk Assessment",
+    "Failure Mode Analysis",
+    "Supplier Quality Assessment",
+    "Design Review",
+    "Compliance / Standards Impact",
+    "Engineering Executive Summary",
+    "Engineering Decision Brief"
+  ],
+  "known_unknowns": [
+    "TEST-063 objective blending discontinuity limit is TBD_PROGRAMME_SPECIFIC",
+    "The friction coefficient specification band does not define behaviour above 400 degC",
+    "No wear rate data for the revised compound exists in the environment"
+  ],
+  "data_classification": "SIMULATED ENTERPRISE ARTEFACT - not OEM, customer or proprietary data",
+  "connector": "SIMULATION"
+}

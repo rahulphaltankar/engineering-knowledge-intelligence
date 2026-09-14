@@ -1,0 +1,15 @@
+{
+  "entity": "Scenario",
+  "description": "Scenarios available in the fire-engineering demonstrator.",
+  "data_classification": "SIMULATED — PUBLIC DEMONSTRATOR DATA",
+  "generated_by": "Engineering Knowledge Intelligence demonstrator",
+  "seed": 42,
+  "records": [
+    {
+      "scenario_id": "SCN-F01",
+      "category": "Fire engineering - change of use",
+      "title": "Level 3 office to residential change of use (single stair)",
+      "one_liner": "Assess the fire-safety impact of this change and the verification evidence it requires."
+    }
+  ]
+}

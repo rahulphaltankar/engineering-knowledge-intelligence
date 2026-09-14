@@ -1,0 +1,53 @@
+{
+  "entity": "Document",
+  "description": "Synthetic project documents.",
+  "data_classification": "SIMULATED — PUBLIC DEMONSTRATOR DATA",
+  "generated_by": "Engineering Knowledge Intelligence demonstrator",
+  "seed": 42,
+  "records": [
+    {
+      "id": "FDOC-001",
+      "title": "Existing fire strategy report",
+      "document_type": "fire_strategy",
+      "revision": "C",
+      "issued_date": "2023-10-01",
+      "status": "released",
+      "basis": "office",
+      "abstract": "Synthetic fire strategy for the building in office use: simultaneous evacuation via the single stair, Category L2 detection and alarm, sprinklers to Levels 0-1.",
+      "record_type": "Document"
+    },
+    {
+      "id": "FDOC-002",
+      "title": "Fire alarm cause-and-effect matrix",
+      "document_type": "cause_and_effect",
+      "revision": "B",
+      "issued_date": "2023-11-15",
+      "status": "released",
+      "basis": "office",
+      "abstract": "Programmed alarm outputs for each zone, prepared for office occupancy.",
+      "record_type": "Document"
+    },
+    {
+      "id": "FDOC-003",
+      "title": "Level 3 change-of-use proposal - six apartments",
+      "document_type": "architectural_proposal",
+      "revision": "P2",
+      "issued_date": "2026-05-12",
+      "status": "for_comment",
+      "basis": "residential",
+      "abstract": "Proposed layout of six flats on Level 3 opening onto a common corridor leading to the stair lobby.",
+      "record_type": "Document"
+    },
+    {
+      "id": "FDOC-004",
+      "title": "Sprinkler installation record, Levels 0-1",
+      "document_type": "installation_record",
+      "revision": "A",
+      "issued_date": "2019-04-30",
+      "status": "released",
+      "basis": "not_occupancy_dependent",
+      "abstract": "Record of the existing sprinkler installation serving the lower two storeys.",
+      "record_type": "Document"
+    }
+  ]
+}

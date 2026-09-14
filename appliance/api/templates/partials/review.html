@@ -1,0 +1,87 @@
+<div class="review-box">
+  <div class="row" style="justify-content:space-between;margin-bottom:8px">
+    <strong style="font-size:13.5px">Reviewer decision on <code>{{ e.finding_id }}</code></strong>
+    <span class="control-label">{{ review_control }}</span>
+  </div>
+
+  <div class="small" style="margin-bottom:10px">
+    Current review state:
+    {% set rv = e.review %}
+    {% include "partials/review_pill.html" %}
+    {% if e.review %}
+      <span class="muted">by <strong>{{ e.review.reviewer }}</strong> at
+        <span class="mono tiny">{{ e.review.timestamp }}</span></span>
+      {% if e.review.note %}<div class="note {{ 'warn' if e.review.decision == 'rejected' else 'ok' }}"
+        style="margin-top:6px">{{ e.review.note }}</div>{% endif %}
+    {% endif %}
+  </div>
+
+  {% if error %}
+  <div class="note warn" style="margin-bottom:10px" role="alert">
+    <strong>Not recorded:</strong> {{ error.message }}</div>
+  {% endif %}
+
+  <form hx-post="/review/{{ e.finding_id }}" hx-target="#review-{{ e.finding_id }}"
+        hx-swap="innerHTML" hx-vals='js:{targets: reviewTargets("{{ e.finding_id }}")}'>
+    <div class="split" style="gap:10px">
+      <div>
+        <label class="fl" for="reviewer-{{ e.finding_id }}">Reviewer name (self-declared)</label>
+        <input type="text" id="reviewer-{{ e.finding_id }}" name="reviewer" maxlength="80"
+               value="{{ (draft.reviewer if draft else '') or (e.review.reviewer if e.review else '') }}"
+               placeholder="e.g. Reviewing engineer">
+      </div>
+      <div>
+        <label class="fl" for="note-{{ e.finding_id }}">Note (required to reject)</label>
+        <textarea id="note-{{ e.finding_id }}" name="note" maxlength="2000"
+                  placeholder="Reason for the decision">{{ draft.note if draft else '' }}</textarea>
+      </div>
+    </div>
+    <div class="row" style="margin-top:10px">
+      <button class="accept" type="submit" name="decision" value="accept">Accept finding</button>
+      <button class="reject" type="submit" name="decision" value="reject">Reject finding</button>
+      <span class="tiny muted">A rejection withholds this finding from generated outputs and holds
+        the verification actions it justified.</span>
+    </div>
+  </form>
+
+  {% if e.review_history %}
+  <details class="disclosure" {{ 'open' if e.review_history|length > 0 }}>
+    <summary>Audit record for this finding ({{ e.review_history|length }})</summary>
+    <table style="margin-top:8px">
+      <thead><tr><th>Time (UTC)</th><th>Decision</th><th>Reviewer</th><th>Note</th>
+        <th>Snapshot at decision</th></tr></thead>
+      <tbody>
+      {% for r in e.review_history|reverse %}
+      <tr>
+        <td class="mono tiny">{{ r.timestamp }}</td>
+        <td><span class="pill {{ 'ok' if r.decision == 'accepted' else 'bad' }}">{{ r.decision }}</span></td>
+        <td class="small">{{ r.reviewer }}</td>
+        <td class="small muted">{{ r.note or '—' }}</td>
+        <td class="tiny muted">{{ r.finding_snapshot.classification }} ·
+          confidence {{ '%.2f'|format(r.finding_snapshot.confidence_score) }} ·
+          evidence {{ r.finding_snapshot.evidence_ids|join(', ') or 'none' }}</td>
+      </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </details>
+  {% endif %}
+</div>
+
+{% if oob %}
+{# Out-of-band updates only for regions the calling page has (see reviewTargets). #}
+{% if 'review-summary' in targets %}
+<div id="review-summary" hx-swap-oob="innerHTML">
+  {% include "partials/review_summary.html" %}
+</div>
+{% endif %}
+{% if 'pill' in targets %}
+<span id="rv-{{ e.finding_id }}" hx-swap-oob="innerHTML">{% set rv = e.review %}{% include "partials/review_pill.html" %}</span>
+{% endif %}
+{% if pipeline and 'pipeline' in targets %}
+<div id="pipeline" hx-swap-oob="innerHTML">{% include "partials/pipeline.html" %}</div>
+{% endif %}
+{% if 'output' in targets and refreshed %}
+<div id="output" hx-swap-oob="innerHTML">{% with o = refreshed %}{% include "partials/output.html" %}{% endwith %}</div>
+{% endif %}
+{% endif %}

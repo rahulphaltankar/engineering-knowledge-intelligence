@@ -1,0 +1,85 @@
+{% extends "fire/base.html" %}
+{% block title %}Architecture &middot; {{ S.product_name }}{% endblock %}
+{% block body %}
+<div class="page-head">
+  <h1>Fire Engineering Knowledge Intelligence Architecture</h1>
+  <p>How technical knowledge becomes a reviewable decision. The engine is domain-neutral; fire-engineering
+     knowledge &mdash; specialist operating profiles, the knowledge corpus and its vocabulary &mdash; lives in a
+     domain pack. Each layer shows a fire-engineering example and what is running in this demonstrator now.</p>
+</div>
+
+<div class="panel">
+  {% for layer in S.architecture %}
+  <div class="layer">
+    <div><div class="eyebrow" style="margin:0">Layer {{ loop.index }}</div><div class="ln">{{ layer.layer }}</div></div>
+    <div>
+      <div class="small">{{ layer.description }}</div>
+      <div class="small" style="margin-top:5px"><span class="faint tiny" style="text-transform:uppercase;letter-spacing:.05em">Fire engineering example</span><br>{{ layer.example }}</div>
+      <div class="fact">Running now: {{ facts[layer.fact] }}</div>
+    </div>
+  </div>
+  {% if not loop.last %}<div class="down">&darr;</div>{% endif %}
+  {% endfor %}
+</div>
+
+<section class="panel" id="knowledge-sources">
+  <div class="panel-head"><h2>Knowledge sources</h2>
+    <span class="aside">Conceptual categories for this demonstrator &mdash; not a description of BB7's systems</span></div>
+  <div class="grid3">
+    {% for s in sources %}
+    <div class="tile {{ '' if s.represented else 'muted-tile' }}">
+      <div class="row" style="justify-content:space-between;gap:6px"><h4>{{ s.name }}</h4>
+        {% if s.represented %}<span class="pill ok">Represented</span>{% else %}<span class="pill PLANNED">Conceptual</span>{% endif %}</div>
+      <div class="d">{{ s.description }}</div>
+      <div class="tiny muted" style="margin-top:6px">{{ s.status }}{% if s.types %} ({{ s.types|join(', ') }}){% endif %}</div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<div class="split">
+  <div class="panel">
+    <div class="panel-head"><h2>Fire engineering domains</h2></div>
+    <table>
+      <thead><tr><th>Domain</th><th>In the synthetic corpus</th></tr></thead>
+      <tbody>
+      {% for d in domains %}
+      <tr><td class="small"><strong>{{ d.name }}</strong><div class="tiny muted">{{ d.description }}</div></td>
+        <td class="small">{% if d.records %}{{ d.by_type|join(' · ') }}{% else %}<span class="muted">{{ d.note or 'Not modelled' }}</span>{% endif %}</td></tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  <div class="panel">
+    <div class="panel-head"><h2>Intelligence capabilities</h2></div>
+    <table>
+      <tbody>
+      {% for c in S.capabilities %}
+      <tr><td class="small"><a href="{{ c.page }}"><strong>{{ c.name }}</strong></a><div class="tiny muted">{{ c.description }}</div></td></tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="split">
+  <div class="panel">
+    <div class="panel-head"><h2>Governance controls</h2></div>
+    <dl class="kv">
+      <dt>Evidence is data</dt><dd>Retrieved records are passed to any model as untrusted context, never as instructions.</dd>
+      <dt>Exact citations</dt><dd>Every cited record must exist; fabricated citations are detected and the claim downgraded or removed.</dd>
+      <dt>No invented criteria</dt><dd>An acceptance criterion not in the evidence is reported as not established; outputs that synthesise one are blocked.</dd>
+      <dt>Unknown is an answer</dt><dd>What the evidence does not establish is reported as UNKNOWN with no value assumed.</dd>
+      <dt>Lower trust for models</dt><dd>Model interpretation is bounded, classified INFERRED and below deterministic findings.</dd>
+      <dt>Human review</dt><dd>Finding-level decisions with a recorded reason ({{ review_label|lower }}).</dd>
+    </dl>
+  </div>
+  <div class="panel">
+    <div class="panel-head"><h2>Not in this demonstrator</h2></div>
+    <ul class="small" style="margin:0;padding-left:18px">
+      {% for x in S.not_in_demonstrator %}<li style="margin:4px 0">{{ x }}</li>{% endfor %}
+    </ul>
+    <p class="tiny muted" style="margin:12px 0 0">{{ S.independence }}</p>
+  </div>
+</div>
+{% endblock %}

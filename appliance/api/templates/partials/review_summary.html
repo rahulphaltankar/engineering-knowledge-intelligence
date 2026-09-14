@@ -1,0 +1,38 @@
+<div class="panel">
+  <div class="panel-head">
+    <h2>Human review</h2>
+    <span class="aside control-label">{{ review_control }}</span>
+  </div>
+  {% set log = reviews.log if reviews else [] %}
+  {% set current = reviews.current if reviews else {} %}
+  {% set accepted = current.values()|selectattr('decision', 'equalto', 'accepted')|list %}
+  {% set rejected = current.values()|selectattr('decision', 'equalto', 'rejected')|list %}
+  <p class="small muted" style="margin:0 0 10px">
+    Open any finding with <strong>Explain</strong> to inspect its evidence and derivation, then
+    accept or reject it. Decisions apply to that finding only and are reflected in every output
+    generated afterwards. The reviewer name is self-declared: this is not identity, approval or
+    sign-off.
+  </p>
+  <div class="row small">
+    <span class="pill ok">{{ accepted|length }} accepted</span>
+    <span class="pill bad">{{ rejected|length }} rejected</span>
+    <span class="muted">{{ log|length }} decision(s) in the session audit log</span>
+  </div>
+  {% if log %}
+  <table style="margin-top:10px">
+    <thead><tr><th>Time (UTC)</th><th>Finding</th><th>Decision</th><th>Reviewer</th><th>Note</th></tr></thead>
+    <tbody>
+    {% for r in log|reverse %}
+    <tr>
+      <td class="mono tiny">{{ r.timestamp }}</td>
+      <td><button class="ghost" style="padding:0" hx-get="/explain/{{ r.finding_id }}"
+                  hx-target="#why" hx-swap="innerHTML">{{ r.finding_id }}</button></td>
+      <td><span class="pill {{ 'ok' if r.decision == 'accepted' else 'bad' }}">{{ r.decision }}</span></td>
+      <td class="small">{{ r.reviewer }}</td>
+      <td class="small muted">{{ r.note or '—' }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  {% endif %}
+</div>

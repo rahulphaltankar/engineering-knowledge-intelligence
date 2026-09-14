@@ -1,0 +1,170 @@
+{% extends "base.html" %}
+{% block title %}Appliance Architecture{% endblock %}
+{% block body %}
+
+<div class="page-head">
+  <h1>Appliance Architecture</h1>
+  <p>A portable intelligence layer that sits across an enterprise's existing engineering
+     ecosystem. The customer's systems remain outside the appliance; the appropriate
+     connector is enabled when the customer authorises it.</p>
+</div>
+
+<div class="panel tight">
+  <div class="row" style="justify-content:space-between">
+    <div class="row" style="gap:22px">
+      <span class="small"><strong>{{ arch.summary.components }}</strong>
+        <span class="muted">architecture components</span></span>
+      <span class="small"><span class="pill IMPLEMENTED">{{ arch.summary.IMPLEMENTED }} implemented</span></span>
+      <span class="small"><span class="pill PARTIAL">{{ arch.summary.PARTIAL }} partial</span></span>
+      <span class="small"><span class="pill PLANNED">{{ arch.summary.PLANNED }} planned</span></span>
+    </div>
+    <span class="tiny faint">Status is verified against the modules on disk, not asserted.</span>
+  </div>
+</div>
+
+<!-- ================= THE THREE COLUMNS ================= -->
+<div style="display:grid;grid-template-columns:250px 1fr 288px;gap:14px;align-items:start">
+
+  <!-- LEFT: INPUT CONNECTORS -->
+  <div class="panel" style="padding:0;overflow:hidden">
+    <div style="background:var(--navy);color:#dbe6f2;padding:11px 15px">
+      <div style="font-size:11.5px;text-transform:uppercase;letter-spacing:.08em;font-weight:650">
+        Input connectors</div>
+      <div class="tiny" style="color:#93a7bd">Pluggable · {{ connector_summary.total }} categories</div>
+    </div>
+    <div style="padding:11px 13px;max-height:640px;overflow-y:auto">
+      {% for cat, rows in connectors_by_category.items() %}
+      <div class="tiny faint" style="text-transform:uppercase;letter-spacing:.06em;
+           margin:11px 0 4px">{{ cat }}</div>
+      {% for c in rows %}
+      <div class="row" style="justify-content:space-between;gap:6px;padding:3px 0;
+           border-bottom:1px solid var(--line-soft)">
+        <span class="tiny" style="color:{{ 'var(--ink)' if c.display_state=='ACTIVE' else 'var(--muted)' }};
+              overflow:hidden;text-overflow:ellipsis;white-space:nowrap"
+              title="{{ c.name }}">{{ c.name }}</span>
+        <span class="pill {{ c.display_state|replace(' ','_') }}"
+              style="font-size:9px;padding:1.5px 5px">{{ c.display_state }}</span>
+      </div>
+      {% endfor %}
+      {% endfor %}
+    </div>
+  </div>
+
+  <!-- CENTRE: THE CONTAINER -->
+  <div class="panel" style="border:2px solid var(--navy);padding:0;overflow:hidden">
+    <div style="background:var(--navy);color:#eaf0f7;padding:14px 18px">
+      <div style="font-size:14px;font-weight:650;letter-spacing:.03em">
+        ENTERPRISE ENGINEERING INTELLIGENCE CONTAINER</div>
+      <div class="tiny" style="color:#93a7bd;margin-top:2px">
+        Secure · Portable · Enterprise Independent · Customer Owned · Model Agnostic</div>
+    </div>
+    <div style="padding:14px 16px">
+      {% for L in arch.layers %}
+      <div style="border:1px solid var(--line);border-radius:7px;margin-bottom:10px;
+                  overflow:hidden">
+        <div style="background:var(--panel-alt);padding:8px 12px;
+                    border-bottom:1px solid var(--line)" class="row">
+          <span style="font-size:12px;font-weight:640">{{ L.number }}. {{ L.name }}</span>
+          <span style="margin-left:auto" class="tiny muted">
+            {{ L.counts.IMPLEMENTED }} implemented{% if L.counts.PARTIAL %} ·
+            {{ L.counts.PARTIAL }} partial{% endif %}{% if L.counts.PLANNED %} ·
+            {{ L.counts.PLANNED }} planned{% endif %}
+          </span>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(196px,1fr));
+                    gap:1px;background:var(--line-soft)">
+          {% for c in L.components %}
+          <div style="background:{{ '#fff' if c.status != 'PLANNED' else 'var(--panel-alt)' }};
+                      padding:8px 10px" title="{{ c.note }}">
+            <div class="row" style="gap:5px;justify-content:space-between;align-items:flex-start">
+              <span style="font-size:11.5px;font-weight:550;line-height:1.3;
+                    color:{{ 'var(--ink)' if c.status != 'PLANNED' else 'var(--muted)' }}">
+                {{ c.name }}</span>
+              <span class="pill {{ c.status }}" style="font-size:8.5px;padding:1px 4px">
+                {{ 'IMPL' if c.status=='IMPLEMENTED' else ('PART' if c.status=='PARTIAL' else 'PLAN') }}
+              </span>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <!-- RIGHT: ENGINEERING OUTPUTS -->
+  <div class="panel" style="padding:0;overflow:hidden">
+    <div style="background:var(--navy);color:#dbe6f2;padding:11px 15px">
+      <div style="font-size:11.5px;text-transform:uppercase;letter-spacing:.08em;font-weight:650">
+        Engineering outputs</div>
+      <div class="tiny" style="color:#93a7bd">{{ outputs|length }} deliverables ·
+        one intelligence layer</div>
+    </div>
+    <div style="padding:11px 13px;max-height:640px;overflow-y:auto">
+      {% set by_cat = {} %}
+      {% for o in outputs %}{% set _ = by_cat.setdefault(o.category, []).append(o) %}{% endfor %}
+      {% for cat, rows in by_cat.items() %}
+      <div class="tiny faint" style="text-transform:uppercase;letter-spacing:.06em;
+           margin:11px 0 4px">{{ cat }}</div>
+      {% for o in rows %}
+      <div class="row" style="justify-content:space-between;gap:6px;padding:3px 0;
+           border-bottom:1px solid var(--line-soft)">
+        <span class="tiny" style="color:{{ 'var(--ink)' if o.implemented else 'var(--muted)' }}"
+              title="{{ o.description }}">{{ o.name }}</span>
+        <span class="pill {{ o.status|replace(' ','_') }}"
+              style="font-size:9px;padding:1.5px 5px">
+          {{ 'BUILT' if o.implemented else 'PLANNED' }}</span>
+      </div>
+      {% endfor %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<!-- ================= DATA FLOW ================= -->
+<div class="panel" style="margin-top:16px">
+  <div class="panel-head">
+    <h2>End-to-end data flow</h2>
+    <span class="aside">Context and findings feed back into the intelligence layer for
+      follow-up analysis and output generation</span>
+  </div>
+  <div class="flow">
+    {% for f in arch.data_flow %}
+    <div class="flow-step">
+      <div class="n">{{ f.stage }}</div>
+      <div class="d">{{ f.note }}</div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+<!-- ================= PRINCIPLES ================= -->
+<div class="panel">
+  <div class="panel-head">
+    <h2>Operating principles</h2>
+    <span class="aside">Each is enforced in code and covered by a test</span>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:9px">
+    {% for p in arch.principles %}
+    <div class="row" style="gap:9px;align-items:flex-start;padding:7px 0;
+         border-bottom:1px solid var(--line-soft)">
+      <span style="color:var(--ok);font-weight:700;line-height:1.4">✓</span>
+      <div>
+        <div style="font-size:13px;font-weight:565">{{ p.name }}</div>
+        <div class="tiny muted">{{ p.note }}</div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+<div class="panel tight">
+  <p class="small muted" style="margin:0">
+    <strong>What this view is claiming.</strong> The architecture above is the intended
+    product. Components marked <span class="pill PLANNED">plan</span> are not built,
+    and the appliance will not pretend otherwise anywhere in this interface. Today
+    exactly one connector has an adapter, and the appliance is running deterministic
+    analysis because no model credentials are configured.
+  </p>
+</div>
+{% endblock %}

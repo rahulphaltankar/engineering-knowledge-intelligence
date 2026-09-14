@@ -1,0 +1,98 @@
+{
+  "entity": "TestResult",
+  "description": "Verification results: pass, fail, inconclusive and not_run.",
+  "data_classification": "SIMULATED — PUBLIC DEMONSTRATOR DATA",
+  "generated_by": "Engineering Knowledge Intelligence demonstrator",
+  "seed": 42,
+  "records": [
+    {
+      "id": "FTR-001",
+      "test_id": "FTST-001",
+      "status": "pass",
+      "basis": "office",
+      "executed_date": "2024-03-14",
+      "measured_summary": "Stair capacity assessed as adequate for simultaneous evacuation of the office population from every storey.",
+      "notes": "Assessment inputs were office population and simultaneous evacuation of awake occupants. Residential sleeping occupancy was not considered.",
+      "origin": "synthetic",
+      "record_type": "TestResult"
+    },
+    {
+      "id": "FTR-002",
+      "test_id": "FTST-002",
+      "status": "inconclusive",
+      "basis": "office",
+      "executed_date": "2025-11-06",
+      "measured_summary": "Cause-and-effect outputs confirmed for Levels 0-2 and 4-7. Level 3 outputs could not be demonstrated.",
+      "notes": "Retest not scheduled.",
+      "origin": "synthetic",
+      "deviation": "Level 3 was partly stripped out for the proposed works at the time of the test; two sounder circuits were isolated, so Level 3 cause-and-effect could not be demonstrated.",
+      "record_type": "TestResult"
+    },
+    {
+      "id": "FTR-003",
+      "test_id": "FTST-003",
+      "status": "pass",
+      "basis": "residential",
+      "executed_date": "2026-06-02",
+      "measured_summary": "Installer's inspection of the show flat reports detectors fitted.",
+      "notes": "No grade or category has been agreed for the flats, so the result cannot be judged against a criterion.",
+      "origin": "synthetic",
+      "record_type": "TestResult"
+    },
+    {
+      "id": "FTR-004",
+      "test_id": "FTST-004",
+      "status": "pass",
+      "basis": "not_occupancy_dependent",
+      "executed_date": "2026-02-18",
+      "measured_summary": "All stair lobby doorsets at Levels 2-4 inspected; certification labels present; self-closing devices close and latch.",
+      "notes": "",
+      "origin": "synthetic",
+      "record_type": "TestResult"
+    },
+    {
+      "id": "FTR-005",
+      "test_id": "FTST-005",
+      "status": "pass",
+      "basis": "not_occupancy_dependent",
+      "executed_date": "2026-01-22",
+      "measured_summary": "As-built floor construction matches the assessed specification referenced in the fire strategy.",
+      "notes": "",
+      "origin": "synthetic",
+      "record_type": "TestResult"
+    },
+    {
+      "id": "FTR-006",
+      "test_id": "FTST-006",
+      "status": "not_run",
+      "basis": "residential",
+      "executed_date": null,
+      "measured_summary": "Not executed.",
+      "notes": "Flat entrance doorsets have not yet been specified or procured.",
+      "origin": "synthetic",
+      "record_type": "TestResult"
+    },
+    {
+      "id": "FTR-007",
+      "test_id": "FTST-007",
+      "status": "not_run",
+      "basis": "residential",
+      "executed_date": null,
+      "measured_summary": "Not executed.",
+      "notes": "Assessment not commissioned; the sprinkler decision is outstanding.",
+      "origin": "synthetic",
+      "record_type": "TestResult"
+    },
+    {
+      "id": "FTR-008",
+      "test_id": "FTST-009",
+      "status": "pass",
+      "basis": "not_occupancy_dependent",
+      "executed_date": "2025-09-10",
+      "measured_summary": "Dry rising main pressure test completed with no loss of pressure recorded.",
+      "notes": "",
+      "origin": "synthetic",
+      "record_type": "TestResult"
+    }
+  ]
+}

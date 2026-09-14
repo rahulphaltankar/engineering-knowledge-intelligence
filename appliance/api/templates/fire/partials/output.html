@@ -1,0 +1,95 @@
+{% from "fire/_macros.html" import lbl with context %}
+<div class="panel" style="border-color:var(--ok)">
+  <div class="panel-head">
+    <h2>{{ o.name }}</h2>
+    <span class="aside"><span class="pill IMPLEMENTED">{{ o.maturity }}</span>
+      &nbsp;generated from analysis snapshot <code>{{ o.provenance.context_snapshot_id }}</code></span>
+  </div>
+
+  <p class="tiny muted" style="margin:0 0 4px">
+    Change <code>{{ o.subject_id }}</code> · {{ o.provenance.context_records }} records ·
+    knowledge source {{ o.provenance.connectors|join(', ') }}
+    {% if o.upstream_skills %} · specialist profiles
+      {% for s in o.upstream_skills %}<code>{{ s }}</code>{% if not loop.last %}, {% endif %}{% endfor %}{% endif %}
+  </p>
+  {% if o.provenance.data_classification %}
+  <p class="tiny" style="color:var(--warn);margin:0 0 10px">{{ o.provenance.data_classification }}</p>
+  {% endif %}
+
+  <p class="small" style="margin:0 0 10px">
+    Engineering review applied:
+    <span class="pill ok">{{ o.review_summary.accepted }} accepted</span>
+    <span class="pill bad">{{ o.review_summary.rejected }} rejected</span>
+    <span class="pill PLANNED">{{ o.review_summary.pending }} pending</span>
+    <span class="control-label">&nbsp;{{ review_label }}</span>
+  </p>
+
+  <div class="row tiny" style="margin-bottom:16px">
+    <span class="faint" style="text-transform:uppercase;letter-spacing:.05em">Checks</span>
+    {% for rule in o.validation.rules %}
+      <span class="pill {{ 'ok' if rule.passed else 'bad' }}" title="{{ rule.detail }}">{{ rule.rule|replace('_',' ') }}</span>
+    {% endfor %}
+  </div>
+
+  {% for s in o.sections %}
+  <h3>{{ s.title }}</h3>
+  {% if s.is_empty %}
+    <p class="muted small">{{ s.empty_reason }}</p>
+  {% elif s.kind == 'text' %}
+    <div class="small stack">
+      {% for line in s.text.split('\n') %}{% if line.strip() %}<div>{{ line|replace('**','') }}</div>{% endif %}{% endfor %}
+    </div>
+  {% elif s.kind == 'list' %}
+    <div class="note unknown stack">{% for i in s.items %}<div>{{ i }}</div>{% endfor %}</div>
+  {% else %}
+    <div class="scroll">
+    <table>
+      <thead><tr>{% for c in s.rows[0].keys() %}<th>{{ lbl(c) }}</th>{% endfor %}</tr></thead>
+      <tbody>
+      {% for row in s.rows %}
+      <tr class="{{ 'held' if (row.review|string).startswith('REJECTED') }}">
+      {% for key, val in row.items() %}
+        <td class="col-{{ key }} {{ 'small muted' if key in ('reason','path','note','conditions','rationale','effect','notes','statement') else '' }}">
+          {% if key == 'acceptance_criterion' and 'NOT ESTABLISHED' in (val|string) %}
+            <span class="pill unknown">Not established</span>
+            <div class="tiny muted" style="margin-top:3px">{{ val }}</div>
+          {% elif key == 'classification' %}
+            <span class="pill {{ val }}">{{ val }}</span>
+          {% elif key == 'action' and (val|string).startswith('HELD') %}
+            <span class="pill bad">Held</span><div class="small" style="margin-top:3px">{{ val }}</div>
+          {% elif key == 'action' and 'does not cover' in (val|string) %}
+            <span class="pill warn">{{ val }}</span>
+          {% elif key == 'review' %}
+            {% if (val|string).startswith('REJECTED') %}<span class="pill bad">Rejected</span>
+              <div class="tiny" style="margin-top:3px">{{ val[11:] if (val|string).startswith('REJECTED - ') else val }}</div>
+            {% elif (val|string).startswith('ACCEPTED') %}<span class="pill ok">Accepted</span>
+              <div class="tiny muted" style="margin-top:3px">{{ val }}</div>
+            {% else %}<span class="tiny muted">{{ val }}</span>{% endif %}
+          {% elif key == 'decision' %}
+            <span class="pill {{ 'bad' if val == 'REJECTED' else 'ok' }}">{{ val }}</span>
+          {% elif key in ('findings', 'finding_id', 'id') and val and val is not number %}
+            {% for fid in (val if val is not string else [val]) %}<button class="ghost" style="padding:1px 3px" hx-get="/explain/{{ fid }}" hx-target="#why" hx-swap="innerHTML">{{ fid }}</button>{% endfor %}
+          {% elif key == 'gap_type' %}
+            {{ val|replace('_',' ') }}
+          {% elif key == 'transferable' and val is sameas false and row.status in ('no_result', 'not_run') %}
+            <span class="tiny muted">n/a</span>
+          {% elif key in ('transferable', 'criterion_established') and val is boolean %}
+            {% if val %}yes{% else %}<strong style="color:var(--bad)">no</strong>{% endif %}
+          {% elif key == 'transferable' and val == 'NO' %}
+            <strong style="color:var(--bad)">NO</strong>
+          {% elif key == 'status' %}
+            {{ (val or '')|replace('_',' ') }}
+          {% elif val is iterable and val is not string and val is not mapping %}
+            {{ val|join(', ') }}
+          {% elif val is none %}<span class="faint">&mdash;</span>
+          {% else %}{{ val }}{% endif %}
+        </td>
+      {% endfor %}</tr>
+      {% endfor %}
+      </tbody>
+    </table>
+    </div>
+  {% endif %}
+  {% if s.note %}<p class="tiny muted" style="margin-top:7px">{{ s.note }}</p>{% endif %}
+  {% endfor %}
+</div>

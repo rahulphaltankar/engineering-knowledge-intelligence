@@ -1,0 +1,84 @@
+{
+  "entity": "Configuration",
+  "description": "Build levels and configuration baselines.",
+  "data_classification": "SIMULATED ENTERPRISE ARTEFACT - not OEM, customer or proprietary data",
+  "generated_by": "scripts/generate_simulation.py",
+  "seed": 20260823,
+  "records": [
+    {
+      "id": "CFG-001",
+      "programme_id": "PRG-001",
+      "name": "ATLAS PT1",
+      "phase": "prototype",
+      "description": "First prototype build, pre-tooling parts, engineering calibration.",
+      "build_date": "2026-02-10",
+      "vehicle_ids": [
+        "VEH-001"
+      ],
+      "record_type": "Configuration"
+    },
+    {
+      "id": "CFG-002",
+      "programme_id": "PRG-001",
+      "name": "ATLAS PT2",
+      "phase": "prototype",
+      "description": "Second prototype build, partial production tooling, DV calibration set.",
+      "build_date": "2026-05-08",
+      "vehicle_ids": [
+        "VEH-001",
+        "VEH-002"
+      ],
+      "record_type": "Configuration"
+    },
+    {
+      "id": "CFG-003",
+      "programme_id": "PRG-001",
+      "name": "ATLAS DV",
+      "phase": "design_verification",
+      "description": "Design verification build, production intent design, production tooling on critical parts.",
+      "build_date": "2026-07-15",
+      "vehicle_ids": [
+        "VEH-001",
+        "VEH-002"
+      ],
+      "record_type": "Configuration"
+    },
+    {
+      "id": "CFG-004",
+      "programme_id": "PRG-001",
+      "name": "ATLAS PV",
+      "phase": "production_validation",
+      "description": "Production validation build, production tooling and process, PPAP candidate parts.",
+      "build_date": "2026-11-20",
+      "vehicle_ids": [
+        "VEH-001",
+        "VEH-002"
+      ],
+      "record_type": "Configuration"
+    },
+    {
+      "id": "CFG-005",
+      "programme_id": "PRG-002",
+      "name": "VEGA PV",
+      "phase": "production_validation",
+      "description": "Production validation build for the PHEV programme.",
+      "build_date": "2026-03-12",
+      "vehicle_ids": [
+        "VEH-003"
+      ],
+      "record_type": "Configuration"
+    },
+    {
+      "id": "CFG-006",
+      "programme_id": "PRG-003",
+      "name": "ORION SOP",
+      "phase": "production",
+      "description": "Series production configuration.",
+      "build_date": "2026-02-01",
+      "vehicle_ids": [
+        "VEH-004"
+      ],
+      "record_type": "Configuration"
+    }
+  ]
+}

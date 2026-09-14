@@ -1,0 +1,75 @@
+{
+  "scenario_id": "SCN-004",
+  "category": "Thermal / performance issue",
+  "title": "Charging performance shortfall at low ambient temperature",
+  "engineering_question": "Charging performance is worse than expected under one environmental condition. Is this a defect, a specification gap, or expected behaviour?",
+  "one_liner": "Determine whether the observed charging performance constitutes a non-conformance.",
+  "initial_input": "DC charge time from 10 to 80 percent state of charge measured at 8 degC ambient exceeds the reference-condition target by 9 to 14 minutes across three vehicles.",
+  "relevant_entities": {
+    "quality_issues": [
+      "QI-002"
+    ],
+    "systems": [
+      "SYS-003",
+      "SYS-002",
+      "SYS-001"
+    ],
+    "requirements": [
+      "REQ-040",
+      "REQ-011",
+      "REQ-030",
+      "REQ-033"
+    ],
+    "failure_modes": [
+      "FM-040",
+      "FM-024",
+      "FM-032"
+    ],
+    "tests": [
+      "TEST-040",
+      "TEST-041",
+      "TEST-024",
+      "TEST-032"
+    ],
+    "documents": [
+      "DOC-006"
+    ]
+  },
+  "expected_impacted_domains": [
+    "Charging strategy and current limit derivation",
+    "Battery preconditioning capability",
+    "Thermal system heating capacity",
+    "Requirement completeness across the environmental envelope"
+  ],
+  "expected_evidence": [
+    "TR-006",
+    "TR-007",
+    "MEAS-005",
+    "MEAS-006"
+  ],
+  "expected_reasoning_paths": [
+    "TR-007 passes at the reference condition and TR-006 is inconclusive at low ambient, so the vehicle is not demonstrably non-conforming",
+    "The real finding is that REQ-040 defines a target only at the reference condition, so no low ambient obligation exists to fail against",
+    "This is a requirements completeness gap that should be raised as a specification action rather than a defect"
+  ],
+  "candidate_outputs": [
+    "Requirements Impact Analysis",
+    "Evidence Gap Analysis",
+    "Root Cause Analysis",
+    "Engineering Impact Assessment",
+    "Test Strategy",
+    "Test Case Recommendations",
+    "Verification Plan",
+    "Risk Assessment",
+    "Design Review",
+    "Engineering Executive Summary",
+    "Engineering Decision Brief"
+  ],
+  "known_unknowns": [
+    "TEST-041 acceptance criterion is TBD_PROGRAMME_SPECIFIC",
+    "No battery preconditioning strategy is represented in the environment",
+    "Competitive benchmark charge times are not available"
+  ],
+  "data_classification": "SIMULATED ENTERPRISE ARTEFACT - not OEM, customer or proprietary data",
+  "connector": "SIMULATION"
+}

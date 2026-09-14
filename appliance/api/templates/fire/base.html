@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block title %}{{ S.product_name }}{% endblock %}</title>
+<script src="/static/htmx.min.js"></script>
+{% include "_styles.html" %}
+<style>
+/* Fire-engineering surface: same components, its own identity. */
+:root{
+  --navy:#1d1a18; --accent:#b23f1a; --accent-soft:#fbeee8;
+  --ember:#e0662b; --slate:#3b3531;
+}
+.mast{background:linear-gradient(90deg,#1d1a18 0%,#2a2320 70%,#3a2a22 100%)}
+.mast .brand{letter-spacing:.07em}
+.mast .brand .flame{display:inline-block;width:9px;height:9px;border-radius:2px;
+  background:var(--ember);margin-right:9px;transform:rotate(45deg);vertical-align:1px}
+nav a.on{border-bottom-color:var(--ember)}
+nav{flex-wrap:wrap}
+.mast-top{flex-wrap:wrap}
+body{overflow-x:hidden}
+@media(max-width:900px){nav a{padding:9px 10px;font-size:11.5px}.mast .tag{display:none}}
+button.primary{background:var(--accent);border-color:var(--accent)}
+button.primary:hover{background:#963413}
+.demo-strip.fire{background:#fff4ec;border-bottom:1px solid #f1d6c4;color:#6d3416}
+.demo-strip.fire .sep{color:#d7a98d;margin:0 7px}
+
+.hero{background:#fff;border:1px solid var(--line);border-radius:12px;padding:26px 28px;
+  margin-bottom:16px;position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;
+  background:linear-gradient(180deg,var(--ember),var(--accent))}
+.hero h1{font-size:25px;margin:0 0 4px;letter-spacing:-.015em}
+.hero .sub{color:var(--muted);font-size:15px;margin:0 0 14px}
+.eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.09em;color:var(--accent);
+  font-weight:650;margin-bottom:6px}
+.change-text{font-size:17px;line-height:1.55;color:var(--ink);border-left:3px solid var(--ember);
+  padding:4px 0 4px 16px;margin:10px 0 16px;max-width:92ch}
+
+.chain{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:4px 0 2px}
+.chain a,.chain span.c{font-size:11.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;
+  color:var(--slate);background:#f6f1ee;border:1px solid #eadfd8;border-radius:5px;padding:4px 8px}
+.chain a:hover{border-color:var(--ember);color:var(--accent)}
+.chain .arrow{color:#c9b3a6;font-size:13px}
+
+.step{display:flex;gap:12px;align-items:baseline;margin-bottom:12px}
+.step .num{flex:none;width:26px;height:26px;border-radius:50%;background:var(--accent);color:#fff;
+  font-size:12.5px;font-weight:650;display:inline-flex;align-items:center;justify-content:center}
+.step h2{font-size:15px;margin:0;font-weight:650;letter-spacing:-.005em;text-transform:none;color:var(--ink)}
+.step .aside{margin-left:auto;font-size:12px;color:var(--faint)}
+section.panel{scroll-margin-top:14px}
+.grid3{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px}
+.tile{border:1px solid var(--line);border-radius:8px;padding:12px 13px;background:#fff}
+.tile.muted-tile{background:var(--panel-alt)}
+.tile h4{margin:0 0 4px;font-size:13.5px;font-weight:620}
+.tile .d{font-size:12px;color:var(--muted);line-height:1.45}
+.chip{display:inline-block;font-size:11px;border-radius:100px;padding:2px 8px;margin:2px 3px 0 0;
+  background:#f6f1ee;color:var(--slate);border:1px solid #eadfd8}
+.chip.hot{background:var(--accent-soft);border-color:#f0c9b7;color:var(--accent)}
+.layer{display:grid;grid-template-columns:230px 1fr;gap:16px;border:1px solid var(--line);
+  border-radius:9px;background:#fff;padding:14px 16px}
+.layer + .down{text-align:center;color:#c9b3a6;font-size:16px;line-height:1;margin:3px 0}
+.layer .ln{font-weight:650;font-size:14px}
+.layer .fact{font-size:12px;color:var(--ok);margin-top:6px}
+@media(max-width:800px){.layer{grid-template-columns:1fr}}
+footer.fire-foot{max-width:1420px;margin:0 auto;padding:6px 26px 30px;font-size:11.5px;color:var(--faint)}
+</style>
+</head>
+<body>
+<header class="mast">
+  <div class="mast-top">
+    <span class="brand"><span class="flame"></span>{{ S.product_name }}</span>
+    <span class="tag">{{ S.subtitle }}</span>
+    <span class="spacer"></span>
+    {% if health.model.execution_mode == 'model' %}
+      <span class="mode ai"><span class="dot"></span>Analysis mode: AI-assisted
+        ({{ health.model.provider }})</span>
+    {% else %}
+      <span class="mode"><span class="dot"></span>Analysis mode: Deterministic</span>
+    {% endif %}
+  </div>
+  <nav>
+    {% for href, key, text in [('/', 'overview', 'Overview'), ('/analyse-change', 'analyse', 'Analyse Change'),
+        ('/requirements', 'requirements', 'Requirements'), ('/evidence', 'evidence', 'Evidence'),
+        ('/reasoning', 'reasoning', 'Reasoning'), ('/verification-plan', 'plan', 'Verification Plan'),
+        ('/review', 'review', 'Review'), ('/architecture', 'architecture', 'Architecture')] %}
+    <a href="{{ href }}" class="{{ 'on' if nav == key }}">{{ text }}</a>
+    {% endfor %}
+  </nav>
+</header>
+<div class="demo-strip fire">
+  <strong>{{ S.notice_title }}</strong><span class="sep">|</span>{{ S.notice }}<span class="sep">|</span>Independent
+  demonstrator &mdash; not commissioned, supplied or endorsed by BB7 or the University of Leeds<span class="sep">|</span>Not
+  production safety or certification software
+</div>
+<div class="wrap">
+{% block body %}{% endblock %}
+</div>
+<footer class="fire-foot">{{ S.independence }} Human review in this demonstrator is
+  {{ review_label|lower }}.</footer>
+<script>
+document.body.addEventListener('htmx:beforeSwap', function (event) {
+  var status = event.detail.xhr && event.detail.xhr.status;
+  if (status === 400 || status === 422) { event.detail.shouldSwap = true; event.detail.isError = false; }
+});
+/* Bring an opened derivation into view. */
+document.body.addEventListener('htmx:afterSwap', function (event) {
+  var target = event.detail && event.detail.target;
+  if (!target || target.id !== 'why') return;
+  var panel = target.querySelector('.panel');
+  if (!panel) return;
+  var box = panel.getBoundingClientRect();
+  if (box.top >= 0 && box.bottom <= window.innerHeight) return;
+  var still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  window.scrollTo({top: Math.max(0, window.scrollY + box.top - 20), behavior: still ? 'auto' : 'smooth'});
+});
+/* A review decision refreshes only the regions this page has. */
+function reviewTargets(findingId) {
+  var ids = ['review-summary', 'output', 'review-count'];
+  var present = ids.filter(function (id) { return document.getElementById(id); });
+  if (document.getElementById('rv-' + findingId)) present.push('pill');
+  return present.join(',');
+}
+</script>
+</body>
+</html>

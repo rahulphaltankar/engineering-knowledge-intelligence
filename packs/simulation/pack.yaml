@@ -1,0 +1,9 @@
+name: simulation
+version: 0.1.0
+source_repo: https://github.com/rahulphaltankar/engineering-intelligence-simulation
+commit: c23f4432a4f972e6dff5195874944860eb4c6acd
+licence: MIT
+provides:
+  - simulation-connector-data
+data_classification: >-
+  SIMULATED ENTERPRISE ARTEFACT - not OEM, customer or proprietary data

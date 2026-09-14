@@ -1,0 +1,31 @@
+# Demonstration profile: simulation connector only, no enterprise connectors.
+profile: demo
+simulation_mode: true
+
+# BYOK. Only the NAME of the environment variable is held here, never a value.
+# With no credentials the appliance runs deterministic graph analysis and says so.
+model:
+  provider: none          # none | anthropic | litellm
+  model: ""
+  api_key_env: ""         # e.g. APPLIANCE_MODEL_API_KEY
+  base_url_env: ""
+  max_tokens: 1500
+
+connectors:
+  - connector_id: SIMULATION
+    enabled: true
+  # Synthetic fire-engineering dataset (packs/fire-engineering), same adapter.
+  - connector_id: FIRE_SIMULATION
+    enabled: true
+
+agent_packs:
+  - quality-engineering
+  - automotive-engineering
+  - fire-engineering
+
+traversal_depth: 2
+
+# Product surface shown to a new client. The automotive reference demonstration
+# remains available at /domain/automotive.
+default_domain: fire-engineering
+telemetry_enabled: false

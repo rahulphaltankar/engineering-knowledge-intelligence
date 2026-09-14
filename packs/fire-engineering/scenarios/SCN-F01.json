@@ -1,0 +1,83 @@
+{
+  "scenario_id": "SCN-F01",
+  "category": "Fire engineering - change of use",
+  "title": "Level 3 office to residential change of use (single stair)",
+  "domain": "fire-engineering",
+  "connector": "FIRE_SIMULATION",
+  "engineering_question": "An existing office floor is to become six flats in a single-stair building. Which fire-safety domains and requirements does this affect, what evidence already exists, does it still apply, and what must now be verified?",
+  "one_liner": "Assess the fire-safety impact of this change and the verification evidence it requires.",
+  "initial_input": "Change of use on Level 3 of an existing 8-storey mixed-use building from office use to six residential apartments. Single stair. Category L2 fire alarm. Existing fire strategy is based on simultaneous evacuation of the office population. Sprinklers are not fitted above Level 1.",
+  "relevant_entities": {
+    "engineering_changes": [
+      "FEC-001"
+    ],
+    "systems": [
+      "FSYS-001",
+      "FSYS-002",
+      "FSYS-003",
+      "FSYS-004"
+    ],
+    "requirements": [
+      "FREQ-001",
+      "FREQ-002",
+      "FREQ-003",
+      "FREQ-004",
+      "FREQ-005",
+      "FREQ-006",
+      "FREQ-007",
+      "FREQ-008",
+      "FREQ-009",
+      "FREQ-010"
+    ],
+    "tests": [
+      "FTST-001",
+      "FTST-002",
+      "FTST-003",
+      "FTST-004",
+      "FTST-005",
+      "FTST-006",
+      "FTST-007",
+      "FTST-008",
+      "FTST-009"
+    ]
+  },
+  "expected_impacted_domains": [
+    "Means of warning and escape",
+    "Detection and warning",
+    "Internal fire spread",
+    "Suppression and firefighting"
+  ],
+  "expected_evidence_conditions": {
+    "test_not_run": [
+      "FTR-006",
+      "FTR-007"
+    ],
+    "inconclusive_with_deviation": [
+      "FTR-002"
+    ],
+    "criterion_not_established": [
+      "FTST-003",
+      "FTST-007"
+    ],
+    "evidence_not_transferable": [
+      "FTR-001"
+    ],
+    "no_result_recorded": [
+      "FTST-008"
+    ],
+    "clean_pass": [
+      "FTR-004",
+      "FTR-005",
+      "FTR-008"
+    ]
+  },
+  "known_unknowns": [
+    "height of the topmost storey above ground level in metres",
+    "the evacuation strategy intended for the residential floor",
+    "whether sprinkler protection is to be extended to Level 3",
+    "the smoke control provision for the Level 3 common corridor and stair"
+  ],
+  "data_classification": "SIMULATED — PUBLIC DEMONSTRATOR DATA",
+  "generated_by": "Engineering Knowledge Intelligence demonstrator",
+  "seed": 42
+}

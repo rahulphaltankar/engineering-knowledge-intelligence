@@ -1,0 +1,94 @@
+{
+  "entity": "RootCause",
+  "description": "Root causes with five-why chains and confirmation state.",
+  "data_classification": "SIMULATED ENTERPRISE ARTEFACT - not OEM, customer or proprietary data",
+  "generated_by": "scripts/generate_simulation.py",
+  "seed": 20260823,
+  "records": [
+    {
+      "id": "RC-001",
+      "quality_issue_id": "QI-009",
+      "cause_type": "design",
+      "statement": "Balancing current sizing did not account for the cell self-discharge spread observed after extended parked periods.",
+      "evidence_strength": "strong",
+      "systemic": true,
+      "five_why_chain": [
+        "Cell voltage spread exceeded expectation after parking",
+        "Balancing did not converge during the available window",
+        "Available balancing current was lower than the spread growth rate",
+        "Balancing current was sized on cycling data, not parked self-discharge data",
+        "The sizing input specification did not include a parked self-discharge case"
+      ],
+      "confirmed": true,
+      "record_type": "RootCause"
+    },
+    {
+      "id": "RC-002",
+      "quality_issue_id": "QI-012",
+      "cause_type": "process",
+      "statement": "Laser focus offset drifted outside the process window following a fixture change, reducing weld penetration.",
+      "evidence_strength": "strong",
+      "systemic": true,
+      "five_why_chain": [
+        "Weld resistance measured above limit",
+        "Weld penetration was below specification",
+        "Laser focus position was offset from nominal",
+        "The fixture change altered the standoff distance",
+        "Focus verification was not included in the fixture change control plan"
+      ],
+      "confirmed": true,
+      "record_type": "RootCause"
+    },
+    {
+      "id": "RC-003",
+      "quality_issue_id": "QI-006",
+      "cause_type": "process",
+      "statement": "Controlled atmosphere furnace dew point excursion during the affected production week produced through-wall porosity in the braze joint.",
+      "evidence_strength": "moderate",
+      "systemic": true,
+      "five_why_chain": [
+        "Coolant leak detected at pack leak test",
+        "Braze joint contained through-wall porosity",
+        "Joint was formed with oxide contamination present",
+        "Furnace atmosphere dew point exceeded the qualified window",
+        "Dew point alarm threshold was set above the qualified limit after the process change"
+      ],
+      "confirmed": false,
+      "record_type": "RootCause"
+    },
+    {
+      "id": "RC-004",
+      "quality_issue_id": "QI-011",
+      "cause_type": "process",
+      "statement": "Cure cycle temperature at the transferred production location ran below the qualified window, producing under-cured compound with reduced radial stiffness.",
+      "evidence_strength": "moderate",
+      "systemic": true,
+      "five_why_chain": [
+        "Radial stiffness measured below the lower specification limit",
+        "The rubber compound was under-cured",
+        "Cure temperature was below the qualified window",
+        "The transferred oven profile was not requalified for the new oven",
+        "The process transfer checklist did not require cure profile requalification"
+      ],
+      "confirmed": false,
+      "record_type": "RootCause"
+    },
+    {
+      "id": "RC-005",
+      "quality_issue_id": "QI-017",
+      "cause_type": "process",
+      "statement": "Vent membrane was contaminated during handling before installation.",
+      "evidence_strength": "strong",
+      "systemic": false,
+      "five_why_chain": [
+        "Vent flow verification failed",
+        "Vent membrane was obstructed",
+        "Contamination was present on the membrane surface",
+        "The vent was handled without protective packaging at the station",
+        "The work instruction did not specify handling protection"
+      ],
+      "confirmed": true,
+      "record_type": "RootCause"
+    }
+  ]
+}

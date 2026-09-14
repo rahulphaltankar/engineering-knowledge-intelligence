@@ -1,0 +1,977 @@
+{
+  "description": "Vendored upstream content with integrity hashes.",
+  "files": [
+    {
+      "pack": "simulation",
+      "source_repo": "rahulphaltankar/engineering-intelligence-simulation",
+      "commit": "c23f4432a4f972e6dff5195874944860eb4c6acd",
+      "path": "simulation/data/components.json",
+      "licence": "MIT",
+      "sha256": "53b68a6150926c443ecf0cec56b3cc75f8e068f613eed47a246b872d6f23c86c",
+      "modified": false
+    },
+    {
+      "pack": "simulation",
+      "source_repo": "rahulphaltankar/engineering-intelligence-simulation",
+      "commit": "c23f4432a4f972e6dff5195874944860eb4c6acd",
+      "path": "simulation/data/configurations.json",
+      "licence": "MIT",
+      "sha256": "4d1bf11a5afef222a0c3305d6ec9bed323f325f39dd1e5516248356687f0f1e2",
+      "modified": false
+    },
+    {
+      "pack": "simulation",
+      "source_repo": "rahulphaltankar/engineering-intelligence-simulation",
+      "commit": "c23f4432a4f972e6dff5195874944860eb4c6acd",
+      "path": "simulation/data/corrective_actions.json",
+      "licence": "MIT",
+      "sha256": "c74285d8c51d367113e842bfcd6156c08679bb704fbf9e29f9f112ef9b5e7b07",
+      "modified": false
+    },
+    {
+      "pack": "simulation",
+      "source_repo": "rahulphaltankar/engineering-intelligence-simulation",
+      "commit": "c23f4432a4f972e6dff5195874944860eb4c6acd",
+      "path": "simulation/data/dataset-inventory.json",
+      "licence": "MIT",
+      "sha256": "dd5fbc5f7a7940a139c47f90186b0b0a817bc04a49a1df2959ca583c9b76de75",
+      "modified": false
+    },
+    {
+      "pack": "simulation",
+      "source_repo": "rahulphaltankar/engineering-intelligence-simulation",
+      "commit": "c23f4432a4f972e6dff5195874944860eb4c6acd",
+      "path": "simulation/data/dfmea.json",
+      "licence": "MIT",
+      "sha256": "dfdb4ea29f9c988ccdceb19752b6b23ee707145fbcd62113bc9f17e0066eca65",
+      "modified": false
+    },
+    {
+      "pack": "simulation",
+      "source_repo": "rahulphaltankar/engineering-intelligence-simulation",
+      "commit": "c23f4432a4f972e6dff5195874944860eb4c6acd",
+      "path": "simulation/data/documents.json",
+      "licence": "MIT",
+      "sha256": "be1256174a222fa94e49697b2f3cf35760e6260f3496bad40b0f409c417a16d5",
+      "modified": false
+    },
+    {
+      "pack": "simulation",
+      "source_repo": "rahulphaltankar/engineering-intelligence-simulation",
+      "commit": "c23f4432a4f972e6dff5195874944860eb4c6acd",
+      "path": "simulation/data/engineering_changes.json",
+      "licence": "MIT",
+      "sha256": "7fa8bfd91667e08713500f9e4bd527b01f46f7bc7804e041f09021b09bdc776d",
+      "modified": false
+    },
+    {
+      "pack": "simulation",
+      "source_repo": "rahulphaltankar/engineering-intelligence-simulation",
+      "commit": "c23f4432a4f972e6dff5195874944860eb4c6acd",
+      "path": "simulation/data/evidence.json",
+      "licence": "MIT",
+      "sha256": "68cbb0c77e2e6850c6ed71df697c9c264a5a8eefa9f5d42aa20cd9a4676bb3d1",
+      "modified": false
+    },
+    {
+      "pack": "simulation",
+      "source_repo": "rahulphaltankar/engineering-intelligence-simulation",
+      "commit": "c23f4432a4f972e6dff5195874944860eb4c6acd",
+      "path": "simulation/data/failure_modes.json",
+      "licence": "MIT",
+      "sha256": "57baca704b6edf19a81d9dce08153453274cde047acc19bbc11c247720f654c2",
+      "modified": false
+    },
+    {
+      "pack": "simulation",
+      "source_repo": "rahulphaltankar/engineering-intelligence-simulation",
+      "commit": "c23f4432a4f972e6dff5195874944860eb4c6acd",
+      "path": "simulation/data/fmea.json",
+      "licence": "MIT",
+      "sha256": "61abef6d0988a573f07052871af77a95dd3e4f717fbf15a50619340544e4886c",
+      "modified": false
+    },
+    {
+      "pack": "simulation",
+      "source_repo": "rahulphaltankar/engineering-intelligence-simulation",
+      "commit": "c23f4432a4f972e6dff5195874944860eb4c6acd",
+      "path": "simulation/data/measurements.json",
+      "licence": "MIT",
+      "sha256": "94b797a256779e64b1a12d497cc2013d5d18b08e0ec7dfe22f7497cc19217402",
+      "modified": false
+    },
+    {
+      "pack": "simulation",
+      "source_repo": "rahulphaltankar/engineering-intelligence-simulation",
+      "commit": "c23f4432a4f972e6dff5195874944860eb4c6acd",
+      "path": "simulation/data/ncrs.json",
+      "licence": "MIT",
+      "sha256": "066379f8b137916c56975b7f2f4171c401c16d5f1951802ffae82d9935f4cd89",
+      "modified": false
+    },
+    {
+      "pack": "simulation",
+      "source_repo": "rahulphaltankar/engineering-intelligence-simulation",
+      "commit": "c23f4432a4f972e6dff5195874944860eb4c6acd",
+      "path": "simulation/data/pfmea.json",
+      "licence": "MIT",
+      "sha256": "cb343371a0869d2791b50df91ce76998718ee1fc838fe4ec9f0d87942013fdb2",
+      "modified": false
+    },
+    {
+      "pack": "simulation",
+      "source_repo": "rahulphaltankar/engineering-intelligence-simulation",
+      "commit": "c23f4432a4f972e6dff5195874944860eb4c6acd",
+      "path": "simulation/data/programmes.json",
+      "licence": "MIT",
+      "sha256": "7deb41bc7b7e0901398c1f97e3e2fd80ad197c71834332904af2b5b925099a8a",
+      "modified": false
+    },
+    {
+      "pack": "simulation",
+      "source_repo": "rahulphaltankar/engineering-intelligence-simulation",
+      "commit": "c23f4432a4f972e6dff5195874944860eb4c6acd",
+      "path": "simulation/data/quality_issues.json",
+      "licence": "MIT",
+      "sha256": "2d3af81e4f1eacfc2c9f1da65b6ce7d8b5f9c7ff21c5e67712a959a69285786e",
+      "modified": false
+    },
+    {
+      "pack": "simulation",
+      "source_repo": "rahulphaltankar/engineering-intelligence-simulation",
+      "commit": "c23f4432a4f972e6dff5195874944860eb4c6acd",
+      "path": "simulation/data/relationships.json",
+      "licence": "MIT",
+      "sha256": "91e53bfd0d42b6f60ab0560d7c2754dedac4b6f33af918991ed1adcddaa110d6",
+      "modified": false
+    },
+    {
+      "pack": "simulation",
+      "source_repo": "rahulphaltankar/engineering-intelligence-simulation",
+      "commit": "c23f4432a4f972e6dff5195874944860eb4c6acd",
+      "path": "simulation/data/requirements.json",
+      "licence": "MIT",
+      "sha256": "6490c385dfb18cb293df77ca2955d5e17178c91ac8e164bafce441138d603f8a",
+      "modified": false
+    },
+    {
+      "pack": "simulation",
+      "source_repo": "rahulphaltankar/engineering-intelligence-simulation",
+      "commit": "c23f4432a4f972e6dff5195874944860eb4c6acd",
+      "path": "simulation/data/risks.json",
+      "licence": "MIT",
+      "sha256": "55f56568ff4c97600b9ff44f1510dce274ef96d021fec4576ad05d5a89b9999c",
+      "modified": false
+    },
+    {
+      "pack": "simulation",
+      "source_repo": "rahulphaltankar/engineering-intelligence-simulation",
+      "commit": "c23f4432a4f972e6dff5195874944860eb4c6acd",
+      "path": "simulation/data/root_causes.json",
+      "licence": "MIT",
+      "sha256": "cb7e289826be2df6ec38da525086e10d4d448aefdc42cb8015e58796fee38fd1",
+      "modified": false
+    },
+    {
+      "pack": "simulation",
+      "source_repo": "rahulphaltankar/engineering-intelligence-simulation",
+      "commit": "c23f4432a4f972e6dff5195874944860eb4c6acd",
+      "path": "simulation/data/signals.json",
+      "licence": "MIT",
+      "sha256": "b0cf99296c81017efa67bd8f5db9d4744d7244530da6a689450ad33a79d08611",
+      "modified": false
+    },
+    {
+      "pack": "simulation",
+      "source_repo": "rahulphaltankar/engineering-intelligence-simulation",
+      "commit": "c23f4432a4f972e6dff5195874944860eb4c6acd",
+      "path": "simulation/data/standards.json",
+      "licence": "MIT",
+      "sha256": "0ea9ea0eac8c53350b96e8d76cb6de1faf6b30c8d6b4805d90f4c03fb4224751",
+      "modified": false
+    },
+    {
+      "pack": "simulation",
+      "source_repo": "rahulphaltankar/engineering-intelligence-simulation",
+      "commit": "c23f4432a4f972e6dff5195874944860eb4c6acd",
+      "path": "simulation/data/subsystems.json",
+      "licence": "MIT",
+      "sha256": "c3fa4a3090cf479e0df46a347322ce0720625147106ca8b57fdb827220bee558",
+      "modified": false
+    },
+    {
+      "pack": "simulation",
+      "source_repo": "rahulphaltankar/engineering-intelligence-simulation",
+      "commit": "c23f4432a4f972e6dff5195874944860eb4c6acd",
+      "path": "simulation/data/suppliers.json",
+      "licence": "MIT",
+      "sha256": "7237aeffc96a6db6a703e918ec8011fab06abb0a03d53f9c5c8337b6adfc8705",
+      "modified": false
+    },
+    {
+      "pack": "simulation",
+      "source_repo": "rahulphaltankar/engineering-intelligence-simulation",
+      "commit": "c23f4432a4f972e6dff5195874944860eb4c6acd",
+      "path": "simulation/data/supplier_issues.json",
+      "licence": "MIT",
+      "sha256": "b610d2dbf8027a4185f534be74d283523890ce88f03e86ee662923a5432e1c23",
+      "modified": false
+    },
+    {
+      "pack": "simulation",
+      "source_repo": "rahulphaltankar/engineering-intelligence-simulation",
+      "commit": "c23f4432a4f972e6dff5195874944860eb4c6acd",
+      "path": "simulation/data/systems.json",
+      "licence": "MIT",
+      "sha256": "6a1a247286ec88c81e61913531b552d5135febe7734e09c56a9ab3b851c7b460",
+      "modified": false
+    },
+    {
+      "pack": "simulation",
+      "source_repo": "rahulphaltankar/engineering-intelligence-simulation",
+      "commit": "c23f4432a4f972e6dff5195874944860eb4c6acd",
+      "path": "simulation/data/tests.json",
+      "licence": "MIT",
+      "sha256": "9b636ba1f58b6428dcc0febc30d873d311436ae5c3e0123df0677349e9848e6d",
+      "modified": false
+    },
+    {
+      "pack": "simulation",
+      "source_repo": "rahulphaltankar/engineering-intelligence-simulation",
+      "commit": "c23f4432a4f972e6dff5195874944860eb4c6acd",
+      "path": "simulation/data/test_results.json",
+      "licence": "MIT",
+      "sha256": "579aab0f68849f14290aa5aa524c994b5bd4db7ed41d09a9ddab504ececff3d5",
+      "modified": false
+    },
+    {
+      "pack": "simulation",
+      "source_repo": "rahulphaltankar/engineering-intelligence-simulation",
+      "commit": "c23f4432a4f972e6dff5195874944860eb4c6acd",
+      "path": "simulation/data/validation_activities.json",
+      "licence": "MIT",
+      "sha256": "84d5e011425edb250860d9e93fe6fc4f7e94dc1686877b3499b68bc2a1fdbffd",
+      "modified": false
+    },
+    {
+      "pack": "simulation",
+      "source_repo": "rahulphaltankar/engineering-intelligence-simulation",
+      "commit": "c23f4432a4f972e6dff5195874944860eb4c6acd",
+      "path": "simulation/data/vehicles.json",
+      "licence": "MIT",
+      "sha256": "43e6850a425941ededdaa40bcd92b8a53d139c22911427769875106fc0b7a8c1",
+      "modified": false
+    },
+    {
+      "pack": "simulation",
+      "source_repo": "rahulphaltankar/engineering-intelligence-simulation",
+      "commit": "c23f4432a4f972e6dff5195874944860eb4c6acd",
+      "path": "simulation/data/verification_activities.json",
+      "licence": "MIT",
+      "sha256": "d6d8b2f2d9adb142dd65543c0601cf9185a8872ed0477b0b2a36ade820ce976c",
+      "modified": false
+    },
+    {
+      "pack": "simulation",
+      "source_repo": "rahulphaltankar/engineering-intelligence-simulation",
+      "commit": "c23f4432a4f972e6dff5195874944860eb4c6acd",
+      "path": "simulation/data/vv_activities.json",
+      "licence": "MIT",
+      "sha256": "6d651d24f357d2f1104357de390400c99f12edb090b1b4acb78771b04c592b8b",
+      "modified": false
+    },
+    {
+      "pack": "simulation",
+      "source_repo": "rahulphaltankar/engineering-intelligence-simulation",
+      "commit": "c23f4432a4f972e6dff5195874944860eb4c6acd",
+      "path": "simulation/scenarios/index.json",
+      "licence": "MIT",
+      "sha256": "66d5e3fe78c90273a84a2b489694f24da284c6a8015ac72e3b18569bb8a51ad6",
+      "modified": false
+    },
+    {
+      "pack": "simulation",
+      "source_repo": "rahulphaltankar/engineering-intelligence-simulation",
+      "commit": "c23f4432a4f972e6dff5195874944860eb4c6acd",
+      "path": "simulation/scenarios/SCN-001.json",
+      "licence": "MIT",
+      "sha256": "a7d1dc0f264c94cab302fdb2e7dd58057f905074de5bdbc59194c8820738d1ff",
+      "modified": false
+    },
+    {
+      "pack": "simulation",
+      "source_repo": "rahulphaltankar/engineering-intelligence-simulation",
+      "commit": "c23f4432a4f972e6dff5195874944860eb4c6acd",
+      "path": "simulation/scenarios/SCN-002.json",
+      "licence": "MIT",
+      "sha256": "4e877981b84bdb072c802491e3ec997468cdb3b4f97b9cd9d200893f87464802",
+      "modified": false
+    },
+    {
+      "pack": "simulation",
+      "source_repo": "rahulphaltankar/engineering-intelligence-simulation",
+      "commit": "c23f4432a4f972e6dff5195874944860eb4c6acd",
+      "path": "simulation/scenarios/SCN-003.json",
+      "licence": "MIT",
+      "sha256": "9e28455d0a17600fb5b0d6922c924192877e3cd80d96ef4c8f10ce0bf4021ef1",
+      "modified": false
+    },
+    {
+      "pack": "simulation",
+      "source_repo": "rahulphaltankar/engineering-intelligence-simulation",
+      "commit": "c23f4432a4f972e6dff5195874944860eb4c6acd",
+      "path": "simulation/scenarios/SCN-004.json",
+      "licence": "MIT",
+      "sha256": "0da5e1da9af1ac4c5a48d890df9f663d3f0417cafa787ade730c91dcd978fb05",
+      "modified": false
+    },
+    {
+      "pack": "simulation",
+      "source_repo": "rahulphaltankar/engineering-intelligence-simulation",
+      "commit": "c23f4432a4f972e6dff5195874944860eb4c6acd",
+      "path": "simulation/scenarios/SCN-005.json",
+      "licence": "MIT",
+      "sha256": "2fc30be3edc8fc759cb282dee5d3d43f95d043158db5890e4ff5c47980f5606d",
+      "modified": false
+    },
+    {
+      "pack": "simulation",
+      "source_repo": "rahulphaltankar/engineering-intelligence-simulation",
+      "commit": "c23f4432a4f972e6dff5195874944860eb4c6acd",
+      "path": "simulation/scenarios/SCN-006.json",
+      "licence": "MIT",
+      "sha256": "f22e57ab83735b2d7777b319fd6605f72d8435f5e9fc3646e935fd4312211949",
+      "modified": false
+    },
+    {
+      "pack": "simulation",
+      "source_repo": "rahulphaltankar/engineering-intelligence-simulation",
+      "commit": "c23f4432a4f972e6dff5195874944860eb4c6acd",
+      "path": "simulation/scenarios/SCN-007.json",
+      "licence": "MIT",
+      "sha256": "5177938302ecd69e7350bea2645bb93967cb40412ed1cc6b26318cc9f5d4872e",
+      "modified": false
+    },
+    {
+      "pack": "simulation",
+      "source_repo": "rahulphaltankar/engineering-intelligence-simulation",
+      "commit": "c23f4432a4f972e6dff5195874944860eb4c6acd",
+      "path": "simulation/scenarios/SCN-008.json",
+      "licence": "MIT",
+      "sha256": "07c605f55f27a5662c22448def5cccb492236c201b00624c2c857273a6732ef2",
+      "modified": false
+    },
+    {
+      "pack": "simulation",
+      "source_repo": "rahulphaltankar/engineering-intelligence-simulation",
+      "commit": "c23f4432a4f972e6dff5195874944860eb4c6acd",
+      "path": "simulation/scenarios/SCN-009.json",
+      "licence": "MIT",
+      "sha256": "feed62822d55a07e0d0fb3808106e908d4e2089ddb28b54ada7b63cdb71872a3",
+      "modified": false
+    },
+    {
+      "pack": "simulation",
+      "source_repo": "rahulphaltankar/engineering-intelligence-simulation",
+      "commit": "c23f4432a4f972e6dff5195874944860eb4c6acd",
+      "path": "simulation/scenarios/SCN-010.json",
+      "licence": "MIT",
+      "sha256": "a5c331beb0ff63710e28242eb1e28ec8c9f8692322569bc485263ea41ad30cf8",
+      "modified": false
+    },
+    {
+      "pack": "simulation",
+      "source_repo": "rahulphaltankar/engineering-intelligence-simulation",
+      "commit": "c23f4432a4f972e6dff5195874944860eb4c6acd",
+      "path": "simulation/scenarios/SCN-011.json",
+      "licence": "MIT",
+      "sha256": "5884c04d2f8b28df9033a543467cf1cbeceb25e1e9d536005694b1a2831acae4",
+      "modified": false
+    },
+    {
+      "pack": "simulation",
+      "source_repo": "rahulphaltankar/engineering-intelligence-simulation",
+      "commit": "c23f4432a4f972e6dff5195874944860eb4c6acd",
+      "path": "simulation/scenarios/SCN-012.json",
+      "licence": "MIT",
+      "sha256": "ea9fa7781d857df140ae7377eadbe064881944ca38e11a6aa6bc3f3fe462be1a",
+      "modified": false
+    },
+    {
+      "pack": "simulation",
+      "source_repo": "rahulphaltankar/engineering-intelligence-simulation",
+      "commit": "c23f4432a4f972e6dff5195874944860eb4c6acd",
+      "path": "simulation/schemas/entities.schema.json",
+      "licence": "MIT",
+      "sha256": "cabf68b1742cfaceb7aefba319f1affb7255f1e155fb3a28e59df6d7da8c1e48",
+      "modified": false
+    },
+    {
+      "pack": "simulation",
+      "source_repo": "rahulphaltankar/engineering-intelligence-simulation",
+      "commit": "c23f4432a4f972e6dff5195874944860eb4c6acd",
+      "path": "simulation/schemas/relationships.schema.json",
+      "licence": "MIT",
+      "sha256": "3d0198839f8f9e480db69443a646d73ac8035b35a713d6b4bb7dd458507c6a5d",
+      "modified": false
+    },
+    {
+      "pack": "quality-engineering",
+      "source_repo": "RBraga01/Quality-Engineering-Skills",
+      "commit": "186d97e8bc885a82af92a0dfb52b495b71fbd232",
+      "path": "quality-engineering/skills/agents/8d-coach/SKILL.md",
+      "licence": "MIT",
+      "sha256": "bb704dd5b01e9b90f27431679afddfb84e86b70bed26648109ff85d893a947eb",
+      "modified": false
+    },
+    {
+      "pack": "quality-engineering",
+      "source_repo": "RBraga01/Quality-Engineering-Skills",
+      "commit": "186d97e8bc885a82af92a0dfb52b495b71fbd232",
+      "path": "quality-engineering/skills/agents/audit-guide/SKILL.md",
+      "licence": "MIT",
+      "sha256": "1e76ea2cd90cdf41588c46e96be9d77416c39328334fdf6ddfec6b8f5ffc2d05",
+      "modified": false
+    },
+    {
+      "pack": "quality-engineering",
+      "source_repo": "RBraga01/Quality-Engineering-Skills",
+      "commit": "186d97e8bc885a82af92a0dfb52b495b71fbd232",
+      "path": "quality-engineering/skills/agents/control-plan-builder/SKILL.md",
+      "licence": "MIT",
+      "sha256": "c573ac50ec0bc4b35e2a7c443f3682243087362f24582d9775d0984472ebad60",
+      "modified": false
+    },
+    {
+      "pack": "quality-engineering",
+      "source_repo": "RBraga01/Quality-Engineering-Skills",
+      "commit": "186d97e8bc885a82af92a0dfb52b495b71fbd232",
+      "path": "quality-engineering/skills/agents/fmea-reviewer/SKILL.md",
+      "licence": "MIT",
+      "sha256": "84857692194d77471c1f6a9fb7f22145eb5a63468d420d6253cea9ea5e0b6a0b",
+      "modified": false
+    },
+    {
+      "pack": "quality-engineering",
+      "source_repo": "RBraga01/Quality-Engineering-Skills",
+      "commit": "186d97e8bc885a82af92a0dfb52b495b71fbd232",
+      "path": "quality-engineering/skills/agents/ncr-writer/SKILL.md",
+      "licence": "MIT",
+      "sha256": "96e9f303ed06c503e7dabfad4c97c0056afa8b121e580561d234f1857a2d7267",
+      "modified": false
+    },
+    {
+      "pack": "quality-engineering",
+      "source_repo": "RBraga01/Quality-Engineering-Skills",
+      "commit": "186d97e8bc885a82af92a0dfb52b495b71fbd232",
+      "path": "quality-engineering/skills/agents/ppap-checker/SKILL.md",
+      "licence": "MIT",
+      "sha256": "b3e7ce4adeda695a80c5a1568f30ca7c2ac9cacb221f19ad9ccbd131e5b5bfd1",
+      "modified": false
+    },
+    {
+      "pack": "quality-engineering",
+      "source_repo": "RBraga01/Quality-Engineering-Skills",
+      "commit": "186d97e8bc885a82af92a0dfb52b495b71fbd232",
+      "path": "quality-engineering/skills/agents/rca-facilitator/SKILL.md",
+      "licence": "MIT",
+      "sha256": "d6afb3c4c99e1798a6a63369b1adfc2a8a405a3c008fcebe894b4b059991d20e",
+      "modified": false
+    },
+    {
+      "pack": "quality-engineering",
+      "source_repo": "RBraga01/Quality-Engineering-Skills",
+      "commit": "186d97e8bc885a82af92a0dfb52b495b71fbd232",
+      "path": "quality-engineering/skills/agents/skill-auditor/SKILL.md",
+      "licence": "MIT",
+      "sha256": "cc30e6e5af43727e48c965534d0837175d38c089ce0fa1d4b7bc17f7478bb2b2",
+      "modified": false
+    },
+    {
+      "pack": "quality-engineering",
+      "source_repo": "RBraga01/Quality-Engineering-Skills",
+      "commit": "186d97e8bc885a82af92a0dfb52b495b71fbd232",
+      "path": "quality-engineering/skills/agents/skill-auditor/references/cross-skill-rules.md",
+      "licence": "MIT",
+      "sha256": "80cab1d2525a5ed12df7ddb88f42507f52351e493faca4b1e8cb3390c915d7f9",
+      "modified": false
+    },
+    {
+      "pack": "quality-engineering",
+      "source_repo": "RBraga01/Quality-Engineering-Skills",
+      "commit": "186d97e8bc885a82af92a0dfb52b495b71fbd232",
+      "path": "quality-engineering/skills/audit/iatf-16949-audit/SKILL.md",
+      "licence": "MIT",
+      "sha256": "3bd224d6649b7a634a034f2477c64f943b5b5a83573fc52772bdbcac40ad51ee",
+      "modified": false
+    },
+    {
+      "pack": "quality-engineering",
+      "source_repo": "RBraga01/Quality-Engineering-Skills",
+      "commit": "186d97e8bc885a82af92a0dfb52b495b71fbd232",
+      "path": "quality-engineering/skills/audit/iatf-16949-audit/references/supplemental-requirements.md",
+      "licence": "MIT",
+      "sha256": "9de99b04cba8d64462b3ff7a01fbf28bda4548bdbfcae2e27df9b9ef4e7d0ce9",
+      "modified": false
+    },
+    {
+      "pack": "quality-engineering",
+      "source_repo": "RBraga01/Quality-Engineering-Skills",
+      "commit": "186d97e8bc885a82af92a0dfb52b495b71fbd232",
+      "path": "quality-engineering/skills/audit/iso-9001-internal-audit/SKILL.md",
+      "licence": "MIT",
+      "sha256": "1bfe9bc5f64a41d56652fd834e0eb51434941b9fceebcade2dceff38100cbbe9",
+      "modified": false
+    },
+    {
+      "pack": "quality-engineering",
+      "source_repo": "RBraga01/Quality-Engineering-Skills",
+      "commit": "186d97e8bc885a82af92a0dfb52b495b71fbd232",
+      "path": "quality-engineering/skills/audit/iso-9001-internal-audit/references/clause-questions.md",
+      "licence": "MIT",
+      "sha256": "3264285d87d965f3c8db0df486248f8991014ab92daa585f93811be24b2b4c5c",
+      "modified": false
+    },
+    {
+      "pack": "quality-engineering",
+      "source_repo": "RBraga01/Quality-Engineering-Skills",
+      "commit": "186d97e8bc885a82af92a0dfb52b495b71fbd232",
+      "path": "quality-engineering/skills/audit/vda-6-3-audit/SKILL.md",
+      "licence": "MIT",
+      "sha256": "6bde620d5db45c8209678c4bb6d3c4e1b6ce9f6670225495946ecc2e79039791",
+      "modified": false
+    },
+    {
+      "pack": "quality-engineering",
+      "source_repo": "RBraga01/Quality-Engineering-Skills",
+      "commit": "186d97e8bc885a82af92a0dfb52b495b71fbd232",
+      "path": "quality-engineering/skills/audit/vda-6-3-audit/references/p1-p7-questions.md",
+      "licence": "MIT",
+      "sha256": "a39a5aea5e7d9aba68500a0114e159e812fa4e0fc3cb6f350f1c1dac2e0df49e",
+      "modified": false
+    },
+    {
+      "pack": "quality-engineering",
+      "source_repo": "RBraga01/Quality-Engineering-Skills",
+      "commit": "186d97e8bc885a82af92a0dfb52b495b71fbd232",
+      "path": "quality-engineering/skills/documentation/8d-report-writing/SKILL.md",
+      "licence": "MIT",
+      "sha256": "b6691229397b407658fff5dbc5b523e6dc10709ecd6172c6f985288ba7c70f91",
+      "modified": false
+    },
+    {
+      "pack": "quality-engineering",
+      "source_repo": "RBraga01/Quality-Engineering-Skills",
+      "commit": "186d97e8bc885a82af92a0dfb52b495b71fbd232",
+      "path": "quality-engineering/skills/documentation/8d-report-writing/references/oem-formats.md",
+      "licence": "MIT",
+      "sha256": "8850f021a24d50c49c9c08f36c341f3e1493283e20c92a6e5fb21b9fae1cd606",
+      "modified": false
+    },
+    {
+      "pack": "quality-engineering",
+      "source_repo": "RBraga01/Quality-Engineering-Skills",
+      "commit": "186d97e8bc885a82af92a0dfb52b495b71fbd232",
+      "path": "quality-engineering/skills/documentation/car-corrective-action/SKILL.md",
+      "licence": "MIT",
+      "sha256": "7a5e08356b5691b28665d7b82d077e7a744bf3b87ac845e503d2b2b3291296e7",
+      "modified": false
+    },
+    {
+      "pack": "quality-engineering",
+      "source_repo": "RBraga01/Quality-Engineering-Skills",
+      "commit": "186d97e8bc885a82af92a0dfb52b495b71fbd232",
+      "path": "quality-engineering/skills/documentation/car-corrective-action/references/car-template.md",
+      "licence": "MIT",
+      "sha256": "751c63d3daedc3044a3b14d03295775b19b6f320f02f9cc8afef06351c48fdad",
+      "modified": false
+    },
+    {
+      "pack": "quality-engineering",
+      "source_repo": "RBraga01/Quality-Engineering-Skills",
+      "commit": "186d97e8bc885a82af92a0dfb52b495b71fbd232",
+      "path": "quality-engineering/skills/documentation/ncr-writing/SKILL.md",
+      "licence": "MIT",
+      "sha256": "ffada9637935bfdd840cb0513b30af5f85a9967992895b1bc4ac42448f681025",
+      "modified": false
+    },
+    {
+      "pack": "quality-engineering",
+      "source_repo": "RBraga01/Quality-Engineering-Skills",
+      "commit": "186d97e8bc885a82af92a0dfb52b495b71fbd232",
+      "path": "quality-engineering/skills/documentation/ncr-writing/assets/ncr-template.md",
+      "licence": "MIT",
+      "sha256": "c3b0baaf02a5bc63f096beb8996199f7a325ffca69cd8f229636eee25d080acd",
+      "modified": false
+    },
+    {
+      "pack": "quality-engineering",
+      "source_repo": "RBraga01/Quality-Engineering-Skills",
+      "commit": "186d97e8bc885a82af92a0dfb52b495b71fbd232",
+      "path": "quality-engineering/skills/measurement/msa-gauge-rr/SKILL.md",
+      "licence": "MIT",
+      "sha256": "77dfaa8c043847ba249aec781b2f6b016c73fc157877dc0b50d704951f8b9510",
+      "modified": false
+    },
+    {
+      "pack": "quality-engineering",
+      "source_repo": "RBraga01/Quality-Engineering-Skills",
+      "commit": "186d97e8bc885a82af92a0dfb52b495b71fbd232",
+      "path": "quality-engineering/skills/measurement/msa-gauge-rr/references/gauge-rr-study-guide.md",
+      "licence": "MIT",
+      "sha256": "d7c5900eae24b26ef8752df21fc75f6bbc150d6e6998d32227895cada36ed043",
+      "modified": false
+    },
+    {
+      "pack": "quality-engineering",
+      "source_repo": "RBraga01/Quality-Engineering-Skills",
+      "commit": "186d97e8bc885a82af92a0dfb52b495b71fbd232",
+      "path": "quality-engineering/skills/measurement/spc-control-charts/SKILL.md",
+      "licence": "MIT",
+      "sha256": "c602e6f38c28802fe62c8cf7a7354c8480493185981764d1e4f2ce181137b133",
+      "modified": false
+    },
+    {
+      "pack": "quality-engineering",
+      "source_repo": "RBraga01/Quality-Engineering-Skills",
+      "commit": "186d97e8bc885a82af92a0dfb52b495b71fbd232",
+      "path": "quality-engineering/skills/measurement/spc-control-charts/references/chart-selection-guide.md",
+      "licence": "MIT",
+      "sha256": "0e7c66dc6368bee1c4f48084e2d2d1cdaf9d8b2554d3bc1f1e1315f1b4c1906e",
+      "modified": false
+    },
+    {
+      "pack": "quality-engineering",
+      "source_repo": "RBraga01/Quality-Engineering-Skills",
+      "commit": "186d97e8bc885a82af92a0dfb52b495b71fbd232",
+      "path": "quality-engineering/skills/planning/apqp/SKILL.md",
+      "licence": "MIT",
+      "sha256": "4cff49867e9468236ae49974867fe40085fc648597148958b79433a105e8d3f1",
+      "modified": false
+    },
+    {
+      "pack": "quality-engineering",
+      "source_repo": "RBraga01/Quality-Engineering-Skills",
+      "commit": "186d97e8bc885a82af92a0dfb52b495b71fbd232",
+      "path": "quality-engineering/skills/planning/apqp/references/phase-deliverables.md",
+      "licence": "MIT",
+      "sha256": "9e6150a4ce39628bf7ee1c1a2b3f0771b494bfac71e2d663b967417f93a65f26",
+      "modified": false
+    },
+    {
+      "pack": "quality-engineering",
+      "source_repo": "RBraga01/Quality-Engineering-Skills",
+      "commit": "186d97e8bc885a82af92a0dfb52b495b71fbd232",
+      "path": "quality-engineering/skills/planning/control-plan/SKILL.md",
+      "licence": "MIT",
+      "sha256": "7333a324c01a90df1d441bf88fb1922943f3556d94511d8a9ac61601d44677ae",
+      "modified": false
+    },
+    {
+      "pack": "quality-engineering",
+      "source_repo": "RBraga01/Quality-Engineering-Skills",
+      "commit": "186d97e8bc885a82af92a0dfb52b495b71fbd232",
+      "path": "quality-engineering/skills/planning/control-plan/references/control-plan-template.md",
+      "licence": "MIT",
+      "sha256": "4e0661fd0b03a88e1e39b1fc81a0332aa111c6437430e50b637f510d72fe058a",
+      "modified": false
+    },
+    {
+      "pack": "quality-engineering",
+      "source_repo": "RBraga01/Quality-Engineering-Skills",
+      "commit": "186d97e8bc885a82af92a0dfb52b495b71fbd232",
+      "path": "quality-engineering/skills/planning/dvp-test-plan/SKILL.md",
+      "licence": "MIT",
+      "sha256": "42d39e9a88590954899f56988e5885367c348ffbac5b6334d9fc8ead75e51caf",
+      "modified": false
+    },
+    {
+      "pack": "quality-engineering",
+      "source_repo": "RBraga01/Quality-Engineering-Skills",
+      "commit": "186d97e8bc885a82af92a0dfb52b495b71fbd232",
+      "path": "quality-engineering/skills/planning/dvp-test-plan/references/dvp-template.md",
+      "licence": "MIT",
+      "sha256": "6e3a657a9328063997feddefe301c9c610bba27c419cdeee28412b3c7258e4e6",
+      "modified": false
+    },
+    {
+      "pack": "quality-engineering",
+      "source_repo": "RBraga01/Quality-Engineering-Skills",
+      "commit": "186d97e8bc885a82af92a0dfb52b495b71fbd232",
+      "path": "quality-engineering/skills/planning/ppap/SKILL.md",
+      "licence": "MIT",
+      "sha256": "aaa0509e4e5b766afa262163c17c58db40484df4958408aefba67f3c5b8eac1a",
+      "modified": false
+    },
+    {
+      "pack": "quality-engineering",
+      "source_repo": "RBraga01/Quality-Engineering-Skills",
+      "commit": "186d97e8bc885a82af92a0dfb52b495b71fbd232",
+      "path": "quality-engineering/skills/planning/ppap/references/18-elements-checklist.md",
+      "licence": "MIT",
+      "sha256": "f03084bd706f7f292c44425795896d2bb66f271f9d4e99903b06f1e9173bd622",
+      "modified": false
+    },
+    {
+      "pack": "quality-engineering",
+      "source_repo": "RBraga01/Quality-Engineering-Skills",
+      "commit": "186d97e8bc885a82af92a0dfb52b495b71fbd232",
+      "path": "quality-engineering/skills/problem-solving/5why-root-cause/SKILL.md",
+      "licence": "MIT",
+      "sha256": "492a3f50c07ede34b6e738e75ceea8a9bc46afec63559c0df413c4368dce5028",
+      "modified": false
+    },
+    {
+      "pack": "quality-engineering",
+      "source_repo": "RBraga01/Quality-Engineering-Skills",
+      "commit": "186d97e8bc885a82af92a0dfb52b495b71fbd232",
+      "path": "quality-engineering/skills/problem-solving/5why-root-cause/references/chain-validation.md",
+      "licence": "MIT",
+      "sha256": "db3c5d993273b218721fbd5cfb9c94ae7e8962550ab364ffbf0428a1ab898806",
+      "modified": false
+    },
+    {
+      "pack": "quality-engineering",
+      "source_repo": "RBraga01/Quality-Engineering-Skills",
+      "commit": "186d97e8bc885a82af92a0dfb52b495b71fbd232",
+      "path": "quality-engineering/skills/problem-solving/8d-problem-solving/SKILL.md",
+      "licence": "MIT",
+      "sha256": "69fc87e295f05f59b18ea9716df4a1f3b014699fdfd24d8a54a7422e1e845ffb",
+      "modified": false
+    },
+    {
+      "pack": "quality-engineering",
+      "source_repo": "RBraga01/Quality-Engineering-Skills",
+      "commit": "186d97e8bc885a82af92a0dfb52b495b71fbd232",
+      "path": "quality-engineering/skills/problem-solving/8d-problem-solving/assets/8d-template.md",
+      "licence": "MIT",
+      "sha256": "6d7a552c4ca75c8ab3e0fc7413f7ff3e9f1d1d587b1322ffb1d3626fc6901f19",
+      "modified": false
+    },
+    {
+      "pack": "quality-engineering",
+      "source_repo": "RBraga01/Quality-Engineering-Skills",
+      "commit": "186d97e8bc885a82af92a0dfb52b495b71fbd232",
+      "path": "quality-engineering/skills/problem-solving/8d-problem-solving/references/d0-d8-guide.md",
+      "licence": "MIT",
+      "sha256": "1406d2c36dc017d5f6320681ba8313d7db2027bddec85c14068d57bbc2ba0cc5",
+      "modified": false
+    },
+    {
+      "pack": "quality-engineering",
+      "source_repo": "RBraga01/Quality-Engineering-Skills",
+      "commit": "186d97e8bc885a82af92a0dfb52b495b71fbd232",
+      "path": "quality-engineering/skills/problem-solving/dmaic/SKILL.md",
+      "licence": "MIT",
+      "sha256": "f6425c4f7108208fca62c73c52d94c3984ddabf31e45daa4bcd59af601f84f49",
+      "modified": false
+    },
+    {
+      "pack": "quality-engineering",
+      "source_repo": "RBraga01/Quality-Engineering-Skills",
+      "commit": "186d97e8bc885a82af92a0dfb52b495b71fbd232",
+      "path": "quality-engineering/skills/problem-solving/dmaic/references/statistical-tools.md",
+      "licence": "MIT",
+      "sha256": "6b1377a3a07322e4046c39d9c9af237d75937829970761adbcadd87d59a91f65",
+      "modified": false
+    },
+    {
+      "pack": "quality-engineering",
+      "source_repo": "RBraga01/Quality-Engineering-Skills",
+      "commit": "186d97e8bc885a82af92a0dfb52b495b71fbd232",
+      "path": "quality-engineering/skills/problem-solving/fishbone-analysis/SKILL.md",
+      "licence": "MIT",
+      "sha256": "d23711b27fbd2100c2ed55f127d27811574d574b626048417dd272f2b5137ce5",
+      "modified": false
+    },
+    {
+      "pack": "quality-engineering",
+      "source_repo": "RBraga01/Quality-Engineering-Skills",
+      "commit": "186d97e8bc885a82af92a0dfb52b495b71fbd232",
+      "path": "quality-engineering/skills/problem-solving/fishbone-analysis/references/6m-category-guide.md",
+      "licence": "MIT",
+      "sha256": "4bde94cc292cb11b714b7072ae1c7e9d69a703fe98c81c942a1a2dc2cd9806e6",
+      "modified": false
+    },
+    {
+      "pack": "quality-engineering",
+      "source_repo": "RBraga01/Quality-Engineering-Skills",
+      "commit": "186d97e8bc885a82af92a0dfb52b495b71fbd232",
+      "path": "quality-engineering/skills/problem-solving/is-is-not-scoping/SKILL.md",
+      "licence": "MIT",
+      "sha256": "1614fe316a59ce400b725c62b44f21e01ba5de7b45c83b55f530d82a1e8c1b73",
+      "modified": false
+    },
+    {
+      "pack": "quality-engineering",
+      "source_repo": "RBraga01/Quality-Engineering-Skills",
+      "commit": "186d97e8bc885a82af92a0dfb52b495b71fbd232",
+      "path": "quality-engineering/skills/problem-solving/is-is-not-scoping/references/hypothesis-elimination.md",
+      "licence": "MIT",
+      "sha256": "0b849c468a5428c2ee08e8ce51ca41d0076ee6e03f038e139f01fa052f13e144",
+      "modified": false
+    },
+    {
+      "pack": "quality-engineering",
+      "source_repo": "RBraga01/Quality-Engineering-Skills",
+      "commit": "186d97e8bc885a82af92a0dfb52b495b71fbd232",
+      "path": "quality-engineering/skills/problem-solving/pdca-improvement/SKILL.md",
+      "licence": "MIT",
+      "sha256": "bf004b57cf7cc32687c0603ea156a7e24320c6faff787a14340f796baa29573c",
+      "modified": false
+    },
+    {
+      "pack": "quality-engineering",
+      "source_repo": "RBraga01/Quality-Engineering-Skills",
+      "commit": "186d97e8bc885a82af92a0dfb52b495b71fbd232",
+      "path": "quality-engineering/skills/problem-solving/pdca-improvement/references/pdca-examples.md",
+      "licence": "MIT",
+      "sha256": "dd49242d3a02b0f48d6b4571c8af6be9edea6a5ffcf2e5b7045aab0d64fb1d76",
+      "modified": false
+    },
+    {
+      "pack": "quality-engineering",
+      "source_repo": "RBraga01/Quality-Engineering-Skills",
+      "commit": "186d97e8bc885a82af92a0dfb52b495b71fbd232",
+      "path": "quality-engineering/skills/problem-solving/quality-problem-zeroing/SKILL.md",
+      "licence": "MIT",
+      "sha256": "f3d277dd56017e7d751e3eb68157faf101c40cad3e51963841b8e2ac28914443",
+      "modified": false
+    },
+    {
+      "pack": "quality-engineering",
+      "source_repo": "RBraga01/Quality-Engineering-Skills",
+      "commit": "186d97e8bc885a82af92a0dfb52b495b71fbd232",
+      "path": "quality-engineering/skills/problem-solving/quality-problem-zeroing/assets/zeroing-report-template.md",
+      "licence": "MIT",
+      "sha256": "b71bc68727fac94bdbe09c9d6f9a3fa74e6a60b6ddec52965733c5ff21016fec",
+      "modified": false
+    },
+    {
+      "pack": "quality-engineering",
+      "source_repo": "RBraga01/Quality-Engineering-Skills",
+      "commit": "186d97e8bc885a82af92a0dfb52b495b71fbd232",
+      "path": "quality-engineering/skills/problem-solving/quality-problem-zeroing/references/engineering-methods.md",
+      "licence": "MIT",
+      "sha256": "2abbb6554bff3fc4d88e37f4bae4dc0e6b229890e63536d8334faeabbd24a142",
+      "modified": false
+    },
+    {
+      "pack": "quality-engineering",
+      "source_repo": "RBraga01/Quality-Engineering-Skills",
+      "commit": "186d97e8bc885a82af92a0dfb52b495b71fbd232",
+      "path": "quality-engineering/skills/problem-solving/quality-problem-zeroing/references/gbt-29076-2021-method-guide.md",
+      "licence": "MIT",
+      "sha256": "79b248e24c9ab2499bf3792a8d3cbc09aa56279d5dfa129c1733afcd8d76e55e",
+      "modified": false
+    },
+    {
+      "pack": "quality-engineering",
+      "source_repo": "RBraga01/Quality-Engineering-Skills",
+      "commit": "186d97e8bc885a82af92a0dfb52b495b71fbd232",
+      "path": "quality-engineering/skills/risk-analysis/action-priority-ap/SKILL.md",
+      "licence": "MIT",
+      "sha256": "19c56bfa5111b61cf9dc9f34f4d47f93ac5134e526514e4a113cddbdc0d7c99f",
+      "modified": false
+    },
+    {
+      "pack": "quality-engineering",
+      "source_repo": "RBraga01/Quality-Engineering-Skills",
+      "commit": "186d97e8bc885a82af92a0dfb52b495b71fbd232",
+      "path": "quality-engineering/skills/risk-analysis/action-priority-ap/references/oem-requirements.md",
+      "licence": "MIT",
+      "sha256": "43051be4de5f449dc44df35367da0f62becfc7433a28d8dc649905bf17a845f0",
+      "modified": false
+    },
+    {
+      "pack": "quality-engineering",
+      "source_repo": "RBraga01/Quality-Engineering-Skills",
+      "commit": "186d97e8bc885a82af92a0dfb52b495b71fbd232",
+      "path": "quality-engineering/skills/risk-analysis/dfmea-design/SKILL.md",
+      "licence": "MIT",
+      "sha256": "4f41212eae69753ce1cb2103ddb9f381b99f311c5ef2500436a03e914fe9f960",
+      "modified": false
+    },
+    {
+      "pack": "quality-engineering",
+      "source_repo": "RBraga01/Quality-Engineering-Skills",
+      "commit": "186d97e8bc885a82af92a0dfb52b495b71fbd232",
+      "path": "quality-engineering/skills/risk-analysis/dfmea-design/references/interface-matrix.md",
+      "licence": "MIT",
+      "sha256": "4ba5f5941dba8bb0e3a9a7c79a769b988e99e526892bb7dcb91cc96746dfa8c8",
+      "modified": false
+    },
+    {
+      "pack": "quality-engineering",
+      "source_repo": "RBraga01/Quality-Engineering-Skills",
+      "commit": "186d97e8bc885a82af92a0dfb52b495b71fbd232",
+      "path": "quality-engineering/skills/risk-analysis/pfmea-process/SKILL.md",
+      "licence": "MIT",
+      "sha256": "09099726e052d30a49aaae431bf01f512c9494e942e1b741cbc9f52047f6add2",
+      "modified": false
+    },
+    {
+      "pack": "quality-engineering",
+      "source_repo": "RBraga01/Quality-Engineering-Skills",
+      "commit": "186d97e8bc885a82af92a0dfb52b495b71fbd232",
+      "path": "quality-engineering/skills/risk-analysis/pfmea-process/assets/ap-table.md",
+      "licence": "MIT",
+      "sha256": "cc7225de1767a1d8c9364a08ee947a592fed7521eb8c98273e5c6ac348d1bf66",
+      "modified": false
+    },
+    {
+      "pack": "quality-engineering",
+      "source_repo": "RBraga01/Quality-Engineering-Skills",
+      "commit": "186d97e8bc885a82af92a0dfb52b495b71fbd232",
+      "path": "quality-engineering/skills/risk-analysis/pfmea-process/references/aiag-vda-2019.md",
+      "licence": "MIT",
+      "sha256": "e4abba08325767407f6ee63777e02e28aa933a9f067b0b0c34285c0c9ef6a097",
+      "modified": false
+    },
+    {
+      "pack": "quality-engineering",
+      "source_repo": "RBraga01/Quality-Engineering-Skills",
+      "commit": "186d97e8bc885a82af92a0dfb52b495b71fbd232",
+      "path": "quality-engineering/skills/supplier-quality/supplier-scar/SKILL.md",
+      "licence": "MIT",
+      "sha256": "dbab37446da74d84b451f27cde01672072eefd520753137dc17373a76d272813",
+      "modified": false
+    },
+    {
+      "pack": "quality-engineering",
+      "source_repo": "RBraga01/Quality-Engineering-Skills",
+      "commit": "186d97e8bc885a82af92a0dfb52b495b71fbd232",
+      "path": "quality-engineering/skills/supplier-quality/supplier-scar/references/scar-template.md",
+      "licence": "MIT",
+      "sha256": "f8f6a8498dc1a2746834294a9a25db8411401e2eb658093973976b68b88888a8",
+      "modified": false
+    },
+    {
+      "pack": "automotive-engineering",
+      "source_repo": "K-Dense-AI/scientific-agents",
+      "commit": "acbd93db7ed551f703225c38ed90a30bd95d23be",
+      "path": "automotive-engineering/AGENTS.md",
+      "licence": "MIT",
+      "sha256": "0ec3676e0911f96371a90bb9940ef3ab05ee53033c267837366a1b984692c1d2",
+      "modified": false
+    },
+    {
+      "pack": "automotive-engineering",
+      "source_repo": "K-Dense-AI/scientific-agents",
+      "commit": "acbd93db7ed551f703225c38ed90a30bd95d23be",
+      "path": "automotive-engineering/CLAUDE.md",
+      "licence": "MIT",
+      "sha256": "0ec3676e0911f96371a90bb9940ef3ab05ee53033c267837366a1b984692c1d2",
+      "modified": false
+    },
+    {
+      "pack": "automotive-engineering",
+      "source_repo": "K-Dense-AI/scientific-agents",
+      "commit": "acbd93db7ed551f703225c38ed90a30bd95d23be",
+      "path": "automotive-engineering/agents/automotive-engineer.md",
+      "licence": "MIT",
+      "sha256": "95b95f789b82cb16536c21ae102f9bb295057c263a925ea6944c43759080959b",
+      "modified": false
+    }
+  ]
+}

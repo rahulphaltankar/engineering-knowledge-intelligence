@@ -1,0 +1,97 @@
+{% extends "fire/base.html" %}
+{% from "fire/_macros.html" import lbl, explain, status_pill, no_analysis with context %}
+{% block title %}Evidence &middot; {{ S.product_name }}{% endblock %}
+{% block body %}
+<div class="page-head">
+  <h1>Evidence assessment</h1>
+  <p>What evidence exists for the change, where each item comes from, whether it still applies to the
+     proposed use, and what is missing.</p>
+</div>
+
+{% if not view %}{{ no_analysis('/evidence', 'Evidence assessments') }}{% else %}
+{% set k = view.k %}
+<div class="metrics" style="margin-bottom:16px">
+  <div class="metric"><div class="v">{{ k.evidence_cards|length }}</div><div class="k">Evidence items in scope</div></div>
+  <div class="metric good"><div class="v">{{ k.transferable_count }}</div><div class="k">Transfer to proposed basis</div></div>
+  <div class="metric attn"><div class="v">{{ k.evidence_cards|length - k.transferable_count }}</div><div class="k">Do not transfer</div></div>
+  <div class="metric attn"><div class="v">{{ view.gaps|map(attribute='pairs')|map('length')|sum }}</div><div class="k">Evidence gaps</div></div>
+  <div class="metric unk"><div class="v">{{ view.unknown_findings|length }}</div><div class="k">Not established</div></div>
+</div>
+
+<div class="panel">
+  <div class="panel-head"><h2>Evidence items and provenance</h2></div>
+  <div class="cards">
+    {% for c in k.evidence_cards %}
+    <div class="ev-card {{ '' if c.transferable else 'blocked' }}">
+      <div class="row" style="justify-content:space-between;gap:6px">
+        <span><code>{{ c.id }}</code> <span class="tiny muted">{{ lbl(c.entity_type) }}</span></span>
+        {% if c.transferable %}<span class="pill ok">Transferable</span>{% else %}<span class="pill bad">Not transferable</span>{% endif %}
+      </div>
+      <div style="font-weight:570;margin:6px 0 5px;font-size:13.5px">{{ c.title }}</div>
+      <dl class="kv">
+        <dt>Status</dt><dd>{{ status_pill(c.status) }}</dd>
+        <dt>Basis</dt><dd>{{ c.basis|replace('_',' ') }}</dd>
+        {% if c.test %}<dt>Verification activity</dt><dd><code>{{ c.test }}</code>
+          {% if c.criterion_established == false %}<span class="pill unknown">criterion not established</span>{% endif %}</dd>{% endif %}
+        {% if c.requirements %}<dt>Requirements</dt><dd>{{ c.requirements|join(', ') }}</dd>{% endif %}
+        {% if c.evidence_records %}<dt>Evidence records</dt><dd>{{ c.evidence_records|join(', ') }}</dd>{% endif %}
+        <dt>Classification</dt><dd><span class="pill {{ c.classification }}">{{ c.classification }}</span></dd>
+      </dl>
+      {% if c.reason %}<div class="note warn tiny" style="margin-top:8px">{{ c.reason }}</div>{% endif %}
+      <div class="meta">Provenance: {{ c.provenance.connector_id }} / {{ c.provenance.source_object_id }} &middot; {{ c.provenance.source_version }}<br>
+        Retrieved {{ c.provenance.retrieved_at }}<br>{{ c.provenance.data_classification }}</div>
+      <div style="margin-top:4px">{{ explain(c.finding_id, 'Explain & review') }}</div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+<div id="why"></div>
+
+<section class="panel" id="transferability">
+  <div class="panel-head"><h2>Transferability</h2>
+    <span class="aside">Evidence basis compared with the basis the change establishes</span></div>
+  {% for f in view.transfer_findings %}
+  <div class="note warn small" style="margin-bottom:8px">{{ f.statement }} {{ explain(f.id, 'Explain & review') }}</div>
+  {% endfor %}
+  {% if view.basis_conflict %}
+  <div class="note small">{{ view.basis_conflict.statement }} {{ explain(view.basis_conflict.id) }}</div>
+  {% endif %}
+</section>
+
+<section class="panel" id="gaps">
+  <div class="panel-head"><h2>Evidence gaps by condition</h2>
+    <span class="aside">Categorised &mdash; these are different engineering problems</span></div>
+  <table>
+    <thead><tr><th>Evidence condition</th><th>Requirement / verification activity / result</th><th>Reason</th><th>Action</th><th></th></tr></thead>
+    <tbody>
+    {% for g in view.gaps %}
+      {% for i in g.pairs %}
+      <tr>
+        {% if loop.first %}<td rowspan="{{ g.pairs|length }}"><strong>{{ g.label }}</strong><div class="tiny muted">{{ g.detail }}</div></td>{% endif %}
+        <td class="small"><code>{{ i.requirement }}</code> / <code>{{ i.test }}</code>{% if i.result %} / <code>{{ i.result }}</code>{% endif %}</td>
+        <td class="small muted">{{ i.reason }}</td>
+        {% if loop.first %}<td rowspan="{{ g.pairs|length }}" class="small" style="color:var(--accent)">{{ g.action }}</td>
+        <td rowspan="{{ g.pairs|length }}">{{ explain(g.finding_ids[0]) }}</td>{% endif %}
+      </tr>
+      {% endfor %}
+    {% endfor %}
+    </tbody>
+  </table>
+</section>
+
+<div class="panel">
+  <div class="panel-head"><h2>Knowledge sources drawn on by this analysis</h2>
+    <span class="aside">Conceptual categories; counts are records reached from the change</span></div>
+  <div class="grid3">
+    {% for s in in_scope %}
+    <div class="tile {{ '' if s.represented else 'muted-tile' }}">
+      <div class="row" style="justify-content:space-between"><h4>{{ s.name }}</h4>
+        {% if s.represented %}<span class="pill ok">{{ s.count }}</span>{% else %}<span class="pill PLANNED">Not in scope</span>{% endif %}</div>
+      <div class="tiny muted">{% for i in s.ids %}<code>{{ i }}</code> {% endfor %}{% if s.profiles %}{{ s.profiles|join(', ') }}{% endif %}</div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endif %}
+{% endblock %}

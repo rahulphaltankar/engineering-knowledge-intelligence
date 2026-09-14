@@ -1,0 +1,52 @@
+{
+  "entity": "System",
+  "description": "Fire-safety systems (domains) of the synthetic building.",
+  "data_classification": "SIMULATED — PUBLIC DEMONSTRATOR DATA",
+  "generated_by": "Engineering Knowledge Intelligence demonstrator",
+  "seed": 42,
+  "records": [
+    {
+      "id": "FSYS-001",
+      "name": "Means of escape and evacuation",
+      "domain": "Means of warning and escape",
+      "description": "Escape routes, the common stair, protected lobbies and the evacuation strategy.",
+      "domain_areas": [
+        "Means of Escape",
+        "Evacuation Strategy"
+      ],
+      "record_type": "System"
+    },
+    {
+      "id": "FSYS-002",
+      "name": "Fire detection and alarm",
+      "domain": "Detection and warning",
+      "description": "Automatic detection, manual call points, sounders and cause-and-effect.",
+      "domain_areas": [
+        "Fire Detection & Alarm"
+      ],
+      "record_type": "System"
+    },
+    {
+      "id": "FSYS-003",
+      "name": "Compartmentation and structural fire protection",
+      "domain": "Internal fire spread",
+      "description": "Compartment floors and walls, fire-stopping and fire resistance of structure.",
+      "domain_areas": [
+        "Passive Fire Protection",
+        "Structural Fire Performance"
+      ],
+      "record_type": "System"
+    },
+    {
+      "id": "FSYS-004",
+      "name": "Sprinklers and fire service facilities",
+      "domain": "Suppression and firefighting",
+      "description": "Automatic suppression, fire mains and access for firefighting.",
+      "domain_areas": [
+        "Active Fire Protection",
+        "Firefighting Access"
+      ],
+      "record_type": "System"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+id: evidence_gap_analysis
+name: Evidence Gap Analysis
+description: >-
+  What evidence exists, what is missing, and why. Gaps are categorised rather
+  than counted: a test not run, an unestablished acceptance criterion and a
+  passing result obtained on a superseded configuration are different problems.
+category: Evidence and traceability
+maturity: functional
+required_context_types:
+  - Requirement
+  - TestCase
+  - TestResult
+upstream_skills:
+  - dvp-test-plan
+sections:
+  - builder: evidence_gaps
+  - builder: evidence_table
+  - builder: finding_list
+    params:
+      key: evidence_findings
+      title: Evidence findings
+      tags: [evidence_summary, evidence_gap]
+  - builder: review_record
+  - builder: confidence_summary
+  - builder: unknowns
+validation_rules:
+  - required_sections_present
+  - no_fabricated_ids
+  - unknowns_declared
+  - human_review_applied
+export_formats: [markdown, json, csv]

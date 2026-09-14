@@ -1,0 +1,110 @@
+{
+  "scenario_id": "SCN-011",
+  "category": "Manufacturing / process quality",
+  "title": "Process change followed by an escape at end of line",
+  "engineering_question": "A manufacturing process change was implemented and defects subsequently escaped detection. What went wrong in both the process and the detection system?",
+  "one_liner": "Investigate this manufacturing quality escape and determine corrective action.",
+  "initial_input": "Two components were rejected at final assembly leak test, both traced to the same supplier production week, following a process change at that supplier.",
+  "relevant_entities": {
+    "quality_issues": [
+      "QI-006"
+    ],
+    "ncrs": [
+      "NCR-001"
+    ],
+    "supplier_issues": [
+      "SI-002"
+    ],
+    "root_causes": [
+      "RC-003"
+    ],
+    "corrective_actions": [
+      "CA-005",
+      "CA-006"
+    ],
+    "engineering_changes": [
+      "ECR-010"
+    ],
+    "suppliers": [
+      "SUP-006"
+    ],
+    "components": [
+      "COMP-012"
+    ],
+    "subsystems": [
+      "SUB-005"
+    ],
+    "requirements": [
+      "REQ-023",
+      "REQ-130",
+      "REQ-131",
+      "REQ-022"
+    ],
+    "failure_modes": [
+      "FM-008",
+      "FM-200",
+      "FM-201",
+      "FM-202",
+      "FM-203"
+    ],
+    "tests": [
+      "TEST-009",
+      "TEST-010",
+      "TEST-011",
+      "TEST-012",
+      "TEST-008"
+    ],
+    "documents": [
+      "DOC-017",
+      "DOC-018",
+      "DOC-019"
+    ],
+    "standards": [
+      "STD-004",
+      "STD-043",
+      "STD-044"
+    ]
+  },
+  "expected_impacted_domains": [
+    "Supplier process control and change management",
+    "Detection system capability",
+    "Battery thermal performance consequences of degraded braze coverage",
+    "High voltage safety exposure from coolant ingress",
+    "Containment scope and affected population"
+  ],
+  "expected_evidence": [
+    "TR-032",
+    "TR-033",
+    "TR-034",
+    "TR-035",
+    "MEAS-015"
+  ],
+  "expected_reasoning_paths": [
+    "There are two distinct problems - an occurrence problem, TR-032 process, and a detection problem, TR-033 measurement capability - and the 8D must address both",
+    "RC-003 identifies that the dew point alarm threshold was set above the qualified limit after the process change, which is a change management failure rather than an operator error",
+    "TR-032 also found coverage below minimum, which links to FM-007 and therefore to the thermal capability investigated in SCN-003",
+    "TR-034 passes on post-containment samples but does not clear the originally affected population, so containment scope must be defined by production week, not by sample result"
+  ],
+  "candidate_outputs": [
+    "8D",
+    "PFMEA Review",
+    "Root Cause Analysis",
+    "5-Why",
+    "Fishbone Analysis",
+    "Corrective Action Plan",
+    "Supplier Quality Assessment",
+    "Risk Assessment",
+    "Evidence Gap Analysis",
+    "Failure Mode Analysis",
+    "Engineering Change Impact",
+    "Engineering Executive Summary",
+    "Engineering Decision Brief"
+  ],
+  "known_unknowns": [
+    "RC-003 is not confirmed - the furnace atmosphere record for the affected week is not in the environment",
+    "The number of plates from the affected week already built into vehicles is not represented",
+    "No thermal measurement exists on packs containing affected plates"
+  ],
+  "data_classification": "SIMULATED ENTERPRISE ARTEFACT - not OEM, customer or proprietary data",
+  "connector": "SIMULATION"
+}

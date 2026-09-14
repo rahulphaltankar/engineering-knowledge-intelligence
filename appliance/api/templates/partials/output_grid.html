@@ -1,0 +1,25 @@
+{% set by_cat = {} %}
+{% for o in outputs %}{% set _ = by_cat.setdefault(o.category, []).append(o) %}{% endfor %}
+{% for cat, rows in by_cat.items() %}
+  <h3>{{ cat }}</h3>
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(258px,1fr));gap:10px">
+  {% for o in rows %}
+    <div style="border:1px solid var(--line);border-radius:7px;padding:12px 13px;
+                background:{{ '#fff' if o.executable else 'var(--panel-alt)' }}">
+      <div class="row" style="justify-content:space-between;gap:6px;align-items:flex-start">
+        <span style="font-weight:585;font-size:13.5px;line-height:1.3">{{ o.name }}</span>
+        <span class="pill {{ o.status|replace(' ','_') }}">{{ o.status }}</span>
+      </div>
+      <div class="tiny muted" style="margin:5px 0 8px;line-height:1.45">{{ o.description }}</div>
+      {% if o.executable %}
+        <button class="ghost" style="padding:4px 0"
+                hx-post="/output/{{ o.id }}" hx-target="#output" hx-swap="innerHTML"
+                hx-indicator="#ospin-{{ o.id }}">Generate →</button>
+        <span class="spin tiny" id="ospin-{{ o.id }}">generating…</span>
+      {% else %}
+        <div class="tiny faint">{{ o.reason }}</div>
+      {% endif %}
+    </div>
+  {% endfor %}
+  </div>
+{% endfor %}

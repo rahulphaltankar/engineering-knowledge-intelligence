@@ -1,0 +1,7 @@
+# Keep repository files byte-identical on every platform. Vendored upstream packs
+# are stored exactly as published (packs/MANIFEST.json records their sha256).
+* text=auto eol=lf
+packs/simulation/** -text
+packs/quality-engineering/** -text
+packs/automotive-engineering/** -text
+packs/MANIFEST.json -text

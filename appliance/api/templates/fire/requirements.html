@@ -1,0 +1,105 @@
+{% extends "fire/base.html" %}
+{% from "fire/_macros.html" import lbl, explain, status_pill, no_analysis with context %}
+{% block title %}Requirements &middot; {{ S.product_name }}{% endblock %}
+{% block body %}
+<div class="page-head">
+  <h1>Requirements applicability</h1>
+  <p>Which requirements the change brings into scope, what each traces to, whether its applicability is
+     established, and how it is verified. Requirement statements are plain-language synthetic text;
+     standards and legislation are referenced by identifier and title only.</p>
+</div>
+
+{% if not view %}{{ no_analysis('/requirements', 'Applicable requirements') }}{% else %}
+{% set k = view.k %}
+<div class="metrics" style="margin-bottom:16px">
+  <div class="metric"><div class="v">{{ k.requirements|length }}</div><div class="k">Requirements in scope</div></div>
+  <div class="metric good"><div class="v">{{ k.requirements|selectattr('applicability','equalto','applies')|list|length }}</div><div class="k">Applicability established</div></div>
+  <div class="metric unk"><div class="v">{{ view.applicability_unknown|length }}</div><div class="k">Applicability unknown</div></div>
+  <div class="metric attn"><div class="v">{{ k.requirements|rejectattr('status','equalto','approved')|list|length }}</div><div class="k">Not yet baselined</div></div>
+  <div class="metric"><div class="v">{{ view.standards|length }}</div><div class="k">Standards / guidance referenced</div></div>
+</div>
+
+<div class="panel">
+  <div class="panel-head"><h2>Applicable requirements</h2>
+    <span class="aside">{% if k.applicable_finding %}{{ explain(k.applicable_finding, 'Explain') }}{% endif %}</span></div>
+  <table>
+    <thead><tr><th>Requirement</th><th>Statement (synthetic)</th><th>Regulatory reference</th><th>Standards / guidance</th><th>Applicability</th><th>Status</th><th>Basis</th></tr></thead>
+    <tbody>
+    {% for r in k.requirements %}
+    {% set rec = view.result.context.get(r.requirement) %}
+    <tr>
+      <td><code>{{ r.requirement }}</code><br><strong class="small">{{ r.title }}</strong>
+        <div>{% for a in (rec.get('domain_areas') or []) %}<span class="chip">{{ a }}</span>{% endfor %}</div></td>
+      <td class="small muted">{{ rec.get('statement') }}</td>
+      <td class="small muted">{{ r.regulatory_reference }}</td>
+      <td class="small">{% for s in r.standards %}<code>{{ s.id }}</code> {{ s.identifier }}{% if not loop.last %}<br>{% endif %}{% endfor %}</td>
+      <td>{% if r.applicability == 'applies' %}<span class="pill ok">applies</span>{% else %}<span class="pill unknown">{{ r.applicability|replace('_',' ') }}</span>
+        <div class="tiny muted" style="margin-top:4px">{{ rec.get('applicability_note') }}</div>{% endif %}</td>
+      <td class="small">{{ r.status }}</td>
+      <td class="small">{{ r.basis|replace('_',' ') }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+<div id="why"></div>
+
+<div class="split">
+  <div class="panel">
+    <div class="panel-head"><h2>Applicability not established</h2></div>
+    <div class="stack">
+      {% for u in view.applicability_unknown %}
+      <div class="note unknown small">{{ u.statement }} {{ explain(u.id) }}</div>
+      {% else %}<p class="small muted">Applicability is established for every requirement in scope.</p>{% endfor %}
+    </div>
+  </div>
+  <div class="panel">
+    <div class="panel-head"><h2>Verification coverage gaps</h2></div>
+    <div class="stack">
+      {% for u in view.unverified %}
+      <div class="note warn small">{{ u.statement }} {{ explain(u.id) }}</div>
+      {% else %}<p class="small muted">Every requirement and prioritised hazard has a verification activity.</p>{% endfor %}
+    </div>
+  </div>
+</div>
+
+<div class="panel">
+  <div class="panel-head"><h2>Requirement &rarr; verification activity &rarr; result</h2></div>
+  <table>
+    <thead><tr><th>Requirement</th><th>Verification activity</th><th>Acceptance criterion</th><th>Results</th></tr></thead>
+    <tbody>
+    {% for row in view.coverage %}
+      {% if row.activities %}
+        {% for a in row.activities %}
+        <tr>
+          {% if loop.first %}<td rowspan="{{ row.activities|length }}"><code>{{ row.requirement.id }}</code><br><span class="small">{{ row.requirement.title }}</span></td>{% endif %}
+          <td><code>{{ a.activity.id }}</code> <span class="small">{{ a.activity.title }}</span><div class="tiny muted">{{ (a.activity.get('method') or '')|replace('_',' ') }}</div></td>
+          <td class="small">{% if a.criterion_established %}{{ a.activity.acceptance_criterion }}{% else %}<span class="pill unknown">Not established</span> <span class="tiny muted">none assumed</span>{% endif %}</td>
+          <td class="small">{% for res in a.results %}<div><code>{{ res.result.id }}</code> {{ status_pill(res.status) }}{% if not res.transferable and res.status == 'pass' %} <span class="pill bad">not transferable</span>{% endif %}</div>{% else %}<span class="pill warn">no result recorded</span>{% endfor %}</td>
+        </tr>
+        {% endfor %}
+      {% else %}
+        <tr><td><code>{{ row.requirement.id }}</code><br><span class="small">{{ row.requirement.title }}</span></td>
+          <td colspan="3"><span class="pill warn">No verification activity defined</span></td></tr>
+      {% endif %}
+    {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+<div class="panel">
+  <div class="panel-head"><h2>Standards, guidance and legislation referenced</h2>
+    <span class="aside">Identifier and title only &mdash; no clause text is reproduced</span></div>
+  <table>
+    <thead><tr><th>Record</th><th>Identifier</th><th>Title</th><th>Body</th><th>Edition</th></tr></thead>
+    <tbody>
+    {% for s in view.standards %}
+    <tr><td><code>{{ s.id }}</code></td><td><strong>{{ s.get('identifier') }}</strong></td><td class="small">{{ s.get('title') }}</td>
+      <td class="small">{{ s.get('body') }}</td><td class="tiny muted">{{ s.get('edition') }}</td></tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endif %}
+{% endblock %}

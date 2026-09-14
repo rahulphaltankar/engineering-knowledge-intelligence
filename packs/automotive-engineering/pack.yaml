@@ -1,0 +1,9 @@
+name: automotive-engineering
+version: 0.1.0
+source_repo: https://github.com/K-Dense-AI/scientific-agents
+commit: acbd93db7ed551f703225c38ed90a30bd95d23be
+source_path: scientific-agents/automotive-engineer
+licence: MIT
+attribution: K-Dense AI
+provides:
+  - agent: automotive-engineer

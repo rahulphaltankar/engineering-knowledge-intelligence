@@ -1,0 +1,69 @@
+{
+  "entity": "Inventory",
+  "description": "Record counts per collection.",
+  "data_classification": "SIMULATED — PUBLIC DEMONSTRATOR DATA",
+  "generated_by": "Engineering Knowledge Intelligence demonstrator",
+  "seed": 42,
+  "records": [
+    {
+      "file": "engineering_changes.json",
+      "entity": "EngineeringChange",
+      "records": 1
+    },
+    {
+      "file": "systems.json",
+      "entity": "System",
+      "records": 4
+    },
+    {
+      "file": "subsystems.json",
+      "entity": "Subsystem",
+      "records": 4
+    },
+    {
+      "file": "components.json",
+      "entity": "Component",
+      "records": 4
+    },
+    {
+      "file": "requirements.json",
+      "entity": "Requirement",
+      "records": 10
+    },
+    {
+      "file": "failure_modes.json",
+      "entity": "FailureMode",
+      "records": 6
+    },
+    {
+      "file": "tests.json",
+      "entity": "TestCase",
+      "records": 9
+    },
+    {
+      "file": "test_results.json",
+      "entity": "TestResult",
+      "records": 8
+    },
+    {
+      "file": "standards.json",
+      "entity": "Standard",
+      "records": 8
+    },
+    {
+      "file": "documents.json",
+      "entity": "Document",
+      "records": 4
+    },
+    {
+      "file": "evidence.json",
+      "entity": "Evidence",
+      "records": 6
+    },
+    {
+      "file": "relationships.json",
+      "entity": "Relationship",
+      "records": 117
+    }
+  ]
+}

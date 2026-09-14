@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block title %}Engineering Outputs{% endblock %}
+{% block body %}
+<div class="page-head">
+  <h1>Engineering outputs</h1>
+  <p>One intelligence context, many engineering deliverables. These are not 25 separate
+     tools &mdash; every output is generated from the same reasoning context, which is
+     why an Impact Assessment and a DVP&amp;R produced from one analysis cannot
+     contradict each other.</p>
+</div>
+
+<div class="panel tight">
+  <div class="row" style="gap:24px">
+    <span class="small"><strong>{{ summary.total }}</strong>
+      <span class="muted">deliverables in the capability model</span></span>
+    {% for st, n in summary.by_status.items() %}
+    <span class="small">
+      <span class="pill {{ st|replace(' ','_') }}">{{ n }} {{ st|lower }}</span></span>
+    {% endfor %}
+  </div>
+</div>
+
+{% if not has_analysis %}
+<div class="panel tight">
+  <p class="small muted" style="margin:0">
+    Run an analysis on the <a href="/">Intelligence</a> page to resolve each output
+    against a real engineering context. The status shown below is the registry state only.
+  </p>
+</div>
+{% endif %}
+
+<div class="panel">
+  {% include "partials/output_grid.html" %}
+</div>
+
+<div id="output"></div>
+
+<div class="panel tight">
+  <p class="small muted" style="margin:0">
+    <strong>Status is resolved from the real registry and the real analysis scope.</strong>
+    <span class="pill AVAILABLE">available</span> the workflow exists and this context
+    supports it &middot;
+    <span class="pill REQUIRES_DATA">requires data</span> the workflow exists but the
+    context is missing an entity type &middot;
+    <span class="pill NOT_APPLICABLE">not applicable</span> this analysis contains
+    nothing the output would operate on &middot;
+    <span class="pill PLANNED">planned</span> the workflow definition is not yet authored.
+    An output is never shown as executable when it is not.
+  </p>
+</div>
+{% endblock %}

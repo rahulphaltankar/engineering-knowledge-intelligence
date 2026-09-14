@@ -1,0 +1,81 @@
+{% from "fire/_macros.html" import review_pill with context %}
+<div class="review-box">
+  <div class="row" style="justify-content:space-between;margin-bottom:8px">
+    <strong style="font-size:14px">Engineering Review &middot; <code>{{ e.finding_id }}</code></strong>
+    <span class="control-label">{{ review_label }}</span>
+  </div>
+
+  <div class="small" style="margin-bottom:10px">
+    Current state: {{ review_pill(e.review) }}
+    {% if e.review %}
+      <span class="muted">by <strong>{{ e.review.reviewer }}</strong> at
+        <span class="mono tiny">{{ e.review.timestamp }}</span></span>
+      {% if e.review.note %}<div class="note {{ 'warn' if e.review.decision == 'rejected' else 'ok' }}" style="margin-top:6px">{{ e.review.note }}</div>{% endif %}
+    {% endif %}
+  </div>
+
+  {% if error %}
+  <div class="note warn" style="margin-bottom:10px" role="alert"><strong>Not recorded:</strong> {{ error.message }}</div>
+  {% endif %}
+
+  <form hx-post="/review/{{ e.finding_id }}" hx-target="#review-{{ e.finding_id }}" hx-swap="innerHTML"
+        hx-vals='js:{targets: reviewTargets("{{ e.finding_id }}")}'>
+    <div class="split" style="gap:10px">
+      <div>
+        <label class="fl" for="reviewer-{{ e.finding_id }}">Reviewer</label>
+        <input type="text" id="reviewer-{{ e.finding_id }}" name="reviewer" maxlength="80"
+               value="{{ (draft.reviewer if draft else '') or (e.review.reviewer if e.review else '') }}"
+               placeholder="Name (self-declared)">
+      </div>
+      <div>
+        <label class="fl" for="note-{{ e.finding_id }}">Reason / note (required to reject)</label>
+        <textarea id="note-{{ e.finding_id }}" name="note" maxlength="2000"
+                  placeholder="Engineering reason for the decision">{{ draft.note if draft else '' }}</textarea>
+      </div>
+    </div>
+    <div class="row" style="margin-top:10px">
+      <span class="fl" style="margin:0">Decision</span>
+      <button class="accept" type="submit" name="decision" value="accept">Accept</button>
+      <button class="reject" type="submit" name="decision" value="reject">Reject</button>
+      <span class="tiny muted">A rejection withholds this finding from outputs and holds the
+        verification actions it justified.</span>
+    </div>
+  </form>
+
+  {% if e.review_history %}
+  <details class="disclosure" open>
+    <summary>Audit trail for this finding ({{ e.review_history|length }})</summary>
+    <table style="margin-top:8px">
+      <thead><tr><th>Time (UTC)</th><th>Decision</th><th>Reviewer</th><th>Reason / note</th><th>Finding as reviewed</th></tr></thead>
+      <tbody>
+      {% for r in e.review_history|reverse %}
+      <tr>
+        <td class="mono tiny">{{ r.timestamp }}</td>
+        <td><span class="pill {{ 'ok' if r.decision == 'accepted' else 'bad' }}">{{ r.decision }}</span></td>
+        <td class="small">{{ r.reviewer }}</td>
+        <td class="small muted">{{ r.note or '—' }}</td>
+        <td class="tiny muted">{{ r.finding_snapshot.classification }} · confidence
+          {{ '%.2f'|format(r.finding_snapshot.confidence_score) }} · evidence
+          {{ r.finding_snapshot.evidence_ids|join(', ') or 'none' }}</td>
+      </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </details>
+  {% endif %}
+</div>
+
+{% if oob %}
+  {% if 'review-summary' in targets %}
+  <div id="review-summary" hx-swap-oob="innerHTML">{% include "fire/partials/review_summary.html" %}</div>
+  {% endif %}
+  {% if 'pill' in targets %}
+  <span id="rv-{{ e.finding_id }}" hx-swap-oob="innerHTML">{{ review_pill(e.review) }}</span>
+  {% endif %}
+  {% if 'review-count' in targets %}
+  <span id="review-count" hx-swap-oob="innerHTML">{{ reviews.log|length }}</span>
+  {% endif %}
+  {% if 'output' in targets and refreshed %}
+  <div id="output" hx-swap-oob="innerHTML">{% with o = refreshed %}{% include "fire/partials/output.html" %}{% endwith %}</div>
+  {% endif %}
+{% endif %}

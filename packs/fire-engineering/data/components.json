@@ -1,0 +1,37 @@
+{
+  "entity": "Component",
+  "description": "Components relevant to the change.",
+  "data_classification": "SIMULATED — PUBLIC DEMONSTRATOR DATA",
+  "generated_by": "Engineering Knowledge Intelligence demonstrator",
+  "seed": 42,
+  "records": [
+    {
+      "id": "FCMP-001",
+      "subsystem_id": "FSUB-001",
+      "system_id": "FSYS-001",
+      "name": "Stair lobby fire doorsets (Levels 2-4)",
+      "record_type": "Component"
+    },
+    {
+      "id": "FCMP-002",
+      "subsystem_id": "FSUB-002",
+      "system_id": "FSYS-002",
+      "name": "Level 3 detectors and sounder circuits",
+      "record_type": "Component"
+    },
+    {
+      "id": "FCMP-003",
+      "subsystem_id": "FSUB-003",
+      "system_id": "FSYS-003",
+      "name": "Flat entrance doorsets (proposed)",
+      "record_type": "Component"
+    },
+    {
+      "id": "FCMP-004",
+      "subsystem_id": "FSUB-004",
+      "system_id": "FSYS-004",
+      "name": "Sprinkler valve set and distribution (Levels 0-1)",
+      "record_type": "Component"
+    }
+  ]
+}

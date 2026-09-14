@@ -1,0 +1,37 @@
+{
+  "entity": "Subsystem",
+  "description": "Subsystems within each fire-safety system.",
+  "data_classification": "SIMULATED — PUBLIC DEMONSTRATOR DATA",
+  "generated_by": "Engineering Knowledge Intelligence demonstrator",
+  "seed": 42,
+  "records": [
+    {
+      "id": "FSUB-001",
+      "system_id": "FSYS-001",
+      "name": "Single common stair and lobbies",
+      "description": "The only vertical escape route, with lobby protection at each storey.",
+      "record_type": "Subsystem"
+    },
+    {
+      "id": "FSUB-002",
+      "system_id": "FSYS-002",
+      "name": "Level 3 alarm zone and cause-and-effect",
+      "description": "Detection, sounders and programmed outputs serving Level 3.",
+      "record_type": "Subsystem"
+    },
+    {
+      "id": "FSUB-003",
+      "system_id": "FSYS-003",
+      "name": "Level 3 compartmentation",
+      "description": "Compartment floor, flat separation and fire-stopping on Level 3.",
+      "record_type": "Subsystem"
+    },
+    {
+      "id": "FSUB-004",
+      "system_id": "FSYS-004",
+      "name": "Sprinkler installation, Levels 0-1",
+      "description": "Existing sprinkler protection limited to the lower two storeys.",
+      "record_type": "Subsystem"
+    }
+  ]
+}

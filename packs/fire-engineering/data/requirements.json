@@ -1,0 +1,235 @@
+{
+  "entity": "Requirement",
+  "description": "Plain-language synthetic requirements with regulatory references.",
+  "data_classification": "SIMULATED — PUBLIC DEMONSTRATOR DATA",
+  "generated_by": "Engineering Knowledge Intelligence demonstrator",
+  "seed": 42,
+  "records": [
+    {
+      "id": "FREQ-001",
+      "level": "building",
+      "system_id": "FSYS-001",
+      "title": "Evacuation strategy for the residential floor",
+      "domain_areas": [
+        "Means of Escape",
+        "Evacuation Strategy",
+        "Regulatory / Guidance Requirements"
+      ],
+      "statement": "An evacuation strategy appropriate to residential sleeping occupancy is defined for Level 3 and reconciled with the strategy for the rest of the building.",
+      "requirement_type": "life_safety",
+      "regulatory_reference": "Building Regulations 2010, Schedule 1, Part B, requirement B1 (means of warning and escape)",
+      "standard_ids": [
+        "FSTD-001",
+        "FSTD-003"
+      ],
+      "status": "draft",
+      "basis": "residential",
+      "applicability": "applies",
+      "statement_origin": "Plain-language synthetic requirement authored for the demonstrator; not quoted from any standard.",
+      "record_type": "Requirement"
+    },
+    {
+      "id": "FREQ-002",
+      "level": "building",
+      "system_id": "FSYS-001",
+      "title": "Single stair capacity and protection",
+      "domain_areas": [
+        "Means of Escape",
+        "Evacuation Strategy",
+        "Regulatory / Guidance Requirements"
+      ],
+      "statement": "The single common stair provides adequate capacity and protection for the evacuating population under the building's evacuation strategy.",
+      "requirement_type": "life_safety",
+      "regulatory_reference": "Building Regulations 2010, Schedule 1, Part B, requirement B1 (means of warning and escape)",
+      "standard_ids": [
+        "FSTD-002"
+      ],
+      "status": "approved",
+      "basis": "office",
+      "applicability": "applies",
+      "statement_origin": "Plain-language synthetic requirement authored for the demonstrator; not quoted from any standard.",
+      "record_type": "Requirement"
+    },
+    {
+      "id": "FREQ-003",
+      "level": "building",
+      "system_id": "FSYS-001",
+      "title": "Protected escape from flats to the common stair",
+      "domain_areas": [
+        "Means of Escape",
+        "Evacuation Strategy",
+        "Regulatory / Guidance Requirements"
+      ],
+      "statement": "Escape from each flat is through protected common circulation separated from the stair.",
+      "requirement_type": "life_safety",
+      "regulatory_reference": "Building Regulations 2010, Schedule 1, Part B, requirement B1 (means of warning and escape)",
+      "standard_ids": [
+        "FSTD-001",
+        "FSTD-003"
+      ],
+      "status": "draft",
+      "basis": "residential",
+      "applicability": "applies",
+      "statement_origin": "Plain-language synthetic requirement authored for the demonstrator; not quoted from any standard.",
+      "record_type": "Requirement"
+    },
+    {
+      "id": "FREQ-004",
+      "level": "building",
+      "system_id": "FSYS-002",
+      "title": "Fire detection and alarm within each flat",
+      "domain_areas": [
+        "Fire Detection & Alarm",
+        "Regulatory / Guidance Requirements"
+      ],
+      "statement": "Each flat has automatic fire detection and alarm to a grade and category selected for the residential occupancy.",
+      "requirement_type": "life_safety",
+      "regulatory_reference": "Building Regulations 2010, Schedule 1, Part B, requirement B1 (means of warning and escape)",
+      "standard_ids": [
+        "FSTD-005"
+      ],
+      "status": "draft",
+      "basis": "residential",
+      "applicability": "applies",
+      "statement_origin": "Plain-language synthetic requirement authored for the demonstrator; not quoted from any standard.",
+      "record_type": "Requirement"
+    },
+    {
+      "id": "FREQ-005",
+      "level": "building",
+      "system_id": "FSYS-002",
+      "title": "Alarm cause-and-effect compatible with the evacuation strategy",
+      "domain_areas": [
+        "Fire Detection & Alarm",
+        "Regulatory / Guidance Requirements"
+      ],
+      "statement": "The building fire alarm cause-and-effect is compatible with the evacuation strategy for the building's occupancies.",
+      "requirement_type": "life_safety",
+      "regulatory_reference": "Building Regulations 2010, Schedule 1, Part B, requirement B1 (means of warning and escape)",
+      "standard_ids": [
+        "FSTD-004"
+      ],
+      "status": "approved",
+      "basis": "office",
+      "applicability": "applies",
+      "statement_origin": "Plain-language synthetic requirement authored for the demonstrator; not quoted from any standard.",
+      "record_type": "Requirement"
+    },
+    {
+      "id": "FREQ-006",
+      "level": "building",
+      "system_id": "FSYS-003",
+      "title": "Compartmentation of each flat",
+      "domain_areas": [
+        "Passive Fire Protection",
+        "Structural Fire Performance",
+        "Regulatory / Guidance Requirements"
+      ],
+      "statement": "Each flat forms a separate fire compartment from other flats and from the common parts.",
+      "requirement_type": "life_safety",
+      "regulatory_reference": "Building Regulations 2010, Schedule 1, Part B, requirement B3 (internal fire spread - structure)",
+      "standard_ids": [
+        "FSTD-001",
+        "FSTD-003"
+      ],
+      "status": "draft",
+      "basis": "residential",
+      "applicability": "applies",
+      "statement_origin": "Plain-language synthetic requirement authored for the demonstrator; not quoted from any standard.",
+      "record_type": "Requirement"
+    },
+    {
+      "id": "FREQ-007",
+      "level": "building",
+      "system_id": "FSYS-003",
+      "title": "Fire resistance of the Level 3 compartment floor",
+      "domain_areas": [
+        "Passive Fire Protection",
+        "Structural Fire Performance",
+        "Regulatory / Guidance Requirements"
+      ],
+      "statement": "The Level 3 compartment floor and its supporting structure achieve the fire resistance required for the building as altered.",
+      "requirement_type": "life_safety",
+      "regulatory_reference": "Building Regulations 2010, Schedule 1, Part B, requirement B3 (internal fire spread - structure)",
+      "standard_ids": [
+        "FSTD-001",
+        "FSTD-002"
+      ],
+      "status": "approved",
+      "basis": "not_occupancy_dependent",
+      "applicability": "applies",
+      "statement_origin": "Plain-language synthetic requirement authored for the demonstrator; not quoted from any standard.",
+      "record_type": "Requirement"
+    },
+    {
+      "id": "FREQ-008",
+      "level": "building",
+      "system_id": "FSYS-004",
+      "title": "Sprinkler protection to the residential floor",
+      "domain_areas": [
+        "Active Fire Protection",
+        "Firefighting Access",
+        "Regulatory / Guidance Requirements"
+      ],
+      "statement": "The need for, and extent of, automatic sprinkler protection to the residential floor is determined and justified.",
+      "requirement_type": "life_safety",
+      "regulatory_reference": "Building Regulations 2010, Schedule 1, Part B, requirement B3 (internal fire spread - structure)",
+      "standard_ids": [
+        "FSTD-001",
+        "FSTD-006"
+      ],
+      "status": "draft",
+      "basis": "residential",
+      "applicability": "to_be_confirmed",
+      "statement_origin": "Plain-language synthetic requirement authored for the demonstrator; not quoted from any standard.",
+      "applicability_note": "Whether sprinkler protection must be extended to Level 3 depends on the height of the topmost storey and on the evacuation strategy adopted; neither is recorded in the available evidence.",
+      "record_type": "Requirement"
+    },
+    {
+      "id": "FREQ-009",
+      "level": "building",
+      "system_id": "FSYS-004",
+      "title": "Fire service access and facilities serving Level 3",
+      "domain_areas": [
+        "Active Fire Protection",
+        "Firefighting Access",
+        "Regulatory / Guidance Requirements"
+      ],
+      "statement": "Fire service access, firefighting facilities and the fire main remain adequate for firefighting on Level 3.",
+      "requirement_type": "life_safety",
+      "regulatory_reference": "Building Regulations 2010, Schedule 1, Part B, requirement B5 (access and facilities for the fire service)",
+      "standard_ids": [
+        "FSTD-002"
+      ],
+      "status": "approved",
+      "basis": "not_occupancy_dependent",
+      "applicability": "applies",
+      "statement_origin": "Plain-language synthetic requirement authored for the demonstrator; not quoted from any standard.",
+      "record_type": "Requirement"
+    },
+    {
+      "id": "FREQ-010",
+      "level": "building",
+      "system_id": "FSYS-001",
+      "title": "Regulatory route and higher-risk building status",
+      "domain_areas": [
+        "Means of Escape",
+        "Evacuation Strategy",
+        "Regulatory / Guidance Requirements"
+      ],
+      "statement": "The regulatory route for the works is determined, including whether the building as altered falls within the higher-risk building definition.",
+      "requirement_type": "life_safety",
+      "regulatory_reference": "Building Safety Act 2022 (higher-risk building definition); Building Regulations 2010 (material change of use)",
+      "standard_ids": [
+        "FSTD-007",
+        "FSTD-008"
+      ],
+      "status": "draft",
+      "basis": "residential",
+      "applicability": "to_be_confirmed",
+      "statement_origin": "Plain-language synthetic requirement authored for the demonstrator; not quoted from any standard.",
+      "applicability_note": "Depends on the building's height and storey count measured as the applicable regulations define, and on the number of residential units after the change; the height is not recorded in the available evidence.",
+      "record_type": "Requirement"
+    }
+  ]
+}

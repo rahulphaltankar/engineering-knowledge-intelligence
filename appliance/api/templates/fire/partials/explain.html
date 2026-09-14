@@ -1,0 +1,96 @@
+{% from "fire/_macros.html" import lbl with context %}
+<div class="panel" style="border-color:var(--accent)">
+  <div class="panel-head">
+    <h2>Auditable derivation</h2>
+    <span class="aside">Evidence and reasoning trace &mdash; the recorded evidence, relationship paths,
+      scoring and gate outcome behind this finding</span>
+  </div>
+  <div class="tiny faint" style="margin-bottom:4px">Finding <code>{{ e.finding_id }}</code> ·
+    {{ e.produced_by|join(', ') }} · {{ e.execution_mode }} analysis</div>
+  <h3 style="margin-top:0">{{ e.finding.statement }}</h3>
+  <div class="row small" style="margin-bottom:12px">
+    <span class="pill {{ e.classification }}">{{ e.classification }}</span>
+    <span class="muted">Confidence {{ e.confidence }} ({{ '%.2f'|format(e.confidence_score) }})</span>
+  </div>
+
+  <dl class="kv" style="margin-bottom:12px">
+    <dt>Classification reason</dt><dd>{{ e.classification_meaning }}</dd>
+    <dt>Confidence basis</dt><dd>{{ e.confidence_basis }}</dd>
+    <dt>Evidence gate outcome</dt><dd>{{ e.gate_outcome }}</dd>
+  </dl>
+
+  {% if e.rationale %}
+  <h3>How it was derived</h3>
+  <p class="note" style="margin-bottom:8px">{{ e.rationale }}</p>
+  {% endif %}
+  {% if e.derivation %}
+  <details class="disclosure" style="margin-top:4px">
+    <summary>Pipeline stages this finding passed through</summary>
+    <ol class="steps" style="margin-top:8px">
+      {% for s in e.derivation %}<li><strong>{{ s.step }}</strong> &mdash; <span class="muted">{{ s.detail }}</span></li>{% endfor %}
+    </ol>
+  </details>
+  {% endif %}
+
+  {% set transfer = e.evidence|selectattr('transferability_reason')|list %}
+  {% if transfer or e.evidence|selectattr('transferable', 'sameas', false)|list %}
+  <h3>Transferability reasoning</h3>
+  <div class="stack">
+    {% for ev in e.evidence if ev.transferable == false %}
+    <div class="note warn small"><code>{{ ev.id }}</code> &mdash; {{ ev.transferability_reason or 'Marked non-transferable in the source record.' }}</div>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  <h3>Assumptions</h3>
+  {% if e.assumptions %}
+  <div class="note warn stack">{% for a in e.assumptions %}<div>{{ a }}</div>{% endfor %}</div>
+  {% else %}
+  <p class="small muted" style="margin:0">None. No premise was supplied that the evidence does not contain.</p>
+  {% endif %}
+
+  {% if e.unknowns %}
+  <h3>Unknowns</h3>
+  <div class="note unknown stack">{% for u in e.unknowns %}<div>{{ u }}</div>{% endfor %}</div>
+  {% endif %}
+
+  <h3>Supporting evidence ({{ e.evidence|length }})</h3>
+  {% if e.evidence %}
+  <div class="cards">
+  {% for ev in e.evidence %}
+    <div class="ev-card {{ 'blocked' if ev.transferable == false else '' }}">
+      <div class="row" style="justify-content:space-between">
+        <span><code>{{ ev.id }}</code> <span class="tiny muted" style="margin-left:4px">{{ lbl(ev.entity_type) }}</span></span>
+        <span><span class="pill {{ ev.classification }}">{{ ev.classification }}</span>
+          {% if ev.transferable == false %}<span class="pill bad">Not transferable</span>
+          {% elif ev.transferable %}<span class="pill ok">Transferable</span>{% endif %}</span>
+      </div>
+      <div style="font-weight:560;margin:5px 0 4px">{{ ev.summary }}</div>
+      {% for key, val in ev.attributes.items() %}
+        <div class="tiny muted"><span class="mono">{{ lbl(key) }}</span>: {{ val }}</div>
+      {% endfor %}
+      {% if ev.path %}
+      <div class="path" style="margin-top:8px">
+        <span class="tiny faint" style="text-transform:uppercase;letter-spacing:.05em">Relationship path</span><br>
+        {% for p in ev.path %}{{ p }}{% if not loop.last %}<br>{% endif %}{% endfor %}
+      </div>
+      {% endif %}
+      <div class="meta">
+        Provenance: {{ ev.provenance.connector_id }} / {{ ev.provenance.source_object_id }} · {{ ev.provenance.source_version }}
+        <br>{{ ev.provenance.source_system }}
+        {% if ev.provenance.licence %} · {{ ev.provenance.licence }}{% endif %}
+        <br>Retrieved {{ ev.provenance.retrieved_at }}
+        {% if ev.provenance.data_classification %}<br>{{ ev.provenance.data_classification }}{% endif %}
+      </div>
+    </div>
+  {% endfor %}
+  </div>
+  {% else %}
+  <p class="muted small">No verifiable evidence is attached. The finding is reported as
+     {{ e.classification }} for exactly that reason.</p>
+  {% endif %}
+
+  <div id="review-{{ e.finding_id }}">
+    {% include "fire/partials/review.html" %}
+  </div>
+</div>

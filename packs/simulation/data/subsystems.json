@@ -1,0 +1,338 @@
+{
+  "entity": "Subsystem",
+  "description": "Subsystems within each system.",
+  "data_classification": "SIMULATED ENTERPRISE ARTEFACT - not OEM, customer or proprietary data",
+  "generated_by": "scripts/generate_simulation.py",
+  "seed": 20260823,
+  "records": [
+    {
+      "id": "SUB-001",
+      "system_id": "SYS-001",
+      "name": "Cell Module Assembly",
+      "description": "Series/parallel cell modules with busbars and sensing.",
+      "record_type": "Subsystem"
+    },
+    {
+      "id": "SUB-002",
+      "system_id": "SYS-001",
+      "name": "Battery Management System",
+      "description": "Cell monitoring, SOC/SOH estimation, balancing and protection.",
+      "record_type": "Subsystem"
+    },
+    {
+      "id": "SUB-003",
+      "system_id": "SYS-001",
+      "name": "Battery Disconnect Unit",
+      "description": "HV contactors, pyro fuse, current sensing and precharge.",
+      "record_type": "Subsystem"
+    },
+    {
+      "id": "SUB-004",
+      "system_id": "SYS-001",
+      "name": "Pack Enclosure and Sealing",
+      "description": "Structural enclosure, seals, venting and ingress protection.",
+      "record_type": "Subsystem"
+    },
+    {
+      "id": "SUB-005",
+      "system_id": "SYS-001",
+      "name": "Pack Cooling Plate",
+      "description": "Brazed cooling plate bonded to module base.",
+      "record_type": "Subsystem"
+    },
+    {
+      "id": "SUB-006",
+      "system_id": "SYS-002",
+      "name": "Battery Coolant Loop",
+      "description": "Pump, chiller, valves and lines serving the HV battery.",
+      "record_type": "Subsystem"
+    },
+    {
+      "id": "SUB-007",
+      "system_id": "SYS-002",
+      "name": "Powertrain Coolant Loop",
+      "description": "Loop serving inverter, motor and DC-DC.",
+      "record_type": "Subsystem"
+    },
+    {
+      "id": "SUB-008",
+      "system_id": "SYS-002",
+      "name": "Thermal Control Strategy",
+      "description": "Supervisory thermal arbitration and derate strategy.",
+      "record_type": "Subsystem"
+    },
+    {
+      "id": "SUB-009",
+      "system_id": "SYS-003",
+      "name": "On-Board Charger",
+      "description": "AC to DC conversion for AC charging.",
+      "record_type": "Subsystem"
+    },
+    {
+      "id": "SUB-010",
+      "system_id": "SYS-003",
+      "name": "DC Charge Path",
+      "description": "HV path, contactors and protection for DC fast charging.",
+      "record_type": "Subsystem"
+    },
+    {
+      "id": "SUB-011",
+      "system_id": "SYS-003",
+      "name": "Charge Inlet Assembly",
+      "description": "Combined AC/DC inlet, lock actuator and thermal sensing.",
+      "record_type": "Subsystem"
+    },
+    {
+      "id": "SUB-012",
+      "system_id": "SYS-003",
+      "name": "Charge Control Software",
+      "description": "Charge session negotiation, current arbitration and derate.",
+      "record_type": "Subsystem"
+    },
+    {
+      "id": "SUB-013",
+      "system_id": "SYS-004",
+      "name": "Traction Motor",
+      "description": "Permanent magnet synchronous machine and resolver.",
+      "record_type": "Subsystem"
+    },
+    {
+      "id": "SUB-014",
+      "system_id": "SYS-004",
+      "name": "Traction Inverter",
+      "description": "Power module, gate drive, DC link and control board.",
+      "record_type": "Subsystem"
+    },
+    {
+      "id": "SUB-015",
+      "system_id": "SYS-004",
+      "name": "Reduction Gearbox",
+      "description": "Single-speed reducer, differential and lubrication.",
+      "record_type": "Subsystem"
+    },
+    {
+      "id": "SUB-016",
+      "system_id": "SYS-005",
+      "name": "Front Foundation Brake",
+      "description": "Front caliper, disc and friction material.",
+      "record_type": "Subsystem"
+    },
+    {
+      "id": "SUB-017",
+      "system_id": "SYS-005",
+      "name": "Rear Foundation Brake",
+      "description": "Rear caliper, disc and friction material.",
+      "record_type": "Subsystem"
+    },
+    {
+      "id": "SUB-018",
+      "system_id": "SYS-005",
+      "name": "Brake Actuation and ESC",
+      "description": "Electro-hydraulic actuation, ABS/ESC and regen blending.",
+      "record_type": "Subsystem"
+    },
+    {
+      "id": "SUB-019",
+      "system_id": "SYS-006",
+      "name": "Front Suspension",
+      "description": "Lower control arms, bushings, struts and anti-roll bar.",
+      "record_type": "Subsystem"
+    },
+    {
+      "id": "SUB-020",
+      "system_id": "SYS-006",
+      "name": "Rear Suspension",
+      "description": "Multi-link arms, bushings, dampers and springs.",
+      "record_type": "Subsystem"
+    },
+    {
+      "id": "SUB-021",
+      "system_id": "SYS-006",
+      "name": "Rear Subframe",
+      "description": "Rear subframe and isolation bushings.",
+      "record_type": "Subsystem"
+    },
+    {
+      "id": "SUB-022",
+      "system_id": "SYS-007",
+      "name": "EPS Rack Assembly",
+      "description": "Rack, ball nut, motor and torque sensor.",
+      "record_type": "Subsystem"
+    },
+    {
+      "id": "SUB-023",
+      "system_id": "SYS-007",
+      "name": "Steering ECU",
+      "description": "Steering control unit and safety monitoring.",
+      "record_type": "Subsystem"
+    },
+    {
+      "id": "SUB-024",
+      "system_id": "SYS-008",
+      "name": "HV Wiring Harness",
+      "description": "Shielded HV cabling, connectors and routing.",
+      "record_type": "Subsystem"
+    },
+    {
+      "id": "SUB-025",
+      "system_id": "SYS-008",
+      "name": "LV Wiring Harness",
+      "description": "Low voltage harness, splices and grounding.",
+      "record_type": "Subsystem"
+    },
+    {
+      "id": "SUB-026",
+      "system_id": "SYS-008",
+      "name": "Vehicle Domain Controller",
+      "description": "Central compute, gateway and bus arbitration.",
+      "record_type": "Subsystem"
+    },
+    {
+      "id": "SUB-027",
+      "system_id": "SYS-009",
+      "name": "Front Camera Module",
+      "description": "Forward-looking camera and perception processing.",
+      "record_type": "Subsystem"
+    },
+    {
+      "id": "SUB-028",
+      "system_id": "SYS-009",
+      "name": "Front Radar Module",
+      "description": "Long range radar sensing.",
+      "record_type": "Subsystem"
+    },
+    {
+      "id": "SUB-029",
+      "system_id": "SYS-010",
+      "name": "Electric Compressor",
+      "description": "HV-driven refrigerant compressor.",
+      "record_type": "Subsystem"
+    },
+    {
+      "id": "SUB-030",
+      "system_id": "SYS-010",
+      "name": "Heat Pump Module",
+      "description": "Refrigerant circuit, valves and heat exchangers.",
+      "record_type": "Subsystem"
+    },
+    {
+      "id": "SUB-031",
+      "system_id": "SYS-010",
+      "name": "Cabin Air Handling",
+      "description": "Blower, filter, ducting and vents.",
+      "record_type": "Subsystem"
+    },
+    {
+      "id": "SUB-032",
+      "system_id": "SYS-011",
+      "name": "Vehicle Control Software",
+      "description": "Supervisory vehicle control application software.",
+      "record_type": "Subsystem"
+    },
+    {
+      "id": "SUB-033",
+      "system_id": "SYS-011",
+      "name": "Calibration Dataset",
+      "description": "Released calibration parameter sets per variant.",
+      "record_type": "Subsystem"
+    },
+    {
+      "id": "SUB-034",
+      "system_id": "SYS-011",
+      "name": "OTA Update Agent",
+      "description": "Software update orchestration and rollback.",
+      "record_type": "Subsystem"
+    },
+    {
+      "id": "SUB-035",
+      "system_id": "SYS-012",
+      "name": "Underbody Structure",
+      "description": "Floor structure and battery mounting interface.",
+      "record_type": "Subsystem"
+    },
+    {
+      "id": "SUB-036",
+      "system_id": "SYS-012",
+      "name": "Closure Sealing",
+      "description": "Door, tailgate and body sealing system.",
+      "record_type": "Subsystem"
+    },
+    {
+      "id": "SUB-037",
+      "system_id": "SYS-013",
+      "name": "Frontal Restraints",
+      "description": "Driver and passenger airbags and pretensioners.",
+      "record_type": "Subsystem"
+    },
+    {
+      "id": "SUB-038",
+      "system_id": "SYS-013",
+      "name": "Crash Sensing",
+      "description": "Satellite sensors and restraint control module.",
+      "record_type": "Subsystem"
+    },
+    {
+      "id": "SUB-039",
+      "system_id": "SYS-014",
+      "name": "Combustion Engine",
+      "description": "Engine assembly for PHEV and MHEV applications.",
+      "record_type": "Subsystem"
+    },
+    {
+      "id": "SUB-040",
+      "system_id": "SYS-014",
+      "name": "Hybrid Transmission",
+      "description": "Hybrid transmission and coupling.",
+      "record_type": "Subsystem"
+    },
+    {
+      "id": "SUB-041",
+      "system_id": "SYS-015",
+      "name": "Close-Coupled Catalyst",
+      "description": "Catalyst brick, substrate and washcoat.",
+      "record_type": "Subsystem"
+    },
+    {
+      "id": "SUB-042",
+      "system_id": "SYS-015",
+      "name": "Particulate Filter",
+      "description": "Filter substrate and regeneration control.",
+      "record_type": "Subsystem"
+    },
+    {
+      "id": "SUB-043",
+      "system_id": "SYS-016",
+      "name": "Front Wheel End",
+      "description": "Front wheel, tyre, hub and bearing.",
+      "record_type": "Subsystem"
+    },
+    {
+      "id": "SUB-044",
+      "system_id": "SYS-016",
+      "name": "Rear Wheel End",
+      "description": "Rear wheel, tyre, hub and bearing.",
+      "record_type": "Subsystem"
+    },
+    {
+      "id": "SUB-045",
+      "system_id": "SYS-017",
+      "name": "Telematics Control Unit",
+      "description": "Cellular modem, GNSS and secure element.",
+      "record_type": "Subsystem"
+    },
+    {
+      "id": "SUB-046",
+      "system_id": "SYS-018",
+      "name": "DC-DC Converter",
+      "description": "HV to LV conversion.",
+      "record_type": "Subsystem"
+    },
+    {
+      "id": "SUB-047",
+      "system_id": "SYS-018",
+      "name": "LV Battery and Distribution",
+      "description": "12V battery, fuses and distribution boxes.",
+      "record_type": "Subsystem"
+    }
+  ]
+}
