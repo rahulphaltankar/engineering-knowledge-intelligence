@@ -70,6 +70,8 @@
 
 - The MIT-licensed upstream packs for the automotive reference demonstration are included so
   a fresh clone is self-contained; the fire demonstrator does not depend on them.
-- No container image definition is published; run with Python as described in the README.
+- The `Dockerfile` targets Google Cloud Run with a single worker. Sessions and review
+  decisions are in process memory, so a deployment must run one instance (with session
+  affinity) and loses that state whenever the instance restarts or scales to zero.
 - No authentication, TLS, rate limiting or multi-process session store; do not expose it
   beyond a controlled demonstration.

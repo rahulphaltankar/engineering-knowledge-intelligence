@@ -187,6 +187,28 @@ python -m pytest -q
 Sessions are per browser (an opaque cookie); two people using the demonstrator do not see
 each other's analysis or reviews.
 
+## Deploy to Google Cloud Run
+
+The `Dockerfile` runs the same application (`appliance.api.app:app`) with uvicorn on
+`0.0.0.0:$PORT`, falling back to `8080` when `PORT` is not set, as a non-root user. The image
+contains only the application code, `config/` and `packs/`; no credentials are needed.
+
+```bash
+docker build -t engineering-knowledge-intelligence .
+docker run --rm -p 8080:8080 engineering-knowledge-intelligence
+```
+
+```bash
+gcloud run deploy engineering-knowledge-intelligence --source . --region europe-west2 --max-instances 1 --session-affinity
+```
+
+Analysis sessions and engineering review decisions are held in process memory (see
+[docs/LIMITATIONS.md](docs/LIMITATIONS.md)). The container therefore runs one uvicorn worker;
+deploy with `--max-instances 1` (and session affinity) so a browser keeps reaching the instance
+that holds its session. State is lost when Cloud Run restarts or scales the instance to zero.
+Choose the service's access setting (authenticated or public) deliberately: the demonstrator
+has no authentication of its own.
+
 ## Model behaviour
 
 The appliance runs **deterministically** by default: findings are computed from the

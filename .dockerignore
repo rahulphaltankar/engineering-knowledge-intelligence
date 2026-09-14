@@ -1,0 +1,22 @@
+# Keep the build context to what the image needs.
+.git
+.gitattributes
+.gitignore
+.dockerignore
+Dockerfile
+**/__pycache__
+**/*.py[cod]
+.pytest_cache
+.venv
+venv
+.env
+.env.*
+.mcp.json
+.claude
+.idea
+.vscode
+tests
+docs
+scripts
+*.md
+!packs/**/*.md
