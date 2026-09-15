@@ -74,6 +74,33 @@ derivation panel, review response and output for it. Its knowledge-source catego
 **conceptual** and labelled as such; their coverage, and the coverage of the nine
 fire-engineering domains, is computed from the synthetic corpus at runtime.
 
+## Target architecture
+
+This repository contains two distinct things:
+
+1. **An implemented fire-engineering vertical slice** — the running demonstrator described in
+   this README and in [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md): one scenario, a synthetic
+   corpus, deterministic graph reasoning, an evidence gate, auditable derivation and
+   session-scoped human review. Its live deployment has been acceptance-tested
+   ([docs/LIVE-ACCEPTANCE-TEST.md](docs/LIVE-ACCEPTANCE-TEST.md): 16/16 criteria, PASS WITH
+   FINDINGS).
+2. **A target enterprise architecture hypothesis for the KTP** —
+   [docs/TARGET-ARCHITECTURE.md](docs/TARGET-ARCHITECTURE.md): *Engineering Knowledge
+   Intelligence Platform — Knowledge Fabric + Intelligence Layer + Engineering Workflow*,
+   described across business, data, application and technology architecture, with hybrid
+   retrieval, a replaceable model router, an evidence gate, retrieval-time authorisation,
+   continuous evaluation and a controlled learning loop.
+
+To be absolutely clear about the target architecture:
+
+- **It is not BB7's internal architecture.** It describes a hypothesis, not an existing system.
+- **BB7's internal systems have not been inspected.** Nothing in it asserts which systems,
+  data or processes BB7 has or uses.
+- **Technology choices are hypotheses until discovery.** Named technologies and model providers
+  are candidates to evaluate, not decisions.
+- **It is intended to be validated collaboratively during the KTP**, with BB7 and the
+  University of Leeds, against real practice, data and constraints.
+
 ## The flow it demonstrates
 
 ```
@@ -222,6 +249,8 @@ classified INFERRED (lower trust than deterministic findings); and removed by th
 
 ## Documentation
 
+- [docs/TARGET-ARCHITECTURE.md](docs/TARGET-ARCHITECTURE.md) — target enterprise architecture hypothesis for the KTP
+- [docs/LIVE-ACCEPTANCE-TEST.md](docs/LIVE-ACCEPTANCE-TEST.md) — black-box acceptance test of the live deployment
 - [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) — how the domain pack plugs into the unchanged core
 - [docs/PROVENANCE.md](docs/PROVENANCE.md) — classification, confidence, provenance, the gate and review
 - [docs/LIMITATIONS.md](docs/LIMITATIONS.md) — what this demonstrator is not
