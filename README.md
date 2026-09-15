@@ -78,18 +78,20 @@ fire-engineering domains, is computed from the synthetic corpus at runtime.
 
 This repository contains two distinct things:
 
-1. **An implemented fire-engineering vertical slice** — the running demonstrator described in
+1. **CURRENT — an implemented, public-safe fire-engineering vertical slice** — the running demonstrator described in
    this README and in [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md): one scenario, a synthetic
    corpus, deterministic graph reasoning, an evidence gate, auditable derivation and
    session-scoped human review. Its live deployment has been acceptance-tested
    ([docs/LIVE-ACCEPTANCE-TEST.md](docs/LIVE-ACCEPTANCE-TEST.md): 16/16 criteria, PASS WITH
    FINDINGS).
-2. **A target enterprise architecture hypothesis for the KTP** —
-   [docs/TARGET-ARCHITECTURE.md](docs/TARGET-ARCHITECTURE.md): *Engineering Knowledge
-   Intelligence Platform — Knowledge Fabric + Intelligence Layer + Engineering Workflow*,
-   described across business, data, application and technology architecture, with hybrid
-   retrieval, a replaceable model router, an evidence gate, retrieval-time authorisation,
-   continuous evaluation and a controlled learning loop.
+2. **TARGET — an enterprise knowledge-intelligence architecture to be validated during the
+   KTP** — [docs/TARGET-ARCHITECTURE.md](docs/TARGET-ARCHITECTURE.md): *Engineering Knowledge
+   Intelligence Platform — Knowledge Fabric + Agentic Intelligence Layer + Engineering
+   Workflow*. It combines TOGAF-aligned enterprise architecture, a least-autonomy agentic
+   intelligence layer with a replaceable model gateway (Claude among other candidate
+   providers), hybrid RAG with context closure, auditable derivation, human governance,
+   evaluation, and a traceability table from KTP requirements to architecture and to what the
+   demonstrator already shows.
 
 To be absolutely clear about the target architecture:
 
